@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var spawn_interval: float = 0.01
+@export var spawn_interval: float = 0.04
 @export var ghost_lifetime: float = 0.1
 @export var ghost_color: Color = Color(0.4, 0.7, 1.0, 0.6)
 
