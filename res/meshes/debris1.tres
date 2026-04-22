@@ -1,4 +1,4 @@
-[gd_resource type="ArrayMesh" load_steps=5 format=4 uid="uid://62wtawlbgkyn"]
+[gd_resource type="ArrayMesh" format=4 uid="uid://62wtawlbgkyn"]
 
 [ext_resource type="Texture2D" uid="uid://bycueji43k8vt" path="res://assets/source/env/decor/debris1_text.png" id="1_psmi6"]
 

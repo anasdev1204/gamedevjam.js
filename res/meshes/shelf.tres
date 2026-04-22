@@ -1,4 +1,4 @@
-[gd_resource type="ArrayMesh" load_steps=4 format=4 uid="uid://bhpe3bydlrj2i"]
+[gd_resource type="ArrayMesh" format=4 uid="uid://bhpe3bydlrj2i"]
 
 [ext_resource type="Material" uid="uid://dmsvhf6ry2mas" path="res://res/materials/simple_outline.tres" id="1_hnw0h"]
 

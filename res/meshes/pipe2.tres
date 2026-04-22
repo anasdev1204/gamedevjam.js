@@ -1,4 +1,4 @@
-[gd_resource type="ArrayMesh" load_steps=5 format=4 uid="uid://bujtxagutwo4t"]
+[gd_resource type="ArrayMesh" format=4 uid="uid://bujtxagutwo4t"]
 
 [ext_resource type="Texture2D" uid="uid://d2rg2akk7gnfh" path="res://assets/source/env/decor/pipe2_text.png" id="1_fabq3"]
 [ext_resource type="Material" uid="uid://dmsvhf6ry2mas" path="res://res/materials/simple_outline.tres" id="2_ffome"]

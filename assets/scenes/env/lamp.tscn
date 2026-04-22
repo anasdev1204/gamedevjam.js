@@ -1,11 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://b40xgutgor8sj"]
+[gd_scene format=3 uid="uid://b40xgutgor8sj"]
 
 [ext_resource type="ArrayMesh" uid="uid://bnif2p8lys5ol" path="res://res/meshes/lamp.tres" id="1_xp0bh"]
+[ext_resource type="Script" uid="uid://u6l7ut6tijcq" path="res://scripts/vfx/flickering_light.gd" id="2_rvgdm"]
 
-[node name="lamp" type="Node3D"]
+[node name="lamp" type="Node3D" unique_id=1668262043]
+script = ExtResource("2_rvgdm")
 
-[node name="lamp" type="MeshInstance3D" parent="."]
+[node name="lamp" type="MeshInstance3D" parent="." unique_id=992170143]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.805916, 0.10497856, -21.08797)
 mesh = ExtResource("1_xp0bh")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1991549449]

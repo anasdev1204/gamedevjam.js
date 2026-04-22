@@ -1,4 +1,4 @@
-[gd_resource type="ArrayMesh" load_steps=6 format=4 uid="uid://bnif2p8lys5ol"]
+[gd_resource type="ArrayMesh" format=4 uid="uid://bnif2p8lys5ol"]
 
 [ext_resource type="Texture2D" uid="uid://bgvs043nsrqjh" path="res://assets/source/env/decor/lamp_text.png" id="1_b0phi"]
 [ext_resource type="Material" uid="uid://dmsvhf6ry2mas" path="res://res/materials/simple_outline.tres" id="2_wmk68"]
