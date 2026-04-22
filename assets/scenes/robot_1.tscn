@@ -5,22 +5,23 @@
 [ext_resource type="Shader" uid="uid://dbu7llmqrxdp3" path="res://res/shaders/toon.tres" id="2_6dg2v"]
 [ext_resource type="Texture2D" uid="uid://dt20l402adu7q" path="res://assets/source/entities/robot1/mc_texture.png" id="3_6iefm"]
 [ext_resource type="PackedScene" uid="uid://dv2ji8ty5oudg" path="res://assets/scenes/sword.tscn" id="5_b44hl"]
-[ext_resource type="Script" uid="uid://gj31cgpakkbq" path="res://scripts/Components/ActiveSkillsContainer.gd" id="6_8w37o"]
+[ext_resource type="Script" uid="uid://gj31cgpakkbq" path="res://scripts/Classes/ActiveSkillsContainer.gd" id="6_8w37o"]
 [ext_resource type="Script" uid="uid://dw3mcscvxt3xt" path="res://scripts/Components/MovementComponent.gd" id="6_30swm"]
 [ext_resource type="Script" uid="uid://4gsfrqitdpoc" path="res://scripts/Classes/ActiveSkill.gd" id="6_y14u4"]
 [ext_resource type="Script" uid="uid://dxagjxh1g8e6s" path="res://scripts/Components/InputComponent.gd" id="7_mfce1"]
 [ext_resource type="Script" uid="uid://ba8212q4seyav" path="res://scripts/Components/RotationComponent.gd" id="7_rpskj"]
 [ext_resource type="Shader" uid="uid://cyc8cdq322ia3" path="res://res/shaders/sword_trail.gdshader" id="8_5ih1s"]
 [ext_resource type="Script" uid="uid://de1wp8vsj500e" path="res://scripts/Components/CameraComponent.gd" id="9_1rmvn"]
-[ext_resource type="Script" uid="uid://t8tlnax4mnhv" path="res://scripts/vfx/sword_vfx.gd" id="9_5ih1s"]
+[ext_resource type="Script" uid="uid://t8tlnax4mnhv" path="res://scripts/VFX/sword_vfx.gd" id="9_5ih1s"]
 [ext_resource type="Texture2D" uid="uid://0cq824j8erqx" path="res://res/materials/sword_vfx_length_grad.tres" id="9_806eg"]
 [ext_resource type="Texture2D" uid="uid://bwjx4wvecvi0p" path="res://res/materials/sword_vfx_colors.tres" id="9_lpqwr"]
-[ext_resource type="Script" uid="uid://dy5m5f1dv31so" path="res://scripts/vfx/dash_afterimage.gd" id="9_x73gp"]
+[ext_resource type="Script" uid="uid://dy5m5f1dv31so" path="res://scripts/VFX/dash_afterimage.gd" id="9_x73gp"]
 [ext_resource type="Texture2D" uid="uid://dsl1be4yejkkd" path="res://res/materials/sword_vfx_noise.tres" id="10_806eg"]
 [ext_resource type="Texture2D" uid="uid://cu72pd66gxw50" path="res://res/materials/sword_vfx_highlight.tres" id="10_x73gp"]
 [ext_resource type="Texture2D" uid="uid://em2k4iohhmfv" path="res://res/materials/sword_vfx_width_grad.tres" id="11_rwm3k"]
 [ext_resource type="Script" uid="uid://q8fs4agvgiw0" path="res://scripts/Components/ActiveSkillComponent.gd" id="13_bte7j"]
 [ext_resource type="AnimationLibrary" uid="uid://c7wu6c4qhv44i" path="res://assets/source/entities/robot1/robot1_animations.res" id="16_l5q4v"]
+[ext_resource type="AnimationNodeBlendTree" uid="uid://cm1dqv2ampjp0" path="res://assets/source/entities/robot1/robot_blend_tree.tres" id="17_k6btb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pixqs"]
 render_priority = 0
@@ -210,112 +211,28 @@ _data = {
 &"RESET": SubResource("Animation_k6btb")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_y14u4"]
-
-[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_8w37o"]
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_y14u4"]
-graph_offset = Vector2(-322.42102, -2.7944002)
-nodes/Animation/node = SubResource("AnimationNodeAnimation_y14u4")
-nodes/Animation/position = Vector2(-100, 120)
-nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_8w37o")
-nodes/TimeScale/position = Vector2(80, 120)
-node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bte7j"]
-
-[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_5ih1s"]
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_8w37o"]
-graph_offset = Vector2(-114.23999, 42.23999)
-nodes/output/position = Vector2(490, 150)
-nodes/Animation/node = SubResource("AnimationNodeAnimation_bte7j")
-nodes/Animation/position = Vector2(-30, 140)
-nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_5ih1s")
-nodes/TimeScale/position = Vector2(330, 80)
-node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
-
-[sub_resource type="Curve" id="Curve_lpqwr"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_8w37o"]
-xfade_time = 0.3
-xfade_curve = SubResource("Curve_lpqwr")
-input_0/name = "end_attack"
-input_0/auto_advance = false
-input_0/break_loop_at_end = false
-input_0/reset = true
-input_1/name = "attack_buffer_0"
-input_1/auto_advance = false
-input_1/break_loop_at_end = false
-input_1/reset = true
-input_2/name = "attack_buffer_1"
-input_2/auto_advance = false
-input_2/break_loop_at_end = false
-input_2/reset = true
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8w37o"]
-animation = &"robot1/idle-loop"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5ih1s"]
-animation = &"robot1/run-loop"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pixqs"]
-animation = &"robot1/run-loop"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hhfox"]
-animation = &"robot1/run-loop"
-
-[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_806eg"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_8w37o")
-blend_point_0/pos = 0.0
-blend_point_1/node = SubResource("AnimationNodeAnimation_5ih1s")
-blend_point_1/pos = 0.0
-blend_point_2/node = SubResource("AnimationNodeAnimation_pixqs")
-blend_point_2/pos = 1.0
-blend_point_3/node = SubResource("AnimationNodeAnimation_hhfox")
-blend_point_3/pos = -1.0
-snap = 1.0
-
-[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_y14u4"]
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_pixqs"]
-graph_offset = Vector2(-270.33978, -32.405323)
-nodes/output/position = Vector2(690, 130)
-nodes/attack_buffer_0/node = SubResource("AnimationNodeBlendTree_y14u4")
-nodes/attack_buffer_0/position = Vector2(230, 340)
-nodes/movement_blend/node = SubResource("AnimationNodeBlendSpace1D_806eg")
-nodes/movement_blend/position = Vector2(-500, 10)
-nodes/attack_buffer_1/node = SubResource("AnimationNodeBlendTree_8w37o")
-nodes/attack_buffer_1/position = Vector2(230, 500)
-nodes/movement_time_scale/node = SubResource("AnimationNodeTimeScale_y14u4")
-nodes/movement_time_scale/position = Vector2(-10, 120)
-nodes/attack_transition/node = SubResource("AnimationNodeTransition_8w37o")
-nodes/attack_transition/position = Vector2(496, 80)
-node_connections = [&"output", 0, &"attack_transition", &"movement_time_scale", 0, &"movement_blend", &"attack_transition", 0, &"movement_time_scale", &"attack_transition", 1, &"attack_buffer_0", &"attack_transition", 2, &"attack_buffer_1"]
-
-[node name="Robot1" type="CharacterBody3D"]
+[node name="Robot1" type="CharacterBody3D" unique_id=1422039638]
 script = ExtResource("1_8w37o")
 
-[node name="VFX" type="Node3D" parent="."]
+[node name="VFX" type="Node3D" parent="." unique_id=1699654892]
 
-[node name="SwordTrail" type="MeshInstance3D" parent="VFX" node_paths=PackedStringArray("base_point", "tip_point")]
+[node name="SwordTrail" type="MeshInstance3D" parent="VFX" unique_id=1506238966 node_paths=PackedStringArray("base_point", "tip_point")]
 visible = false
 material_override = SubResource("ShaderMaterial_pixqs")
 script = ExtResource("9_5ih1s")
 base_point = NodePath("../../Armature/Skeleton3D/righthand/Sword/blade_base")
 tip_point = NodePath("../../Armature/Skeleton3D/righthand/Sword/blade_tip")
 
-[node name="DashAfterImage" type="Node3D" parent="VFX"]
+[node name="DashAfterImage" type="Node3D" parent="VFX" unique_id=1256288670 node_paths=PackedStringArray("character_mesh")]
 script = ExtResource("9_x73gp")
+character_mesh = NodePath("../../Armature/Skeleton3D/model")
 ghost_lifetime = 0.25
 ghost_color = Color(0.3481339, 0.61677563, 0.7976407, 0.3019608)
 
-[node name="Armature" type="Node3D" parent="."]
+[node name="Armature" type="Node3D" parent="." unique_id=1001866424]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Skeleton3D" type="Skeleton3D" parent="Armature"]
+[node name="Skeleton3D" type="Skeleton3D" parent="Armature" unique_id=1704183329]
 bones/0/name = "DEF-spine"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, -1.8575504e-09, 2.382475e-07, 3.3328977e-08, 0.9912278, -0.13216387, -2.359121e-07, 0.13216387, 0.99122775, -1.2456439e-08, 2.0365014, -0.111312866)
@@ -562,36 +479,36 @@ bones/34/position = Vector3(-9.522773e-08, 0.4656373, 1.4901161e-08)
 bones/34/rotation = Quaternion(0.08250026, 0.9658418, -0.24468516, 0.021737562)
 bones/34/scale = Vector3(0.99995905, 1.0000547, 1.000014)
 
-[node name="model" type="MeshInstance3D" parent="Armature/Skeleton3D"]
+[node name="model" type="MeshInstance3D" parent="Armature/Skeleton3D" unique_id=823192963]
 mesh = SubResource("ArrayMesh_o8p25")
 skin = SubResource("Skin_v8my1")
 surface_material_override/0 = SubResource("ShaderMaterial_scrq5")
 
-[node name="head" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
+[node name="head" type="BoneAttachment3D" parent="Armature/Skeleton3D" unique_id=252033045]
 transform = Transform3D(0.98031974, 0.07047825, -0.18440714, -0.1660767, 0.79943585, -0.57733905, 0.10673185, 0.5966027, 0.79540765, 0.079802975, 3.0470228, 0.042491205)
 bone_name = "DEF-spine.005"
 bone_idx = 5
 
-[node name="righthand" type="BoneAttachment3D" parent="Armature/Skeleton3D"]
+[node name="righthand" type="BoneAttachment3D" parent="Armature/Skeleton3D" unique_id=2144218357]
 transform = Transform3D(-0.9063468, -0.22072275, 0.36999923, 0.30547938, -0.91442627, 0.23838112, 0.29037446, 0.34217215, 0.89774024, -0.6931273, 2.0581262, 0.04498537)
 bone_name = "DEF-hand.R"
 bone_idx = 18
 
-[node name="Sword" parent="Armature/Skeleton3D/righthand" instance=ExtResource("5_b44hl")]
+[node name="Sword" parent="Armature/Skeleton3D/righthand" unique_id=1282051706 instance=ExtResource("5_b44hl")]
 transform = Transform3D(0.55828154, 0.4613589, 0.68954456, -0.046274357, 0.84714735, -0.52934194, -0.8283602, 0.26361355, 0.49429578, 0.65872973, 0.26771498, 0.4155838)
 visible = false
 
-[node name="blade_tip" type="Marker3D" parent="Armature/Skeleton3D/righthand/Sword"]
+[node name="blade_tip" type="Marker3D" parent="Armature/Skeleton3D/righthand/Sword" unique_id=710547907]
 transform = Transform3D(0.9999989, 6.109476e-07, 9.23872e-07, 7.4505806e-08, 0.9999992, 8.791685e-07, 1.7881393e-07, -3.2782555e-07, 0.9999992, 0.2503916, 0.6604006, 1.9531894)
 
-[node name="blade_base" type="Marker3D" parent="Armature/Skeleton3D/righthand/Sword"]
+[node name="blade_base" type="Marker3D" parent="Armature/Skeleton3D/righthand/Sword" unique_id=1058134434]
 transform = Transform3D(1, 1.4901161e-08, 1.1920929e-07, -2.9802322e-08, 0.9999998, 2.2351742e-07, 5.9604645e-08, -1.6391277e-07, 0.9999999, -0.073192835, -0.14731362, -0.37279332)
 
-[node name="skills" type="Node3D" parent="Armature/Skeleton3D/righthand" node_paths=PackedStringArray("active_skills")]
+[node name="skills" type="Node3D" parent="Armature/Skeleton3D/righthand" unique_id=528357124 node_paths=PackedStringArray("active_skills")]
 script = ExtResource("6_8w37o")
 active_skills = [NodePath("ActiveSkill1"), NodePath("ActiveSkill2"), NodePath("ActiveSkill3")]
 
-[node name="ActiveSkill1" type="Node" parent="Armature/Skeleton3D/righthand/skills"]
+[node name="ActiveSkill1" type="Node" parent="Armature/Skeleton3D/righthand/skills" unique_id=949939775]
 script = ExtResource("6_y14u4")
 animation_name = &"robot1/attack1"
 windup_duration = 0.03
@@ -603,7 +520,7 @@ recovery_scale = 1.55
 acceleration = 150.0
 metadata/_custom_type_script = "uid://4gsfrqitdpoc"
 
-[node name="ActiveSkill2" type="Node" parent="Armature/Skeleton3D/righthand/skills"]
+[node name="ActiveSkill2" type="Node" parent="Armature/Skeleton3D/righthand/skills" unique_id=1997524684]
 script = ExtResource("6_y14u4")
 animation_name = &"robot1/attack2"
 windup_duration = 0.04
@@ -615,7 +532,7 @@ recovery_scale = 1.45
 acceleration = 200.0
 metadata/_custom_type_script = "uid://4gsfrqitdpoc"
 
-[node name="ActiveSkill3" type="Node" parent="Armature/Skeleton3D/righthand/skills"]
+[node name="ActiveSkill3" type="Node" parent="Armature/Skeleton3D/righthand/skills" unique_id=1514038380]
 script = ExtResource("6_y14u4")
 animation_name = &"robot1/attack3"
 windup_duration = 0.08
@@ -627,36 +544,35 @@ recovery_scale = 1.35
 acceleration = 220.0
 metadata/_custom_type_script = "uid://4gsfrqitdpoc"
 
-[node name="CameraPivot" type="Node3D" parent="."]
+[node name="CameraPivot" type="Node3D" parent="." unique_id=910483293]
 transform = Transform3D(0.8480481, 0, 0.52991927, 0, 1, 0, -0.52991927, 0, 0.8480481, 0, 3.169639, 0)
 
-[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=1438496648]
 unique_name_in_owner = true
 transform = Transform3D(-1, -6.181724e-08, 6.181724e-08, 0, 0.70710677, 0.70710677, -8.742278e-08, 0.70710677, -0.70710677, 0, 10, -5)
 projection = 1
 size = 20.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=592802098]
 transform = Transform3D(3.2242746, 0, 0, 0, 3.2242746, 0, 0, 0, 3.2242746, 0, 1.6461445, 0)
 shape = SubResource("CapsuleShape3D_np8er")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.2802033, -0.14692974)
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1426378359]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.265074, -0.14692974)
 light_energy = 3.366
+light_size = 0.402
 shadow_enabled = true
-omni_range = 11.66
+omni_range = 12.0
 omni_attenuation = 0.96
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_yklvb"),
-&"robot1": ExtResource("16_l5q4v")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1412085403]
+libraries/ = SubResource("AnimationLibrary_yklvb")
+libraries/robot1 = ExtResource("16_l5q4v")
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=861477972]
 unique_name_in_owner = true
 root_node = NodePath("%AnimationTree/..")
-tree_root = SubResource("AnimationNodeBlendTree_pixqs")
+tree_root = ExtResource("17_k6btb")
 anim_player = NodePath("../AnimationPlayer")
 parameters/attack_buffer_0/TimeScale/scale = 1.0
 parameters/movement_blend/blend_position = 0.0
@@ -666,12 +582,12 @@ parameters/attack_transition/current_state = "end_attack"
 parameters/attack_transition/transition_request = ""
 parameters/attack_transition/current_index = 0
 
-[node name="InputComponent" type="Node" parent="."]
+[node name="InputComponent" type="Node" parent="." unique_id=1982053175]
 unique_name_in_owner = true
 script = ExtResource("7_mfce1")
 metadata/_custom_type_script = "uid://dxagjxh1g8e6s"
 
-[node name="MovementComponent" type="Node" parent="." node_paths=PackedStringArray("body", "rotation_component", "camera_component", "dash_after_image_vfx")]
+[node name="MovementComponent" type="Node" parent="." unique_id=2115256045 node_paths=PackedStringArray("body", "rotation_component", "camera_component", "dash_after_image_vfx")]
 unique_name_in_owner = true
 script = ExtResource("6_30swm")
 body = NodePath("..")
@@ -683,14 +599,14 @@ active_dash_duration = 0.3
 active_dash_cooldown = 0.4
 metadata/_custom_type_script = "uid://dw3mcscvxt3xt"
 
-[node name="RotationComponent" type="Node" parent="." node_paths=PackedStringArray("player", "model")]
+[node name="RotationComponent" type="Node" parent="." unique_id=866598036 node_paths=PackedStringArray("player", "model")]
 unique_name_in_owner = true
 script = ExtResource("7_rpskj")
 player = NodePath("..")
-model = NodePath("../Armature/Skeleton3D")
+model = NodePath("../Armature")
 metadata/_custom_type_script = "uid://ba8212q4seyav"
 
-[node name="CameraComponent" type="Node" parent="." node_paths=PackedStringArray("target", "pivot", "camera")]
+[node name="CameraComponent" type="Node" parent="." unique_id=1995044647 node_paths=PackedStringArray("target", "pivot", "camera")]
 unique_name_in_owner = true
 script = ExtResource("9_1rmvn")
 target = NodePath("..")
@@ -699,7 +615,7 @@ camera = NodePath("../CameraPivot/Camera3D")
 camera_size = 20.0
 metadata/_custom_type_script = "uid://de1wp8vsj500e"
 
-[node name="ActiveSkillComponent" type="Node" parent="." node_paths=PackedStringArray("player", "anim_tree", "skills_container", "movement_component", "camera_component")]
+[node name="ActiveSkillComponent" type="Node" parent="." unique_id=1280865552 node_paths=PackedStringArray("player", "anim_tree", "skills_container", "movement_component", "camera_component")]
 unique_name_in_owner = true
 script = ExtResource("13_bte7j")
 player = NodePath("..")

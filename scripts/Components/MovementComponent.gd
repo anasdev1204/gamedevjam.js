@@ -97,6 +97,8 @@ func update(delta: float, move_dir: Vector3, is_attacking: bool):
 	body.move_and_slide()
 
 func passive_dash(_velocity : Vector3, duration : float, delay : float):
+	if _velocity == Vector3.ZERO:
+		return
 	rotation_component.tween_rotate(delay * 0.5, last_direction)
 	await get_tree().create_timer(delay).timeout
 	passive_dash_timer.start(duration)

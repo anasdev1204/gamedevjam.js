@@ -1,3 +1,4 @@
+class_name Robot1
 extends Player
 
 @onready var sword: MeshInstance3D = $Armature/Skeleton3D/righthand/Sword

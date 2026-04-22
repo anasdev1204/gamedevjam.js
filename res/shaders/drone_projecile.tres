@@ -1,0 +1,65 @@
+[gd_resource type="VisualShader" format=3 uid="uid://dlpfymhw37i0d"]
+
+[ext_resource type="Texture2D" uid="uid://bxf5uqwklae57" path="res://assets/source/entities/drone/text1_drone_projectile.png" id="1_qxogd"]
+
+[sub_resource type="VisualShaderNodeVec2Parameter" id="VisualShaderNodeVec2Parameter_vtrmr"]
+parameter_name = "Speed"
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_dic2p"]
+parameter_name = "Color"
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_g3bsk"]
+expanded_output_ports = [0]
+texture = ExtResource("1_qxogd")
+
+[sub_resource type="Gradient" id="Gradient_sjg54"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w41bi"]
+gradient = SubResource("Gradient_sjg54")
+fill_from = Vector2(0, 0.25128207)
+fill_to = Vector2(0, 1)
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_poysq"]
+texture = SubResource("GradientTexture2D_w41bi")
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_vauvq"]
+output_port_for_preview = 0
+operator = 1
+
+[sub_resource type="VisualShaderNodeClamp" id="VisualShaderNodeClamp_axscb"]
+
+[sub_resource type="VisualShaderNodeUVFunc" id="VisualShaderNodeUVFunc_ekctr"]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_7rfo1"]
+input_name = "time"
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_e42q3"]
+default_input_values = [0, Vector2(0, 0), 1, Vector2(0, 2)]
+op_type = 0
+operator = 2
+
+[resource]
+modes/cull = 2
+flags/unshaded = true
+flags/shadows_disabled = true
+flags/ambient_light_disabled = true
+nodes/fragment/0/position = Vector2(560, 48)
+nodes/fragment/2/node = SubResource("VisualShaderNodeColorParameter_dic2p")
+nodes/fragment/2/position = Vector2(-128, 48)
+nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_g3bsk")
+nodes/fragment/3/position = Vector2(-480, 304)
+nodes/fragment/4/node = SubResource("VisualShaderNodeTexture_poysq")
+nodes/fragment/4/position = Vector2(-576, 752)
+nodes/fragment/5/node = SubResource("VisualShaderNodeFloatOp_vauvq")
+nodes/fragment/5/position = Vector2(0, 432)
+nodes/fragment/6/node = SubResource("VisualShaderNodeClamp_axscb")
+nodes/fragment/6/position = Vector2(288, 352)
+nodes/fragment/7/node = SubResource("VisualShaderNodeUVFunc_ekctr")
+nodes/fragment/7/position = Vector2(-912, 368)
+nodes/fragment/8/node = SubResource("VisualShaderNodeInput_7rfo1")
+nodes/fragment/8/position = Vector2(-1520, 320)
+nodes/fragment/9/node = SubResource("VisualShaderNodeVectorOp_e42q3")
+nodes/fragment/9/position = Vector2(-1184, 384)
+nodes/fragment/10/node = SubResource("VisualShaderNodeVec2Parameter_vtrmr")
+nodes/fragment/10/position = Vector2(-1568, 496)
+nodes/fragment/connections = PackedInt32Array(2, 0, 0, 0, 3, 1, 5, 0, 4, 0, 5, 1, 5, 0, 6, 0, 6, 0, 0, 1, 7, 0, 3, 0, 8, 0, 9, 0, 9, 0, 7, 2, 10, 0, 9, 1)

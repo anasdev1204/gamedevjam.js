@@ -1,9 +1,35 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3i347pyrts44"]
+[gd_scene format=3 uid="uid://d3i347pyrts44"]
 
 [ext_resource type="ArrayMesh" uid="uid://bcc1s6ntjcraj" path="res://res/meshes/lab_pc.tres" id="1_c10mg"]
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c10mg"]
+cull_mode = 2
+emission_enabled = true
+emission = Color(0.18039216, 0.22745098, 0.2509804, 1)
+emission_energy_multiplier = 6.97
 
-[node name="LabPc" type="MeshInstance3D" parent="."]
+[sub_resource type="PlaneMesh" id="PlaneMesh_8m35r"]
+material = SubResource("StandardMaterial3D_c10mg")
+
+[node name="Node3D" type="Node3D" unique_id=681081065]
+
+[node name="LabPc" type="MeshInstance3D" parent="." unique_id=1959745204]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.389475, -0.20268583, 6.4086103)
 mesh = ExtResource("1_c10mg")
+
+[node name="screens" type="Node3D" parent="." unique_id=907735526]
+
+[node name="middle" type="MeshInstance3D" parent="screens" unique_id=490051167]
+transform = Transform3D(2.5494943, 0, 0, 0, -0.14330988, -1.787439, 0, 1.0148184, -0.25241727, 0.24462986, 5.430819, 0.42259836)
+mesh = SubResource("PlaneMesh_8m35r")
+skeleton = NodePath("../..")
+
+[node name="left" type="MeshInstance3D" parent="screens" unique_id=1153611469]
+transform = Transform3D(2.2680764, 0.46739516, -0.04426673, 0.11551145, -0.14507967, -1.7851231, -1.1586211, 0.90049314, -0.2646272, -5.4947567, 5.430819, 1.9518976)
+mesh = SubResource("PlaneMesh_8m35r")
+skeleton = NodePath("../..")
+
+[node name="left2" type="MeshInstance3D" parent="screens" unique_id=965459698]
+transform = Transform3D(2.2587833, -0.47304034, 0.0811226, -0.06543744, -0.1491865, -1.7853454, 1.1804796, 0.8968671, -0.25419062, 6.042061, 5.430819, 1.9518976)
+mesh = SubResource("PlaneMesh_8m35r")
+skeleton = NodePath("../..")

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://hey7tb57bduq"]
+
+[ext_resource type="ArrayMesh" uid="uid://dc6cmcn7rs8yw" path="res://res/meshes/drone_propeller.tres" id="1_l1ces"]
+[ext_resource type="ArrayMesh" uid="uid://dkxelv6k2ih4l" path="res://res/meshes/drone_propeller_center.tres" id="2_i4aeh"]
+
+[node name="drone_propeller" type="Node3D" unique_id=1937261150]
+
+[node name="DronePropeller" type="MeshInstance3D" parent="." unique_id=106666161]
+mesh = ExtResource("1_l1ces")
+
+[node name="DronePropellerCenter" type="MeshInstance3D" parent="." unique_id=1368895121]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = ExtResource("2_i4aeh")

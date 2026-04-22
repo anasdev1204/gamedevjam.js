@@ -1,0 +1,42 @@
+[gd_resource type="ArrayMesh" format=4 uid="uid://dc6cmcn7rs8yw"]
+
+[ext_resource type="Shader" uid="uid://diehh4qm11vrh" path="res://res/shaders/drone_propeller.gdshader" id="1_epq42"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l7yar"]
+render_priority = 0
+shader = ExtResource("1_epq42")
+shader_parameter/speed = 0.800000038
+shader_parameter/blade_count = 4.0
+shader_parameter/opacity = 20.0
+shader_parameter/tint = Color(0.81960785, 0.29411766, 0.29411766, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_sfyy8"]
+_surfaces = [{
+"aabb": AABB(-1, -1, 0.010243, 2, 2, 1e-05),
+"format": 34896613377,
+"index_count": 90,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAwABAAQABAABAAUABQABAAYABgABAAcABwABAAgACAABAAkACQABAAoACgABAAsACwABAAwADAABAA0ADQABAA4ADgABAA8ADwABABAAEAABABEAEQABABIAEgABABMAEwABABQAFAABABUAFQABABYAFgABABcAFwABABgAGAABABkAGQABABoAGgABABsAGwABABwAHAABAB0AHQABAB4AHgABAB8A"),
+"name": "Cylinder",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 32,
+"vertex_data": PackedByteArray("/3///5QZAAD4mIn9lBkAAAZnif2UGQAAA09A9pQZAADiOGzqlBkAAH0lgdqUGQAAkhUcxwAAAAC+CfuwAAAAAHUC+JgAAAAAAAD/fwAAAAB1AgZnAAAAAL4JA08AAAAAkhXiOAAAAAB9JX0lAAAAAOI4khUAAAAAA0++CQAAAAAGZ3UCAAAAAP9/AAAAAAAA+Jh1AgAAAAD7sL4JAAAAABzHkhUAAAAAgdp9JQAAAABs6uI4AAAAAED2A08AAAAAif0GZwAAAAD///9/AAAAAIn9+JgAAAAAQPb7sAAAAABs6hzHAAAAAIHagdqUGQAAHMds6pQZAAD7sED2lBkAAA==")
+}]
+blend_shape_mode = 0
+
+[resource]
+_surfaces = [{
+"aabb": AABB(-1, -1, 0.010243, 2, 2, 1e-05),
+"attribute_data": PackedByteArray("/38AAPiYdQIGZ3UCA0++CeI4khV9JX0lkhXiOL4JA091AgZnAAD/f3UC+Ji+CfuwkhUcx30lgdriOGzqA09A9gZnif3/f///+JiJ/fuwQPYcx2zqgdqB2mzqHMdA9vuwif34mP///3+J/QZnQPYDT2zq4jiB2n0lHMeSFfuwvgk="),
+"format": 34896613399,
+"index_count": 90,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAwABAAQABAABAAUABQABAAYABgABAAcABwABAAgACAABAAkACQABAAoACgABAAsACwABAAwADAABAA0ADQABAA4ADgABAA8ADwABABAAEAABABEAEQABABIAEgABABMAEwABABQAFAABABUAFQABABYAFgABABcAFwABABgAGAABABkAGQABABoAGgABABsAGwABABwAHAABAB0AHQABAB4AHgABAB8A"),
+"material": SubResource("ShaderMaterial_l7yar"),
+"name": "Cylinder",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 32,
+"vertex_data": PackedByteArray("/3///5QZAID4mIn9lBkAgAZnif2UGQCAA09A9pQZAIDiOGzqlBkAgH0lgdqUGQCAkhUcxwAAAIC+CfuwAAAAgHUC+JgAAACAAAD/fwAAAIB1AgZnAAAAgL4JA08AAACAkhXiOAAAAIB9JX0lAAAAgOI4khUAAACAA0++CQAAAIAGZ3UCAAAAgP9/AAAAAACA+Jh1AgAAAID7sL4JAAAAgBzHkhUAAACAgdp9JQAAAIBs6uI4AAAAgED2A08AAACAif0GZwAAAID///9/AAAAgIn9+JgAAACAQPb7sAAAAIBs6hzHAAAAgIHagdqUGQCAHMds6pQZAID7sED2lBkAgP9/////f////3//////////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9//////////3////9/////f////3////9//3//f/////////9//3//f/9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_sfyy8")

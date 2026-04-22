@@ -3,7 +3,7 @@ extends Node3D
 @onready var light: OmniLight3D = $OmniLight3D
 
 @export var base_energy := 1.
-@export var range := 5.
+@export var base_range := 5.
 @export_range(0., 1., 0.1) var flicker_speed := 1.
 
 @export_range(0., 1., 0.1) var intensity_range := 0.5
@@ -20,7 +20,7 @@ func _ready():
 	current_energy = base_energy
 	
 	light.light_energy = base_energy
-	light.omni_range = range
+	light.omni_range = base_range
 	
 func _process(delta):
 	timer += delta * flicker_speed

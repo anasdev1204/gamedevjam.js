@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://dhu7d5mfju5tc"]
 
-[ext_resource type="PackedScene" uid="uid://dfalw600pj8u8" path="res://assets/scenes/robot_1.tscn" id="2_0wfyh"]
 [ext_resource type="Material" uid="uid://bldmqy2ivi5ny" path="res://res/materials/tile.tres" id="7_85g3d"]
 [ext_resource type="Material" uid="uid://6xhy26gxuau5" path="res://res/materials/wall.tres" id="8_choun"]
 [ext_resource type="PackedScene" uid="uid://bgfncvsletmqa" path="res://assets/scenes/env/pipe1.tscn" id="9_eb6dy"]
@@ -14,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://couf2t2cw72nh" path="res://assets/scenes/env/debris3.tscn" id="13_trceg"]
 [ext_resource type="PackedScene" uid="uid://b40xgutgor8sj" path="res://assets/scenes/env/lamp.tscn" id="14_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://cmp5jykytdt03" path="res://assets/scenes/env/pickup.tscn" id="14_jkv2x"]
+[ext_resource type="Script" uid="uid://bb66le7po8wvn" path="res://scripts/Managers/projectile_manager.gd" id="15_jkv2x"]
+[ext_resource type="Script" uid="uid://cckuyd1ot5s7f" path="res://scripts/Managers/drone_manager.gd" id="16_jbj1t"]
 
 [sub_resource type="Environment" id="Environment_0wfyh"]
 background_mode = 1
@@ -45,11 +46,7 @@ size = Vector3(1, 20, 100)
 [sub_resource type="BoxShape3D" id="BoxShape3D_jyhfs"]
 size = Vector3(100, 20, 1)
 
-[node name="Node3D" type="Node3D" unique_id=2129682689]
-
-[node name="Robot1" parent="." unique_id=1958497624 node_paths=PackedStringArray("visible_area") instance=ExtResource("2_0wfyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.784, 0.50980616, -0.644)
-visible_area = NodePath("../CameraBounds")
+[node name="main" type="Node3D" unique_id=2129682689]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=283175406]
 environment = SubResource("Environment_0wfyh")
@@ -436,3 +433,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9518604, 10.655375, 49.805
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MapBounds/top" unique_id=2032995295]
 shape = SubResource("BoxShape3D_jyhfs")
+
+[node name="ProjectileManager" type="Node" parent="." unique_id=260401708]
+unique_name_in_owner = true
+script = ExtResource("15_jkv2x")
+
+[node name="DroneManager" type="Node" parent="." unique_id=992271836 node_paths=PackedStringArray("camera_bounds")]
+unique_name_in_owner = true
+script = ExtResource("16_jbj1t")
+camera_bounds = NodePath("../CameraBounds")
+
+[node name="Robot1Manager" type="Node" parent="." unique_id=1035737565]
+unique_name_in_owner = true
+
+[node name="Robot2Manager" type="Node" parent="." unique_id=40115028]
+unique_name_in_owner = true
+
+[node name="Robot3Manager" type="Node" parent="." unique_id=612295838]
+unique_name_in_owner = true
