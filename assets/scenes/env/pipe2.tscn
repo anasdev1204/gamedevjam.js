@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://q7n0w5cxc83m"]
+
+[ext_resource type="ArrayMesh" uid="uid://bujtxagutwo4t" path="res://res/meshes/pipe2.tres" id="1_x66ra"]
+
+[node name="pipe2" type="Node3D"]
+
+[node name="Pipe2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07823038, 0, -0.14320016)
+mesh = ExtResource("1_x66ra")

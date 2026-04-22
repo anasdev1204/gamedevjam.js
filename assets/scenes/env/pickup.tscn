@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmp5jykytdt03"]
+
+[ext_resource type="Texture2D" uid="uid://cvrv5mdo133fj" path="res://assets/source/env/decor/pickup_text.png" id="1_xlhnk"]
+[ext_resource type="Material" uid="uid://dmsvhf6ry2mas" path="res://res/materials/simple_outline.tres" id="2_ncyo0"]
+[ext_resource type="ArrayMesh" uid="uid://cgwhbp75ps5qe" path="res://res/meshes/pickup.tres" id="3_8qdan"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uuw7c"]
+next_pass = ExtResource("2_ncyo0")
+albedo_texture = ExtResource("1_xlhnk")
+
+[node name="pickup" type="Node3D"]
+
+[node name="Pickup" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23459864, 0, 0.33982348)
+material_override = SubResource("StandardMaterial3D_uuw7c")
+mesh = ExtResource("3_8qdan")

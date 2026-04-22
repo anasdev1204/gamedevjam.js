@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bh50v7bgv73bv"]
+
+[ext_resource type="ArrayMesh" uid="uid://cp0yfxb56knah" path="res://res/meshes/broken_shelf.tres" id="1_ip5e2"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="ShelfBroken" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38022566, 0, 0.21335363)
+mesh = ExtResource("1_ip5e2")

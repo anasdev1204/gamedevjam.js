@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm7gsrflkf3sk"]
+
+[ext_resource type="ArrayMesh" uid="uid://bmdy6myq0a1ni" path="res://res/meshes/debris2.tres" id="1_mfboj"]
+
+[node name="debris2" type="Node3D"]
+
+[node name="Debris2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.930228, -1.4323406, -0.9381604)
+mesh = ExtResource("1_mfboj")

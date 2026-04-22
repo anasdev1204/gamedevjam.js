@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3i347pyrts44"]
+
+[ext_resource type="ArrayMesh" uid="uid://bcc1s6ntjcraj" path="res://res/meshes/lab_pc.tres" id="1_c10mg"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="LabPc" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.389475, -0.20268583, 6.4086103)
+mesh = ExtResource("1_c10mg")
