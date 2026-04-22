@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b40xgutgor8sj"]
+
+[ext_resource type="ArrayMesh" uid="uid://bnif2p8lys5ol" path="res://res/meshes/lamp.tres" id="1_xp0bh"]
+
+[node name="lamp" type="Node3D"]
+
+[node name="lamp" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.805916, 0.10497856, -21.08797)
+mesh = ExtResource("1_xp0bh")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dhu7d5mfju5tc"]
+[gd_scene load_steps=22 format=3 uid="uid://dhu7d5mfju5tc"]
 
 [ext_resource type="PackedScene" uid="uid://dfalw600pj8u8" path="res://assets/scenes/robot_1.tscn" id="2_0wfyh"]
 [ext_resource type="Material" uid="uid://d1dwppieho5aw" path="res://res/materials/prototyping_purple.tres" id="3_o6xl0"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://d3i347pyrts44" path="res://assets/scenes/env/lab_pc.tscn" id="13_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://dox8wuvkqghsu" path="res://assets/scenes/env/incubator.tscn" id="13_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://couf2t2cw72nh" path="res://assets/scenes/env/debris3.tscn" id="13_trceg"]
+[ext_resource type="PackedScene" uid="uid://b40xgutgor8sj" path="res://assets/scenes/env/lamp.tscn" id="14_a8y0u"]
 
 [sub_resource type="Environment" id="Environment_0wfyh"]
 background_mode = 1
@@ -113,6 +114,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5161743, 0, 0)
 shape = SubResource("BoxShape3D_85g3d")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Env/floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.039340973, 1.9073486e-06, 0.024450302)
 mesh = SubResource("BoxMesh_choun")
 surface_material_override/0 = ExtResource("7_85g3d")
 
@@ -388,6 +390,23 @@ transform = Transform3D(0.98811656, 2.8318932, -0.06332217, -0.12047418, -0.0249
 
 [node name="pc" parent="Env/pc" instance=ExtResource("13_a8y0u")]
 transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, 48.50231, 7.6293945e-06, -2.8310204)
+
+[node name="lamps" type="Node3D" parent="Env"]
+
+[node name="lamp" parent="Env/lamps" instance=ExtResource("14_a8y0u")]
+transform = Transform3D(0.14980246, 0.6288185, 0.76298535, -0.12114755, 0.7775524, -0.617038, -0.98126584, -7.3338358e-09, 0.19265904, 31.802912, 0.28541887, -40.406853)
+
+[node name="lamp4" parent="Env/lamps" instance=ExtResource("14_a8y0u")]
+transform = Transform3D(0.14980246, 0.6288185, 0.76298535, -0.12114755, 0.7775524, -0.617038, -0.98126584, -7.3338358e-09, 0.19265904, 25.164263, 0.28541887, 43.742363)
+
+[node name="lamp5" parent="Env/lamps" instance=ExtResource("14_a8y0u")]
+transform = Transform3D(0.14980246, 0.6288185, 0.76298535, -0.12114755, 0.7775524, -0.617038, -0.98126584, -7.3338358e-09, 0.19265904, -45.09745, 0.28541887, 19.048069)
+
+[node name="lamp2" parent="Env/lamps" instance=ExtResource("14_a8y0u")]
+transform = Transform3D(-1.4444647, -0.36431614, -0.17548588, -0.18172134, 1.1663284, -0.9255569, 0.36124632, -0.8700298, -1.1672828, 40.274727, 0.28541887, -34.5201)
+
+[node name="lamp3" parent="Env/lamps" instance=ExtResource("14_a8y0u")]
+transform = Transform3D(-2.445655, -0.04357712, -0.5165952, 0.1411161, 2.3411326, -0.86555415, 0.4988545, -0.8758985, -2.2877822, 9.540963, 0.8745817, -41.634834)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.27423722, -0.71372896, -0.6445036, -0.54040915, -0.43999, 0.7171937, -0.7954571, 0.54497683, -0.2650441, 0, 20, 0)

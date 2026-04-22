@@ -1,6 +1,6 @@
 [gd_resource type="ArrayMesh" load_steps=4 format=4 uid="uid://bcc1s6ntjcraj"]
 
-[ext_resource type="Texture2D" uid="uid://c1csiplx8n3d6" path="res://assets/source/env/decor/pc_text.png" id="1_gkdtw"]
+[ext_resource type="Texture2D" uid="uid://c1csiplx8n3d6" path="res://assets/source/env/decor/lab_pc_text.png" id="1_gkdtw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0muag"]
 cull_mode = 2
