@@ -9,12 +9,11 @@ class_name Player extends CharacterBody3D
 @onready var camera_component: CameraComponent = %CameraComponent
 @onready var active_skill_component: ActiveSkillComponent = %ActiveSkillComponent
 
-@onready var animation_tree: AnimationTree = %AnimationTree
+@onready var animation_tree: AnimationTree = $AnimationTree
 
 var is_attacking := false
 
 func _ready():
-	print(visible_area)
 	camera_component.bounds_area = visible_area
 	camera_component.update_bounds()
 	

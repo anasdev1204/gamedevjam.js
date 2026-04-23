@@ -74,7 +74,7 @@ snap = 1.0
 
 [resource]
 resource_local_to_scene = true
-graph_offset = Vector2(-92.68301, 73.52212)
+graph_offset = Vector2(-252.55586, -75.89512)
 nodes/output/position = Vector2(690, 130)
 nodes/attack_buffer_0/node = SubResource("AnimationNodeBlendTree_y14u4")
 nodes/attack_buffer_0/position = Vector2(230, 340)

@@ -1,0 +1,38 @@
+[gd_resource type="ArrayMesh" format=4 uid="uid://chgf1qmdspn10"]
+
+[ext_resource type="Texture2D" uid="uid://wropqt2h2otf" path="res://assets/source/env/decor/lift_door_text.png" id="1_nyeqh"]
+[ext_resource type="Material" uid="uid://dmsvhf6ry2mas" path="res://res/materials/simple_outline.tres" id="2_84rnx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vwun7"]
+next_pass = ExtResource("2_84rnx")
+albedo_texture = ExtResource("1_nyeqh")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qb1xx"]
+_surfaces = [{
+"aabb": AABB(-0.86363494, -1.1590436, -0.034738302, 1.7272701, 1.1590436, 0.069476366),
+"format": 34896613377,
+"index_count": 96,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAgADAAQAAgAEAAAAAQAFAAMABQAEAAMABgAFAAEAAAAGAAEABwAEAAUABgAHAAUAAAAEAAgACQAHAAYAAAAIAAoABAALAAgACgAIAAsABAAHAAwABAAMAAsACgALAA0ADQAAAAoADQALAAwADgAAAA0ABgAAAA4ADQAMAA4ABgAOAA8ABgAPAAkADgAMABAADgAQAA8ADAARABAADwAQABEADwARAAkADAAHABEACQARAAcA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 18,
+"vertex_data": PackedByteArray("ujXaNgAAAAAAAP//AAAAAAAA2jYAAAAAAADaNv//AAC6Ndo2//8AAAAA/////wAA/3///wAAAAD/f/////8AAKZcAAD//wAA/////wAAAACmXAAAAAAAAISlAAD//wAAgc9INv//AACEpQAAAAAAAIHPSDYAAAAA//8mNQAAAAD//yY1//8AAP///////wAA")
+}]
+blend_shape_mode = 0
+
+[resource]
+resource_name = "lift_Cube_006"
+_surfaces = [{
+"aabb": AABB(-0.86363494, -1.1590436, -0.034738302, 1.7272701, 1.1590436, 0.069476366),
+"attribute_data": PackedByteArray("Iq7auv9/fagirn2o/38+1Iau////f///RK5r77e6EeG3uinIt7r//9rooe3a6P//t7o+1PzoELm3un2oPul9qG/1asdv9VPg9Pih7W/1QuD0+ELgb/Wh7f//d9F5/FSj//9Uo3n8d9F5/D7U9Ph9qHn8faj0+D7Uefz///T4///0+BC5b/V9qPT4fahv9RC59PhC4G/1Wsf0+FrHb/VC4PT4//9v9aHt9Pih7W/1//95/HfR/v///3n8///+/3fR9Phax2/1ELn0+BC5b/Vaxw=="),
+"format": 34896613399,
+"index_count": 96,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAwAEAAUAAwAGAAQAAwAAAAYABgAAAAcABwAAAAgACQAKAAsADAAKAAkACgAMAA0ADQAMAA4ADQAOAA8ACgANABAACgAQABEAEgATABQAEgAVABMAFgAXABgAFgAZABcAGgAbABwAGgAdABsAHgAdABoAHgAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEA"),
+"material": SubResource("StandardMaterial3D_vwun7"),
+"primitive": 3,
+"uv_scale": Vector4(2.0000002, 2, 0, 0),
+"vertex_count": 52,
+"vertex_data": PackedByteArray("ujXaNgAA//8AAP//AAD//wAA2jYAAP///3///wAA/////yY1AAD///////8AAP//gc9INgAA//+EpQAAAAD//6ZcAAAAAP//AAD//////7+6Ndo2////vwAA2jb///+//3///////7+Bz0g2////v/////////+///8mNf///7+EpQAA////v6ZcAAD///+/ujXaNgAA5eimXAAA///l6KZcAAAAAOXoujXaNv//5egAAP//AAD//wAA2jb/////AADaNgAA//8AAP////////9///8AAFTVAAD/////VNUAAP//AABU1f9//////1TV/////wAAVNX///////9U1YHPSDYAALPV//8mNf//s9X//yY1AACz1YHPSDb//7PVplwAAAAAVNWEpQAA//9U1YSlAAAAAFTVplwAAP//VNUAANo2AABU1bo12jb//1TVujXaNgAAVNUAANo2//9U1f//JjUAAP//////////////////AAD/////JjX/////hKUAAAAADceBz0g2//8Nx4HPSDYAAA3HhKUAAP//Dcf/P/+//z//v/8//7//v/8//7//P/8//7//v/8//7//P/8//7//f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//39WS1FpVktRaVZLUWlWS1Fp/z//f/8//3//P/9//z//f1TVqipU1aoqVNWqKlTVqipU1aoqVNWqKhtVx1UbVcdVG1XHVRtVx1VUVVRVVFVUVVRVVFVUVVRVVFVUVVRVVFVUVVRVVFVUVf+//3//v/9//7//f/+//391YRM9dWETPXVhEz11YRM9")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_qb1xx")

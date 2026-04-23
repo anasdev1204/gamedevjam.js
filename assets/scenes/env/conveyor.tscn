@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c1rpljyy3r668"]
+
+[ext_resource type="ArrayMesh" uid="uid://c3i3iwf4byxn3" path="res://res/meshes/conveyor_belt.tres" id="1_in7fy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_in7fy"]
+size = Vector3(2.4899902, 2.1259766, 8.180603)
+
+[node name="conveyor" type="StaticBody3D" unique_id=651534881]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="ConveyorBelt" type="MeshInstance3D" parent="." unique_id=947324113]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.93115, 0, 2.9646788)
+mesh = ExtResource("1_in7fy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1567201385]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7449951, 2.5083008, 0.4593811)
+shape = SubResource("BoxShape3D_in7fy")

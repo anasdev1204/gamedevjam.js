@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://xau1sksva2cv"]
+
+[ext_resource type="PackedScene" uid="uid://5qtfl6axw7n2" path="res://assets/source/env/decor/wall.glb" id="1_4pdc4"]
+[ext_resource type="ArrayMesh" uid="uid://bff4gx2grs5dj" path="res://res/meshes/wall.tres" id="2_oqhfa"]
+
+[node name="wall" unique_id=33382425 instance=ExtResource("1_4pdc4")]
+
+[node name="Cube" parent="." index="0" unique_id=941328205]
+mesh = ExtResource("2_oqhfa")

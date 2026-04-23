@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bjw82cmkuyfty"]
+
+[ext_resource type="ArrayMesh" uid="uid://fmwsc2skt81e" path="res://res/meshes/tube_curved.tres" id="1_pbeq1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pbeq1"]
+radius = 2.1513672
+height = 7.1493073
+
+[node name="ventilationtube_curved" type="StaticBody3D" unique_id=633217357]
+
+[node name="CurvedTube" type="MeshInstance3D" parent="." unique_id=1760388122]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 6.961101, 0, -4.2964373)
+mesh = ExtResource("1_pbeq1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1796149380]
+transform = Transform3D(0.96260196, 0.27091968, -1.1842276e-08, 0, -4.371139e-08, -1, -0.27091968, 0.96260196, -4.2076667e-08, 0.69672155, -0.03221796, 0.85210514)
+shape = SubResource("CapsuleShape3D_pbeq1")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=342163544]
+transform = Transform3D(0.06622167, 0.99780506, -4.3615447e-08, 8.605707e-16, -4.371139e-08, -1, -0.99780506, 0.06622167, -2.894641e-09, -4.2681165, -0.03221798, -3.155469)
+shape = SubResource("CapsuleShape3D_pbeq1")

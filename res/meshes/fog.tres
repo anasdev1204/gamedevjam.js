@@ -1,0 +1,15 @@
+[gd_resource type="QuadMesh" format=3 uid="uid://kwb5dhkkd0g3"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p3snd"]
+load_path = "res://.godot/imported/fog_text.png-53d7b4782f752930d795f94f87ee6a97.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fgnuw"]
+shading_mode = 0
+albedo_color = Color(0.81960785, 0.29411766, 0.29411766, 1)
+albedo_texture = SubResource("CompressedTexture2D_p3snd")
+billboard_mode = 1
+proximity_fade_enabled = true
+distance_fade_mode = 1
+
+[resource]
+material = SubResource("StandardMaterial3D_fgnuw")

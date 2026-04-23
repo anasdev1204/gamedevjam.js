@@ -1,9 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://cm7gsrflkf3sk"]
+[gd_scene format=3 uid="uid://cm7gsrflkf3sk"]
 
+[ext_resource type="Script" uid="uid://cgyhlk88scmat" path="res://scripts/derbis.gd" id="1_jjdmc"]
 [ext_resource type="ArrayMesh" uid="uid://bmdy6myq0a1ni" path="res://res/meshes/debris2.tres" id="1_mfboj"]
 
-[node name="debris2" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_lg0ug"]
+size = Vector3(1.4155426, 1.5881348, 1.8006744)
 
-[node name="Debris2" type="MeshInstance3D" parent="."]
+[node name="debris2" type="StaticBody3D" unique_id=471481674]
+script = ExtResource("1_jjdmc")
+
+[node name="Debris2" type="MeshInstance3D" parent="." unique_id=1588305992]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.930228, -1.4323406, -0.9381604)
 mesh = ExtResource("1_mfboj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=48560851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1698699, 0.24043179, -0.9924545)
+shape = SubResource("BoxShape3D_lg0ug")

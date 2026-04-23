@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://dox8wuvkqghsu"]
+[gd_scene format=4 uid="uid://dox8wuvkqghsu"]
 
 [ext_resource type="Texture2D" uid="uid://ixu7poki5lvq" path="res://assets/source/env/decor/incubator_text.png" id="1_a0nop"]
 
@@ -48,8 +48,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_cms4e")
 
-[node name="incubator" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_rq7i0"]
+size = Vector3(1.4066086, 3.6401367, 1.562561)
 
-[node name="Incubator" type="MeshInstance3D" parent="."]
+[node name="incubator" type="StaticBody3D" unique_id=985314026]
+
+[node name="Incubator" type="MeshInstance3D" parent="." unique_id=315448846]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0059634447, 0, 0.08063984)
 mesh = SubResource("ArrayMesh_5x3yc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=481754674]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02865982, 0.2619629, 0.052337646)
+shape = SubResource("BoxShape3D_rq7i0")

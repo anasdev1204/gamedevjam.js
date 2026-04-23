@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cb4ruhgj5q020"]
+
+[ext_resource type="ArrayMesh" uid="uid://o3b20lk82m56" path="res://res/meshes/tube.tres" id="1_u6bdm"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u6bdm"]
+radius = 2.177246
+height = 4.925476
+
+[node name="ventilationtube" type="StaticBody3D" unique_id=905578093]
+
+[node name="Tube" type="MeshInstance3D" parent="." unique_id=1523182763]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20.067337, 0, -0.30993938)
+mesh = ExtResource("1_u6bdm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=888916642]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.115997314, 5.0704028e-09, 0.78850174)
+shape = SubResource("CapsuleShape3D_u6bdm")

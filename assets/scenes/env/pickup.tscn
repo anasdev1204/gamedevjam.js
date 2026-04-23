@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmp5jykytdt03"]
+[gd_scene format=3 uid="uid://cmp5jykytdt03"]
 
 [ext_resource type="Texture2D" uid="uid://cvrv5mdo133fj" path="res://assets/source/env/decor/pickup_text.png" id="1_xlhnk"]
 [ext_resource type="Material" uid="uid://dmsvhf6ry2mas" path="res://res/materials/simple_outline.tres" id="2_ncyo0"]
@@ -8,9 +8,16 @@
 next_pass = ExtResource("2_ncyo0")
 albedo_texture = ExtResource("1_xlhnk")
 
-[node name="pickup" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ddqx1"]
+size = Vector3(0.97387695, 2.936676, 1.0214844)
 
-[node name="Pickup" type="MeshInstance3D" parent="."]
+[node name="pickup" type="StaticBody3D" unique_id=274366538]
+
+[node name="Pickup" type="MeshInstance3D" parent="." unique_id=208593371]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23459864, 0, 0.33982348)
 material_override = SubResource("StandardMaterial3D_uuw7c")
 mesh = ExtResource("3_8qdan")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1603760489]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06945801, 1.7166595, 0.35058594)
+shape = SubResource("BoxShape3D_ddqx1")

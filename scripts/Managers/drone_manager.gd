@@ -9,7 +9,7 @@ extends Node
 func _ready():
 	var drone_instance = drone.instantiate()
 	drone_instance.visible_area = camera_bounds
-	main.add_child.call_deferred(drone_instance)
-	drone_instance.shot_fired.connect(
-		projectile_manager._spawn_projectile
-	)
+	#main.add_child.call_deferred(drone_instance)
+	#drone_instance.shot_fired.connect(
+		#projectile_manager._spawn_projectile
+	#)

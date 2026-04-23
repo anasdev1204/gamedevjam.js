@@ -12,9 +12,17 @@
 [ext_resource type="PackedScene" uid="uid://dox8wuvkqghsu" path="res://assets/scenes/env/incubator.tscn" id="13_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://couf2t2cw72nh" path="res://assets/scenes/env/debris3.tscn" id="13_trceg"]
 [ext_resource type="PackedScene" uid="uid://b40xgutgor8sj" path="res://assets/scenes/env/lamp.tscn" id="14_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://cb4ruhgj5q020" path="res://assets/scenes/env/ventilationtube.tscn" id="14_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://cmp5jykytdt03" path="res://assets/scenes/env/pickup.tscn" id="14_jkv2x"]
 [ext_resource type="Script" uid="uid://bb66le7po8wvn" path="res://scripts/Managers/projectile_manager.gd" id="15_jkv2x"]
+[ext_resource type="PackedScene" uid="uid://bjw82cmkuyfty" path="res://assets/scenes/env/ventilationtube_curved.tscn" id="15_muem4"]
+[ext_resource type="PackedScene" uid="uid://cktlavdl7yebe" path="res://assets/scenes/env/lift.tscn" id="16_dp3eg"]
 [ext_resource type="Script" uid="uid://cckuyd1ot5s7f" path="res://scripts/Managers/drone_manager.gd" id="16_jbj1t"]
+[ext_resource type="PackedScene" uid="uid://bnrtmhlm137j0" path="res://assets/scenes/env/door.tscn" id="17_0ld40"]
+[ext_resource type="PackedScene" uid="uid://c1rpljyy3r668" path="res://assets/scenes/env/conveyor.tscn" id="18_gqmmt"]
+[ext_resource type="PackedScene" uid="uid://ba0igo8jquk3k" path="res://assets/scenes/env/fog.tscn" id="20_jscy8"]
+[ext_resource type="PackedScene" uid="uid://xau1sksva2cv" path="res://assets/scenes/env/wall.tscn" id="21_yc10j"]
+[ext_resource type="PackedScene" uid="uid://cchhimadbt1dg" path="res://assets/scenes/bigenemy.tscn" id="23_pm3ni"]
 
 [sub_resource type="Environment" id="Environment_0wfyh"]
 background_mode = 1
@@ -31,7 +39,7 @@ volumetric_fog_detail_spread = 0.7071066
 size = Vector3(100, 1, 100)
 
 [sub_resource type="BoxMesh" id="BoxMesh_choun"]
-size = Vector3(100, 1, 100)
+size = Vector3(100, 1, 110)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ya4ey"]
 material = ExtResource("8_choun")
@@ -60,7 +68,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5161743, 0, 0)
 shape = SubResource("BoxShape3D_85g3d")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Env/floor" unique_id=216736668]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.039340973, 1.9073486e-06, 0.024450302)
+transform = Transform3D(0.9999364, 0.007524781, -0.00839576, -0.0076142894, 0.999914, -0.010678317, 0.00831467, 0.01074158, 0.99990773, -0.039340973, 1.9073486e-06, 5.1042843)
 mesh = SubResource("BoxMesh_choun")
 surface_material_override/0 = ExtResource("7_85g3d")
 
@@ -79,11 +87,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.019945145, 0)
 mesh = SubResource("BoxMesh_ya4ey")
 
 [node name="wall_forward" type="Node3D" parent="Env" unique_id=1050897014]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.4, 10, 50)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.4, 9.614342, 50)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Env/wall_forward" unique_id=1508480422]
-mesh = SubResource("BoxMesh_ya4ey")
-surface_material_override/0 = ExtResource("8_choun")
+[node name="wall" parent="Env/wall_forward" unique_id=33382425 instance=ExtResource("21_yc10j")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.06111145, -10.401544, 0.3120674)
 
 [node name="wall_back" type="Node3D" parent="Env" unique_id=1967937392]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.4, -7, -50)
@@ -183,6 +190,7 @@ transform = Transform3D(-1.269781, 1.3816031, 0.6919739, 1.4914763, 1.3299893, 0
 
 [node name="debris" parent="Env/debris/1" unique_id=1858620138 instance=ExtResource("11_a8y0u")]
 transform = Transform3D(0.2880291, 0, 0.95762163, 0, 1, 0, -0.95762163, 0, 0.2880291, -11.8996105, 1.2779851, 7.5236845)
+disable_collisions = false
 
 [node name="debris2" parent="Env/debris/1" unique_id=1916229246 instance=ExtResource("12_jkv2x")]
 transform = Transform3D(-0.55397296, 0, 0.8325346, 0, 1, 0, -0.8325346, 0, -0.55397296, -12.832735, 1.214144, 1.9133158)
@@ -192,11 +200,13 @@ transform = Transform3D(-0.39373654, 0, -0.3081745, 0, 0.5, 0, 0.3081745, 0, -0.
 
 [node name="debris3" parent="Env/debris/1" unique_id=707277088 instance=ExtResource("13_trceg")]
 transform = Transform3D(0.7920273, -0.24435452, -0.5594496, 0.16376008, 0.96785384, -0.19089663, 0.588112, 0.05957988, 0.80658233, -18.272238, 2.3723907, 10.87221)
+disable_collisions = false
 
 [node name="2" type="Node" parent="Env/debris" unique_id=1688347825]
 
 [node name="debris5" parent="Env/debris/2" unique_id=1714746646 instance=ExtResource("11_a8y0u")]
 transform = Transform3D(0.2880291, 0, 0.95762163, 0, 1, 0, -0.95762163, 0, 0.2880291, -36.694115, 1.2779851, 21.028969)
+disable_collisions = false
 
 [node name="debris6" parent="Env/debris/2" unique_id=1579856462 instance=ExtResource("12_jkv2x")]
 transform = Transform3D(-0.5539729, 0, 0.8325346, 0, 1, 0, -0.8325346, 0, -0.5539729, -37.627243, 1.214144, 15.418599)
@@ -226,11 +236,13 @@ transform = Transform3D(-0.39373654, 0, -0.3081745, 0, 0.5, 0, 0.3081745, 0, -0.
 
 [node name="debris8" parent="Env/debris/3" unique_id=758547085 instance=ExtResource("13_trceg")]
 transform = Transform3D(0.08636737, -0.20683205, -0.97455716, 0.1637601, 0.96785384, -0.19089662, 0.9827124, -0.1431062, 0.11746201, 19.974081, 2.3723907, 41.940956)
+disable_collisions = false
 
 [node name="4" type="Node" parent="Env/debris" unique_id=318078937]
 
 [node name="debris5" parent="Env/debris/4" unique_id=1140929420 instance=ExtResource("11_a8y0u")]
 transform = Transform3D(0.2880291, 0, 0.95762163, 0, 1, 0, -0.95762163, 0, 0.2880291, 23.975039, 1.2779851, -12.655853)
+disable_collisions = false
 
 [node name="debris10" parent="Env/debris/4" unique_id=11818223 instance=ExtResource("11_a8y0u")]
 transform = Transform3D(0.14401455, 0, 0.47881082, 0, 0.5, 0, -0.47881082, 0, 0.14401455, 20.606764, 1.2779851, -7.285549)
@@ -243,6 +255,7 @@ transform = Transform3D(-0.39373654, 0, -0.3081745, 0, 0.5, 0, 0.3081745, 0, -0.
 
 [node name="debris8" parent="Env/debris/4" unique_id=1194057971 instance=ExtResource("13_trceg")]
 transform = Transform3D(0.48434576, 0, 0.12413362, 0, 0.49999997, 0, -0.12413362, 0, 0.48434576, 16.481388, 1.0919025, -9.307327)
+disable_collisions = false
 
 [node name="debris9" parent="Env/debris/4" unique_id=2019097985 instance=ExtResource("13_trceg")]
 transform = Transform3D(0.17825486, 0, 0.46714586, 0, 0.49999997, 0, -0.46714586, 0, 0.17825486, 15.446024, 1.0919025, -9.209231)
@@ -251,6 +264,7 @@ transform = Transform3D(0.17825486, 0, 0.46714586, 0, 0.49999997, 0, -0.46714586
 
 [node name="debris5" parent="Env/debris/5" unique_id=485396378 instance=ExtResource("11_a8y0u")]
 transform = Transform3D(0.2880291, 0, 0.95762163, 0, 1, 0, -0.95762163, 0, 0.2880291, 39.952553, 1.2779851, -41.154903)
+disable_collisions = false
 
 [node name="debris6" parent="Env/debris/5" unique_id=1670690291 instance=ExtResource("12_jkv2x")]
 transform = Transform3D(-0.5539729, 0, 0.8325346, 0, 1, 0, -0.8325346, 0, -0.5539729, 39.019424, 1.214144, -46.765274)
@@ -260,11 +274,13 @@ transform = Transform3D(-0.39373654, 0, -0.3081745, 0, 0.5, 0, 0.3081745, 0, -0.
 
 [node name="debris8" parent="Env/debris/5" unique_id=683149463 instance=ExtResource("13_trceg")]
 transform = Transform3D(0.7920273, -0.24435452, -0.5594496, 0.16376008, 0.96785384, -0.19089663, 0.588112, 0.05957988, 0.80658233, 33.579926, 2.3723907, -37.806377)
+disable_collisions = false
 
 [node name="6" type="Node" parent="Env/debris" unique_id=518798121]
 
 [node name="debris5" parent="Env/debris/6" unique_id=1705252786 instance=ExtResource("11_a8y0u")]
 transform = Transform3D(0.2880291, 0, 0.95762163, 0, 1, 0, -0.95762163, 0, 0.2880291, -38.19204, 1.2779851, -38.351547)
+disable_collisions = false
 
 [node name="debris6" parent="Env/debris/6" unique_id=1407529955 instance=ExtResource("12_jkv2x")]
 transform = Transform3D(-0.5539729, 0, 0.8325346, 0, 1, 0, -0.8325346, 0, -0.5539729, -39.125168, 1.214144, -43.961918)
@@ -274,6 +290,7 @@ transform = Transform3D(-0.39373654, 0, -0.3081745, 0, 0.5, 0, 0.3081745, 0, -0.
 
 [node name="debris8" parent="Env/debris/6" unique_id=1045450586 instance=ExtResource("13_trceg")]
 transform = Transform3D(0.7920273, -0.24435452, -0.5594496, 0.16376008, 0.96785384, -0.19089663, 0.588112, 0.05957988, 0.80658233, -44.564667, 2.3723907, -35.00302)
+disable_collisions = false
 
 [node name="scatter" type="Node" parent="Env/debris" unique_id=1308376950]
 
@@ -290,7 +307,7 @@ transform = Transform3D(-0.39373654, 0, -0.3081745, 0, 0.5, 0, 0.3081745, 0, -0.
 transform = Transform3D(0.29060748, 0, 0.074480176, 0, 0.3, 0, -0.074480176, 0, 0.29060748, 31.08435, 1.0919025, 6.5014114)
 
 [node name="debris10" parent="Env/debris/scatter" unique_id=612953561 instance=ExtResource("13_trceg")]
-transform = Transform3D(0.19622427, 0, 0.22692734, 0, 0.30000004, 0, -0.22692734, 0, 0.19622427, 36.77126, 1.0919025, -26.587725)
+transform = Transform3D(0.19622427, 0, 0.22692734, 0, 0.30000004, 0, -0.22692734, 0, 0.19622427, 31.511963, 1.0919025, -26.89088)
 
 [node name="shelves" type="Node3D" parent="Env" unique_id=681177296]
 
@@ -324,7 +341,7 @@ transform = Transform3D(0.63966715, -0.6221285, 0.45142227, 0.66519564, 0.742322
 [node name="incubators" type="Node3D" parent="Env" unique_id=490954517]
 
 [node name="incubator" parent="Env/incubators" unique_id=913447650 instance=ExtResource("13_jkv2x")]
-transform = Transform3D(5.510968, 0, -2.3725996, 0, 6, 0, 2.3725996, 0, 5.510968, -41.918594, 8.867464, 34.884426)
+transform = Transform3D(5.510968, 0, -2.3725996, 0, 6, 0, 2.3725996, 0, 5.510968, -41.469646, 8.867464, 34.884426)
 
 [node name="incubator2" parent="Env/incubators" unique_id=1719178698 instance=ExtResource("13_jkv2x")]
 transform = Transform3D(-0.7420244, 0, -5.9539394, 0, 5.9999995, 0, 5.9539394, 0, -0.7420244, -40.84296, 8.867464, 3.427248)
@@ -375,10 +392,389 @@ smooth_speed = 15.0
 [node name="pickup" type="Node3D" parent="Env" unique_id=828927156]
 
 [node name="pickup" parent="Env/pickup" unique_id=366531057 instance=ExtResource("14_jkv2x")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -35.873398, -1.1542335, 44.168636)
+transform = Transform3D(-3.3607552, 0, 0.97740734, 0, 3.5, 0, -0.97740734, 0, -3.3607552, -23.688377, -1.1542335, 47.002003)
 
 [node name="pickup2" parent="Env/pickup" unique_id=913766855 instance=ExtResource("14_jkv2x")]
 transform = Transform3D(-0.55166703, 1.922405, -0.0046702954, 0.15324718, 0.04881998, 1.9935224, 1.916293, 0.5495226, -0.16076775, -25.770222, 0.18305969, -47.65063)
+
+[node name="ventilation" type="Node3D" parent="Env" unique_id=203224961]
+
+[node name="1" type="Node" parent="Env/ventilation" unique_id=1317139489]
+
+[node name="ventilationtube" parent="Env/ventilation/1" unique_id=24315464 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 43.9377, 12.335824, 43.427567)
+
+[node name="ventilationtube2" parent="Env/ventilation/1" unique_id=2100450717 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 43.9377, 16.260393, 43.427567)
+
+[node name="ventilationtube_curved" parent="Env/ventilation/1" unique_id=44471914 instance=ExtResource("15_muem4")]
+transform = Transform3D(0.65359235, 0.7568467, 3.3082824e-08, 0, -4.3711385e-08, 1, 0.7568468, -0.6535923, -2.856943e-08, 43.145416, 7.1121883, 43.29414)
+
+[node name="2" type="Node" parent="Env/ventilation" unique_id=677805331]
+
+[node name="ventilationtube" parent="Env/ventilation/2" unique_id=246645728 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(0.41366753, -0.7139115, -0.5649862, -0.59612155, 0.25665286, -0.76076823, 0.68812656, 0.65150565, -0.31940904, -40.412304, 4.7117186, 16.83212)
+
+[node name="ventilationtube_curved" parent="Env/ventilation/2" unique_id=1306488101 instance=ExtResource("15_muem4")]
+transform = Transform3D(-0.6649887, 0.22227651, -0.71300995, -0.40803856, 0.691479, 0.59612143, 0.62553537, 0.6873496, -0.36912847, -36.221478, 3.0263653, 25.525864)
+
+[node name="3" type="Node" parent="Env/ventilation" unique_id=488570285]
+
+[node name="ventilationtube_curved" parent="Env/ventilation/3" unique_id=599774024 instance=ExtResource("15_muem4")]
+transform = Transform3D(-4.3711385e-08, -0.9999999, 4.3711385e-08, 0, -4.3711385e-08, -0.9999999, 0.9999999, -4.3711385e-08, 1.9106853e-15, -55.199463, 16.895435, 43.924236)
+
+[node name="ventilationtube_curved2" parent="Env/ventilation/3" unique_id=1931494332 instance=ExtResource("15_muem4")]
+transform = Transform3D(-4.3711385e-08, 0.9999999, -1.1924879e-08, 0, 1.1924879e-08, 0.9999999, 0.9999999, 4.3711385e-08, -5.21253e-16, -55.199463, -4.3757243, 43.904606)
+
+[node name="vertical" type="Node3D" parent="Env/ventilation/3" unique_id=1752728259]
+
+[node name="ventilationtube3" parent="Env/ventilation/3/vertical" unique_id=1891399129 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -55.193653, 12.171385, 44.434547)
+
+[node name="ventilationtube4" parent="Env/ventilation/3/vertical" unique_id=1159785097 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -55.193653, 8.262772, 44.434547)
+
+[node name="ventilationtube5" parent="Env/ventilation/3/vertical" unique_id=1491733395 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -55.193653, 4.5946884, 44.434547)
+
+[node name="ventilationtube6" parent="Env/ventilation/3/vertical" unique_id=1498690701 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -55.193653, 0.8063412, 44.434547)
+
+[node name="horizantal" type="Node3D" parent="Env/ventilation/3" unique_id=325218059]
+
+[node name="ventilationtube3" parent="Env/ventilation/3/horizantal" unique_id=1959715855 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, 24.517464)
+
+[node name="ventilationtube4" parent="Env/ventilation/3/horizantal" unique_id=476427579 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, 28.426003)
+
+[node name="ventilationtube5" parent="Env/ventilation/3/horizantal" unique_id=1144816237 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, 32.09401)
+
+[node name="ventilationtube6" parent="Env/ventilation/3/horizantal" unique_id=1941465783 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, 35.882282)
+
+[node name="ventilationtube7" parent="Env/ventilation/3/horizantal" unique_id=56988850 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, 8.963547)
+
+[node name="ventilationtube8" parent="Env/ventilation/3/horizantal" unique_id=1777173424 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, 12.872086)
+
+[node name="ventilationtube9" parent="Env/ventilation/3/horizantal" unique_id=470434464 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, 16.540092)
+
+[node name="ventilationtube10" parent="Env/ventilation/3/horizantal" unique_id=143288537 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, 20.328365)
+
+[node name="ventilationtube11" parent="Env/ventilation/3/horizantal" unique_id=823074408 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, -6.494953)
+
+[node name="ventilationtube12" parent="Env/ventilation/3/horizantal" unique_id=2037901089 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, -2.5864143)
+
+[node name="ventilationtube13" parent="Env/ventilation/3/horizantal" unique_id=1929135193 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, 1.0815926)
+
+[node name="ventilationtube14" parent="Env/ventilation/3/horizantal" unique_id=1843874600 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, 4.8698654)
+
+[node name="ventilationtube15" parent="Env/ventilation/3/horizantal" unique_id=128112603 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, -22.04887)
+
+[node name="ventilationtube16" parent="Env/ventilation/3/horizantal" unique_id=1656766832 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, -18.140331)
+
+[node name="ventilationtube17" parent="Env/ventilation/3/horizantal" unique_id=465232232 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, -14.472324)
+
+[node name="ventilationtube18" parent="Env/ventilation/3/horizantal" unique_id=2032833645 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, -10.6840515)
+
+[node name="ventilationtube19" parent="Env/ventilation/3/horizantal" unique_id=641652266 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, -37.698208)
+
+[node name="ventilationtube20" parent="Env/ventilation/3/horizantal" unique_id=1000196377 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, -33.78967)
+
+[node name="ventilationtube21" parent="Env/ventilation/3/horizantal" unique_id=1295098534 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, -30.121662)
+
+[node name="ventilationtube22" parent="Env/ventilation/3/horizantal" unique_id=739876200 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, -26.33339)
+
+[node name="ventilationtube25" parent="Env/ventilation/3/horizantal" unique_id=873849087 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, -45.67558)
+
+[node name="ventilationtube26" parent="Env/ventilation/3/horizantal" unique_id=1669814311 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, -41.887306)
+
+[node name="horizantal2" type="Node3D" parent="Env/ventilation/3" unique_id=1040250460]
+
+[node name="ventilationtube3" parent="Env/ventilation/3/horizantal2" unique_id=1868973429 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, 24.517464)
+
+[node name="ventilationtube4" parent="Env/ventilation/3/horizantal2" unique_id=1386002781 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, 28.426003)
+
+[node name="ventilationtube5" parent="Env/ventilation/3/horizantal2" unique_id=1330265419 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, 32.09401)
+
+[node name="ventilationtube6" parent="Env/ventilation/3/horizantal2" unique_id=621298892 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, 35.882282)
+
+[node name="ventilationtube7" parent="Env/ventilation/3/horizantal2" unique_id=623026760 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, 8.963547)
+
+[node name="ventilationtube8" parent="Env/ventilation/3/horizantal2" unique_id=1101055716 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, 12.872086)
+
+[node name="ventilationtube9" parent="Env/ventilation/3/horizantal2" unique_id=970699120 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, 16.540092)
+
+[node name="ventilationtube10" parent="Env/ventilation/3/horizantal2" unique_id=1937889837 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, 20.328365)
+
+[node name="ventilationtube11" parent="Env/ventilation/3/horizantal2" unique_id=434360444 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, -6.494953)
+
+[node name="ventilationtube12" parent="Env/ventilation/3/horizantal2" unique_id=1370005861 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, -2.5864143)
+
+[node name="ventilationtube13" parent="Env/ventilation/3/horizantal2" unique_id=2004358409 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, 1.0815926)
+
+[node name="ventilationtube14" parent="Env/ventilation/3/horizantal2" unique_id=1585676003 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, 4.8698654)
+
+[node name="ventilationtube15" parent="Env/ventilation/3/horizantal2" unique_id=1474071007 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, -22.04887)
+
+[node name="ventilationtube16" parent="Env/ventilation/3/horizantal2" unique_id=1504256513 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, -18.140331)
+
+[node name="ventilationtube17" parent="Env/ventilation/3/horizantal2" unique_id=497165305 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, -14.472324)
+
+[node name="ventilationtube18" parent="Env/ventilation/3/horizantal2" unique_id=260778579 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, -10.6840515)
+
+[node name="ventilationtube19" parent="Env/ventilation/3/horizantal2" unique_id=378076053 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, -37.698208)
+
+[node name="ventilationtube20" parent="Env/ventilation/3/horizantal2" unique_id=754567856 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, -33.78967)
+
+[node name="ventilationtube21" parent="Env/ventilation/3/horizantal2" unique_id=1013926500 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, -30.121662)
+
+[node name="ventilationtube22" parent="Env/ventilation/3/horizantal2" unique_id=1165368588 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, -26.33339)
+
+[node name="ventilationtube25" parent="Env/ventilation/3/horizantal2" unique_id=786899933 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, -45.67558)
+
+[node name="ventilationtube26" parent="Env/ventilation/3/horizantal2" unique_id=56443852 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, -41.887306)
+
+[node name="4" type="Node" parent="Env/ventilation" unique_id=1760313449]
+
+[node name="ventilationtube_curved" parent="Env/ventilation/4" unique_id=1449660193 instance=ExtResource("15_muem4")]
+transform = Transform3D(0.9997495, -0.022373237, 9.779653e-10, 0, -4.371138e-08, -0.9999999, 0.022373237, 0.9997495, -4.3700442e-08, 47.53808, 16.895435, -54.535645)
+
+[node name="ventilationtube_curved2" parent="Env/ventilation/4" unique_id=289221623 instance=ExtResource("15_muem4")]
+transform = Transform3D(0.9997495, 0.022373237, 9.779653e-10, 0, -4.371138e-08, 0.9999999, 0.022373237, -0.9997495, -4.3700442e-08, 47.518456, -4.3757243, -54.536087)
+
+[node name="vertical" type="Node3D" parent="Env/ventilation/4" unique_id=579786469]
+transform = Transform3D(0.022373194, 0, 0.9997496, 0, 1, 0, -0.9997496, 0, 0.022373194, 4.859829, 0, -110.70402)
+
+[node name="ventilationtube3" parent="Env/ventilation/4/vertical" unique_id=2030874740 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -55.193653, 12.171385, 44.434547)
+
+[node name="ventilationtube4" parent="Env/ventilation/4/vertical" unique_id=1705655673 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -55.193653, 8.262772, 44.434547)
+
+[node name="ventilationtube5" parent="Env/ventilation/4/vertical" unique_id=849126070 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -55.193653, 4.5946884, 44.434547)
+
+[node name="ventilationtube6" parent="Env/ventilation/4/vertical" unique_id=608534018 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -55.193653, 0.8063412, 44.434547)
+
+[node name="horizantal" type="Node3D" parent="Env/ventilation/4" unique_id=594898147]
+transform = Transform3D(0.022373194, 0, 0.9997496, 0, 1, 0, -0.9997496, 0, 0.022373194, 4.859829, 0, -110.70402)
+
+[node name="ventilationtube3" parent="Env/ventilation/4/horizantal" unique_id=1396589669 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, 24.517464)
+
+[node name="ventilationtube4" parent="Env/ventilation/4/horizantal" unique_id=1867695764 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, 28.426003)
+
+[node name="ventilationtube5" parent="Env/ventilation/4/horizantal" unique_id=292676788 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, 32.09401)
+
+[node name="ventilationtube6" parent="Env/ventilation/4/horizantal" unique_id=1887765686 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, 35.882282)
+
+[node name="ventilationtube7" parent="Env/ventilation/4/horizantal" unique_id=798210337 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, 8.963547)
+
+[node name="ventilationtube8" parent="Env/ventilation/4/horizantal" unique_id=1510552504 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, 12.872086)
+
+[node name="ventilationtube9" parent="Env/ventilation/4/horizantal" unique_id=342697389 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, 16.540092)
+
+[node name="ventilationtube10" parent="Env/ventilation/4/horizantal" unique_id=1055711673 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, 20.328365)
+
+[node name="ventilationtube11" parent="Env/ventilation/4/horizantal" unique_id=2007288937 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, -6.494953)
+
+[node name="ventilationtube12" parent="Env/ventilation/4/horizantal" unique_id=950281626 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, -2.5864143)
+
+[node name="ventilationtube13" parent="Env/ventilation/4/horizantal" unique_id=1048697627 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, 1.0815926)
+
+[node name="ventilationtube14" parent="Env/ventilation/4/horizantal" unique_id=1018668961 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, 4.8698654)
+
+[node name="ventilationtube15" parent="Env/ventilation/4/horizantal" unique_id=1663267957 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, -22.04887)
+
+[node name="ventilationtube16" parent="Env/ventilation/4/horizantal" unique_id=2009630798 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, -18.140331)
+
+[node name="ventilationtube17" parent="Env/ventilation/4/horizantal" unique_id=862162200 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, -14.472324)
+
+[node name="ventilationtube18" parent="Env/ventilation/4/horizantal" unique_id=1854730297 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, -10.6840515)
+
+[node name="ventilationtube19" parent="Env/ventilation/4/horizantal" unique_id=985869267 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, -37.698208)
+
+[node name="ventilationtube20" parent="Env/ventilation/4/horizantal" unique_id=710797336 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, -33.78967)
+
+[node name="ventilationtube21" parent="Env/ventilation/4/horizantal" unique_id=573579683 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, -30.121662)
+
+[node name="ventilationtube22" parent="Env/ventilation/4/horizantal" unique_id=1493787844 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, -26.33339)
+
+[node name="ventilationtube25" parent="Env/ventilation/4/horizantal" unique_id=426608353 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, -45.67558)
+
+[node name="ventilationtube26" parent="Env/ventilation/4/horizantal" unique_id=1346192380 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, -41.887306)
+
+[node name="horizantal2" type="Node3D" parent="Env/ventilation/4" unique_id=1039478734]
+transform = Transform3D(0.022373194, 0, 0.9997496, 0, 1, 0, -0.9997496, 0, 0.022373194, 4.859829, 0, -110.70402)
+
+[node name="ventilationtube3" parent="Env/ventilation/4/horizantal2" unique_id=261519513 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, 24.517464)
+
+[node name="ventilationtube4" parent="Env/ventilation/4/horizantal2" unique_id=1953278430 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, 28.426003)
+
+[node name="ventilationtube5" parent="Env/ventilation/4/horizantal2" unique_id=1971006360 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, 32.09401)
+
+[node name="ventilationtube6" parent="Env/ventilation/4/horizantal2" unique_id=1801950419 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, 35.882282)
+
+[node name="ventilationtube7" parent="Env/ventilation/4/horizantal2" unique_id=1352721923 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, 8.963547)
+
+[node name="ventilationtube8" parent="Env/ventilation/4/horizantal2" unique_id=1960102803 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, 12.872086)
+
+[node name="ventilationtube9" parent="Env/ventilation/4/horizantal2" unique_id=4274272 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, 16.540092)
+
+[node name="ventilationtube10" parent="Env/ventilation/4/horizantal2" unique_id=161954863 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, 20.328365)
+
+[node name="ventilationtube11" parent="Env/ventilation/4/horizantal2" unique_id=1158748689 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, -6.494953)
+
+[node name="ventilationtube12" parent="Env/ventilation/4/horizantal2" unique_id=1496067122 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, -2.5864143)
+
+[node name="ventilationtube13" parent="Env/ventilation/4/horizantal2" unique_id=1233272775 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, 1.0815926)
+
+[node name="ventilationtube14" parent="Env/ventilation/4/horizantal2" unique_id=843223332 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, 4.8698654)
+
+[node name="ventilationtube15" parent="Env/ventilation/4/horizantal2" unique_id=266927304 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, -22.04887)
+
+[node name="ventilationtube16" parent="Env/ventilation/4/horizantal2" unique_id=155464036 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, -18.140331)
+
+[node name="ventilationtube17" parent="Env/ventilation/4/horizantal2" unique_id=465006545 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, -14.472324)
+
+[node name="ventilationtube18" parent="Env/ventilation/4/horizantal2" unique_id=121861080 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, -10.6840515)
+
+[node name="ventilationtube19" parent="Env/ventilation/4/horizantal2" unique_id=1103362420 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, -37.698208)
+
+[node name="ventilationtube20" parent="Env/ventilation/4/horizantal2" unique_id=791330320 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, -33.78967)
+
+[node name="ventilationtube21" parent="Env/ventilation/4/horizantal2" unique_id=1362234142 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, -30.121662)
+
+[node name="ventilationtube22" parent="Env/ventilation/4/horizantal2" unique_id=2112915475 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, -26.33339)
+
+[node name="ventilationtube25" parent="Env/ventilation/4/horizantal2" unique_id=1971599901 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, -45.67558)
+
+[node name="ventilationtube26" parent="Env/ventilation/4/horizantal2" unique_id=339687375 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, -41.887306)
+
+[node name="scatter" type="Node" parent="Env/ventilation" unique_id=1132645402]
+
+[node name="ventilationtube" parent="Env/ventilation/scatter" unique_id=1545581063 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(0.9749459, 0.16465741, 0.14956075, -0.02382993, 0.7458013, -0.6657416, -0.22116198, 0.64549816, 0.73103994, 19.448181, 2.0658593, -34.166233)
+
+[node name="ventilationtube2" parent="Env/ventilation/scatter" unique_id=218807483 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(0.9749459, 0.16465741, 0.14956075, -0.02382993, 0.7458013, -0.6657416, -0.22116198, 0.64549816, 0.73103994, 15.621942, 2.159381, -33.298267)
+
+[node name="ventilationtube_curved" parent="Env/ventilation/scatter" unique_id=1325503680 instance=ExtResource("15_muem4")]
+transform = Transform3D(0.22081338, 0.026868625, -0.97494584, -0.016414195, 0.99958134, 0.023829948, 0.975178, 0.01074101, 0.22116198, 24.390533, 1.4393228, -35.930458)
+
+[node name="lifts" type="Node3D" parent="Env" unique_id=353533169]
+
+[node name="lift1" parent="Env/lifts" unique_id=1075321402 instance=ExtResource("16_dp3eg")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, 42.563763, 0, 38.2027)
+
+[node name="lift2" parent="Env/lifts" unique_id=42528732 instance=ExtResource("16_dp3eg")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, 42.563763, 0, -10.91236)
+
+[node name="door" type="Node3D" parent="Env" unique_id=1273159355]
+
+[node name="door" parent="Env/door" unique_id=1333249276 instance=ExtResource("17_0ld40")]
+transform = Transform3D(-6, 0, -7.54979e-07, 0, 5, 0, 9.0597484e-07, 0, -5, -1.0200081, 0, 47.745903)
+
+[node name="conveyor" type="Node3D" parent="Env" unique_id=410727621]
+
+[node name="conveyor_belt" parent="Env/conveyor" unique_id=1695101288 instance=ExtResource("18_gqmmt")]
+transform = Transform3D(2.9984832, 0, -0.09538349, 0, 3.5, 0, 0.09538349, 0, 2.9984832, -32.925613, 0, 47.320206)
+
+[node name="fog" type="Node3D" parent="Env" unique_id=1982349391]
+
+[node name="fog" parent="Env/fog" unique_id=1461466784 instance=ExtResource("20_jscy8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.136621, 4.593067, 55.060955)
+fog_size = Vector2(40, 40)
+
+[node name="fog2" parent="Env/fog" unique_id=42974661 instance=ExtResource("20_jscy8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.791058, 9.770208, 53.88525)
+fog_size = Vector2(40, 40)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=733947204]
 transform = Transform3D(-0.27423722, -0.71372896, -0.6445036, -0.54040915, -0.43999, 0.7171937, -0.7954571, 0.54497683, -0.2650441, 0, 20, 0)
@@ -451,3 +847,7 @@ unique_name_in_owner = true
 
 [node name="Robot3Manager" type="Node" parent="." unique_id=612295838]
 unique_name_in_owner = true
+
+[node name="bigenemy" parent="." unique_id=1665825012 node_paths=PackedStringArray("visible_area") instance=ExtResource("23_pm3ni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91955, 0.66913223, -4.722866)
+visible_area = NodePath("../CameraBounds")

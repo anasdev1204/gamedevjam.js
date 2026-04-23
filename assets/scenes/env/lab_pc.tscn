@@ -11,7 +11,10 @@ emission_energy_multiplier = 6.97
 [sub_resource type="PlaneMesh" id="PlaneMesh_8m35r"]
 material = SubResource("StandardMaterial3D_c10mg")
 
-[node name="Node3D" type="Node3D" unique_id=681081065]
+[sub_resource type="BoxShape3D" id="BoxShape3D_c10mg"]
+size = Vector3(10.689377, 7.126251, 1.1256104)
+
+[node name="Node3D" type="StaticBody3D" unique_id=1565910372]
 
 [node name="LabPc" type="MeshInstance3D" parent="." unique_id=1959745204]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.389475, -0.20268583, 6.4086103)
@@ -33,3 +36,7 @@ skeleton = NodePath("../..")
 transform = Transform3D(2.2587833, -0.47304034, 0.0811226, -0.06543744, -0.1491865, -1.7853454, 1.1804796, 0.8968671, -0.25419062, 6.042061, 5.430819, 1.9518976)
 mesh = SubResource("PlaneMesh_8m35r")
 skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1321806308]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17340851, 3.61055, 2.0790272)
+shape = SubResource("BoxShape3D_c10mg")

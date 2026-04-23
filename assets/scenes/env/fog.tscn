@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ba0igo8jquk3k"]
+
+[ext_resource type="Script" uid="uid://dbx353crdfvma" path="res://scripts/VFX/fog.gd" id="1_fgnuw"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p3snd"]
+load_path = "res://.godot/imported/fog_text.png-53d7b4782f752930d795f94f87ee6a97.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fgnuw"]
+shading_mode = 0
+albedo_color = Color(0.81960785, 0.29411766, 0.29411766, 1)
+albedo_texture = SubResource("CompressedTexture2D_p3snd")
+billboard_mode = 1
+proximity_fade_enabled = true
+distance_fade_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_p3snd"]
+material = SubResource("StandardMaterial3D_fgnuw")
+
+[node name="fog" type="Node3D" unique_id=1461466784]
+script = ExtResource("1_fgnuw")
+
+[node name="fog_mesh" type="MeshInstance3D" parent="." unique_id=229361975]
+mesh = SubResource("QuadMesh_p3snd")
