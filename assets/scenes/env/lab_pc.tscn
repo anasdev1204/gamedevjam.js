@@ -40,3 +40,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1321806308]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17340851, 3.61055, 2.0790272)
 shape = SubResource("BoxShape3D_c10mg")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=64190922]
+height = 8.0
+vertices = PackedVector3Array(-8.069538, 0, -0.06515157, -8.02076, 0, 4.227414, 8.076361, 0, 4.4713097, 7.9544125, 0, -0.11393082)
+affect_navigation_mesh = true

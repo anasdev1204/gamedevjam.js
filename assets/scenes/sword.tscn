@@ -24,6 +24,8 @@ mesh = ExtResource("2_hux4n")
 skeleton = NodePath("")
 
 [node name="Hitbox" type="Area3D" parent="." unique_id=1998555300]
+collision_layer = 16
+collision_mask = 8
 monitorable = false
 script = ExtResource("5_bvkgv")
 damage = 12.0

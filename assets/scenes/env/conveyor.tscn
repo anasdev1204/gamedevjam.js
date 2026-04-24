@@ -3,7 +3,7 @@
 [ext_resource type="ArrayMesh" uid="uid://c3i3iwf4byxn3" path="res://res/meshes/conveyor_belt.tres" id="1_in7fy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_in7fy"]
-size = Vector3(2.4899902, 2.1259766, 8.180603)
+size = Vector3(2.4899902, 2.2745361, 8.180603)
 
 [node name="conveyor" type="StaticBody3D" unique_id=651534881]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
@@ -13,10 +13,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.93115, 0, 2.9646788)
 mesh = ExtResource("1_in7fy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1567201385]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7449951, 2.5083008, 0.4593811)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7449951, 3.0149536, 0.4593811)
 shape = SubResource("BoxShape3D_in7fy")
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=1837198379]
+transform = Transform3D(3, 0, 0, 0, 3.5, 0, 0, 0, 3, 0, 0, 0)
 height = 5.0
 vertices = PackedVector3Array(-2.7012506, 0, 4.832945, 1.087306, 0, 4.945477, 1.61245, 0, -3.7569473, -2.8137815, 0, -3.7194366)
 affect_navigation_mesh = true

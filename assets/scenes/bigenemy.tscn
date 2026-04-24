@@ -74,6 +74,8 @@ size = Vector3(6.645668, 3.5151215, 2.697998)
 size = Vector3(8.315226, 6.158928, 2.697998)
 
 [node name="bigenemy" type="CharacterBody3D" unique_id=1999983968]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_x4fpt")
 metadata/_custom_type_script = "uid://cxpq4kknl2n57"
 
@@ -98,7 +100,7 @@ bones/1/name = "Bone.001"
 bones/1/parent = -1
 bones/1/rest = Transform3D(0.9999929, -0.003766364, 7.420213e-08, 0.003766364, 0.9999929, -5.284853e-08, -7.400255e-08, 5.3127625e-08, 1, 0.023271438, 2.6962051, 4.2992437e-07)
 bones/1/enabled = true
-bones/1/position = Vector3(0.023271436, 2.6962051, 4.2992437e-07)
+bones/1/position = Vector3(0.023271436, 2.5751402, 4.5240463e-07)
 bones/1/rotation = Quaternion(2.6494083e-08, 3.705123e-08, 0.0018831851, 0.9999982)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "Bone.002.L"
@@ -106,7 +108,7 @@ bones/2/parent = 1
 bones/2/rest = Transform3D(0.5262218, 0.8503475, 1.8703578e-07, -0.8503475, 0.5262218, -3.4393304e-07, -3.908849e-07, 2.1939671e-08, 1.0000001, 0.97262925, 2.094288, 1.8324522e-07)
 bones/2/enabled = true
 bones/2/position = Vector3(0.97262925, 2.094288, 1.8324522e-07)
-bones/2/rotation = Quaternion(1.04673454e-07, 1.654133e-07, -0.4868904, 0.87346315)
+bones/2/rotation = Quaternion(1.1539552e-07, 1.640373e-07, -0.5143224, 0.857597)
 bones/2/scale = Vector3(1.0000001, 1.0000001, 1.0000001)
 bones/3/name = "Bone.003.L"
 bones/3/parent = 2
@@ -127,7 +129,7 @@ bones/5/parent = 1
 bones/5/rest = Transform3D(0.5326122, -0.84635943, -3.3793017e-07, 0.84635943, 0.5326122, -3.42103e-07, 4.6952778e-07, -1.0380214e-07, 1.0000001, -1.0033685, 2.1017306, 3.6805403e-08)
 bones/5/enabled = true
 bones/5/position = Vector3(-1.0033685, 2.1017306, 3.6805403e-08)
-bones/5/rotation = Quaternion(6.800876e-08, -2.3061358e-07, 0.48359716, 0.87529075)
+bones/5/rotation = Quaternion(7.670057e-08, -2.2810349e-07, 0.5110887, 0.85952806)
 bones/5/scale = Vector3(1, 1, 1.0000001)
 bones/6/name = "Bone.003.R"
 bones/6/parent = 5
@@ -195,7 +197,8 @@ shape = SubResource("BoxShape3D_x4fpt")
 
 [node name="Hurtbox" type="Area3D" parent="." unique_id=1410373530]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9242675, 0)
-collision_layer = 2
+collision_layer = 8
+collision_mask = 0
 script = ExtResource("8_j646y")
 metadata/_custom_type_script = "uid://4g7g22oy78fc"
 
@@ -212,7 +215,9 @@ shadow_enabled = true
 omni_range = 12.0
 omni_attenuation = 0.96
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=399346033]
+[node name="feet" type="Node3D" parent="." unique_id=24966858]
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="feet" unique_id=399346033]
 debug_enabled = true
 debug_path_custom_color = Color(0.5200528, 0.00019310057, 0.52004904, 1)
 
@@ -233,7 +238,6 @@ parameters/attack_transition/current_index = 0
 [node name="InputComponent" type="Node" parent="." unique_id=604280645]
 unique_name_in_owner = true
 script = ExtResource("8_psmrw")
-metadata/_custom_type_script = "uid://dxagjxh1g8e6s"
 
 [node name="MovementComponent" type="Node" parent="." unique_id=936195654 node_paths=PackedStringArray("body", "rotation_component", "camera_component", "dash_after_image_vfx")]
 unique_name_in_owner = true
@@ -262,7 +266,6 @@ target = NodePath("..")
 pivot = NodePath("../CameraPivot")
 camera = NodePath("../CameraPivot/Camera3D")
 camera_size = 20.0
-metadata/_custom_type_script = "uid://de1wp8vsj500e"
 
 [node name="ActiveSkillComponent" type="Node" parent="." unique_id=301992992 node_paths=PackedStringArray("player", "anim_tree", "skills_container", "movement_component", "camera_component")]
 unique_name_in_owner = true
@@ -281,7 +284,8 @@ model = NodePath("../Armature/Skeleton3D/Cube_004")
 hurtbox = NodePath("../Hurtbox")
 metadata/_custom_type_script = "uid://brr713nr64ach"
 
-[node name="AIComponent" type="Node" parent="." unique_id=1277933985]
+[node name="AIComponent" type="Node" parent="." unique_id=1277933985 node_paths=PackedStringArray("body")]
 unique_name_in_owner = true
 script = ExtResource("15_j646y")
+body = NodePath("..")
 metadata/_custom_type_script = "uid://k8xtbff7swi0"

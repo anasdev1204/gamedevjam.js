@@ -1,7 +1,7 @@
 extends Node3D
 
 @onready var button: Button = $Control/Button
-@onready var robot_1_manager: Robot1Manager = %Robot1Manager
+@onready var robot_1_manager: Robot1Manager = $Robot1Manager
 
 @onready var button_2: Button = $Control/Button2
 @onready var drone_manager: Node = %DroneManager

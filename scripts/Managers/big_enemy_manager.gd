@@ -45,3 +45,6 @@ func _spawn(_animation: String, controlled: bool):
 		)
 	else:
 		main.active_player = bigenemy_instance
+
+func do_nothing():
+	pass

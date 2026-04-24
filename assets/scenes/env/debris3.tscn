@@ -16,3 +16,6 @@ mesh = ExtResource("1_8j7r2")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=663061516]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02927053, -0.25328827, 0.22941971)
 shape = SubResource("BoxShape3D_uebar")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=2084783842]
+vertices = PackedVector3Array(2.2106256, 0, 2.5485544, -1.9571772, 0, 2.802002, -2.0979815, 0, -2.0134985, 1.9571772, 0, -1.9571774)

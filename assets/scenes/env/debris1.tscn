@@ -16,3 +16,6 @@ mesh = ExtResource("1_esakg")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=866376284]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06089735, 0.25104165, -2.0124664)
 shape = SubResource("BoxShape3D_nfony")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=2011505381]
+vertices = PackedVector3Array(1.5977407, 0, -5.8484597, 1.5474502, 0, 3.4627106, -0.8522525, 0, 3.3319728, -1.1056991, 0, -5.8202987)

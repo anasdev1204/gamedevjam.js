@@ -59,6 +59,10 @@ active_dash={
 ]
 }
 
+[navigation]
+
+3d/default_cell_size=0.1
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

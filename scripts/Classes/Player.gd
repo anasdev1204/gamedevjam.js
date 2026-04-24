@@ -45,6 +45,10 @@ func _ready():
 			_on_movement_change
 		)
 		
+		ai_component.primary_fired.connect(
+			active_skill_component._on_primary_fire
+		)
+		
 func _physics_process(delta: float) -> void:
 	if is_controlled:
 		movement_component.update(
@@ -62,12 +66,6 @@ func _physics_process(delta: float) -> void:
 			delta
 		)
 	elif ai_component.is_AI_active():
-		movement_component.update(
-			delta,
-			ai_component.move_dir,
-			is_attacking
-		)
-
 		rotation_component.update(
 			delta,
 			ai_component.move_dir
