@@ -6,6 +6,7 @@
 [ext_resource type="ArrayMesh" uid="uid://b64gk4uiyksqx" path="res://res/meshes/beam.tres" id="4_lt8la"]
 [ext_resource type="Curve" uid="uid://cedqbldamgkop" path="res://assets/source/entities/bigenemy/scale_curve.tres" id="5_83dhm"]
 [ext_resource type="ArrayMesh" uid="uid://dk43gyxj1s4dt" path="res://res/meshes/beam_head.tres" id="8_7pmqx"]
+[ext_resource type="Script" uid="uid://cffa0n4q4tuvk" path="res://scripts/Classes/Hitbox.gd" id="8_d4ksi"]
 [ext_resource type="Shader" uid="uid://dcpqig5w1ikke" path="res://res/shaders/laser_particles.tres" id="9_ic46v"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g5plk"]
@@ -127,6 +128,9 @@ _limits = [-1.0, 1.0, 0.0, 1.0]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.6217009, 0.9188948), 0.0, 0.0, 0, 0, Vector2(1, -1), 0.0, 0.0, 0, 0]
 point_count = 3
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_n0q1q"]
+size = Vector3(1, 6.5098267, 20.530884)
+
 [node name="laser_vfx" type="Node3D" unique_id=1971870939]
 script = ExtResource("1_n0q1q")
 length_curve = ExtResource("5_83dhm")
@@ -202,3 +206,14 @@ initial_velocity_max = 8.0
 radial_accel_max = 2.0
 scale_amount_min = 0.5
 hue_variation_curve = SubResource("Curve_ldsoa")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1096881406]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+script = ExtResource("8_d4ksi")
+damage = 30.0
+metadata/_custom_type_script = "uid://cffa0n4q4tuvk"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1787667714]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.058685392, 9.359563)
+shape = SubResource("BoxShape3D_n0q1q")
+debug_color = Color(0.4762593, 0.0015360448, 0.6797369, 0.41960785)

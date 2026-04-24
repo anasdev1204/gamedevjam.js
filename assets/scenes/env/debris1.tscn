@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cojemujugklfa"]
 
 [ext_resource type="ArrayMesh" uid="uid://62wtawlbgkyn" path="res://res/meshes/debris1.tres" id="1_esakg"]
-[ext_resource type="Script" uid="uid://cgyhlk88scmat" path="res://scripts/derbis.gd" id="1_nfony"]
+[ext_resource type="Script" uid="uid://cgyhlk88scmat" path="res://scripts/Env/debrispipe.gd" id="1_nfony"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nfony"]
 size = Vector3(1.840683, 1.7647705, 7.4927673)

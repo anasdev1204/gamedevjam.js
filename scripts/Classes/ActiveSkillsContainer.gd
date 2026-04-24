@@ -89,7 +89,8 @@ func windup():
 	set_attack_transition("attack_buffer_" + str(attack_buffer_id))
 	set_attack_buffer_timescale(current_active_skill.windup_scale)
 	windup_timer.start(current_active_skill.windup_duration)
-
+	combo_reset_timer.start()
+	
 func _on_windup_timer_timeout():
 	deliver()
 

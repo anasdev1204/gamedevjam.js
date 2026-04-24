@@ -95,6 +95,57 @@ func update(delta: float, move_dir: Vector3, is_attacking: bool):
 		)
 
 	body.move_and_slide()
+	
+func move_to(pos: Vector3, on_finished: Callable = Callable()) -> void:
+	if body == null:
+		return
+
+	var threshold := 0.1
+
+	while is_instance_valid(body):
+		var to_target := pos - body.global_position
+
+		var distance := to_target.length()
+
+		if distance <= threshold:
+			break
+
+		var dir := to_target.normalized()
+		get_parent()._on_movement_change(dir)
+		if rotation_component:
+			rotation_component.update(get_process_delta_time(), dir)
+
+		target_velocity = dir * speed
+
+		body.velocity.x = move_toward(
+			body.velocity.x,
+			target_velocity.x,
+			acceleration * get_process_delta_time()
+		)
+		
+		body.velocity.y = move_toward(
+			body.velocity.y,
+			target_velocity.y,
+			acceleration * get_process_delta_time()
+		)
+
+		body.velocity.z = move_toward(
+			body.velocity.z,
+			target_velocity.z,
+			acceleration * get_process_delta_time()
+		)
+
+		body.move_and_slide()
+
+		await get_tree().physics_frame
+
+	# stop exactly at target
+	body.global_position = Vector3(pos.x, pos.y, pos.z)
+	body.velocity.x = 0.0
+	body.velocity.z = 0.0
+	get_parent()._on_movement_change(Vector3.ZERO)
+	if on_finished.is_valid():
+		on_finished.call()
 
 func passive_dash(_velocity : Vector3, duration : float, delay : float):
 	if _velocity == Vector3.ZERO:

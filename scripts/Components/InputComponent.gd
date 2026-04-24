@@ -6,8 +6,12 @@ signal move_dir_change(move_dir: Vector3)
 
 var move_dir := Vector3.ZERO
 var movement_state := false
+var disabled := true
 
-func _input(event):
+func _unhandled_input(event):
+	if disabled:
+		return 
+		
 	if event.is_action_pressed("primary_attack"):
 		if can_attack():
 			primary_fired.emit()
@@ -33,3 +37,4 @@ func can_attack():
 
 func is_movement_ongoing() -> bool:
 	return abs(move_dir.x) > 0 or abs(move_dir.z) > 0
+	

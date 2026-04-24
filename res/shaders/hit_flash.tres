@@ -1,0 +1,21 @@
+[gd_resource type="VisualShader" format=3 uid="uid://bnh38ynqh8vo3"]
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_xa5jf"]
+parameter_name = "ColorParameter"
+default_value_enabled = true
+
+[sub_resource type="VisualShaderNodeBooleanParameter" id="VisualShaderNodeBooleanParameter_qn4to"]
+parameter_name = "BooleanParameter"
+default_value_enabled = true
+
+[sub_resource type="VisualShaderNodeIf" id="VisualShaderNodeIf_wgh7x"]
+default_input_values = [0, 0.0, 1, 1.0, 2, 1e-05, 3, Vector3(0, 0, 0), 4, Vector3(0, 0, 0), 5, Vector3(0, 0, 0)]
+
+[resource]
+nodes/fragment/2/node = SubResource("VisualShaderNodeColorParameter_xa5jf")
+nodes/fragment/2/position = Vector2(-784, 272)
+nodes/fragment/3/node = SubResource("VisualShaderNodeBooleanParameter_qn4to")
+nodes/fragment/3/position = Vector2(-752, 48)
+nodes/fragment/4/node = SubResource("VisualShaderNodeIf_wgh7x")
+nodes/fragment/4/position = Vector2(0, 160)
+nodes/fragment/connections = PackedInt32Array(3, 0, 4, 0, 4, 0, 0, 0, 2, 0, 4, 3)

@@ -17,6 +17,17 @@ input_name = "color"
 
 [sub_resource type="VisualShaderNodeVaryingSetter" id="VisualShaderNodeVaryingSetter_ah2ps"]
 
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_14082"]
+parameter_name = "Hitflash_Color"
+default_value_enabled = true
+
+[sub_resource type="VisualShaderNodeBooleanParameter" id="VisualShaderNodeBooleanParameter_ajfb8"]
+parameter_name = "is_hit"
+default_value_enabled = true
+
+[sub_resource type="VisualShaderNodeIf" id="VisualShaderNodeIf_lccrw"]
+default_input_values = [0, 0.0, 1, 1.0, 2, 1e-05, 3, Vector3(0, 0, 0), 4, Vector3(0, 0, 0), 5, Vector3(0, 0, 0)]
+
 [sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_tqok8"]
 
 [sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_gg3x1"]
@@ -53,7 +64,7 @@ modes/cull = 2
 varyings/shade = "1,0"
 nodes/vertex/0/position = Vector2(660, 160)
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_ajfb8")
-nodes/fragment/2/position = Vector2(-440, 300)
+nodes/fragment/2/position = Vector2(-688, 352)
 nodes/fragment/3/node = SubResource("VisualShaderNodeTexture2DParameter_lccrw")
 nodes/fragment/3/position = Vector2(-1200, 460)
 nodes/fragment/4/node = SubResource("VisualShaderNodeInput_bqoxh")
@@ -62,7 +73,13 @@ nodes/fragment/5/node = SubResource("VisualShaderNodeVectorDecompose_3mvs8")
 nodes/fragment/5/position = Vector2(-1300, -380)
 nodes/fragment/6/node = SubResource("VisualShaderNodeVaryingSetter_ah2ps")
 nodes/fragment/6/position = Vector2(-600, -440)
-nodes/fragment/connections = PackedInt32Array(3, 0, 2, 2, 2, 0, 0, 0, 4, 0, 5, 0, 5, 1, 6, 0)
+nodes/fragment/7/node = SubResource("VisualShaderNodeColorParameter_14082")
+nodes/fragment/7/position = Vector2(-784, 80)
+nodes/fragment/8/node = SubResource("VisualShaderNodeBooleanParameter_ajfb8")
+nodes/fragment/8/position = Vector2(-576, -160)
+nodes/fragment/9/node = SubResource("VisualShaderNodeIf_lccrw")
+nodes/fragment/9/position = Vector2(-176, 32)
+nodes/fragment/connections = PackedInt32Array(3, 0, 2, 2, 4, 0, 5, 0, 5, 1, 6, 0, 8, 0, 9, 0, 7, 0, 9, 3, 2, 0, 9, 4, 2, 0, 9, 5, 9, 0, 0, 0)
 nodes/light/0/position = Vector2(2580, 260)
 nodes/light/2/node = SubResource("VisualShaderNodeInput_586jl")
 nodes/light/2/position = Vector2(-1140, 460)

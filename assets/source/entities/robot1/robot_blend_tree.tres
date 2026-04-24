@@ -30,7 +30,6 @@ _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_8w37o"]
-xfade_time = 0.3
 xfade_curve = SubResource("Curve_lpqwr")
 input_0/name = "end_attack"
 input_0/auto_advance = false
@@ -74,14 +73,14 @@ snap = 1.0
 
 [resource]
 resource_local_to_scene = true
-graph_offset = Vector2(-252.55586, -75.89512)
+graph_offset = Vector2(-354.95587, 2.5048828)
 nodes/output/position = Vector2(690, 130)
 nodes/attack_buffer_0/node = SubResource("AnimationNodeBlendTree_y14u4")
-nodes/attack_buffer_0/position = Vector2(230, 340)
+nodes/attack_buffer_0/position = Vector2(208, 272)
 nodes/movement_blend/node = SubResource("AnimationNodeBlendSpace1D_806eg")
-nodes/movement_blend/position = Vector2(-480, 16)
+nodes/movement_blend/position = Vector2(-464, 112)
 nodes/attack_buffer_1/node = SubResource("AnimationNodeBlendTree_8w37o")
-nodes/attack_buffer_1/position = Vector2(230, 500)
+nodes/attack_buffer_1/position = Vector2(176, 448)
 nodes/movement_time_scale/node = SubResource("AnimationNodeTimeScale_y14u4")
 nodes/movement_time_scale/position = Vector2(-10, 120)
 nodes/attack_transition/node = SubResource("AnimationNodeTransition_8w37o")

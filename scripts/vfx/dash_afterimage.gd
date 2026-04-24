@@ -9,9 +9,8 @@ var _timer: float = 0.0
 var _is_active: bool = false
 
 func _ready() -> void:
-	print("Mesh found: ", character_mesh)
-	print("Surface count: ", character_mesh.mesh.get_surface_count())
-
+	pass
+	
 func start() -> void:
 	_is_active = true
 

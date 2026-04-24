@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dexr25ne3kmfw"]
+
+[ext_resource type="Material" uid="uid://dmsvhf6ry2mas" path="res://res/materials/simple_outline.tres" id="1_m0arc"]
+[ext_resource type="Shader" uid="uid://dbu7llmqrxdp3" path="res://res/shaders/toon.tres" id="2_vui8f"]
+[ext_resource type="Texture2D" uid="uid://dt20l402adu7q" path="res://assets/source/entities/robot1/mc_texture.png" id="3_t2vs7"]
+
+[resource]
+resource_local_to_scene = true
+render_priority = 0
+next_pass = ExtResource("1_m0arc")
+shader = ExtResource("2_vui8f")
+shader_parameter/is_hit = false
+shader_parameter/Hitflash_Color = Color(1, 1, 1, 1)
+shader_parameter/albedo = ExtResource("3_t2vs7")

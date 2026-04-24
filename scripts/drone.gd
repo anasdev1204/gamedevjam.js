@@ -9,10 +9,10 @@ func _ready():
 	super._ready()
 	
 	input_component.primary_fired.connect(
-		_on_shot_fired
+		_on_primary_fired
 	)
 	
-func _on_shot_fired():
+func _on_primary_fired():
 	var projectile_spawn_locations := []
 	var projectile_dirs := []
 	

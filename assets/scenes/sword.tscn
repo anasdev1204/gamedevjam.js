@@ -1,10 +1,16 @@
 [gd_scene format=3 uid="uid://dv2ji8ty5oudg"]
 
+[ext_resource type="Script" uid="uid://bqocteam1er3v" path="res://scripts/weapons/sword.gd" id="1_phvpg"]
 [ext_resource type="ArrayMesh" uid="uid://drsqa6403bteu" path="res://res/meshes/sword_handle.tres" id="1_rbklg"]
 [ext_resource type="ArrayMesh" uid="uid://bx2yjpch3nu8y" path="res://res/meshes/sword_blade.tres" id="2_hux4n"]
 [ext_resource type="Material" uid="uid://dbfjehkv1l25l" path="res://res/materials/sword_emission.tres" id="4_phvpg"]
+[ext_resource type="Script" uid="uid://cffa0n4q4tuvk" path="res://scripts/Classes/Hitbox.gd" id="5_bvkgv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hux4n"]
+size = Vector3(0.19616318, 0.4697876, 2.426239)
 
 [node name="Sword" type="MeshInstance3D" unique_id=1762692563]
+script = ExtResource("1_phvpg")
 
 [node name="handle2" type="MeshInstance3D" parent="." unique_id=2004483117]
 transform = Transform3D(-0.14875686, 0, 0.98887384, 0, 1, 0, -0.98887384, 0, -0.14875686, 0, 0, 0)
@@ -16,3 +22,14 @@ transform = Transform3D(-0.29751363, 0, 1.9777476, 0, 2, 0, -1.9777476, 0, -0.29
 material_overlay = ExtResource("4_phvpg")
 mesh = ExtResource("2_hux4n")
 skeleton = NodePath("")
+
+[node name="Hitbox" type="Area3D" parent="." unique_id=1998555300]
+monitorable = false
+script = ExtResource("5_bvkgv")
+damage = 12.0
+metadata/_custom_type_script = "uid://cffa0n4q4tuvk"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=653390244]
+transform = Transform3D(0.9928493, -0.04108483, 0.11208164, 0, 0.9389083, 0.34416774, -0.11937442, -0.3417067, 0.9321944, 0.05959271, 0.109210715, 0.68516564)
+shape = SubResource("BoxShape3D_hux4n")
+debug_color = Color(0.3475012, 0.6204995, 0, 0.68100005)

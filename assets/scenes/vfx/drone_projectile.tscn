@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://d10opuybjw4yg"]
 
 [ext_resource type="Shader" uid="uid://dlpfymhw37i0d" path="res://res/shaders/drone_projecile.tres" id="1_166g8"]
-[ext_resource type="Script" uid="uid://ce4auuy6qxnpu" path="res://scripts/drone_projectile.gd" id="1_tsr0g"]
+[ext_resource type="Script" uid="uid://ce4auuy6qxnpu" path="res://scripts/VFX/drone_projectile.gd" id="1_tsr0g"]
 [ext_resource type="ArrayMesh" uid="uid://d07tto8ehcdh" path="res://res/meshes/drone_projectile.tres" id="2_syws2"]
 [ext_resource type="Shader" uid="uid://c0t415uitce2r" path="res://res/shaders/drone_projectile_inner.tres" id="3_tmiwc"]
 [ext_resource type="Shader" uid="uid://qnq3ifsvv782" path="res://res/shaders/drone_projectile_trail.tres" id="4_tsr0g"]
+[ext_resource type="Script" uid="uid://cffa0n4q4tuvk" path="res://scripts/Classes/Hitbox.gd" id="6_wf64q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tmiwc"]
 render_priority = 1
@@ -37,6 +38,9 @@ shader_parameter/Speed = Vector2(2, 0)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_i6bpr"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_l7y30"]
+size = Vector3(0.9403229, 0.50183105, 0.5241089)
+
 [node name="drone_projectile" type="Node3D" unique_id=759469710]
 script = ExtResource("1_tsr0g")
 speed = 30.0
@@ -62,3 +66,11 @@ transform = Transform3D(1.3061197, 0, 0, 0, -0.99999994, 3.673578e-08, 0, -8.742
 visible = false
 material_override = SubResource("ShaderMaterial_3qh8k")
 mesh = SubResource("PlaneMesh_i6bpr")
+
+[node name="Hitbox" type="Area3D" parent="." unique_id=620864400]
+script = ExtResource("6_wf64q")
+metadata/_custom_type_script = "uid://cffa0n4q4tuvk"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=1177974230]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.062049866, 0.009094238, 3.0517578e-05)
+shape = SubResource("BoxShape3D_l7y30")

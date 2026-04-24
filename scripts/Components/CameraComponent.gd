@@ -15,12 +15,14 @@ extends Node
 var target_camera_size: float
 var min_bound := Vector3.ZERO
 var max_bound := Vector3.ZERO
+var disabled := true
 
 func _ready():
+	set_camera_current(not disabled)
 	camera.size = camera_size 
 
 func update(delta: float) -> void:
-	if target == null:
+	if target == null or disabled:
 		return
 
 	var desired := target.global_position
@@ -63,3 +65,6 @@ func update_bounds() -> void:
 
 func set_camera_size(new_size := camera_size):
 	target_camera_size = new_size
+
+func set_camera_current(new_current: bool):
+	camera.current = new_current

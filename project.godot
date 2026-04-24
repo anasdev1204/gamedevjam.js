@@ -22,6 +22,10 @@ config/features=PackedStringArray("4.6", "GL Compatibility")
 
 import/blender/enabled=false
 
+[global_group]
+
+enemy=""
+
 [input]
 
 move_left={

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cx0jgpr1obhsx" path="res://assets/source/env/decor/lift.glb" id="1_begra"]
 [ext_resource type="ArrayMesh" uid="uid://bwe4wn0aj4r1m" path="res://res/meshes/lift.tres" id="2_11yv0"]
+[ext_resource type="Script" uid="uid://bodxm5r67fr87" path="res://scripts/Env/lift.gd" id="2_oj0g4"]
 [ext_resource type="ArrayMesh" uid="uid://c2rverynu2ddp" path="res://res/meshes/lift_door1.tres" id="3_353s3"]
 [ext_resource type="ArrayMesh" uid="uid://chgf1qmdspn10" path="res://res/meshes/lift_door2.tres" id="4_oj0g4"]
 [ext_resource type="AnimationLibrary" uid="uid://c6yq8opg74a7c" path="res://assets/source/env/decor/lift_animations.res" id="5_11yv0"]
@@ -12,16 +13,17 @@ size = Vector3(3.876587, 13.16983, 4.0303955)
 
 [node name="lift" unique_id=1075321402 instance=ExtResource("1_begra")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+script = ExtResource("2_oj0g4")
 
 [node name="Cube_015" parent="." index="0" unique_id=887957716]
 mesh = ExtResource("2_11yv0")
 
 [node name="Cube_017" parent="." index="1" unique_id=1770651224]
-transform = Transform3D(2.03399, 4.5110513e-16, -4.2979177e-16, -4.510836e-16, 0.09826649, -2.0316155, -4.2981393e-16, 2.0316155, 0.09826649, -6.735019, -0.03376341, 2.0662296)
+transform = Transform3D(2.03399, 0, 0, 0, 2.0339906, 0, 0, 0, 2.0339906, -6.735019, -0.03376341, 2.0662296)
 mesh = ExtResource("3_353s3")
 
 [node name="Cube_018" parent="." index="2" unique_id=1303193664]
-transform = Transform3D(2.03399, -4.3270278e-16, -3.2223749e-16, 4.3270236e-16, 0.58276063, 1.948719, -3.2223801e-16, -1.948719, 0.58276063, -6.722, 3.564, 2.105)
+transform = Transform3D(2.03399, 0, 0, 0, 2.0339901, 0, 0, 0, 2.0339901, -6.7223077, 3.5641685, 2.1046467)
 mesh = ExtResource("4_oj0g4")
 
 [node name="fog" parent="." index="3" unique_id=1461466784 instance=ExtResource("5_353s3")]

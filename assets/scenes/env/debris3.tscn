@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://couf2t2cw72nh"]
 
-[ext_resource type="Script" uid="uid://cgyhlk88scmat" path="res://scripts/derbis.gd" id="1_1h5w3"]
+[ext_resource type="Script" uid="uid://cgyhlk88scmat" path="res://scripts/Env/debrispipe.gd" id="1_1h5w3"]
 [ext_resource type="ArrayMesh" uid="uid://csaiwy4xpukvy" path="res://res/meshes/debris3.tres" id="1_8j7r2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uebar"]

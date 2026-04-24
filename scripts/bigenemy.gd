@@ -10,10 +10,11 @@ func _ready():
 	super._ready()
 	
 	input_component.primary_fired.connect(
-		_on_shot_fired
+		_on_primary_fired
 	)
 	
-func _on_shot_fired():
+func _on_primary_fired():
+	await get_tree().create_timer(5.0 / Engine.physics_ticks_per_second).timeout
 	var projectile_spawn_location = beam_marker.global_position
 	var projectile_dir = -beam_marker.global_basis.z
 

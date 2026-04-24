@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dhu7d5mfju5tc"]
 
+[ext_resource type="Script" uid="uid://dv5f5tlqrwyjf" path="res://scripts/main.gd" id="1_og1vs"]
 [ext_resource type="Material" uid="uid://bldmqy2ivi5ny" path="res://res/materials/tile.tres" id="7_85g3d"]
 [ext_resource type="Material" uid="uid://6xhy26gxuau5" path="res://res/materials/wall.tres" id="8_choun"]
 [ext_resource type="PackedScene" uid="uid://bgfncvsletmqa" path="res://assets/scenes/env/pipe1.tscn" id="9_eb6dy"]
@@ -17,13 +18,13 @@
 [ext_resource type="Script" uid="uid://bb66le7po8wvn" path="res://scripts/Managers/projectile_manager.gd" id="15_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://bjw82cmkuyfty" path="res://assets/scenes/env/ventilationtube_curved.tscn" id="15_muem4"]
 [ext_resource type="PackedScene" uid="uid://cktlavdl7yebe" path="res://assets/scenes/env/lift.tscn" id="16_dp3eg"]
-[ext_resource type="Script" uid="uid://cckuyd1ot5s7f" path="res://scripts/Managers/drone_manager.gd" id="16_jbj1t"]
+[ext_resource type="Script" uid="uid://cdt07l0komkec" path="res://scripts/Managers/drone_manager.gd" id="16_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://bnrtmhlm137j0" path="res://assets/scenes/env/door.tscn" id="17_0ld40"]
 [ext_resource type="PackedScene" uid="uid://c1rpljyy3r668" path="res://assets/scenes/env/conveyor.tscn" id="18_gqmmt"]
 [ext_resource type="PackedScene" uid="uid://ba0igo8jquk3k" path="res://assets/scenes/env/fog.tscn" id="20_jscy8"]
 [ext_resource type="PackedScene" uid="uid://xau1sksva2cv" path="res://assets/scenes/env/wall.tscn" id="21_yc10j"]
-[ext_resource type="Script" uid="uid://ctyw3efxqa3w" path="res://scripts/Managers/big_enemy_manager.gd" id="23_pm3ni"]
-[ext_resource type="Script" uid="uid://bbxoejl2dkesg" path="res://scripts/Managers/robot_1_manager.gd" id="24_y6deb"]
+[ext_resource type="Script" uid="uid://cog2ov4dgpth2" path="res://scripts/Managers/big_enemy_manager.gd" id="23_pm3ni"]
+[ext_resource type="Script" uid="uid://bxue002h03ok6" path="res://scripts/Managers/robot_1_manager.gd" id="24_y6deb"]
 
 [sub_resource type="Environment" id="Environment_0wfyh"]
 background_mode = 1
@@ -56,6 +57,7 @@ size = Vector3(1, 20, 100)
 size = Vector3(100, 20, 1)
 
 [node name="main" type="Node3D" unique_id=2129682689]
+script = ExtResource("1_og1vs")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=283175406]
 environment = SubResource("Environment_0wfyh")
@@ -130,16 +132,18 @@ transform = Transform3D(-1.2697812, 1.3816034, 0.6919741, 1.5095657, 1.300404, 0
 [node name="3" type="Node" parent="Env/pipes" unique_id=417623886]
 
 [node name="pipe4" parent="Env/pipes/3" unique_id=2113570264 instance=ExtResource("9_eb6dy")]
-transform = Transform3D(0.8486155, 0.059260063, 0.5256806, -0.19278988, 0.9600115, 0.20300187, -0.49262953, -0.2736164, 0.8261054, 29.30698, 0.5335231, 38.60729)
+transform = Transform3D(0.8486155, 0.059260063, 0.5256806, -0.19278988, 0.9600115, 0.20300187, -0.49262953, -0.2736164, 0.8261054, 29.30698, -0.35417604, 38.60729)
 
 [node name="pipe5" parent="Env/pipes/3" unique_id=1269147086 instance=ExtResource("9_eb6dy")]
-transform = Transform3D(-2.1735497, -0.7165806, 1.9396389, -1.6051656, 2.3587036, -0.9273407, -1.3035061, -1.709687, -2.092329, 22.118414, 2.9116127, 40.48723)
+transform = Transform3D(-2.1735497, -0.7165806, 1.9396389, -1.6051656, 2.3587036, -0.9273407, -1.3035061, -1.709687, -2.092329, 22.118414, 1.3663628, 40.48723)
+disable_collisions = false
 
 [node name="pipe6" parent="Env/pipes/3" unique_id=689685435 instance=ExtResource("10_trceg")]
 transform = Transform3D(-0.63489044, 0.6908016, 0.34598696, 0.75135696, 0.44776562, 0.4847355, 0.17993498, 0.567714, -0.8033209, 24.170593, 2.024941, 41.95104)
 
 [node name="pipe7" parent="Env/pipes/3" unique_id=1494726825 instance=ExtResource("10_trceg")]
 transform = Transform3D(-1.2697811, 1.3816032, 0.6919741, 0.87824607, 1.3822026, -1.1481287, -1.2713536, -0.42507434, -1.4842415, 27.593212, 2.6805034, 39.328663)
+disable_collisions = false
 
 [node name="4" type="Node" parent="Env/pipes" unique_id=100525001]
 
@@ -168,6 +172,7 @@ transform = Transform3D(-0.63489044, 0.6908016, 0.34598696, 0.75135696, 0.447765
 
 [node name="pipe7" parent="Env/pipes/5" unique_id=1870485852 instance=ExtResource("10_trceg")]
 transform = Transform3D(-1.2697812, 1.3816034, 0.6919741, 1.5095657, 1.300404, 0.17367071, -0.329951, 0.6325521, -1.8684248, 35.882416, 3.5654707, -39.11158)
+disable_collisions = false
 
 [node name="6" type="Node" parent="Env/pipes" unique_id=75178538]
 
@@ -221,22 +226,22 @@ transform = Transform3D(0.7920273, -0.24435452, -0.5594496, 0.16376008, 0.967853
 [node name="3" type="Node" parent="Env/debris" unique_id=1698126844]
 
 [node name="debris5" parent="Env/debris/3" unique_id=1749121863 instance=ExtResource("11_a8y0u")]
-transform = Transform3D(-0.03252773, 0, 0.24787486, 0, 0.25, 0, -0.24787486, 0, -0.03252773, 26.346708, 0.6913636, 43.234077)
+transform = Transform3D(-0.03252773, 0, 0.24787486, 0, 0.25, 0, -0.24787486, 0, -0.03252773, 26.346708, -0.19633555, 43.234077)
 
 [node name="debris9" parent="Env/debris/3" unique_id=881836636 instance=ExtResource("11_a8y0u")]
-transform = Transform3D(-0.22498544, -0.016152654, -0.10779928, 0.0012828266, 0.24683042, -0.039662436, 0.10899515, -0.036247004, -0.2220501, 25.780916, 0.94730926, 42.019627)
+transform = Transform3D(-0.22498544, -0.016152654, -0.10779928, 0.0012828266, 0.24683042, -0.039662436, 0.10899515, -0.036247004, -0.2220501, 25.780916, 0.05961013, 42.019627)
 
 [node name="debris6" parent="Env/debris/3" unique_id=205407774 instance=ExtResource("12_jkv2x")]
-transform = Transform3D(-0.76057595, 0, 0.64924884, 0, 1, 0, -0.64924884, 0, -0.76057595, 27.358448, 1.214144, 32.98206)
+transform = Transform3D(-0.76057595, 0, 0.64924884, 0, 1, 0, -0.64924884, 0, -0.76057595, 27.358448, -0.33110595, 32.98206)
 
 [node name="debris10" parent="Env/debris/3" unique_id=763883734 instance=ExtResource("12_jkv2x")]
-transform = Transform3D(-0.76057595, 0, 0.64924884, 0, 1, 0, -0.64924884, 0, -0.76057595, 27.358448, 1.214144, 40.23376)
+transform = Transform3D(-0.76057595, 0, 0.64924884, 0, 1, 0, -0.64924884, 0, -0.76057595, 27.358448, 0.32644486, 40.23376)
 
 [node name="debris7" parent="Env/debris/3" unique_id=529690596 instance=ExtResource("12_jkv2x")]
-transform = Transform3D(-0.39373654, 0, -0.3081745, 0, 0.5, 0, 0.3081745, 0, -0.39373654, 22.667074, 1.214144, 42.249004)
+transform = Transform3D(-0.39373654, 0, -0.3081745, 0, 0.5, 0, 0.3081745, 0, -0.39373654, 22.667074, 0.32644486, 42.249004)
 
 [node name="debris8" parent="Env/debris/3" unique_id=758547085 instance=ExtResource("13_trceg")]
-transform = Transform3D(0.08636737, -0.20683205, -0.97455716, 0.1637601, 0.96785384, -0.19089662, 0.9827124, -0.1431062, 0.11746201, 19.974081, 2.3723907, 41.940956)
+transform = Transform3D(0.08636737, -0.20683205, -0.97455716, 0.1637601, 0.96785384, -0.19089662, 0.9827124, -0.1431062, 0.11746201, 19.974081, 0.8271408, 41.940956)
 disable_collisions = false
 
 [node name="4" type="Node" parent="Env/debris" unique_id=318078937]
@@ -299,7 +304,7 @@ disable_collisions = false
 transform = Transform3D(-0.90634465, 0, 0.42253906, 0, 1, 0, -0.42253906, 0, -0.90634465, -17.672382, 1.214144, -30.750206)
 
 [node name="debris7" parent="Env/debris/scatter" unique_id=1287852021 instance=ExtResource("12_jkv2x")]
-transform = Transform3D(-0.9905814, 0, -0.13692601, 0, 1, 0, 0.13692601, 0, -0.9905814, -12.3186455, 1.214144, 38.57276)
+transform = Transform3D(-0.9905814, 0, -0.13692601, 0, 1, 0, 0.13692601, 0, -0.9905814, -12.3186455, 0.33361173, 38.57276)
 
 [node name="debris8" parent="Env/debris/scatter" unique_id=1151653585 instance=ExtResource("12_jkv2x")]
 transform = Transform3D(-0.39373654, 0, -0.3081745, 0, 0.5, 0, 0.3081745, 0, -0.39373654, 12.990095, 1.214144, 21.981596)
@@ -334,7 +339,7 @@ transform = Transform3D(-3.9111676e-08, -0.8947708, -0.44652593, 1, -4.3711392e-
 transform = Transform3D(-3.5378942e-08, -0.8093759, 0.58729094, 1, -4.371139e-08, 0, 2.5671303e-08, 0.58729094, 0.8093759, -35.18103, 2.0775814, -33.602203)
 
 [node name="broken_shelf3" parent="Env/shelves" unique_id=143681976 instance=ExtResource("12_a8y0u")]
-transform = Transform3D(-3.5378942e-08, -0.8093759, 0.58729094, 1, -4.371139e-08, 0, 2.5671303e-08, 0.58729094, 0.8093759, -46.988808, 2.0775814, -10.274223)
+transform = Transform3D(-3.5378942e-08, -0.8093759, 0.58729094, 1, -4.371139e-08, 0, 2.5671303e-08, 0.58729094, 0.8093759, -46.988808, 0.9553318, -10.274223)
 
 [node name="broken_shelf2" parent="Env/shelves" unique_id=717514150 instance=ExtResource("12_a8y0u")]
 transform = Transform3D(0.63966715, -0.6221285, 0.45142227, 0.66519564, 0.74232256, 0.080448866, -0.38515058, 0.24882361, 0.8886764, -16.065496, 1.3421211, -32.141975)
@@ -342,13 +347,13 @@ transform = Transform3D(0.63966715, -0.6221285, 0.45142227, 0.66519564, 0.742322
 [node name="incubators" type="Node3D" parent="Env" unique_id=490954517]
 
 [node name="incubator" parent="Env/incubators" unique_id=913447650 instance=ExtResource("13_jkv2x")]
-transform = Transform3D(5.510968, 0, -2.3725996, 0, 6, 0, 2.3725996, 0, 5.510968, -41.469646, 8.867464, 34.884426)
+transform = Transform3D(5.510968, 0, -2.3725996, 0, 6, 0, 2.3725996, 0, 5.510968, -41.469646, 7.061741, 34.884426)
 
 [node name="incubator2" parent="Env/incubators" unique_id=1719178698 instance=ExtResource("13_jkv2x")]
-transform = Transform3D(-0.7420244, 0, -5.9539394, 0, 5.9999995, 0, 5.9539394, 0, -0.7420244, -40.84296, 8.867464, 3.427248)
+transform = Transform3D(-0.7420244, 0, -5.9539394, 0, 5.9999995, 0, 5.9539394, 0, -0.7420244, -40.84296, 7.735716, 3.427248)
 
 [node name="incubator3" parent="Env/incubators" unique_id=2074367647 instance=ExtResource("13_jkv2x")]
-transform = Transform3D(0.98811656, 2.8318932, -0.06332217, -0.12047418, -0.024988314, -2.9974766, -2.830037, 0.989828, 0.10549284, -30.926945, 3.7873192, 18.969992)
+transform = Transform3D(0.98811656, 2.8318932, -0.06332217, -0.12047418, -0.024988314, -2.9974766, -2.830037, 0.989828, 0.10549284, -30.926945, 2.4106226, 18.969992)
 
 [node name="pc" type="Node3D" parent="Env" unique_id=1384677335]
 
@@ -364,7 +369,7 @@ transform = Transform3D(0.14980246, 0.6288185, 0.76298535, -0.12114755, 0.777552
 transform = Transform3D(-0.66872287, 0.3954553, 0.6296229, -0.12114754, 0.7775524, -0.617038, -0.7335755, -0.48890465, -0.47205845, -42.063087, 0.28541887, -28.588017)
 
 [node name="lamp4" parent="Env/lamps" unique_id=514292195 instance=ExtResource("14_a8y0u")]
-transform = Transform3D(0.14980246, 0.6288185, 0.76298535, -0.12114755, 0.7775524, -0.617038, -0.98126584, -7.3338358e-09, 0.19265904, 25.164263, 0.28541887, 43.742363)
+transform = Transform3D(0.14980246, 0.6288185, 0.76298535, -0.12114755, 0.7775524, -0.617038, -0.98126584, -7.3338358e-09, 0.19265904, 25.164263, -0.60228026, 43.742363)
 
 [node name="lamp5" parent="Env/lamps" unique_id=75348578 instance=ExtResource("14_a8y0u")]
 transform = Transform3D(0.14980246, 0.6288185, 0.76298535, -0.12114755, 0.7775524, -0.617038, -0.98126584, -7.3338358e-09, 0.19265904, -45.09745, 0.28541887, 19.048069)
@@ -382,7 +387,7 @@ check_interval = 0.23
 smooth_speed = 15.0
 
 [node name="lamp7" parent="Env/lamps" unique_id=1863155028 instance=ExtResource("14_a8y0u")]
-transform = Transform3D(3.6519296, -1.4886806, -0.66875666, 1.5664079, 3.6573687, 0.41233656, 0.4580127, -0.6383424, 3.9220843, 36.94504, 1.357986, 45.07435)
+transform = Transform3D(3.6519296, -1.4886806, -0.66875666, 1.5664079, 3.6573687, 0.41233656, 0.4580127, -0.6383424, 3.9220843, 36.94504, 0.47028685, 45.07435)
 base_energy = 10.0
 flicker_speed = 0.7
 intensity_range = 0.8
@@ -417,7 +422,7 @@ transform = Transform3D(0.65359235, 0.7568467, 3.3082824e-08, 0, -4.3711385e-08,
 transform = Transform3D(0.41366753, -0.7139115, -0.5649862, -0.59612155, 0.25665286, -0.76076823, 0.68812656, 0.65150565, -0.31940904, -40.412304, 4.7117186, 16.83212)
 
 [node name="ventilationtube_curved" parent="Env/ventilation/2" unique_id=1306488101 instance=ExtResource("15_muem4")]
-transform = Transform3D(-0.6649887, 0.22227651, -0.71300995, -0.40803856, 0.691479, 0.59612143, 0.62553537, 0.6873496, -0.36912847, -36.221478, 3.0263653, 25.525864)
+transform = Transform3D(-0.6649887, 0.22227651, -0.71300995, -0.40803856, 0.691479, 0.59612143, 0.62553537, 0.6873496, -0.36912847, -36.221478, 2.368641, 25.525864)
 
 [node name="3" type="Node" parent="Env/ventilation" unique_id=488570285]
 
@@ -752,7 +757,7 @@ transform = Transform3D(0.22081338, 0.026868625, -0.97494584, -0.016414195, 0.99
 [node name="lifts" type="Node3D" parent="Env" unique_id=353533169]
 
 [node name="lift1" parent="Env/lifts" unique_id=1075321402 instance=ExtResource("16_dp3eg")]
-transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, 42.563763, 0, 38.2027)
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, 41.14175, 0, 38.2027)
 
 [node name="lift2" parent="Env/lifts" unique_id=42528732 instance=ExtResource("16_dp3eg")]
 transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, 42.563763, 0, -10.91236)
@@ -835,19 +840,23 @@ shape = SubResource("BoxShape3D_jyhfs")
 unique_name_in_owner = true
 script = ExtResource("15_jkv2x")
 
-[node name="DroneManager" type="Node" parent="." unique_id=992271836 node_paths=PackedStringArray("camera_bounds")]
+[node name="Robot1Manager" type="Node" parent="." unique_id=325656515 node_paths=PackedStringArray("camera_bounds")]
 unique_name_in_owner = true
-script = ExtResource("16_jbj1t")
+script = ExtResource("24_y6deb")
 camera_bounds = NodePath("../CameraBounds")
+metadata/_custom_type_script = "uid://bxue002h03ok6"
 
-[node name="BigEnemyManager" type="Node" parent="." unique_id=612295838 node_paths=PackedStringArray("camera_bounds")]
+[node name="BigEnemyManager" type="Node" parent="." unique_id=363636069 node_paths=PackedStringArray("camera_bounds")]
 unique_name_in_owner = true
 script = ExtResource("23_pm3ni")
 camera_bounds = NodePath("../CameraBounds")
+metadata/_custom_type_script = "uid://cog2ov4dgpth2"
 
-[node name="Robot1Manager" type="Node" parent="." unique_id=1035737565]
+[node name="DroneManager" type="Node" parent="." unique_id=663992579 node_paths=PackedStringArray("camera_bounds")]
 unique_name_in_owner = true
-script = ExtResource("24_y6deb")
+script = ExtResource("16_jbj1t")
+camera_bounds = NodePath("../CameraBounds")
+metadata/_custom_type_script = "uid://cdt07l0komkec"
 
 [node name="Robot2Manager" type="Node" parent="." unique_id=40115028]
 unique_name_in_owner = true
@@ -855,10 +864,52 @@ unique_name_in_owner = true
 [node name="Spawns" type="Node3D" parent="." unique_id=1860744488]
 
 [node name="drone_spawner" type="Marker3D" parent="Spawns" unique_id=1687055254]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.63575, 13.529114, 52.247154)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.63575, 12.822327, 52.247154)
 
 [node name="bigenemy_spawner" type="Marker3D" parent="Spawns" unique_id=1362118858]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.963336, 53.594337)
 
 [node name="robot1_spawner" type="Marker3D" parent="Spawns" unique_id=21368267]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.285088, -0.87120724, 24.666512)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.10605, 0, 24.667)
+
+[node name="PostSpawn" type="Node3D" parent="." unique_id=1942046458]
+
+[node name="robot1postspawn" type="Marker3D" parent="PostSpawn" unique_id=1701489115]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.385262, 0, 24.143246)
+
+[node name="bigenemypostspawn" type="Marker3D" parent="PostSpawn" unique_id=401289646]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.963336, 34.159233)
+
+[node name="dronepostspawn" type="Marker3D" parent="PostSpawn" unique_id=362725012]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.418053, 0, 34.32092)
+
+[node name="GlobalSpawner" type="Marker3D" parent="." unique_id=59072115]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.38793707, 0)
+
+[node name="Control" type="Control" parent="." unique_id=1935789400]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 162.0
+offset_bottom = 127.0
+
+[node name="Button" type="Button" parent="Control" unique_id=1363096946]
+layout_mode = 0
+offset_right = 141.0
+offset_bottom = 37.0
+text = "Spawn robot 1"
+
+[node name="Button2" type="Button" parent="Control" unique_id=649437303]
+layout_mode = 0
+offset_top = 39.0
+offset_right = 144.0
+offset_bottom = 76.0
+text = "Spawn big enemy"
+
+[node name="Button3" type="Button" parent="Control" unique_id=1443825270]
+layout_mode = 0
+offset_top = 78.0
+offset_right = 141.0
+offset_bottom = 115.0
+text = "Spawn drone"
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1194103766]

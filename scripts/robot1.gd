@@ -10,7 +10,10 @@ func _ready():
 
 	skills.attack_started.connect(_on_attack_started)
 	skills.completed_recovery.connect(_on_completed_recovery)
-
+	
+	if not is_controlled:
+		sword.set_is_enemy()
+	
 func _on_attack_started():
 	_toggle_sword(true)
 	_enable_trail()

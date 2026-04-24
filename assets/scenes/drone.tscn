@@ -3,24 +3,18 @@
 [ext_resource type="Script" uid="uid://dprh06t61bjcu" path="res://scripts/drone.gd" id="1_b8s44"]
 [ext_resource type="Script" uid="uid://dy5m5f1dv31so" path="res://scripts/VFX/dash_afterimage.gd" id="2_1rp74"]
 [ext_resource type="PackedScene" uid="uid://hey7tb57bduq" path="res://assets/scenes/vfx/drone_propeller.tscn" id="2_b8s44"]
-[ext_resource type="Material" uid="uid://dmsvhf6ry2mas" path="res://res/materials/simple_outline.tres" id="2_q8fse"]
-[ext_resource type="Shader" uid="uid://dbu7llmqrxdp3" path="res://res/shaders/toon.tres" id="3_w3j5c"]
-[ext_resource type="Texture2D" uid="uid://bwpraxhoy1xt8" path="res://assets/source/entities/drone/drone_text.png" id="4_pi7vy"]
-[ext_resource type="Script" uid="uid://dxagjxh1g8e6s" path="res://scripts/Components/InputComponent.gd" id="5_snx0p"]
+[ext_resource type="Material" uid="uid://cbs2w3u1tjjtc" path="res://assets/source/entities/drone/drone_shader.tres" id="3_b8s44"]
+[ext_resource type="Script" uid="uid://cexttyfap48mc" path="res://scripts/Components/InputComponent.gd" id="5_snx0p"]
 [ext_resource type="Script" uid="uid://dw3mcscvxt3xt" path="res://scripts/Components/MovementComponent.gd" id="6_1rp74"]
 [ext_resource type="Script" uid="uid://gj31cgpakkbq" path="res://scripts/Classes/ActiveSkillsContainer.gd" id="6_8nm5b"]
 [ext_resource type="Script" uid="uid://ba8212q4seyav" path="res://scripts/Components/RotationComponent.gd" id="7_8nm5b"]
 [ext_resource type="Script" uid="uid://4gsfrqitdpoc" path="res://scripts/Classes/ActiveSkill.gd" id="7_praws"]
-[ext_resource type="Script" uid="uid://de1wp8vsj500e" path="res://scripts/Components/CameraComponent.gd" id="8_iamlv"]
+[ext_resource type="Script" uid="uid://w05okq7rpmrx" path="res://scripts/Components/CameraComponent.gd" id="8_iamlv"]
 [ext_resource type="AnimationLibrary" uid="uid://c1p5v7lxwhk6c" path="res://assets/source/entities/drone/drone_anims.res" id="8_praws"]
+[ext_resource type="Script" uid="uid://4g7g22oy78fc" path="res://scripts/Classes/Hurtbox.gd" id="9_mttwm"]
 [ext_resource type="Script" uid="uid://q8fs4agvgiw0" path="res://scripts/Components/ActiveSkillComponent.gd" id="9_praws"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://w148sk4dnhjf" path="res://assets/source/entities/drone/drone_blend_tree.tres" id="9_wt63a"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_k2loo"]
-render_priority = 0
-next_pass = ExtResource("2_q8fse")
-shader = ExtResource("3_w3j5c")
-shader_parameter/albedo = ExtResource("4_pi7vy")
+[ext_resource type="Script" uid="uid://brr713nr64ach" path="res://scripts/Components/HealthComponent.gd" id="16_bnc7f"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_2dbrb"]
 _surfaces = [{
@@ -43,7 +37,6 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 1128,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAAIAAoADAAKAA0ADgAJAA8ADgAQAAkAEQAQAA4AEQASABAAEwAUABUAEwAWABQAFwAYABkAGAAXABoAGgAXABsAGAAaABwAHQAeAB8AHQAgAB4AIQAfAB4AIgAfACEAIQAeACMAIgAkAB8AIwAeACUAJgAkACIAIwAlACYAJgAlACQAJwAoACkAJwAqACgAKwAsAC0AKwAuACwALwAwADEALwAyADAAMwA0ADUAMwA2ADQANwA4ADkANwA6ADgAOwA3ADkAOwA5ADwAPQA+AD8APQBAAD4AQQA9AD8AQQA/AEIAPwBDAEIAPwBEAEMARQBGAEcARQBIAEYASQBFAEcASQBHAEoASwBMAE0ASwBOAEwATwBLAE0ATwBNAFAAUQBSAFMAUQBUAFIAVQBWAFcAVQBYAFYAWQBaAFsAWQBcAFoAXQBeAF8AXQBgAF4AYQBiAGMAYQBkAGIAZQBmAGcAZQBoAGYAaQBqAGsAaQBsAGoAaQBtAGwAaQBuAG0AbwBwAHEAbwByAHAAcwB0AHUAdABzAHYAdgBzAHcAdAB2AHgAeQB6AHsAeQB8AHoAfQB+AH8AfQCAAH4AgQCCAIMAgQCEAIIAhQCCAIQAhQCEAIYAhgCEAIcAhgCHAIgAiACHAIkAiACJAIoAiwCMAI0AiwCOAIwAjwCQAJEAjwCSAJAAkwCUAJUAkwCWAJQAlwCYAJkAlwCaAJgAmwCXAJkAmwCZAJwAmwCdAJcAmwCeAJ0AnwCgAKEAnwCiAKAAowCkAKUAowCmAKQApwCoAKkAqQCoAKoApwCrAKgAqQCqAKwArQCrAKcArACqAK4ArQCuAKsArACuAK0ArwCwALEAsQCwALIArwCzALAAsQCyALQAtQCzAK8AtACyALYAtQC2ALMAtAC2ALUAtwC4ALkAtwC6ALgAuwC8AL0AuwC+ALwAvwDAAMEAvwDCAMAAwwDEAMUAwwDGAMQAxwDIAMkAxwDKAMgAywDMAM0AywDOAMwAzwDQANEAzwDSANAA0wDUANUA0wDWANQA1wDYANkA1wDaANgA2wDcAN0A2wDeANwA3wDgAOEA3wDiAOAA4wDkAOUA4wDmAOQA5wDoAOkA5wDqAOgA6wDsAO0A6wDuAOwA7wDwAPEA7wDyAPAA8wD0APUA9QD0APYA8wD3APQA9QD2APgA+QD3APMA+AD2APoA+QD7APcA+AD6APwA/QD7APkA/AD6AP4A/QD/APsA/AD+AAABAQH/AP0AAAH+AAIBAQEDAf8AAAECAQQBBAEDAQEBBAECAQMBBQEGAQcBBwEGAQgBBQEJAQYBBwEIAQoBCwEJAQUBCgEIAQwBCwENAQkBCgEMAQ4BDwENAQsBDgEMARABDwERAQ0BDgEQARIBEwERAQ8BEgEQARQBEwEVAREBEgEUARYBFgEVARMBFgEUARUBFwEYARkBFwEaARgBGwEcAR0BHAEbAR4BHAEeAR8BHAEgAR0BIAEcASEBIAEhASIBIwEkASUBJAEjASYBJAEmAScBKAEpASoBKAErASkBLAEtAS4BLAEvAS0BMAExATIBMAEzATEBNAE1ATYBNQE0ATcBNwE0ATgBNQE3ATkBOgE7ATwBOgE9ATsBPgE7AT0BPgE/ATsBQAE+AT0BPwFBATsBQAE9AUIBPwFDAUEBQwFAAUIBQwFCAUEBRAFFAUYBRAFHAUUBSAFJAUoBSAFLAUkBTAFNAU4BTAFPAU0BUAFRAVIBUAFTAVEBVAFVAVYBVAFXAVUBWAFXAVQBWAFZAVcBWgFbAVwBWgFdAVsBXgFdAVoBXgFfAV0BXQFfAWABXQFgAWEBYgFjAWQBYgFlAWMBZgFlAWIBZgFnAWUBaAFpAWoBaAFrAWkBbAFrAWgBbAFtAWsBbgFvAXABbgFxAW8BcgFzAXQBcgF1AXMBdgF3AXgBdgF5AXcBegF7AXwBegF9AXsBfgF/AYABfgGBAX8BggGDAYQBggGFAYMBhgGHAYgBhgGJAYcBigGLAYwBiwGKAY0BjQGKAY4BiwGNAY8BkAGRAZIBkAGTAZEBlAGVAZYBlAGXAZUBmAGZAZoBmAGbAZkBnAGaAZkBnAGdAZoBnQGeAZoBnQGfAZ4BnwGgAZ4BnwGhAaABogGjAaQBogGlAaMBpgGnAagBpgGpAacBqgGrAawBqgGtAasBrgGvAbABrgGxAa8BsgGxAa4BsgGzAbEBsgGuAbQBsgG0AbUBtgG3AbgBtgG5AbcBugG7AbwBugG9AbsBvgG/AcABvgHBAb8BwgG+AcABwQHDAb8BwgHAAcQBwQHFAcMBxQHCAcQBxQHEAcMBxgHHAcgBxgHJAccBygHGAcgByQHLAccBygHIAcwByQHNAcsBzQHKAcwBzQHMAcsBzgHPAdABzgHRAc8B0gHTAdQB0gHVAdMB1gHXAdgB1gHZAdcB2gHbAdwB2gHdAdsB3gHfAeAB3gHhAd8B4gHjAeQB4gHlAeMB5gHnAegB5gHpAecB6gHrAewB6gHtAesB7gHvAfAB7gHxAe8B8gHzAfQB8gH1AfMB9gH3AfgB9gH5AfcB+gH7AfwB+gH9AfsB/gH/AQAC/gEBAv8BAgIDAgQCAgIFAgMCBgIHAggCBgIJAgcCCgILAgwCCgINAgsCDgIKAgwCDQIPAgsCDgIMAhACDQIRAg8CEgIOAhACEQITAg8CEgIQAhQCEQIVAhMCFgISAhQCFQIXAhMCFgIUAhgCFQIZAhcCGgIWAhgCGQIbAhcCGgIYAhsCGQIaAhsCHAIdAh4CHAIfAh0CIAIcAh4CHwIhAh0CIAIeAiICHwIjAiECJAIgAiICIwIlAiECJAIiAiYCIwInAiUCKAIkAiYCJwIpAiUCKAImAioCJwIrAikCLAIoAioCKwItAikCLAIqAi0CKwIsAi0CLgIvAjACLgIxAi8CMgIzAjQCMwIyAjUCMwI1AjYC"),
-"material": SubResource("ShaderMaterial_k2loo"),
 "primitive": 3,
 "uv_scale": Vector4(2, 2, 0, 0),
 "vertex_count": 567,
@@ -90,9 +83,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_p1mjp")
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q8fse"]
-radius = 0.34277344
-height = 1.4160156
+[sub_resource type="BoxShape3D" id="BoxShape3D_dpg6e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mttwm"]
 
 [node name="Drone" type="CharacterBody3D" unique_id=2058500955]
 script = ExtResource("1_b8s44")
@@ -109,7 +102,8 @@ character_mesh = NodePath("../../model/drone")
 transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, 2.466189, 0)
 
 [node name="drone" type="MeshInstance3D" parent="model" unique_id=1803811931]
-transform = Transform3D(-0.013962216, 0, 0.99990255, 0, 1.0000001, 0, -0.9999025, 0, -0.013962217, 0.0007964391, 0.0056438446, 1.8626451e-09)
+transform = Transform3D(-0.013962215, 0, 0.9999025, 0, 1, 0, -0.9999024, 0, -0.013962216, 0.0007964391, 0.0056438446, 1.8626451e-09)
+material_override = ExtResource("3_b8s44")
 mesh = SubResource("ArrayMesh_mxu11")
 skeleton = NodePath("")
 
@@ -145,7 +139,7 @@ passive_dash_velocity = Vector3(0, 0, 0)
 metadata/_custom_type_script = "uid://4gsfrqitdpoc"
 
 [node name="projectile_markers" type="Node3D" parent="model" unique_id=2039373692]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2717224, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15654579, 0.014822364, 0.0049407855)
 
 [node name="Marker3D" type="Marker3D" parent="model/projectile_markers" unique_id=1825463218]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0.8742754, -0.08874416, 0.4449328)
@@ -154,8 +148,17 @@ transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0.8742754, -0
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0.9189798, -0.08874416, -0.4614772)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1592515640]
-transform = Transform3D(0.995396, -2.0123987e-10, 0.09584576, -0.095845744, -4.1895505e-09, 0.9953962, 2.0123987e-10, -0.99999976, -4.1895514e-09, 0, 2.466189, 0.00871408)
-shape = SubResource("CapsuleShape3D_q8fse")
+transform = Transform3D(0.995396, -2.0123987e-10, 0.09584576, -0.095845744, -4.1895505e-09, 0.9953962, 2.0123987e-10, -0.99999976, -4.1895514e-09, -0.041025262, 1.3769243, -0.041025262)
+shape = SubResource("BoxShape3D_dpg6e")
+
+[node name="Hurtbox" type="Area3D" parent="." unique_id=543596209]
+script = ExtResource("9_mttwm")
+metadata/_custom_type_script = "uid://4g7g22oy78fc"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=2117543203]
+transform = Transform3D(0.995396, -2.0123987e-10, 0.09584576, -0.095845744, -4.1895505e-09, 0.9953962, 2.0123987e-10, -0.99999976, -4.1895514e-09, -0.02270599, 1.431882, -0.02270599)
+shape = SubResource("BoxShape3D_mttwm")
+debug_color = Color(0.9607843, 0, 0.5176471, 0.41960785)
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=837684905]
 transform = Transform3D(0.8480481, 0, 0.52991927, 0, 1, 0, -0.52991927, 0, 0.8480481, 0, 3.169639, 0)
@@ -234,3 +237,10 @@ skills_container = NodePath("../model/skills")
 movement_component = NodePath("../MovementComponent")
 camera_component = NodePath("../CameraComponent")
 metadata/_custom_type_script = "uid://q8fs4agvgiw0"
+
+[node name="HealthComponent" type="Node" parent="." unique_id=5880889 node_paths=PackedStringArray("model", "hurtbox")]
+unique_name_in_owner = true
+script = ExtResource("16_bnc7f")
+model = NodePath("../model/drone")
+hurtbox = NodePath("../Hurtbox")
+metadata/_custom_type_script = "uid://brr713nr64ach"

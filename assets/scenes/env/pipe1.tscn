@@ -1,9 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgfncvsletmqa"]
+[gd_scene format=3 uid="uid://bgfncvsletmqa"]
 
+[ext_resource type="Script" uid="uid://cgyhlk88scmat" path="res://scripts/Env/debrispipe.gd" id="1_6nu8t"]
 [ext_resource type="ArrayMesh" uid="uid://clwo0amcmkcmv" path="res://res/meshes/pipe1.tres" id="1_n24a7"]
 
-[node name="pipe1" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_crrnl"]
+size = Vector3(0.58128357, 0.6708679, 3.0551758)
 
-[node name="Pipe1" type="MeshInstance3D" parent="."]
+[node name="pipe1" type="StaticBody3D" unique_id=1005287486]
+script = ExtResource("1_6nu8t")
+
+[node name="Pipe1" type="MeshInstance3D" parent="." unique_id=1431661453]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6120986, 0.49073136, 0.7826052)
 mesh = ExtResource("1_n24a7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=167332039]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.52007294, 0.48641908, 1.0275879)
+shape = SubResource("BoxShape3D_crrnl")
