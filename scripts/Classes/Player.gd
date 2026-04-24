@@ -10,6 +10,7 @@ class_name Player extends CharacterBody3D
 @onready var camera_component: CameraComponent = %CameraComponent
 @onready var active_skill_component: ActiveSkillComponent = %ActiveSkillComponent
 @onready var health_component: HealthComponent = %HealthComponent
+@onready var ai_component: AIComponent = %AIComponent
 
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
@@ -39,7 +40,10 @@ func _ready():
 		input_component.active_dash_fired.connect(
 			movement_component._on_active_dash
 		)
-		
+	else:
+		ai_component.move_dir_change.connect(
+			_on_movement_change
+		)
 		
 func _physics_process(delta: float) -> void:
 	if is_controlled:
@@ -56,6 +60,17 @@ func _physics_process(delta: float) -> void:
 		
 		camera_component.update(
 			delta
+		)
+	elif ai_component.is_AI_active():
+		movement_component.update(
+			delta,
+			ai_component.move_dir,
+			is_attacking
+		)
+
+		rotation_component.update(
+			delta,
+			ai_component.move_dir
 		)
 	
 
@@ -81,11 +96,15 @@ func _on_movement_change(move_dir: Vector3):
 		0.75
 	)
 	
-func on_spawn(pos: Vector3, callable: Callable):
+func _active_ai(active_player: Player):
+	ai_component.set_player_to_follow(active_player)
+	
+func on_spawn(pos: Vector3, active_player: Player, callable: Callable):
 	set_collision_shape_state(true)
 
 	var temp = func():
 		set_collision_shape_state(false)
+		_active_ai(active_player)
 		callable.call()
 
 	movement_component.move_to(pos, temp)

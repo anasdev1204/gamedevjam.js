@@ -37,6 +37,10 @@ volumetric_fog_albedo = Color(0.8530436, 0.9209266, 0.9365873, 1)
 volumetric_fog_length = 66.9
 volumetric_fog_detail_spread = 0.7071066
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_og1vs"]
+vertices = PackedVector3Array(-50.001686, 3.5, -50.000004, -50.001686, 3.5, 48.999996, -49.501686, 3.5, -49.750004, 48.998314, 3.5, -49.750004, -36.251686, 1.75, -40.000004, -34.501686, 1.75, -43.000004, -34.501686, 1.75, -48.750004, -48.751686, 1.75, -48.750004, -48.751686, 1.75, -40.000004, -25.751686, 1.5, -43.250004, -25.001686, 1.5, -45.500004, -26.501686, 1.75, -46.250004, -28.501686, 1.5, -42.000004, -25.751686, 1.75, -48.750004, -29.001686, 1.5, -40.500004, 47.498314, 0.5, 18.249996, 47.498314, 0.25, 20.249996, 48.998314, 0.25, 20.249996, -21.001686, 0.5, 46.499996, -22.001686, 0.5, 48.749996, -21.751686, 0.5, 48.999996, -11.251686, 0.5, 48.999996, -11.251686, 0.5, 45.749996, 44.248314, 0.5, 5.999996, 43.748314, 0.5, 4.999996, 42.248314, 0.5, 4.249996, 34.998314, 0.5, 17.749996, 46.998314, 0.5, 17.749996, 42.248314, 0.75, -9.250004, 43.748314, 0.75, -10.000004, 44.248314, 0.75, -11.250004, 45.498314, 0.75, -16.500004, 36.498314, 0.75, -16.750004, 48.998314, 0.5, 4.499996, 46.748314, 0.5, 3.9999962, 46.498314, 0.5, 5.999996, -32.751686, 1, 13.999996, -32.251686, 1, 15.249996, -30.751686, 1, 16.249996, -28.001686, 0.75, 43.999996, -25.751686, 0.75, 44.249996, -25.251686, 0.75, 42.749996, -27.251686, 0.75, 35.999996, -14.751686, 1.5, -34.250004, -14.001686, 1.5, -32.000004, -13.251686, 1.25, -31.500004, 36.498314, 1, -31.250004, -16.001686, 1.5, -43.750004, -16.001686, 1.5, -41.750004, -19.251686, 1.5, -44.500004, -18.501686, 1.75, -43.000004, -18.751686, 1.5, -47.250004, 38.248314, 1, -31.500004, 37.998314, 1.25, -48.750004, 45.748314, 0.75, -11.250004, -25.501686, 1, 17.999996, -24.001686, 1, 17.749996, -35.251686, 1.25, -0.5000038, -36.251686, 1.25, 7.999996, -33.751686, 1, 13.999996, 42.248314, 0.5, 2.9999962, -15.751686, 1.5, -34.500004, -13.251686, 1.25, -30.500004, -15.751686, 1.25, -29.000004, 43.748314, 0.5, 0.7499962, 43.748314, 0.75, -5.750004, 42.248314, 0.75, -8.000004, -17.001686, 1.25, -29.000004, 36.498314, 0.25, 48.999996, 36.748314, 0.25, 32.749996, 34.998314, 0.25, 32.499996, 8.748314, 0.5, 44.499996, 9.248314, 0.5, 45.249996, -23.501686, 1, 18.249996, -20.751686, 0.5, 43.999996, -10.751686, 0.5, 44.499996, 9.248314, 0.25, 48.999996, -23.501686, 1, 20.499996, -24.501686, 0.75, 23.249996, -25.251686, 0.75, 23.999996, -26.751686, 0.75, 24.249996, -22.751686, 1.75, -48.750004, 48.498314, 1, -31.250004, 48.998314, 1, -30.500004, 48.998314, 1, -48.750004, -24.251686, 2.25, -48.000004, -25.001686, 2.25, -48.000004, -25.251686, 2.25, -47.250004, -25.251686, 2.5, -46.750004, -21.251686, 2.5, -45.500004, -20.001686, 2.5, -45.500004, -19.751686, 2.5, -46.500004, -18.501686, 1.5, -42.000004, -21.001686, 1.5, -44.250004, -25.001686, 1.5, -42.750004, -23.001686, 1.5, -39.250004, -27.751686, 3, -41.000004, -25.501686, 3, -37.000004, -23.751686, 2.75, -38.000004, -26.001686, 3, -42.000004, -22.501686, 1.5, -38.500004, -22.501686, 1.5, -37.500004, -18.251686, 1.5, -33.250004, -23.001686, 1.5, -37.250004, -19.251686, 1.5, -32.000004, -34.001686, 3, -41.750004, -35.001686, 2.75, -40.250004, -34.751686, 3, -39.500004, -31.251686, 3, -37.750004, -30.001686, 2.75, -39.500004, -44.251686, 1.5, -27.250004, -44.001686, 1.5, -26.500004, -43.251686, 1.5, -26.250004, -41.501686, 1.5, -28.250004, -48.751686, 1.5, -25.250004, -47.001686, 1.5, -25.250004, -47.001686, 1.5, -26.000004, -38.251686, 1.5, -33.750004, -37.251686, 1.5, -34.000004, -36.251686, 1.5, -35.250004, -35.751686, 1.5, -38.750004, -40.501686, 1.5, -28.250004, -40.251686, 1.5, -27.500004, -38.501686, 1.5, -26.250004, -36.001686, 1.5, -30.000004, -38.251686, 1.5, -32.250004, -46.001686, 1.5, -27.000004, -34.751686, 1.5, -35.000004, -34.001686, 1.5, -38.000004, -42.001686, 1.5, -24.750004, -42.501686, 1.5, -24.750004, -42.501686, 1.5, -24.000004, -41.001686, 1.5, -23.250004, -48.751686, 1.5, -13.000004, -48.751686, 1.5, -11.250004, -48.001686, 1.5, -12.000004, -47.251686, 1.5, -12.750004, -46.751686, 1.5, -12.000004, -25.251686, 1.5, -35.750004, -45.001686, 1.5, -15.750004, -45.001686, 1.5, -14.750004, -44.751686, 1.25, -9.250004, -18.251686, 1.5, -30.000004, -18.251686, 1.5, -30.750004, -26.001686, 1.5, -35.750004, -44.001686, 1.5, -22.750004, -46.251686, 1.5, -17.250004, -44.751686, 1.25, -8.250004, -46.751686, 1.25, -7.250004, -47.251686, 1.25, -6.500004, -45.751686, 1.25, -2.2500038, -39.751686, 1.25, -2.0000038, -48.751686, 1.25, -0.7500038, -46.001686, 1.25, -0.5000038, -48.001686, 1.25, -6.500004, -48.751686, 1.5, -7.250004, -45.751686, 1.5, -10.000004, -31.251686, 1.5, -36.500004, -33.001686, 1.5, -32.500004, -45.251686, 1.5, -22.750004, -48.751686, 1.5, -16.250004, -47.501686, 1.5, -17.250004, -28.501686, 1.5, -40.000004, -30.251686, 1.5, -36.500004, -38.501686, 1.25, -1.2500038, -35.501686, 1.25, -1.0000038, -33.001686, 1.5, -31.500004, -38.251686, 1.5, -25.000004, -35.001686, 1.5, -30.000004, -39.501686, 1.5, -23.500004, -36.001686, 4, -31.250004, -34.251686, 4, -32.000004, -35.501686, 4, -34.000004, -37.001686, 4, -33.250004, -18.001686, 3.5, -32.000004, -17.251686, 3.75, -31.500004, -17.251686, 4.25, -32.250004, -42.501686, 7, -24.750004, -42.251686, 7, -24.250004, -41.501686, 7.5, -24.500004, -41.501686, 7.25, -25.250004, -42.251686, 7.25, -25.500004, -42.501686, 7, -26.250004, -43.001686, 7, -26.250004, -43.501686, 6.75, -25.250004, -43.751686, 6.5, -24.750004, -44.501686, 6.5, -25.250004, -44.751686, 6.5, -24.000004, -45.001686, 6.5, -26.000004, -45.751686, 6.5, -25.500004, 47.748314, 0.5, 1.2499962, 46.748314, 0.75, -11.000004, 46.748314, 0.75, -8.750004, 47.748314, 0.75, -6.250004, 48.998314, 0.75, -16.500004, -48.251686, 5.5, -15.000004, -48.251686, 5.5, -14.250004, -47.751686, 5.5, -14.000004, -46.251686, 5.5, -15.250004, -47.001686, 5.5, -16.000004, -48.001686, 3, -8.000004, -46.001686, 2.75, -8.750004, -47.251686, 2.75, -10.750004, -48.751686, 2.75, -10.000004, 44.998314, 11.25, 4.999996, 45.748314, 11.5, 4.999996, 45.998314, 11.5, 4.249996, 45.998314, 11.5, -9.250004, 45.498314, 11.5, -10.500004, 44.998314, 11.25, -10.250004, -44.251686, 1.25, 9.499996, -44.251686, 1.25, 7.749996, -47.001686, 1.25, 7.249996, -48.751686, 1.25, 14.999996, -44.501686, 1, 14.999996, -44.251686, 1, 13.999996, -41.251686, 1, 12.999996, -41.001686, 1.25, 9.999996, -39.501686, 1.25, 6.499996, -38.501686, 1.25, 5.749996, -37.751686, 1.25, 4.249996, -37.751686, 1.25, 2.2499962, -38.251686, 1.25, 1.2499962, -40.251686, 1.25, -0.2500038, -42.251686, 1.25, -0.2500038, -43.751686, 1.25, 0.4999962, -45.001686, 1.25, 3.2499962, -44.251686, 1.25, 5.499996, -42.501686, 1.25, 6.749996, -35.501686, 1, 15.249996, -34.251686, 1, 14.999996, -34.251686, 1, 14.249996, -40.251686, 1, 13.749996, -39.751686, 1, 14.999996, -36.501686, 1, 8.499996, -39.501686, 1.25, 8.249996, -39.501686, 1.25, 9.749996, -39.751686, 1, 16.999996, -36.251686, 1, 17.749996, -43.501686, 3.5, 14.749996, -43.251686, 4, 15.749996, -43.001686, 3.75, 15.249996, -41.251686, 3.75, 14.749996, -42.501686, 3.5, 14.249996, -41.751686, 1, 17.499996, -42.251686, 1, 18.249996, -36.251686, 1, 20.999996, -36.751686, 1, 18.999996, -43.251686, 1, 18.249996, -44.251686, 1, 28.499996, -43.001686, 1, 28.499996, -48.751686, 1, 36.999996, -48.001686, 1, 36.999996, -38.751686, 1, 30.499996, -42.751686, 4.25, 16.249996, -42.751686, 4.5, 16.749996, -42.251686, 4.5, 16.749996, -40.751686, 4.5, 15.999996, -41.001686, 4.25, 15.499996, -34.001686, 5, 18.999996, -34.001686, 5, 19.749996, -33.501686, 5, 19.999996, -32.501686, 5, 16.499996, -33.001686, 5, 16.499996, -26.251686, 5, 22.499996, -25.751686, 5, 22.249996, -24.751686, 5, 19.499996, -25.251686, 5.25, 20.874996, -25.501686, 1, 20.499996, -25.501686, 1, 19.749996, -26.501686, 1, 19.249996, -26.751686, 1, 21.749996, -26.001686, 1, 21.749996, -33.751686, 1, 16.749996, -31.001686, 1, 19.999996, -34.501686, 1, 16.749996, -35.001686, 1, 18.249996, -33.001686, 1, 19.249996, -32.251686, 1.25, 19.999996, -34.751686, 1.25, 18.999996, -40.001686, 5.5, 17.749996, -40.251686, 5.25, 16.999996, -40.751686, 5, 16.999996, -42.251686, 5.25, 17.749996, -42.001686, 5.5, 18.499996, 48.248314, 0.25, 32.249996, 48.998314, 0, 48.999996, -32.751686, 1, 21.499996, -34.751686, 1, 20.999996, -35.001686, 1, 21.749996, -35.751686, 1, 21.749996, -35.501686, 0.75, 32.249996, -35.501686, 0.75, 33.499996, -36.251686, 0.75, 34.999996, -35.251686, 0.75, 35.499996, -27.251686, 1, 23.999996, -27.251686, 1, 23.249996, -44.001686, 20, 30.249996, -42.001686, 20.25, 30.499996, -43.001686, 20, 29.749996, -43.751686, 20, 29.749996, -43.501686, 1, 29.999996, -43.501686, 1, 30.499996, -42.751686, 1.25, 30.499996, -45.001686, 1, 36.999996, -44.251686, 0.75, 37.999996, -42.751686, 0.75, 38.749996, -38.251686, 0.75, 35.499996, -38.251686, 0.75, 33.999996, -39.001686, 1, 32.749996, -40.751686, 1, 31.749996, -41.251686, 0.75, 35.499996, -42.751686, 1, 31.749996, -43.751686, 1, 32.249996, -45.251686, 1, 34.249996, -41.501686, 0.75, 38.749996, -37.251686, 20.25, 32.499996, -37.001686, 20.25, 33.499996, -36.501686, 20, 32.999996, -47.001686, 20, 37.249996, -46.251686, 20.25, 37.749996, -46.501686, 20.25, 36.749996, -47.751686, 1, 38.499996, -48.751686, 0.75, 48.999996, -41.751686, 0.75, 48.999996, -41.501686, 0.75, 40.999996, -40.501686, 20.25, 39.999996, -39.751686, 20, 40.499996, -39.751686, 20.25, 39.999996, -26.501686, 0.5, 47.499996, -28.501686, 0.5, 48.999996, -21.751686, 10.5, 44.999996, -23.251686, 10.5, 44.499996, -22.501686, 10.5, 44.999996, -24.501686, 10.5, 44.999996, -23.251686, 10.5, 44.249996, -24.751686, 10.5, 43.999996, -24.501686, 10.5, 46.499996, -25.251686, 10.5, 45.749996, -25.001686, 10.5, 46.999996, -22.501686, 10.5, 47.499996, -23.251686, 10.5, 46.999996, -24.251686, 0.75, 44.499996, -24.751686, 0.75, 45.749996, -24.501686, 0.5, 46.749996, -22.751686, 0.5, 46.999996, -22.251686, 0.5, 45.249996, 2.498314, 19.75, 48.999996, 7.998314, 19.5, 48.999996, 7.998314, 19.5, 45.499996, -10.001686, 19.5, 45.499996, -10.001686, 19.5, 48.999996, -1.0016861, 19.75, 48.999996, -49.751686, 20, 49.999996, 49.498314, 20, 50.249996, -1.0016861, 20, 49.999996, 2.498314, 20, 49.999996, -8.751686, 0.75, 47.249996, -8.751686, 0.75, 48.249996, -2.001686, 0.5, 48.249996, -2.001686, 0.5, 47.249996, -2.001686, 8.5, 47.249996, -2.001686, 8.5, 47.999996, 0.2483139, 8.5, 47.999996, 0.2483139, 8.5, 47.249996, -0.8766861, 8.75, 47.249996, -0.8766861, 8.75, 47.999996, -2.001686, 13, 47.249996, -2.001686, 13, 47.999996, 0.2483139, 13, 47.999996, 0.2483139, 13, 47.249996, -0.8766861, 13.25, 47.249996, -0.8766861, 13.25, 47.999996, -0.2516861, 0.5, 47.249996, -0.2516861, 0.5, 48.249996, 7.248314, 0.5, 48.249996, 7.248314, 0.5, 47.249996, -28.501686, 0.5, 51.249996, -29.251686, 0.5, 56.999996, -29.251686, 0.5, 59.499996, -7.251686, 0.5, 51.249996, 6.998314, 0.25, 51.249996, 6.748314, 0.25, 50.749996, -7.001686, 0.5, 50.749996, 49.248314, 0, 60.249996, 49.248314, 0, 51.249996, -42.001686, 0.5, 59.499996, -41.751686, 0.75, 55.499996, -41.751686, 0.75, 51.249996, -50.001686, 0.75, 51.249996, -50.001686, 0.75, 59.249996)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(3, 2, 0), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 8), PackedInt32Array(6, 8, 7), PackedInt32Array(10, 9, 11), PackedInt32Array(11, 9, 12), PackedInt32Array(11, 12, 13), PackedInt32Array(13, 12, 5), PackedInt32Array(13, 5, 6), PackedInt32Array(12, 14, 5), PackedInt32Array(17, 16, 15), PackedInt32Array(19, 18, 20), PackedInt32Array(20, 18, 21), PackedInt32Array(21, 18, 22), PackedInt32Array(24, 23, 25), PackedInt32Array(25, 23, 27), PackedInt32Array(25, 27, 26), PackedInt32Array(29, 28, 30), PackedInt32Array(30, 28, 31), PackedInt32Array(31, 28, 32), PackedInt32Array(34, 33, 35), PackedInt32Array(35, 33, 15), PackedInt32Array(15, 33, 17), PackedInt32Array(38, 37, 36), PackedInt32Array(40, 39, 41), PackedInt32Array(41, 39, 42), PackedInt32Array(44, 43, 45), PackedInt32Array(45, 43, 48), PackedInt32Array(45, 48, 47), PackedInt32Array(45, 47, 46), PackedInt32Array(50, 49, 47), PackedInt32Array(47, 49, 51), PackedInt32Array(52, 46, 53), PackedInt32Array(53, 46, 47), PackedInt32Array(53, 47, 51), PackedInt32Array(31, 54, 30), PackedInt32Array(55, 38, 56), PackedInt32Array(56, 38, 36), PackedInt32Array(56, 36, 58), PackedInt32Array(56, 58, 57), PackedInt32Array(36, 59, 58), PackedInt32Array(60, 25, 26), PackedInt32Array(43, 61, 48), PackedInt32Array(57, 63, 62), PackedInt32Array(64, 60, 65), PackedInt32Array(65, 60, 66), PackedInt32Array(66, 60, 32), PackedInt32Array(32, 60, 26), PackedInt32Array(57, 67, 63), PackedInt32Array(69, 68, 70), PackedInt32Array(70, 68, 72), PackedInt32Array(70, 72, 71), PackedInt32Array(73, 56, 57), PackedInt32Array(46, 32, 26), PackedInt32Array(75, 22, 74), PackedInt32Array(74, 22, 18), PackedInt32Array(68, 76, 72), PackedInt32Array(41, 42, 74), PackedInt32Array(74, 42, 75), PackedInt32Array(75, 42, 78), PackedInt32Array(75, 78, 77), PackedInt32Array(32, 28, 66), PackedInt32Array(26, 70, 71), PackedInt32Array(42, 80, 79), PackedInt32Array(51, 81, 53), PackedInt32Array(42, 79, 78), PackedInt32Array(62, 45, 46), PackedInt32Array(57, 62, 73), PackedInt32Array(73, 62, 71), PackedInt32Array(71, 62, 26), PackedInt32Array(26, 62, 46), PackedInt32Array(15, 27, 35), PackedInt32Array(35, 27, 23), PackedInt32Array(77, 73, 75), PackedInt32Array(75, 73, 71), PackedInt32Array(84, 83, 82), PackedInt32Array(52, 53, 82), PackedInt32Array(82, 53, 84), PackedInt32Array(87, 86, 85), PackedInt32Array(87, 85, 88), PackedInt32Array(88, 85, 89), PackedInt32Array(89, 85, 90), PackedInt32Array(90, 85, 91), PackedInt32Array(50, 92, 49), PackedInt32Array(49, 92, 93), PackedInt32Array(10, 94, 9), PackedInt32Array(10, 93, 94), PackedInt32Array(94, 93, 95), PackedInt32Array(95, 93, 92), PackedInt32Array(99, 98, 96), PackedInt32Array(96, 98, 97), PackedInt32Array(100, 95, 92), PackedInt32Array(100, 92, 101), PackedInt32Array(101, 92, 48), PackedInt32Array(101, 48, 61), PackedInt32Array(101, 61, 102), PackedInt32Array(101, 102, 103), PackedInt32Array(103, 102, 104), PackedInt32Array(106, 105, 107), PackedInt32Array(107, 105, 108), PackedInt32Array(108, 105, 109), PackedInt32Array(111, 110, 112), PackedInt32Array(112, 110, 113), PackedInt32Array(116, 115, 114), PackedInt32Array(118, 117, 119), PackedInt32Array(119, 117, 120), PackedInt32Array(120, 117, 4), PackedInt32Array(122, 121, 123), PackedInt32Array(123, 121, 124), PackedInt32Array(124, 121, 125), PackedInt32Array(126, 114, 117), PackedInt32Array(117, 114, 4), PackedInt32Array(4, 114, 8), PackedInt32Array(126, 116, 114), PackedInt32Array(127, 119, 128), PackedInt32Array(128, 119, 120), PackedInt32Array(125, 121, 113), PackedInt32Array(110, 126, 113), PackedInt32Array(113, 126, 125), PackedInt32Array(125, 126, 117), PackedInt32Array(130, 129, 131), PackedInt32Array(131, 129, 132), PackedInt32Array(135, 134, 133), PackedInt32Array(137, 135, 136), PackedInt32Array(136, 135, 133), PackedInt32Array(104, 138, 103), PackedInt32Array(141, 140, 139), PackedInt32Array(143, 142, 104), PackedInt32Array(104, 142, 138), PackedInt32Array(138, 142, 144), PackedInt32Array(131, 132, 145), PackedInt32Array(145, 132, 146), PackedInt32Array(146, 132, 139), PackedInt32Array(148, 147, 149), PackedInt32Array(149, 147, 150), PackedInt32Array(150, 147, 151), PackedInt32Array(140, 137, 136), PackedInt32Array(153, 152, 150), PackedInt32Array(150, 152, 154), PackedInt32Array(154, 152, 155), PackedInt32Array(156, 137, 141), PackedInt32Array(141, 137, 140), PackedInt32Array(128, 157, 127), PackedInt32Array(127, 157, 158), PackedInt32Array(115, 159, 114), PackedInt32Array(114, 159, 161), PackedInt32Array(114, 161, 160), PackedInt32Array(163, 162, 144), PackedInt32Array(165, 164, 151), PackedInt32Array(166, 144, 167), PackedInt32Array(167, 144, 67), PackedInt32Array(167, 67, 165), PackedInt32Array(165, 67, 57), PackedInt32Array(157, 163, 158), PackedInt32Array(158, 163, 166), PackedInt32Array(166, 163, 144), PackedInt32Array(123, 124, 168), PackedInt32Array(169, 167, 139), PackedInt32Array(139, 167, 141), PackedInt32Array(141, 167, 151), PackedInt32Array(151, 167, 165), PackedInt32Array(144, 142, 67), PackedInt32Array(139, 132, 169), PackedInt32Array(151, 147, 141), PackedInt32Array(150, 154, 149), PackedInt32Array(123, 168, 167), PackedInt32Array(167, 168, 166), PackedInt32Array(145, 146, 159), PackedInt32Array(159, 146, 161), PackedInt32Array(173, 172, 170), PackedInt32Array(170, 172, 171), PackedInt32Array(176, 175, 174), PackedInt32Array(178, 177, 179), PackedInt32Array(179, 177, 180), PackedInt32Array(180, 177, 181), PackedInt32Array(182, 181, 183), PackedInt32Array(183, 181, 177), PackedInt32Array(183, 177, 184), PackedInt32Array(177, 185, 184), PackedInt32Array(184, 185, 186), PackedInt32Array(186, 185, 187), PackedInt32Array(188, 186, 189), PackedInt32Array(189, 186, 187), PackedInt32Array(190, 33, 34), PackedInt32Array(192, 191, 193), PackedInt32Array(193, 191, 194), PackedInt32Array(54, 31, 191), PackedInt32Array(191, 31, 194), PackedInt32Array(190, 193, 33), PackedInt32Array(33, 193, 194), PackedInt32Array(196, 195, 197), PackedInt32Array(197, 195, 199), PackedInt32Array(197, 199, 198), PackedInt32Array(203, 202, 200), PackedInt32Array(200, 202, 201), PackedInt32Array(205, 204, 206), PackedInt32Array(206, 204, 207), PackedInt32Array(207, 204, 209), PackedInt32Array(207, 209, 208), PackedInt32Array(212, 211, 210), PackedInt32Array(214, 213, 215), PackedInt32Array(215, 213, 210), PackedInt32Array(210, 213, 212), PackedInt32Array(217, 216, 210), PackedInt32Array(210, 216, 215), PackedInt32Array(153, 212, 152), PackedInt32Array(152, 212, 213), PackedInt32Array(220, 219, 218), PackedInt32Array(221, 220, 222), PackedInt32Array(222, 220, 223), PackedInt32Array(225, 224, 223), PackedInt32Array(228, 227, 226), PackedInt32Array(218, 228, 220), PackedInt32Array(220, 228, 226), PackedInt32Array(220, 226, 225), PackedInt32Array(220, 225, 223), PackedInt32Array(230, 229, 231), PackedInt32Array(231, 229, 233), PackedInt32Array(231, 233, 232), PackedInt32Array(236, 235, 234), PackedInt32Array(216, 217, 236), PackedInt32Array(216, 236, 232), PackedInt32Array(232, 236, 234), PackedInt32Array(232, 234, 231), PackedInt32Array(231, 234, 59), PackedInt32Array(237, 233, 238), PackedInt32Array(238, 233, 229), PackedInt32Array(234, 58, 59), PackedInt32Array(239, 241, 240), PackedInt32Array(239, 243, 241), PackedInt32Array(241, 243, 242), PackedInt32Array(244, 237, 245), PackedInt32Array(245, 237, 247), PackedInt32Array(245, 247, 246), PackedInt32Array(237, 238, 247), PackedInt32Array(245, 246, 248), PackedInt32Array(248, 246, 250), PackedInt32Array(248, 250, 249), PackedInt32Array(214, 248, 213), PackedInt32Array(213, 248, 249), PackedInt32Array(213, 249, 252), PackedInt32Array(213, 252, 251), PackedInt32Array(246, 253, 250), PackedInt32Array(255, 254, 256), PackedInt32Array(256, 254, 258), PackedInt32Array(256, 258, 257), PackedInt32Array(261, 260, 259), PackedInt32Array(259, 263, 262), PackedInt32Array(265, 264, 267), PackedInt32Array(267, 264, 266), PackedInt32Array(266, 264, 261), PackedInt32Array(266, 261, 259), PackedInt32Array(266, 259, 262), PackedInt32Array(268, 270, 269), PackedInt32Array(272, 271, 268), PackedInt32Array(268, 271, 270), PackedInt32Array(270, 271, 274), PackedInt32Array(270, 274, 273), PackedInt32Array(275, 273, 276), PackedInt32Array(276, 273, 277), PackedInt32Array(277, 273, 274), PackedInt32Array(274, 278, 277), PackedInt32Array(277, 279, 276), PackedInt32Array(281, 280, 282), PackedInt32Array(282, 280, 283), PackedInt32Array(283, 280, 284), PackedInt32Array(285, 16, 17), PackedInt32Array(285, 17, 286), PackedInt32Array(69, 285, 68), PackedInt32Array(68, 285, 286), PackedInt32Array(289, 288, 287), PackedInt32Array(253, 246, 290), PackedInt32Array(253, 290, 289), PackedInt32Array(289, 287, 253), PackedInt32Array(253, 287, 291), PackedInt32Array(294, 293, 292), PackedInt32Array(294, 292, 291), PackedInt32Array(287, 296, 295), PackedInt32Array(295, 80, 287), PackedInt32Array(287, 80, 291), PackedInt32Array(291, 80, 294), PackedInt32Array(294, 80, 42), PackedInt32Array(300, 299, 297), PackedInt32Array(297, 299, 298), PackedInt32Array(303, 302, 301), PackedInt32Array(306, 305, 304), PackedInt32Array(308, 307, 309), PackedInt32Array(309, 307, 310), PackedInt32Array(310, 307, 311), PackedInt32Array(313, 312, 310), PackedInt32Array(314, 313, 304), PackedInt32Array(304, 313, 306), PackedInt32Array(306, 313, 311), PackedInt32Array(311, 313, 310), PackedInt32Array(311, 315, 306), PackedInt32Array(318, 317, 316), PackedInt32Array(321, 320, 319), PackedInt32Array(252, 322, 251), PackedInt32Array(251, 322, 323), PackedInt32Array(324, 323, 325), PackedInt32Array(325, 323, 322), PackedInt32Array(328, 327, 326), PackedInt32Array(40, 329, 39), PackedInt32Array(39, 329, 330), PackedInt32Array(19, 20, 329), PackedInt32Array(329, 20, 330), PackedInt32Array(333, 332, 331), PackedInt32Array(336, 335, 334), PackedInt32Array(339, 338, 337), PackedInt32Array(337, 338, 334), PackedInt32Array(334, 338, 336), PackedInt32Array(333, 331, 341), PackedInt32Array(341, 331, 340), PackedInt32Array(337, 341, 339), PackedInt32Array(339, 341, 340), PackedInt32Array(343, 342, 344), PackedInt32Array(344, 342, 345), PackedInt32Array(345, 342, 346), PackedInt32Array(349, 348, 347), PackedInt32Array(351, 350, 352), PackedInt32Array(352, 350, 349), PackedInt32Array(353, 355, 354), PackedInt32Array(352, 349, 347), PackedInt32Array(355, 352, 356), PackedInt32Array(356, 352, 347), PackedInt32Array(355, 356, 354), PackedInt32Array(360, 359, 357), PackedInt32Array(357, 359, 358), PackedInt32Array(364, 363, 365), PackedInt32Array(365, 363, 366), PackedInt32Array(365, 366, 362), PackedInt32Array(365, 362, 361), PackedInt32Array(370, 369, 371), PackedInt32Array(371, 369, 372), PackedInt32Array(371, 372, 368), PackedInt32Array(371, 368, 367), PackedInt32Array(376, 375, 373), PackedInt32Array(373, 375, 374), PackedInt32Array(378, 377, 379), PackedInt32Array(379, 377, 380), PackedInt32Array(382, 381, 383), PackedInt32Array(383, 381, 380), PackedInt32Array(385, 384, 381), PackedInt32Array(381, 384, 379), PackedInt32Array(379, 380, 381), PackedInt32Array(387, 386, 388), PackedInt32Array(388, 386, 390), PackedInt32Array(388, 390, 389)]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_85g3d"]
 size = Vector3(100, 1, 100)
 
@@ -62,322 +66,718 @@ script = ExtResource("1_og1vs")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=283175406]
 environment = SubResource("Environment_0wfyh")
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=733947204]
+transform = Transform3D(-0.27423722, -0.713729, -0.64450365, -0.54040915, -0.43999007, 0.7171937, -0.7954571, 0.54497683, -0.26504403, 0, 20, 0)
+light_color = Color(0.22799999, 0.31349996, 0.57, 1)
+
 [node name="Env" type="Node3D" parent="." unique_id=1329344115]
 
-[node name="floor" type="Area3D" parent="Env" unique_id=324086950]
+[node name="Map" type="NavigationRegion3D" parent="." unique_id=1194103766]
+navigation_mesh = SubResource("NavigationMesh_og1vs")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Env/floor" unique_id=1228591098]
+[node name="floor" type="Area3D" parent="Map" unique_id=324086950]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/floor" unique_id=1228591098]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5161743, 0, 0)
 shape = SubResource("BoxShape3D_85g3d")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Env/floor" unique_id=216736668]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/floor" unique_id=216736668]
 transform = Transform3D(0.9999364, 0.007524781, -0.00839576, -0.0076142894, 0.999914, -0.010678317, 0.00831467, 0.01074158, 0.99990773, -0.039340973, 1.9073486e-06, 5.1042843)
 mesh = SubResource("BoxMesh_choun")
 surface_material_override/0 = ExtResource("7_85g3d")
 
-[node name="wall_left" type="Node3D" parent="Env" unique_id=402288944]
+[node name="wall_left" type="Node3D" parent="Map" unique_id=402288944]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 10, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Env/wall_left" unique_id=494591863]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/wall_left" unique_id=494591863]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.42604065, 0)
 mesh = SubResource("BoxMesh_ya4ey")
 
-[node name="wall_right" type="Node3D" parent="Env" unique_id=1521696589]
+[node name="wall_right" type="Node3D" parent="Map" unique_id=1521696589]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, -7, -0.5)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Env/wall_right" unique_id=390377885]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/wall_right" unique_id=390377885]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.019945145, 0)
 mesh = SubResource("BoxMesh_ya4ey")
 
-[node name="wall_forward" type="Node3D" parent="Env" unique_id=1050897014]
+[node name="wall_forward" type="Node3D" parent="Map" unique_id=1050897014]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.4, 9.614342, 50)
 
-[node name="wall" parent="Env/wall_forward" unique_id=33382425 instance=ExtResource("21_yc10j")]
+[node name="wall" parent="Map/wall_forward" unique_id=33382425 instance=ExtResource("21_yc10j")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.06111145, -10.401544, 0.3120674)
 
-[node name="wall_back" type="Node3D" parent="Env" unique_id=1967937392]
+[node name="wall_back" type="Node3D" parent="Map" unique_id=1967937392]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.4, -7, -50)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Env/wall_back" unique_id=439442121]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/wall_back" unique_id=439442121]
 mesh = SubResource("BoxMesh_ya4ey")
 surface_material_override/0 = ExtResource("8_choun")
 
-[node name="pipes" type="Node3D" parent="Env" unique_id=1987013284]
+[node name="shelves" type="Node3D" parent="Map" unique_id=681177296]
 
-[node name="1" type="Node" parent="Env/pipes" unique_id=424982482]
+[node name="shelf1" parent="Map/shelves" unique_id=572766256 instance=ExtResource("11_trceg")]
+transform = Transform3D(-2.2924938e-08, -0.52446145, -0.8514342, 1, -4.371139e-08, 0, -3.721737e-08, -0.8514342, 0.52446145, -23.392586, 1.3354864, -37.365467)
 
-[node name="pipe1" parent="Env/pipes/1" unique_id=1497072608 instance=ExtResource("9_eb6dy")]
-transform = Transform3D(0.74632436, -0.17553055, -0.6420194, 0.055922262, 0.97772425, -0.20230606, 0.6632288, 0.115082785, 0.7395156, -8.072641, 0.9144285, 9.48214)
+[node name="shelf3" parent="Map/shelves" unique_id=1019530217 instance=ExtResource("11_trceg")]
+transform = Transform3D(-0.6064433, -0.360896, -0.70850575, -0.33658257, 0.9238061, -0.18246807, 0.72037405, 0.12781414, -0.6817074, -39.54409, 1.4322548, -25.510294)
 
-[node name="pipe2" parent="Env/pipes/1" unique_id=1852990072 instance=ExtResource("9_eb6dy")]
-transform = Transform3D(-0.9969149, 0, 1.7338284, 0, 2, 0, -1.7338284, 0, -0.9969149, -13.034103, -0.0144274235, 5.9257536)
+[node name="shelf4" parent="Map/shelves" unique_id=28414033 instance=ExtResource("11_trceg")]
+transform = Transform3D(0.7906575, 0, 0.6122587, 0, 1, 0, -0.6122587, 0, 0.7906575, -45.557217, 0.23109388, -25.510294)
 
-[node name="pipe3" parent="Env/pipes/1" unique_id=190328433 instance=ExtResource("10_trceg")]
-transform = Transform3D(-0.63592684, 0.68933856, 0.34700054, 0.58574003, 0.1383529, 0.79860324, 0.50249946, 0.7111054, -0.49175566, -14.114909, 2.024941, 8.381576)
+[node name="shelf6" parent="Map/shelves" unique_id=481082242 instance=ExtResource("11_trceg")]
+transform = Transform3D(-0.6312445, 0, 0.7755839, 0, 1, 0, -0.7755839, 0, -0.6312445, -47.857464, -0.73634434, -14.2390995)
 
-[node name="2" type="Node" parent="Env/pipes" unique_id=2129542733]
+[node name="shelf5" parent="Map/shelves" unique_id=1562875209 instance=ExtResource("11_trceg")]
+transform = Transform3D(-0.18296112, 0.33565962, 0.92404443, 0.8842621, 0.46695903, 0.0054611117, -0.42965794, 0.8180966, -0.38224646, -43.406338, 1.4322548, 14.471864)
 
-[node name="pipe4" parent="Env/pipes/2" unique_id=746850536 instance=ExtResource("9_eb6dy")]
-transform = Transform3D(0.8486155, 0.059260063, 0.5256806, -0.19278988, 0.9600115, 0.20300187, -0.49262953, -0.2736164, 0.8261054, -39.863953, 0.5335231, 23.8326)
+[node name="shelf2" parent="Map/shelves" unique_id=1128290935 instance=ExtResource("11_trceg")]
+transform = Transform3D(-3.9111676e-08, -0.8947708, -0.44652593, 1, -4.3711392e-08, 3.3757122e-15, -1.9518268e-08, -0.44652593, 0.8947708, -29.36575, 1.3354864, -39.12565)
 
-[node name="pipe5" parent="Env/pipes/2" unique_id=1133781813 instance=ExtResource("9_eb6dy")]
-transform = Transform3D(-0.75036275, 0, 1.2988286, 0, 1.5, 0, -1.2988286, 0, -0.75036275, -45.137146, -0.0144274235, 18.555424)
+[node name="broken_shelf1" parent="Map/shelves" unique_id=940664526 instance=ExtResource("12_a8y0u")]
+transform = Transform3D(-3.5378942e-08, -0.8093759, 0.58729094, 1, -4.371139e-08, 0, 2.5671303e-08, 0.58729094, 0.8093759, -35.18103, 2.0775814, -33.602203)
 
-[node name="pipe6" parent="Env/pipes/2" unique_id=877846454 instance=ExtResource("10_trceg")]
-transform = Transform3D(-0.63489044, 0.6908016, 0.34598696, 0.75135696, 0.44776562, 0.4847355, 0.17993498, 0.567714, -0.8033209, -43.868996, 2.024941, 19.37262)
+[node name="broken_shelf3" parent="Map/shelves" unique_id=143681976 instance=ExtResource("12_a8y0u")]
+transform = Transform3D(-3.5378942e-08, -0.8093759, 0.58729094, 1, -4.371139e-08, 0, 2.5671303e-08, 0.58729094, 0.8093759, -46.988808, 0.9553318, -10.274223)
 
-[node name="pipe7" parent="Env/pipes/2" unique_id=1808894410 instance=ExtResource("10_trceg")]
-transform = Transform3D(-1.2697812, 1.3816034, 0.6919741, 1.5095657, 1.300404, 0.17367071, -0.329951, 0.6325521, -1.8684248, -42.237564, 3.5654707, 22.899536)
+[node name="broken_shelf2" parent="Map/shelves" unique_id=717514150 instance=ExtResource("12_a8y0u")]
+transform = Transform3D(0.63966715, -0.6221285, 0.45142227, 0.66519564, 0.74232256, 0.080448866, -0.38515058, 0.24882361, 0.8886764, -16.065496, 1.3421211, -32.141975)
 
-[node name="3" type="Node" parent="Env/pipes" unique_id=417623886]
+[node name="incubators" type="Node3D" parent="Map" unique_id=490954517]
 
-[node name="pipe4" parent="Env/pipes/3" unique_id=2113570264 instance=ExtResource("9_eb6dy")]
-transform = Transform3D(0.8486155, 0.059260063, 0.5256806, -0.19278988, 0.9600115, 0.20300187, -0.49262953, -0.2736164, 0.8261054, 29.30698, -0.35417604, 38.60729)
+[node name="incubator" parent="Map/incubators" unique_id=913447650 instance=ExtResource("13_jkv2x")]
+transform = Transform3D(5.510968, 0, -2.3725996, 0, 6, 0, 2.3725996, 0, 5.510968, -41.469646, 7.061741, 34.884426)
 
-[node name="pipe5" parent="Env/pipes/3" unique_id=1269147086 instance=ExtResource("9_eb6dy")]
-transform = Transform3D(-2.1735497, -0.7165806, 1.9396389, -1.6051656, 2.3587036, -0.9273407, -1.3035061, -1.709687, -2.092329, 22.118414, 1.3663628, 40.48723)
-disable_collisions = false
+[node name="incubator2" parent="Map/incubators" unique_id=1719178698 instance=ExtResource("13_jkv2x")]
+transform = Transform3D(-0.7420244, 0, -5.9539394, 0, 5.9999995, 0, 5.9539394, 0, -0.7420244, -40.84296, 7.735716, 3.427248)
 
-[node name="pipe6" parent="Env/pipes/3" unique_id=689685435 instance=ExtResource("10_trceg")]
-transform = Transform3D(-0.63489044, 0.6908016, 0.34598696, 0.75135696, 0.44776562, 0.4847355, 0.17993498, 0.567714, -0.8033209, 24.170593, 2.024941, 41.95104)
+[node name="incubator3" parent="Map/incubators" unique_id=2074367647 instance=ExtResource("13_jkv2x")]
+transform = Transform3D(0.98811656, 2.8318932, -0.06332217, -0.12047418, -0.024988314, -2.9974766, -2.830037, 0.989828, 0.10549284, -30.926945, 2.4106226, 18.969992)
 
-[node name="pipe7" parent="Env/pipes/3" unique_id=1494726825 instance=ExtResource("10_trceg")]
-transform = Transform3D(-1.2697811, 1.3816032, 0.6919741, 0.87824607, 1.3822026, -1.1481287, -1.2713536, -0.42507434, -1.4842415, 27.593212, 2.6805034, 39.328663)
-disable_collisions = false
+[node name="pc" type="Node3D" parent="Map" unique_id=1384677335]
 
-[node name="4" type="Node" parent="Env/pipes" unique_id=100525001]
+[node name="pc" parent="Map/pc" unique_id=1065256319 instance=ExtResource("13_a8y0u")]
+transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, 48.50231, 7.6293945e-06, -2.8310204)
 
-[node name="pipe4" parent="Env/pipes/4" unique_id=1365352153 instance=ExtResource("9_eb6dy")]
-transform = Transform3D(0.8486155, 0.059260063, 0.5256806, 0.035392866, 0.9851194, -0.16818799, -0.5278249, 0.16133225, 0.83389014, 20.407602, 0.7605376, -9.434689)
+[node name="pickup" type="Node3D" parent="Map" unique_id=828927156]
 
-[node name="pipe5" parent="Env/pipes/4" unique_id=1127562838 instance=ExtResource("9_eb6dy")]
-transform = Transform3D(-0.75036275, 0, 1.2988286, 0, 1.5, 0, -1.2988286, 0, -0.75036275, 18.505932, -0.0144274235, -13.369724)
+[node name="pickup" parent="Map/pickup" unique_id=366531057 instance=ExtResource("14_jkv2x")]
+transform = Transform3D(-3.3607552, 0, 0.97740734, 0, 3.5, 0, -0.97740734, 0, -3.3607552, -23.688377, -1.1542335, 47.002003)
 
-[node name="pipe6" parent="Env/pipes/4" unique_id=1117360788 instance=ExtResource("10_trceg")]
-transform = Transform3D(-0.6348905, 0.6908017, 0.34598702, 0.73601365, 0.4046084, 0.5427485, 0.23494233, 0.59923726, -0.7653217, 19.774082, 2.024941, -12.552528)
+[node name="pickup2" parent="Map/pickup" unique_id=913766855 instance=ExtResource("14_jkv2x")]
+transform = Transform3D(-0.55166703, 1.922405, -0.0046702954, 0.15324718, 0.04881998, 1.9935224, 1.916293, 0.5495226, -0.16076775, -25.770222, 0.18305969, -47.65063)
 
-[node name="pipe7" parent="Env/pipes/4" unique_id=1496630014 instance=ExtResource("10_trceg")]
-transform = Transform3D(-0.6594506, 0.8112123, -0.34213987, 0.87423146, 0.6539156, -0.13458863, 0.10413699, -0.35260352, -1.0367385, 18.26333, 1.8346124, -9.025612)
+[node name="lifts" type="Node3D" parent="Map" unique_id=353533169]
 
-[node name="5" type="Node" parent="Env/pipes" unique_id=757565326]
+[node name="lift1" parent="Map/lifts" unique_id=1075321402 instance=ExtResource("16_dp3eg")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, 41.14175, 0, 38.2027)
 
-[node name="pipe4" parent="Env/pipes/5" unique_id=1453756686 instance=ExtResource("9_eb6dy")]
-transform = Transform3D(0.8486155, 0.059260063, 0.5256806, -0.19278988, 0.9600115, 0.20300187, -0.49262953, -0.2736164, 0.8261054, 38.256027, 0.5335231, -38.178516)
+[node name="lift2" parent="Map/lifts" unique_id=42528732 instance=ExtResource("16_dp3eg")]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, 42.563763, 0, -10.91236)
 
-[node name="pipe5" parent="Env/pipes/5" unique_id=1339516020 instance=ExtResource("9_eb6dy")]
-transform = Transform3D(-0.75036275, 0, 1.2988286, 0, 1.5, 0, -1.2988286, 0, -0.75036275, 32.982834, -0.0144274235, -43.455692)
+[node name="door" type="Node3D" parent="Map" unique_id=1273159355]
 
-[node name="pipe6" parent="Env/pipes/5" unique_id=1765902261 instance=ExtResource("10_trceg")]
-transform = Transform3D(-0.63489044, 0.6908016, 0.34598696, 0.75135696, 0.44776562, 0.4847355, 0.17993498, 0.567714, -0.8033209, 34.250984, 2.024941, -42.638496)
+[node name="door" parent="Map/door" unique_id=1333249276 instance=ExtResource("17_0ld40")]
+transform = Transform3D(-6, 0, -7.54979e-07, 0, 5, 0, 9.0597484e-07, 0, -5, -1.0200081, 0, 47.745903)
 
-[node name="pipe7" parent="Env/pipes/5" unique_id=1870485852 instance=ExtResource("10_trceg")]
-transform = Transform3D(-1.2697812, 1.3816034, 0.6919741, 1.5095657, 1.300404, 0.17367071, -0.329951, 0.6325521, -1.8684248, 35.882416, 3.5654707, -39.11158)
-disable_collisions = false
+[node name="conveyor" type="Node3D" parent="Map" unique_id=410727621]
 
-[node name="6" type="Node" parent="Env/pipes" unique_id=75178538]
+[node name="conveyor_belt" parent="Map/conveyor" unique_id=1695101288 instance=ExtResource("18_gqmmt")]
+transform = Transform3D(2.9984832, 0, -0.09538349, 0, 3.5, 0, 0.09538349, 0, 2.9984832, -32.925613, 0, 47.320206)
 
-[node name="pipe5" parent="Env/pipes/6" unique_id=2055471806 instance=ExtResource("9_eb6dy")]
-transform = Transform3D(-0.75036275, 0, 1.2988286, 0, 1.5, 0, -1.2988286, 0, -0.75036275, -45.137146, -0.0144274235, -39.27296)
+[node name="Map(nomesh)" type="Node3D" parent="." unique_id=1611870105]
 
-[node name="pipe6" parent="Env/pipes/6" unique_id=687516243 instance=ExtResource("10_trceg")]
-transform = Transform3D(-0.63489044, 0.6908016, 0.34598696, 0.75135696, 0.44776562, 0.4847355, 0.17993498, 0.567714, -0.8033209, -43.868996, 2.024941, -38.455765)
+[node name="debris" type="Node3D" parent="Map(nomesh)" unique_id=1432548216]
 
-[node name="scatter" type="Node" parent="Env/pipes" unique_id=121331767]
+[node name="1" type="Node" parent="Map(nomesh)/debris" unique_id=1106667482]
 
-[node name="pipe4" parent="Env/pipes/scatter" unique_id=995252921 instance=ExtResource("9_eb6dy")]
-transform = Transform3D(0.303357, -0.13843517, 0.9427674, -0.19278991, 0.9600116, 0.2030019, -0.9331702, -0.24333799, 0.26453725, 15.325199, 0.5335231, 16.2753)
-
-[node name="pipe7" parent="Env/pipes/scatter" unique_id=29431350 instance=ExtResource("10_trceg")]
-transform = Transform3D(-1.269781, 1.3816031, 0.6919739, 1.4914763, 1.3299893, 0.081406176, -0.40392396, 0.56771535, -1.8747121, -31.483059, 0.9193058, -2.8172874)
-
-[node name="debris" type="Node3D" parent="Env" unique_id=1432548216]
-
-[node name="1" type="Node" parent="Env/debris" unique_id=1106667482]
-
-[node name="debris" parent="Env/debris/1" unique_id=1858620138 instance=ExtResource("11_a8y0u")]
+[node name="debris" parent="Map(nomesh)/debris/1" unique_id=1858620138 instance=ExtResource("11_a8y0u")]
 transform = Transform3D(0.2880291, 0, 0.95762163, 0, 1, 0, -0.95762163, 0, 0.2880291, -11.8996105, 1.2779851, 7.5236845)
 disable_collisions = false
 
-[node name="debris2" parent="Env/debris/1" unique_id=1916229246 instance=ExtResource("12_jkv2x")]
+[node name="debris2" parent="Map(nomesh)/debris/1" unique_id=1916229246 instance=ExtResource("12_jkv2x")]
 transform = Transform3D(-0.55397296, 0, 0.8325346, 0, 1, 0, -0.8325346, 0, -0.55397296, -12.832735, 1.214144, 1.9133158)
 
-[node name="debris4" parent="Env/debris/1" unique_id=1307834622 instance=ExtResource("12_jkv2x")]
+[node name="debris4" parent="Map(nomesh)/debris/1" unique_id=1307834622 instance=ExtResource("12_jkv2x")]
 transform = Transform3D(-0.39373654, 0, -0.3081745, 0, 0.5, 0, 0.3081745, 0, -0.39373654, -15.579244, 1.214144, 11.180261)
 
-[node name="debris3" parent="Env/debris/1" unique_id=707277088 instance=ExtResource("13_trceg")]
+[node name="debris3" parent="Map(nomesh)/debris/1" unique_id=707277088 instance=ExtResource("13_trceg")]
 transform = Transform3D(0.7920273, -0.24435452, -0.5594496, 0.16376008, 0.96785384, -0.19089663, 0.588112, 0.05957988, 0.80658233, -18.272238, 2.3723907, 10.87221)
 disable_collisions = false
 
-[node name="2" type="Node" parent="Env/debris" unique_id=1688347825]
+[node name="2" type="Node" parent="Map(nomesh)/debris" unique_id=1688347825]
 
-[node name="debris5" parent="Env/debris/2" unique_id=1714746646 instance=ExtResource("11_a8y0u")]
+[node name="debris5" parent="Map(nomesh)/debris/2" unique_id=1714746646 instance=ExtResource("11_a8y0u")]
 transform = Transform3D(0.2880291, 0, 0.95762163, 0, 1, 0, -0.95762163, 0, 0.2880291, -36.694115, 1.2779851, 21.028969)
 disable_collisions = false
 
-[node name="debris6" parent="Env/debris/2" unique_id=1579856462 instance=ExtResource("12_jkv2x")]
+[node name="debris6" parent="Map(nomesh)/debris/2" unique_id=1579856462 instance=ExtResource("12_jkv2x")]
 transform = Transform3D(-0.5539729, 0, 0.8325346, 0, 1, 0, -0.8325346, 0, -0.5539729, -37.627243, 1.214144, 15.418599)
 
-[node name="debris7" parent="Env/debris/2" unique_id=532740512 instance=ExtResource("12_jkv2x")]
+[node name="debris7" parent="Map(nomesh)/debris/2" unique_id=532740512 instance=ExtResource("12_jkv2x")]
 transform = Transform3D(-0.39373654, 0, -0.3081745, 0, 0.5, 0, 0.3081745, 0, -0.39373654, -40.37375, 1.214144, 24.685543)
 
-[node name="debris8" parent="Env/debris/2" unique_id=584518461 instance=ExtResource("13_trceg")]
+[node name="debris8" parent="Map(nomesh)/debris/2" unique_id=584518461 instance=ExtResource("13_trceg")]
 transform = Transform3D(0.7920273, -0.24435452, -0.5594496, 0.16376008, 0.96785384, -0.19089663, 0.588112, 0.05957988, 0.80658233, -43.066742, 2.3723907, 24.377493)
 
-[node name="3" type="Node" parent="Env/debris" unique_id=1698126844]
+[node name="3" type="Node" parent="Map(nomesh)/debris" unique_id=1698126844]
 
-[node name="debris5" parent="Env/debris/3" unique_id=1749121863 instance=ExtResource("11_a8y0u")]
+[node name="debris5" parent="Map(nomesh)/debris/3" unique_id=1749121863 instance=ExtResource("11_a8y0u")]
 transform = Transform3D(-0.03252773, 0, 0.24787486, 0, 0.25, 0, -0.24787486, 0, -0.03252773, 26.346708, -0.19633555, 43.234077)
 
-[node name="debris9" parent="Env/debris/3" unique_id=881836636 instance=ExtResource("11_a8y0u")]
+[node name="debris9" parent="Map(nomesh)/debris/3" unique_id=881836636 instance=ExtResource("11_a8y0u")]
 transform = Transform3D(-0.22498544, -0.016152654, -0.10779928, 0.0012828266, 0.24683042, -0.039662436, 0.10899515, -0.036247004, -0.2220501, 25.780916, 0.05961013, 42.019627)
 
-[node name="debris6" parent="Env/debris/3" unique_id=205407774 instance=ExtResource("12_jkv2x")]
+[node name="debris6" parent="Map(nomesh)/debris/3" unique_id=205407774 instance=ExtResource("12_jkv2x")]
 transform = Transform3D(-0.76057595, 0, 0.64924884, 0, 1, 0, -0.64924884, 0, -0.76057595, 27.358448, -0.33110595, 32.98206)
 
-[node name="debris10" parent="Env/debris/3" unique_id=763883734 instance=ExtResource("12_jkv2x")]
+[node name="debris10" parent="Map(nomesh)/debris/3" unique_id=763883734 instance=ExtResource("12_jkv2x")]
 transform = Transform3D(-0.76057595, 0, 0.64924884, 0, 1, 0, -0.64924884, 0, -0.76057595, 27.358448, 0.32644486, 40.23376)
 
-[node name="debris7" parent="Env/debris/3" unique_id=529690596 instance=ExtResource("12_jkv2x")]
+[node name="debris7" parent="Map(nomesh)/debris/3" unique_id=529690596 instance=ExtResource("12_jkv2x")]
 transform = Transform3D(-0.39373654, 0, -0.3081745, 0, 0.5, 0, 0.3081745, 0, -0.39373654, 22.667074, 0.32644486, 42.249004)
 
-[node name="debris8" parent="Env/debris/3" unique_id=758547085 instance=ExtResource("13_trceg")]
+[node name="debris8" parent="Map(nomesh)/debris/3" unique_id=758547085 instance=ExtResource("13_trceg")]
 transform = Transform3D(0.08636737, -0.20683205, -0.97455716, 0.1637601, 0.96785384, -0.19089662, 0.9827124, -0.1431062, 0.11746201, 19.974081, 0.8271408, 41.940956)
 disable_collisions = false
 
-[node name="4" type="Node" parent="Env/debris" unique_id=318078937]
+[node name="4" type="Node" parent="Map(nomesh)/debris" unique_id=318078937]
 
-[node name="debris5" parent="Env/debris/4" unique_id=1140929420 instance=ExtResource("11_a8y0u")]
+[node name="debris5" parent="Map(nomesh)/debris/4" unique_id=1140929420 instance=ExtResource("11_a8y0u")]
 transform = Transform3D(0.2880291, 0, 0.95762163, 0, 1, 0, -0.95762163, 0, 0.2880291, 23.975039, 1.2779851, -12.655853)
 disable_collisions = false
 
-[node name="debris10" parent="Env/debris/4" unique_id=11818223 instance=ExtResource("11_a8y0u")]
+[node name="debris10" parent="Map(nomesh)/debris/4" unique_id=11818223 instance=ExtResource("11_a8y0u")]
 transform = Transform3D(0.14401455, 0, 0.47881082, 0, 0.5, 0, -0.47881082, 0, 0.14401455, 20.606764, 1.2779851, -7.285549)
 
-[node name="debris6" parent="Env/debris/4" unique_id=741444680 instance=ExtResource("12_jkv2x")]
+[node name="debris6" parent="Map(nomesh)/debris/4" unique_id=741444680 instance=ExtResource("12_jkv2x")]
 transform = Transform3D(-0.5539729, 0, 0.8325346, 0, 1, 0, -0.8325346, 0, -0.5539729, 23.04191, 1.214144, -18.266224)
 
-[node name="debris7" parent="Env/debris/4" unique_id=1137524411 instance=ExtResource("12_jkv2x")]
+[node name="debris7" parent="Map(nomesh)/debris/4" unique_id=1137524411 instance=ExtResource("12_jkv2x")]
 transform = Transform3D(-0.39373654, 0, -0.3081745, 0, 0.5, 0, 0.3081745, 0, -0.39373654, 18.336153, 1.214144, -10.954653)
 
-[node name="debris8" parent="Env/debris/4" unique_id=1194057971 instance=ExtResource("13_trceg")]
+[node name="debris8" parent="Map(nomesh)/debris/4" unique_id=1194057971 instance=ExtResource("13_trceg")]
 transform = Transform3D(0.48434576, 0, 0.12413362, 0, 0.49999997, 0, -0.12413362, 0, 0.48434576, 16.481388, 1.0919025, -9.307327)
 disable_collisions = false
 
-[node name="debris9" parent="Env/debris/4" unique_id=2019097985 instance=ExtResource("13_trceg")]
+[node name="debris9" parent="Map(nomesh)/debris/4" unique_id=2019097985 instance=ExtResource("13_trceg")]
 transform = Transform3D(0.17825486, 0, 0.46714586, 0, 0.49999997, 0, -0.46714586, 0, 0.17825486, 15.446024, 1.0919025, -9.209231)
 
-[node name="5" type="Node" parent="Env/debris" unique_id=479168776]
+[node name="5" type="Node" parent="Map(nomesh)/debris" unique_id=479168776]
 
-[node name="debris5" parent="Env/debris/5" unique_id=485396378 instance=ExtResource("11_a8y0u")]
+[node name="debris5" parent="Map(nomesh)/debris/5" unique_id=485396378 instance=ExtResource("11_a8y0u")]
 transform = Transform3D(0.2880291, 0, 0.95762163, 0, 1, 0, -0.95762163, 0, 0.2880291, 39.952553, 1.2779851, -41.154903)
 disable_collisions = false
 
-[node name="debris6" parent="Env/debris/5" unique_id=1670690291 instance=ExtResource("12_jkv2x")]
+[node name="debris6" parent="Map(nomesh)/debris/5" unique_id=1670690291 instance=ExtResource("12_jkv2x")]
 transform = Transform3D(-0.5539729, 0, 0.8325346, 0, 1, 0, -0.8325346, 0, -0.5539729, 39.019424, 1.214144, -46.765274)
 
-[node name="debris7" parent="Env/debris/5" unique_id=757285538 instance=ExtResource("12_jkv2x")]
+[node name="debris7" parent="Map(nomesh)/debris/5" unique_id=757285538 instance=ExtResource("12_jkv2x")]
 transform = Transform3D(-0.39373654, 0, -0.3081745, 0, 0.5, 0, 0.3081745, 0, -0.39373654, 36.27292, 1.214144, -37.49833)
 
-[node name="debris8" parent="Env/debris/5" unique_id=683149463 instance=ExtResource("13_trceg")]
+[node name="debris8" parent="Map(nomesh)/debris/5" unique_id=683149463 instance=ExtResource("13_trceg")]
 transform = Transform3D(0.7920273, -0.24435452, -0.5594496, 0.16376008, 0.96785384, -0.19089663, 0.588112, 0.05957988, 0.80658233, 33.579926, 2.3723907, -37.806377)
 disable_collisions = false
 
-[node name="6" type="Node" parent="Env/debris" unique_id=518798121]
+[node name="6" type="Node" parent="Map(nomesh)/debris" unique_id=518798121]
 
-[node name="debris5" parent="Env/debris/6" unique_id=1705252786 instance=ExtResource("11_a8y0u")]
+[node name="debris5" parent="Map(nomesh)/debris/6" unique_id=1705252786 instance=ExtResource("11_a8y0u")]
 transform = Transform3D(0.2880291, 0, 0.95762163, 0, 1, 0, -0.95762163, 0, 0.2880291, -38.19204, 1.2779851, -38.351547)
 disable_collisions = false
 
-[node name="debris6" parent="Env/debris/6" unique_id=1407529955 instance=ExtResource("12_jkv2x")]
+[node name="debris6" parent="Map(nomesh)/debris/6" unique_id=1407529955 instance=ExtResource("12_jkv2x")]
 transform = Transform3D(-0.5539729, 0, 0.8325346, 0, 1, 0, -0.8325346, 0, -0.5539729, -39.125168, 1.214144, -43.961918)
 
-[node name="debris7" parent="Env/debris/6" unique_id=67406952 instance=ExtResource("12_jkv2x")]
+[node name="debris7" parent="Map(nomesh)/debris/6" unique_id=67406952 instance=ExtResource("12_jkv2x")]
 transform = Transform3D(-0.39373654, 0, -0.3081745, 0, 0.5, 0, 0.3081745, 0, -0.39373654, -41.871674, 1.214144, -34.694973)
 
-[node name="debris8" parent="Env/debris/6" unique_id=1045450586 instance=ExtResource("13_trceg")]
+[node name="debris8" parent="Map(nomesh)/debris/6" unique_id=1045450586 instance=ExtResource("13_trceg")]
 transform = Transform3D(0.7920273, -0.24435452, -0.5594496, 0.16376008, 0.96785384, -0.19089663, 0.588112, 0.05957988, 0.80658233, -44.564667, 2.3723907, -35.00302)
 disable_collisions = false
 
-[node name="scatter" type="Node" parent="Env/debris" unique_id=1308376950]
+[node name="scatter" type="Node" parent="Map(nomesh)/debris" unique_id=1308376950]
 
-[node name="debris6" parent="Env/debris/scatter" unique_id=985240028 instance=ExtResource("12_jkv2x")]
+[node name="debris6" parent="Map(nomesh)/debris/scatter" unique_id=985240028 instance=ExtResource("12_jkv2x")]
 transform = Transform3D(-0.90634465, 0, 0.42253906, 0, 1, 0, -0.42253906, 0, -0.90634465, -17.672382, 1.214144, -30.750206)
 
-[node name="debris7" parent="Env/debris/scatter" unique_id=1287852021 instance=ExtResource("12_jkv2x")]
+[node name="debris7" parent="Map(nomesh)/debris/scatter" unique_id=1287852021 instance=ExtResource("12_jkv2x")]
 transform = Transform3D(-0.9905814, 0, -0.13692601, 0, 1, 0, 0.13692601, 0, -0.9905814, -12.3186455, 0.33361173, 38.57276)
 
-[node name="debris8" parent="Env/debris/scatter" unique_id=1151653585 instance=ExtResource("12_jkv2x")]
+[node name="debris8" parent="Map(nomesh)/debris/scatter" unique_id=1151653585 instance=ExtResource("12_jkv2x")]
 transform = Transform3D(-0.39373654, 0, -0.3081745, 0, 0.5, 0, 0.3081745, 0, -0.39373654, 12.990095, 1.214144, 21.981596)
 
-[node name="debris9" parent="Env/debris/scatter" unique_id=509121467 instance=ExtResource("13_trceg")]
+[node name="debris9" parent="Map(nomesh)/debris/scatter" unique_id=509121467 instance=ExtResource("13_trceg")]
 transform = Transform3D(0.29060748, 0, 0.074480176, 0, 0.3, 0, -0.074480176, 0, 0.29060748, 31.08435, 1.0919025, 6.5014114)
 
-[node name="debris10" parent="Env/debris/scatter" unique_id=612953561 instance=ExtResource("13_trceg")]
+[node name="debris10" parent="Map(nomesh)/debris/scatter" unique_id=612953561 instance=ExtResource("13_trceg")]
 transform = Transform3D(0.19622427, 0, 0.22692734, 0, 0.30000004, 0, -0.22692734, 0, 0.19622427, 31.511963, 1.0919025, -26.89088)
 
-[node name="shelves" type="Node3D" parent="Env" unique_id=681177296]
+[node name="pipes" type="Node3D" parent="Map(nomesh)" unique_id=1987013284]
 
-[node name="shelf1" parent="Env/shelves" unique_id=572766256 instance=ExtResource("11_trceg")]
-transform = Transform3D(-2.2924938e-08, -0.52446145, -0.8514342, 1, -4.371139e-08, 0, -3.721737e-08, -0.8514342, 0.52446145, -23.392586, 1.3354864, -37.365467)
+[node name="1" type="Node" parent="Map(nomesh)/pipes" unique_id=424982482]
 
-[node name="shelf3" parent="Env/shelves" unique_id=1019530217 instance=ExtResource("11_trceg")]
-transform = Transform3D(-0.6064433, -0.360896, -0.70850575, -0.33658257, 0.9238061, -0.18246807, 0.72037405, 0.12781414, -0.6817074, -39.54409, 1.4322548, -25.510294)
+[node name="pipe1" parent="Map(nomesh)/pipes/1" unique_id=1497072608 instance=ExtResource("9_eb6dy")]
+transform = Transform3D(0.74632436, -0.17553055, -0.6420194, 0.055922262, 0.97772425, -0.20230606, 0.6632288, 0.115082785, 0.7395156, -8.072641, 0.9144285, 9.48214)
 
-[node name="shelf4" parent="Env/shelves" unique_id=28414033 instance=ExtResource("11_trceg")]
-transform = Transform3D(0.7906575, 0, 0.6122587, 0, 1, 0, -0.6122587, 0, 0.7906575, -45.557217, 0.23109388, -25.510294)
+[node name="pipe2" parent="Map(nomesh)/pipes/1" unique_id=1852990072 instance=ExtResource("9_eb6dy")]
+transform = Transform3D(-0.9969149, 0, 1.7338284, 0, 2, 0, -1.7338284, 0, -0.9969149, -13.034103, -0.0144274235, 5.9257536)
 
-[node name="shelf6" parent="Env/shelves" unique_id=481082242 instance=ExtResource("11_trceg")]
-transform = Transform3D(-0.6312445, 0, 0.7755839, 0, 1, 0, -0.7755839, 0, -0.6312445, -47.857464, -0.73634434, -14.2390995)
+[node name="pipe3" parent="Map(nomesh)/pipes/1" unique_id=190328433 instance=ExtResource("10_trceg")]
+transform = Transform3D(-0.63592684, 0.68933856, 0.34700054, 0.58574003, 0.1383529, 0.79860324, 0.50249946, 0.7111054, -0.49175566, -14.114909, 2.024941, 8.381576)
 
-[node name="shelf5" parent="Env/shelves" unique_id=1562875209 instance=ExtResource("11_trceg")]
-transform = Transform3D(-0.18296112, 0.33565962, 0.92404443, 0.8842621, 0.46695903, 0.0054611117, -0.42965794, 0.8180966, -0.38224646, -43.406338, 1.4322548, 14.471864)
+[node name="2" type="Node" parent="Map(nomesh)/pipes" unique_id=2129542733]
 
-[node name="shelf2" parent="Env/shelves" unique_id=1128290935 instance=ExtResource("11_trceg")]
-transform = Transform3D(-3.9111676e-08, -0.8947708, -0.44652593, 1, -4.3711392e-08, 3.3757122e-15, -1.9518268e-08, -0.44652593, 0.8947708, -29.36575, 1.3354864, -39.12565)
+[node name="pipe4" parent="Map(nomesh)/pipes/2" unique_id=746850536 instance=ExtResource("9_eb6dy")]
+transform = Transform3D(0.8486155, 0.059260063, 0.5256806, -0.19278988, 0.9600115, 0.20300187, -0.49262953, -0.2736164, 0.8261054, -39.863953, 0.5335231, 23.8326)
 
-[node name="broken_shelf1" parent="Env/shelves" unique_id=940664526 instance=ExtResource("12_a8y0u")]
-transform = Transform3D(-3.5378942e-08, -0.8093759, 0.58729094, 1, -4.371139e-08, 0, 2.5671303e-08, 0.58729094, 0.8093759, -35.18103, 2.0775814, -33.602203)
+[node name="pipe5" parent="Map(nomesh)/pipes/2" unique_id=1133781813 instance=ExtResource("9_eb6dy")]
+transform = Transform3D(-0.75036275, 0, 1.2988286, 0, 1.5, 0, -1.2988286, 0, -0.75036275, -45.137146, -0.0144274235, 18.555424)
 
-[node name="broken_shelf3" parent="Env/shelves" unique_id=143681976 instance=ExtResource("12_a8y0u")]
-transform = Transform3D(-3.5378942e-08, -0.8093759, 0.58729094, 1, -4.371139e-08, 0, 2.5671303e-08, 0.58729094, 0.8093759, -46.988808, 0.9553318, -10.274223)
+[node name="pipe6" parent="Map(nomesh)/pipes/2" unique_id=877846454 instance=ExtResource("10_trceg")]
+transform = Transform3D(-0.63489044, 0.6908016, 0.34598696, 0.75135696, 0.44776562, 0.4847355, 0.17993498, 0.567714, -0.8033209, -43.868996, 2.024941, 19.37262)
 
-[node name="broken_shelf2" parent="Env/shelves" unique_id=717514150 instance=ExtResource("12_a8y0u")]
-transform = Transform3D(0.63966715, -0.6221285, 0.45142227, 0.66519564, 0.74232256, 0.080448866, -0.38515058, 0.24882361, 0.8886764, -16.065496, 1.3421211, -32.141975)
+[node name="pipe7" parent="Map(nomesh)/pipes/2" unique_id=1808894410 instance=ExtResource("10_trceg")]
+transform = Transform3D(-1.2697812, 1.3816034, 0.6919741, 1.5095657, 1.300404, 0.17367071, -0.329951, 0.6325521, -1.8684248, -42.237564, 3.5654707, 22.899536)
 
-[node name="incubators" type="Node3D" parent="Env" unique_id=490954517]
+[node name="3" type="Node" parent="Map(nomesh)/pipes" unique_id=417623886]
 
-[node name="incubator" parent="Env/incubators" unique_id=913447650 instance=ExtResource("13_jkv2x")]
-transform = Transform3D(5.510968, 0, -2.3725996, 0, 6, 0, 2.3725996, 0, 5.510968, -41.469646, 7.061741, 34.884426)
+[node name="pipe4" parent="Map(nomesh)/pipes/3" unique_id=2113570264 instance=ExtResource("9_eb6dy")]
+transform = Transform3D(0.8486155, 0.059260063, 0.5256806, -0.19278988, 0.9600115, 0.20300187, -0.49262953, -0.2736164, 0.8261054, 29.30698, -0.35417604, 38.60729)
 
-[node name="incubator2" parent="Env/incubators" unique_id=1719178698 instance=ExtResource("13_jkv2x")]
-transform = Transform3D(-0.7420244, 0, -5.9539394, 0, 5.9999995, 0, 5.9539394, 0, -0.7420244, -40.84296, 7.735716, 3.427248)
+[node name="pipe5" parent="Map(nomesh)/pipes/3" unique_id=1269147086 instance=ExtResource("9_eb6dy")]
+transform = Transform3D(-2.1735497, -0.7165806, 1.9396389, -1.6051656, 2.3587036, -0.9273407, -1.3035061, -1.709687, -2.092329, 22.118414, 1.3663628, 40.48723)
+disable_collisions = false
 
-[node name="incubator3" parent="Env/incubators" unique_id=2074367647 instance=ExtResource("13_jkv2x")]
-transform = Transform3D(0.98811656, 2.8318932, -0.06332217, -0.12047418, -0.024988314, -2.9974766, -2.830037, 0.989828, 0.10549284, -30.926945, 2.4106226, 18.969992)
+[node name="pipe6" parent="Map(nomesh)/pipes/3" unique_id=689685435 instance=ExtResource("10_trceg")]
+transform = Transform3D(-0.63489044, 0.6908016, 0.34598696, 0.75135696, 0.44776562, 0.4847355, 0.17993498, 0.567714, -0.8033209, 24.170593, 2.024941, 41.95104)
 
-[node name="pc" type="Node3D" parent="Env" unique_id=1384677335]
+[node name="pipe7" parent="Map(nomesh)/pipes/3" unique_id=1494726825 instance=ExtResource("10_trceg")]
+transform = Transform3D(-1.2697811, 1.3816032, 0.6919741, 0.87824607, 1.3822026, -1.1481287, -1.2713536, -0.42507434, -1.4842415, 27.593212, 2.6805034, 39.328663)
+disable_collisions = false
 
-[node name="pc" parent="Env/pc" unique_id=1065256319 instance=ExtResource("13_a8y0u")]
-transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, 48.50231, 7.6293945e-06, -2.8310204)
+[node name="4" type="Node" parent="Map(nomesh)/pipes" unique_id=100525001]
 
-[node name="lamps" type="Node3D" parent="Env" unique_id=891180502]
+[node name="pipe4" parent="Map(nomesh)/pipes/4" unique_id=1365352153 instance=ExtResource("9_eb6dy")]
+transform = Transform3D(0.8486155, 0.059260063, 0.5256806, 0.035392866, 0.9851194, -0.16818799, -0.5278249, 0.16133225, 0.83389014, 20.407602, 0.7605376, -9.434689)
 
-[node name="lamp" parent="Env/lamps" unique_id=1475684972 instance=ExtResource("14_a8y0u")]
+[node name="pipe5" parent="Map(nomesh)/pipes/4" unique_id=1127562838 instance=ExtResource("9_eb6dy")]
+transform = Transform3D(-0.75036275, 0, 1.2988286, 0, 1.5, 0, -1.2988286, 0, -0.75036275, 18.505932, -0.0144274235, -13.369724)
+
+[node name="pipe6" parent="Map(nomesh)/pipes/4" unique_id=1117360788 instance=ExtResource("10_trceg")]
+transform = Transform3D(-0.6348905, 0.6908017, 0.34598702, 0.73601365, 0.4046084, 0.5427485, 0.23494233, 0.59923726, -0.7653217, 19.774082, 2.024941, -12.552528)
+
+[node name="pipe7" parent="Map(nomesh)/pipes/4" unique_id=1496630014 instance=ExtResource("10_trceg")]
+transform = Transform3D(-0.6594506, 0.8112123, -0.34213987, 0.87423146, 0.6539156, -0.13458863, 0.10413699, -0.35260352, -1.0367385, 18.26333, 1.8346124, -9.025612)
+
+[node name="5" type="Node" parent="Map(nomesh)/pipes" unique_id=757565326]
+
+[node name="pipe4" parent="Map(nomesh)/pipes/5" unique_id=1453756686 instance=ExtResource("9_eb6dy")]
+transform = Transform3D(0.8486155, 0.059260063, 0.5256806, -0.19278988, 0.9600115, 0.20300187, -0.49262953, -0.2736164, 0.8261054, 38.256027, 0.5335231, -38.178516)
+
+[node name="pipe5" parent="Map(nomesh)/pipes/5" unique_id=1339516020 instance=ExtResource("9_eb6dy")]
+transform = Transform3D(-0.75036275, 0, 1.2988286, 0, 1.5, 0, -1.2988286, 0, -0.75036275, 32.982834, -0.0144274235, -43.455692)
+
+[node name="pipe6" parent="Map(nomesh)/pipes/5" unique_id=1765902261 instance=ExtResource("10_trceg")]
+transform = Transform3D(-0.63489044, 0.6908016, 0.34598696, 0.75135696, 0.44776562, 0.4847355, 0.17993498, 0.567714, -0.8033209, 34.250984, 2.024941, -42.638496)
+
+[node name="pipe7" parent="Map(nomesh)/pipes/5" unique_id=1870485852 instance=ExtResource("10_trceg")]
+transform = Transform3D(-1.2697812, 1.3816034, 0.6919741, 1.5095657, 1.300404, 0.17367071, -0.329951, 0.6325521, -1.8684248, 35.882416, 3.5654707, -39.11158)
+disable_collisions = false
+
+[node name="6" type="Node" parent="Map(nomesh)/pipes" unique_id=75178538]
+
+[node name="pipe5" parent="Map(nomesh)/pipes/6" unique_id=2055471806 instance=ExtResource("9_eb6dy")]
+transform = Transform3D(-0.75036275, 0, 1.2988286, 0, 1.5, 0, -1.2988286, 0, -0.75036275, -45.137146, -0.0144274235, -39.27296)
+
+[node name="pipe6" parent="Map(nomesh)/pipes/6" unique_id=687516243 instance=ExtResource("10_trceg")]
+transform = Transform3D(-0.63489044, 0.6908016, 0.34598696, 0.75135696, 0.44776562, 0.4847355, 0.17993498, 0.567714, -0.8033209, -43.868996, 2.024941, -38.455765)
+
+[node name="scatter" type="Node" parent="Map(nomesh)/pipes" unique_id=121331767]
+
+[node name="pipe4" parent="Map(nomesh)/pipes/scatter" unique_id=995252921 instance=ExtResource("9_eb6dy")]
+transform = Transform3D(0.303357, -0.13843517, 0.9427674, -0.19278991, 0.9600116, 0.2030019, -0.9331702, -0.24333799, 0.26453725, 15.325199, 0.5335231, 16.2753)
+
+[node name="pipe7" parent="Map(nomesh)/pipes/scatter" unique_id=29431350 instance=ExtResource("10_trceg")]
+transform = Transform3D(-1.269781, 1.3816031, 0.6919739, 1.4914763, 1.3299893, 0.081406176, -0.40392396, 0.56771535, -1.8747121, -31.483059, 0.9193058, -2.8172874)
+
+[node name="ventilation" type="Node3D" parent="Map(nomesh)" unique_id=203224961]
+
+[node name="1" type="Node" parent="Map(nomesh)/ventilation" unique_id=1317139489]
+
+[node name="ventilationtube" parent="Map(nomesh)/ventilation/1" unique_id=24315464 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 43.9377, 12.335824, 43.427567)
+
+[node name="ventilationtube2" parent="Map(nomesh)/ventilation/1" unique_id=2100450717 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 43.9377, 16.260393, 43.427567)
+
+[node name="ventilationtube_curved" parent="Map(nomesh)/ventilation/1" unique_id=44471914 instance=ExtResource("15_muem4")]
+transform = Transform3D(0.65359235, 0.7568467, 3.3082824e-08, 0, -4.3711385e-08, 1, 0.7568468, -0.6535923, -2.856943e-08, 43.145416, 7.1121883, 43.29414)
+
+[node name="2" type="Node" parent="Map(nomesh)/ventilation" unique_id=677805331]
+
+[node name="ventilationtube" parent="Map(nomesh)/ventilation/2" unique_id=246645728 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(0.41366753, -0.7139115, -0.5649862, -0.59612155, 0.25665286, -0.76076823, 0.68812656, 0.65150565, -0.31940904, -40.412304, 4.7117186, 16.83212)
+
+[node name="ventilationtube_curved" parent="Map(nomesh)/ventilation/2" unique_id=1306488101 instance=ExtResource("15_muem4")]
+transform = Transform3D(-0.6649887, 0.22227651, -0.71300995, -0.40803856, 0.691479, 0.59612143, 0.62553537, 0.6873496, -0.36912847, -36.221478, 2.368641, 25.525864)
+
+[node name="3" type="Node" parent="Map(nomesh)/ventilation" unique_id=488570285]
+
+[node name="ventilationtube_curved" parent="Map(nomesh)/ventilation/3" unique_id=599774024 instance=ExtResource("15_muem4")]
+transform = Transform3D(-4.3711385e-08, -0.9999999, 4.3711385e-08, 0, -4.3711385e-08, -0.9999999, 0.9999999, -4.3711385e-08, 1.9106853e-15, -55.199463, 16.895435, 43.924236)
+
+[node name="ventilationtube_curved2" parent="Map(nomesh)/ventilation/3" unique_id=1931494332 instance=ExtResource("15_muem4")]
+transform = Transform3D(-4.3711385e-08, 0.9999999, -1.1924879e-08, 0, 1.1924879e-08, 0.9999999, 0.9999999, 4.3711385e-08, -5.21253e-16, -55.199463, -4.3757243, 43.904606)
+
+[node name="vertical" type="Node3D" parent="Map(nomesh)/ventilation/3" unique_id=1752728259]
+
+[node name="ventilationtube3" parent="Map(nomesh)/ventilation/3/vertical" unique_id=1891399129 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -55.193653, 12.171385, 44.434547)
+
+[node name="ventilationtube4" parent="Map(nomesh)/ventilation/3/vertical" unique_id=1159785097 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -55.193653, 8.262772, 44.434547)
+
+[node name="ventilationtube5" parent="Map(nomesh)/ventilation/3/vertical" unique_id=1491733395 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -55.193653, 4.5946884, 44.434547)
+
+[node name="ventilationtube6" parent="Map(nomesh)/ventilation/3/vertical" unique_id=1498690701 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -55.193653, 0.8063412, 44.434547)
+
+[node name="horizantal" type="Node3D" parent="Map(nomesh)/ventilation/3" unique_id=325218059]
+
+[node name="ventilationtube3" parent="Map(nomesh)/ventilation/3/horizantal" unique_id=1959715855 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, 24.517464)
+
+[node name="ventilationtube4" parent="Map(nomesh)/ventilation/3/horizantal" unique_id=476427579 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, 28.426003)
+
+[node name="ventilationtube5" parent="Map(nomesh)/ventilation/3/horizantal" unique_id=1144816237 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, 32.09401)
+
+[node name="ventilationtube6" parent="Map(nomesh)/ventilation/3/horizantal" unique_id=1941465783 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, 35.882282)
+
+[node name="ventilationtube7" parent="Map(nomesh)/ventilation/3/horizantal" unique_id=56988850 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, 8.963547)
+
+[node name="ventilationtube8" parent="Map(nomesh)/ventilation/3/horizantal" unique_id=1777173424 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, 12.872086)
+
+[node name="ventilationtube9" parent="Map(nomesh)/ventilation/3/horizantal" unique_id=470434464 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, 16.540092)
+
+[node name="ventilationtube10" parent="Map(nomesh)/ventilation/3/horizantal" unique_id=143288537 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, 20.328365)
+
+[node name="ventilationtube11" parent="Map(nomesh)/ventilation/3/horizantal" unique_id=823074408 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, -6.494953)
+
+[node name="ventilationtube12" parent="Map(nomesh)/ventilation/3/horizantal" unique_id=2037901089 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, -2.5864143)
+
+[node name="ventilationtube13" parent="Map(nomesh)/ventilation/3/horizantal" unique_id=1929135193 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, 1.0815926)
+
+[node name="ventilationtube14" parent="Map(nomesh)/ventilation/3/horizantal" unique_id=1843874600 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, 4.8698654)
+
+[node name="ventilationtube15" parent="Map(nomesh)/ventilation/3/horizantal" unique_id=128112603 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, -22.04887)
+
+[node name="ventilationtube16" parent="Map(nomesh)/ventilation/3/horizantal" unique_id=1656766832 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, -18.140331)
+
+[node name="ventilationtube17" parent="Map(nomesh)/ventilation/3/horizantal" unique_id=465232232 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, -14.472324)
+
+[node name="ventilationtube18" parent="Map(nomesh)/ventilation/3/horizantal" unique_id=2032833645 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, -10.6840515)
+
+[node name="ventilationtube19" parent="Map(nomesh)/ventilation/3/horizantal" unique_id=641652266 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, -37.698208)
+
+[node name="ventilationtube20" parent="Map(nomesh)/ventilation/3/horizantal" unique_id=1000196377 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, -33.78967)
+
+[node name="ventilationtube21" parent="Map(nomesh)/ventilation/3/horizantal" unique_id=1295098534 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, -30.121662)
+
+[node name="ventilationtube22" parent="Map(nomesh)/ventilation/3/horizantal" unique_id=739876200 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, -26.33339)
+
+[node name="ventilationtube25" parent="Map(nomesh)/ventilation/3/horizantal" unique_id=873849087 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, -45.67558)
+
+[node name="ventilationtube26" parent="Map(nomesh)/ventilation/3/horizantal" unique_id=1669814311 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, -41.887306)
+
+[node name="horizantal2" type="Node3D" parent="Map(nomesh)/ventilation/3" unique_id=1040250460]
+
+[node name="ventilationtube3" parent="Map(nomesh)/ventilation/3/horizantal2" unique_id=1868973429 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, 24.517464)
+
+[node name="ventilationtube4" parent="Map(nomesh)/ventilation/3/horizantal2" unique_id=1386002781 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, 28.426003)
+
+[node name="ventilationtube5" parent="Map(nomesh)/ventilation/3/horizantal2" unique_id=1330265419 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, 32.09401)
+
+[node name="ventilationtube6" parent="Map(nomesh)/ventilation/3/horizantal2" unique_id=621298892 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, 35.882282)
+
+[node name="ventilationtube7" parent="Map(nomesh)/ventilation/3/horizantal2" unique_id=623026760 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, 8.963547)
+
+[node name="ventilationtube8" parent="Map(nomesh)/ventilation/3/horizantal2" unique_id=1101055716 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, 12.872086)
+
+[node name="ventilationtube9" parent="Map(nomesh)/ventilation/3/horizantal2" unique_id=970699120 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, 16.540092)
+
+[node name="ventilationtube10" parent="Map(nomesh)/ventilation/3/horizantal2" unique_id=1937889837 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, 20.328365)
+
+[node name="ventilationtube11" parent="Map(nomesh)/ventilation/3/horizantal2" unique_id=434360444 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, -6.494953)
+
+[node name="ventilationtube12" parent="Map(nomesh)/ventilation/3/horizantal2" unique_id=1370005861 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, -2.5864143)
+
+[node name="ventilationtube13" parent="Map(nomesh)/ventilation/3/horizantal2" unique_id=2004358409 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, 1.0815926)
+
+[node name="ventilationtube14" parent="Map(nomesh)/ventilation/3/horizantal2" unique_id=1585676003 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, 4.8698654)
+
+[node name="ventilationtube15" parent="Map(nomesh)/ventilation/3/horizantal2" unique_id=1474071007 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, -22.04887)
+
+[node name="ventilationtube16" parent="Map(nomesh)/ventilation/3/horizantal2" unique_id=1504256513 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, -18.140331)
+
+[node name="ventilationtube17" parent="Map(nomesh)/ventilation/3/horizantal2" unique_id=497165305 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, -14.472324)
+
+[node name="ventilationtube18" parent="Map(nomesh)/ventilation/3/horizantal2" unique_id=260778579 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, -10.6840515)
+
+[node name="ventilationtube19" parent="Map(nomesh)/ventilation/3/horizantal2" unique_id=378076053 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, -37.698208)
+
+[node name="ventilationtube20" parent="Map(nomesh)/ventilation/3/horizantal2" unique_id=754567856 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, -33.78967)
+
+[node name="ventilationtube21" parent="Map(nomesh)/ventilation/3/horizantal2" unique_id=1013926500 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, -30.121662)
+
+[node name="ventilationtube22" parent="Map(nomesh)/ventilation/3/horizantal2" unique_id=1165368588 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, -26.33339)
+
+[node name="ventilationtube25" parent="Map(nomesh)/ventilation/3/horizantal2" unique_id=786899933 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, -45.67558)
+
+[node name="ventilationtube26" parent="Map(nomesh)/ventilation/3/horizantal2" unique_id=56443852 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, -41.887306)
+
+[node name="4" type="Node" parent="Map(nomesh)/ventilation" unique_id=1760313449]
+
+[node name="ventilationtube_curved" parent="Map(nomesh)/ventilation/4" unique_id=1449660193 instance=ExtResource("15_muem4")]
+transform = Transform3D(0.9997495, -0.022373237, 9.779653e-10, 0, -4.371138e-08, -0.9999999, 0.022373237, 0.9997495, -4.3700442e-08, 47.53808, 16.895435, -54.535645)
+
+[node name="ventilationtube_curved2" parent="Map(nomesh)/ventilation/4" unique_id=289221623 instance=ExtResource("15_muem4")]
+transform = Transform3D(0.9997495, 0.022373237, 9.779653e-10, 0, -4.371138e-08, 0.9999999, 0.022373237, -0.9997495, -4.3700442e-08, 47.518456, -4.3757243, -54.536087)
+
+[node name="vertical" type="Node3D" parent="Map(nomesh)/ventilation/4" unique_id=579786469]
+transform = Transform3D(0.022373194, 0, 0.9997496, 0, 1, 0, -0.9997496, 0, 0.022373194, 4.859829, 0, -110.70402)
+
+[node name="ventilationtube3" parent="Map(nomesh)/ventilation/4/vertical" unique_id=2030874740 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -55.193653, 12.171385, 44.434547)
+
+[node name="ventilationtube4" parent="Map(nomesh)/ventilation/4/vertical" unique_id=1705655673 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -55.193653, 8.262772, 44.434547)
+
+[node name="ventilationtube5" parent="Map(nomesh)/ventilation/4/vertical" unique_id=849126070 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -55.193653, 4.5946884, 44.434547)
+
+[node name="ventilationtube6" parent="Map(nomesh)/ventilation/4/vertical" unique_id=608534018 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -55.193653, 0.8063412, 44.434547)
+
+[node name="horizantal" type="Node3D" parent="Map(nomesh)/ventilation/4" unique_id=594898147]
+transform = Transform3D(0.022373194, 0, 0.9997496, 0, 1, 0, -0.9997496, 0, 0.022373194, 4.859829, 0, -110.70402)
+
+[node name="ventilationtube3" parent="Map(nomesh)/ventilation/4/horizantal" unique_id=1396589669 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, 24.517464)
+
+[node name="ventilationtube4" parent="Map(nomesh)/ventilation/4/horizantal" unique_id=1867695764 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, 28.426003)
+
+[node name="ventilationtube5" parent="Map(nomesh)/ventilation/4/horizantal" unique_id=292676788 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, 32.09401)
+
+[node name="ventilationtube6" parent="Map(nomesh)/ventilation/4/horizantal" unique_id=1887765686 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, 35.882282)
+
+[node name="ventilationtube7" parent="Map(nomesh)/ventilation/4/horizantal" unique_id=798210337 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, 8.963547)
+
+[node name="ventilationtube8" parent="Map(nomesh)/ventilation/4/horizantal" unique_id=1510552504 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, 12.872086)
+
+[node name="ventilationtube9" parent="Map(nomesh)/ventilation/4/horizantal" unique_id=342697389 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, 16.540092)
+
+[node name="ventilationtube10" parent="Map(nomesh)/ventilation/4/horizantal" unique_id=1055711673 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, 20.328365)
+
+[node name="ventilationtube11" parent="Map(nomesh)/ventilation/4/horizantal" unique_id=2007288937 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, -6.494953)
+
+[node name="ventilationtube12" parent="Map(nomesh)/ventilation/4/horizantal" unique_id=950281626 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, -2.5864143)
+
+[node name="ventilationtube13" parent="Map(nomesh)/ventilation/4/horizantal" unique_id=1048697627 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, 1.0815926)
+
+[node name="ventilationtube14" parent="Map(nomesh)/ventilation/4/horizantal" unique_id=1018668961 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, 4.8698654)
+
+[node name="ventilationtube15" parent="Map(nomesh)/ventilation/4/horizantal" unique_id=1663267957 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, -22.04887)
+
+[node name="ventilationtube16" parent="Map(nomesh)/ventilation/4/horizantal" unique_id=2009630798 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, -18.140331)
+
+[node name="ventilationtube17" parent="Map(nomesh)/ventilation/4/horizantal" unique_id=862162200 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, -14.472324)
+
+[node name="ventilationtube18" parent="Map(nomesh)/ventilation/4/horizantal" unique_id=1854730297 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, -10.6840515)
+
+[node name="ventilationtube19" parent="Map(nomesh)/ventilation/4/horizantal" unique_id=985869267 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, -37.698208)
+
+[node name="ventilationtube20" parent="Map(nomesh)/ventilation/4/horizantal" unique_id=710797336 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, -33.78967)
+
+[node name="ventilationtube21" parent="Map(nomesh)/ventilation/4/horizantal" unique_id=573579683 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, -30.121662)
+
+[node name="ventilationtube22" parent="Map(nomesh)/ventilation/4/horizantal" unique_id=1493787844 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, -26.33339)
+
+[node name="ventilationtube25" parent="Map(nomesh)/ventilation/4/horizantal" unique_id=426608353 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, -45.67558)
+
+[node name="ventilationtube26" parent="Map(nomesh)/ventilation/4/horizantal" unique_id=1346192380 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, -41.887306)
+
+[node name="horizantal2" type="Node3D" parent="Map(nomesh)/ventilation/4" unique_id=1039478734]
+transform = Transform3D(0.022373194, 0, 0.9997496, 0, 1, 0, -0.9997496, 0, 0.022373194, 4.859829, 0, -110.70402)
+
+[node name="ventilationtube3" parent="Map(nomesh)/ventilation/4/horizantal2" unique_id=261519513 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, 24.517464)
+
+[node name="ventilationtube4" parent="Map(nomesh)/ventilation/4/horizantal2" unique_id=1953278430 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, 28.426003)
+
+[node name="ventilationtube5" parent="Map(nomesh)/ventilation/4/horizantal2" unique_id=1971006360 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, 32.09401)
+
+[node name="ventilationtube6" parent="Map(nomesh)/ventilation/4/horizantal2" unique_id=1801950419 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, 35.882282)
+
+[node name="ventilationtube7" parent="Map(nomesh)/ventilation/4/horizantal2" unique_id=1352721923 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, 8.963547)
+
+[node name="ventilationtube8" parent="Map(nomesh)/ventilation/4/horizantal2" unique_id=1960102803 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, 12.872086)
+
+[node name="ventilationtube9" parent="Map(nomesh)/ventilation/4/horizantal2" unique_id=4274272 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, 16.540092)
+
+[node name="ventilationtube10" parent="Map(nomesh)/ventilation/4/horizantal2" unique_id=161954863 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, 20.328365)
+
+[node name="ventilationtube11" parent="Map(nomesh)/ventilation/4/horizantal2" unique_id=1158748689 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, -6.494953)
+
+[node name="ventilationtube12" parent="Map(nomesh)/ventilation/4/horizantal2" unique_id=1496067122 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, -2.5864143)
+
+[node name="ventilationtube13" parent="Map(nomesh)/ventilation/4/horizantal2" unique_id=1233272775 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, 1.0815926)
+
+[node name="ventilationtube14" parent="Map(nomesh)/ventilation/4/horizantal2" unique_id=843223332 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, 4.8698654)
+
+[node name="ventilationtube15" parent="Map(nomesh)/ventilation/4/horizantal2" unique_id=266927304 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, -22.04887)
+
+[node name="ventilationtube16" parent="Map(nomesh)/ventilation/4/horizantal2" unique_id=155464036 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, -18.140331)
+
+[node name="ventilationtube17" parent="Map(nomesh)/ventilation/4/horizantal2" unique_id=465006545 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, -14.472324)
+
+[node name="ventilationtube18" parent="Map(nomesh)/ventilation/4/horizantal2" unique_id=121861080 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, -10.6840515)
+
+[node name="ventilationtube19" parent="Map(nomesh)/ventilation/4/horizantal2" unique_id=1103362420 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, -37.698208)
+
+[node name="ventilationtube20" parent="Map(nomesh)/ventilation/4/horizantal2" unique_id=791330320 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, -33.78967)
+
+[node name="ventilationtube21" parent="Map(nomesh)/ventilation/4/horizantal2" unique_id=1362234142 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, -30.121662)
+
+[node name="ventilationtube22" parent="Map(nomesh)/ventilation/4/horizantal2" unique_id=2112915475 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, -26.33339)
+
+[node name="ventilationtube25" parent="Map(nomesh)/ventilation/4/horizantal2" unique_id=1971599901 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, -45.67558)
+
+[node name="ventilationtube26" parent="Map(nomesh)/ventilation/4/horizantal2" unique_id=339687375 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, -41.887306)
+
+[node name="scatter" type="Node" parent="Map(nomesh)/ventilation" unique_id=1132645402]
+
+[node name="ventilationtube" parent="Map(nomesh)/ventilation/scatter" unique_id=1545581063 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(0.9749459, 0.16465741, 0.14956075, -0.02382993, 0.7458013, -0.6657416, -0.22116198, 0.64549816, 0.73103994, 19.448181, 2.0658593, -34.166233)
+
+[node name="ventilationtube2" parent="Map(nomesh)/ventilation/scatter" unique_id=218807483 instance=ExtResource("14_jbj1t")]
+transform = Transform3D(0.9749459, 0.16465741, 0.14956075, -0.02382993, 0.7458013, -0.6657416, -0.22116198, 0.64549816, 0.73103994, 15.621942, 2.159381, -33.298267)
+
+[node name="ventilationtube_curved" parent="Map(nomesh)/ventilation/scatter" unique_id=1325503680 instance=ExtResource("15_muem4")]
+transform = Transform3D(0.22081338, 0.026868625, -0.97494584, -0.016414195, 0.99958134, 0.023829948, 0.975178, 0.01074101, 0.22116198, 24.390533, 1.4393228, -35.930458)
+
+[node name="fog" type="Node3D" parent="Map(nomesh)" unique_id=1982349391]
+
+[node name="fog" parent="Map(nomesh)/fog" unique_id=1461466784 instance=ExtResource("20_jscy8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.136621, 4.593067, 55.060955)
+fog_size = Vector2(40, 40)
+
+[node name="fog2" parent="Map(nomesh)/fog" unique_id=42974661 instance=ExtResource("20_jscy8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.791058, 9.770208, 53.88525)
+fog_size = Vector2(40, 40)
+
+[node name="lamps" type="Node3D" parent="Map(nomesh)" unique_id=891180502]
+
+[node name="lamp" parent="Map(nomesh)/lamps" unique_id=1475684972 instance=ExtResource("14_a8y0u")]
 transform = Transform3D(0.14980246, 0.6288185, 0.76298535, -0.12114755, 0.7775524, -0.617038, -0.98126584, -7.3338358e-09, 0.19265904, 31.802912, 0.28541887, -40.406853)
 
-[node name="lamp6" parent="Env/lamps" unique_id=1668262043 instance=ExtResource("14_a8y0u")]
+[node name="lamp6" parent="Map(nomesh)/lamps" unique_id=1668262043 instance=ExtResource("14_a8y0u")]
 transform = Transform3D(-0.66872287, 0.3954553, 0.6296229, -0.12114754, 0.7775524, -0.617038, -0.7335755, -0.48890465, -0.47205845, -42.063087, 0.28541887, -28.588017)
 
-[node name="lamp4" parent="Env/lamps" unique_id=514292195 instance=ExtResource("14_a8y0u")]
+[node name="lamp4" parent="Map(nomesh)/lamps" unique_id=514292195 instance=ExtResource("14_a8y0u")]
 transform = Transform3D(0.14980246, 0.6288185, 0.76298535, -0.12114755, 0.7775524, -0.617038, -0.98126584, -7.3338358e-09, 0.19265904, 25.164263, -0.60228026, 43.742363)
 
-[node name="lamp5" parent="Env/lamps" unique_id=75348578 instance=ExtResource("14_a8y0u")]
+[node name="lamp5" parent="Map(nomesh)/lamps" unique_id=75348578 instance=ExtResource("14_a8y0u")]
 transform = Transform3D(0.14980246, 0.6288185, 0.76298535, -0.12114755, 0.7775524, -0.617038, -0.98126584, -7.3338358e-09, 0.19265904, -45.09745, 0.28541887, 19.048069)
 
-[node name="lamp2" parent="Env/lamps" unique_id=810858818 instance=ExtResource("14_a8y0u")]
+[node name="lamp2" parent="Map(nomesh)/lamps" unique_id=810858818 instance=ExtResource("14_a8y0u")]
 transform = Transform3D(-1.4444647, -0.36431614, -0.17548588, -0.18172134, 1.1663284, -0.9255569, 0.36124632, -0.8700298, -1.1672828, 40.274727, 0.28541887, -34.5201)
 
-[node name="lamp3" parent="Env/lamps" unique_id=929970626 instance=ExtResource("14_a8y0u")]
+[node name="lamp3" parent="Map(nomesh)/lamps" unique_id=929970626 instance=ExtResource("14_a8y0u")]
 transform = Transform3D(-2.445655, -0.04357712, -0.5165952, 0.1411161, 2.3411326, -0.86555415, 0.4988545, -0.8758985, -2.2877822, 9.540963, 0.8745817, -41.634834)
 base_energy = 1.5
 flicker_speed = 0.7
@@ -386,7 +786,7 @@ flicker_chance = 0.5
 check_interval = 0.23
 smooth_speed = 15.0
 
-[node name="lamp7" parent="Env/lamps" unique_id=1863155028 instance=ExtResource("14_a8y0u")]
+[node name="lamp7" parent="Map(nomesh)/lamps" unique_id=1863155028 instance=ExtResource("14_a8y0u")]
 transform = Transform3D(3.6519296, -1.4886806, -0.66875666, 1.5664079, 3.6573687, 0.41233656, 0.4580127, -0.6383424, 3.9220843, 36.94504, 0.47028685, 45.07435)
 base_energy = 10.0
 flicker_speed = 0.7
@@ -394,397 +794,6 @@ intensity_range = 0.8
 flicker_chance = 0.5
 check_interval = 0.23
 smooth_speed = 15.0
-
-[node name="pickup" type="Node3D" parent="Env" unique_id=828927156]
-
-[node name="pickup" parent="Env/pickup" unique_id=366531057 instance=ExtResource("14_jkv2x")]
-transform = Transform3D(-3.3607552, 0, 0.97740734, 0, 3.5, 0, -0.97740734, 0, -3.3607552, -23.688377, -1.1542335, 47.002003)
-
-[node name="pickup2" parent="Env/pickup" unique_id=913766855 instance=ExtResource("14_jkv2x")]
-transform = Transform3D(-0.55166703, 1.922405, -0.0046702954, 0.15324718, 0.04881998, 1.9935224, 1.916293, 0.5495226, -0.16076775, -25.770222, 0.18305969, -47.65063)
-
-[node name="ventilation" type="Node3D" parent="Env" unique_id=203224961]
-
-[node name="1" type="Node" parent="Env/ventilation" unique_id=1317139489]
-
-[node name="ventilationtube" parent="Env/ventilation/1" unique_id=24315464 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 43.9377, 12.335824, 43.427567)
-
-[node name="ventilationtube2" parent="Env/ventilation/1" unique_id=2100450717 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 43.9377, 16.260393, 43.427567)
-
-[node name="ventilationtube_curved" parent="Env/ventilation/1" unique_id=44471914 instance=ExtResource("15_muem4")]
-transform = Transform3D(0.65359235, 0.7568467, 3.3082824e-08, 0, -4.3711385e-08, 1, 0.7568468, -0.6535923, -2.856943e-08, 43.145416, 7.1121883, 43.29414)
-
-[node name="2" type="Node" parent="Env/ventilation" unique_id=677805331]
-
-[node name="ventilationtube" parent="Env/ventilation/2" unique_id=246645728 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(0.41366753, -0.7139115, -0.5649862, -0.59612155, 0.25665286, -0.76076823, 0.68812656, 0.65150565, -0.31940904, -40.412304, 4.7117186, 16.83212)
-
-[node name="ventilationtube_curved" parent="Env/ventilation/2" unique_id=1306488101 instance=ExtResource("15_muem4")]
-transform = Transform3D(-0.6649887, 0.22227651, -0.71300995, -0.40803856, 0.691479, 0.59612143, 0.62553537, 0.6873496, -0.36912847, -36.221478, 2.368641, 25.525864)
-
-[node name="3" type="Node" parent="Env/ventilation" unique_id=488570285]
-
-[node name="ventilationtube_curved" parent="Env/ventilation/3" unique_id=599774024 instance=ExtResource("15_muem4")]
-transform = Transform3D(-4.3711385e-08, -0.9999999, 4.3711385e-08, 0, -4.3711385e-08, -0.9999999, 0.9999999, -4.3711385e-08, 1.9106853e-15, -55.199463, 16.895435, 43.924236)
-
-[node name="ventilationtube_curved2" parent="Env/ventilation/3" unique_id=1931494332 instance=ExtResource("15_muem4")]
-transform = Transform3D(-4.3711385e-08, 0.9999999, -1.1924879e-08, 0, 1.1924879e-08, 0.9999999, 0.9999999, 4.3711385e-08, -5.21253e-16, -55.199463, -4.3757243, 43.904606)
-
-[node name="vertical" type="Node3D" parent="Env/ventilation/3" unique_id=1752728259]
-
-[node name="ventilationtube3" parent="Env/ventilation/3/vertical" unique_id=1891399129 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -55.193653, 12.171385, 44.434547)
-
-[node name="ventilationtube4" parent="Env/ventilation/3/vertical" unique_id=1159785097 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -55.193653, 8.262772, 44.434547)
-
-[node name="ventilationtube5" parent="Env/ventilation/3/vertical" unique_id=1491733395 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -55.193653, 4.5946884, 44.434547)
-
-[node name="ventilationtube6" parent="Env/ventilation/3/vertical" unique_id=1498690701 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -55.193653, 0.8063412, 44.434547)
-
-[node name="horizantal" type="Node3D" parent="Env/ventilation/3" unique_id=325218059]
-
-[node name="ventilationtube3" parent="Env/ventilation/3/horizantal" unique_id=1959715855 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, 24.517464)
-
-[node name="ventilationtube4" parent="Env/ventilation/3/horizantal" unique_id=476427579 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, 28.426003)
-
-[node name="ventilationtube5" parent="Env/ventilation/3/horizantal" unique_id=1144816237 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, 32.09401)
-
-[node name="ventilationtube6" parent="Env/ventilation/3/horizantal" unique_id=1941465783 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, 35.882282)
-
-[node name="ventilationtube7" parent="Env/ventilation/3/horizantal" unique_id=56988850 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, 8.963547)
-
-[node name="ventilationtube8" parent="Env/ventilation/3/horizantal" unique_id=1777173424 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, 12.872086)
-
-[node name="ventilationtube9" parent="Env/ventilation/3/horizantal" unique_id=470434464 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, 16.540092)
-
-[node name="ventilationtube10" parent="Env/ventilation/3/horizantal" unique_id=143288537 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, 20.328365)
-
-[node name="ventilationtube11" parent="Env/ventilation/3/horizantal" unique_id=823074408 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, -6.494953)
-
-[node name="ventilationtube12" parent="Env/ventilation/3/horizantal" unique_id=2037901089 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, -2.5864143)
-
-[node name="ventilationtube13" parent="Env/ventilation/3/horizantal" unique_id=1929135193 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, 1.0815926)
-
-[node name="ventilationtube14" parent="Env/ventilation/3/horizantal" unique_id=1843874600 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, 4.8698654)
-
-[node name="ventilationtube15" parent="Env/ventilation/3/horizantal" unique_id=128112603 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, -22.04887)
-
-[node name="ventilationtube16" parent="Env/ventilation/3/horizantal" unique_id=1656766832 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, -18.140331)
-
-[node name="ventilationtube17" parent="Env/ventilation/3/horizantal" unique_id=465232232 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, -14.472324)
-
-[node name="ventilationtube18" parent="Env/ventilation/3/horizantal" unique_id=2032833645 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, -10.6840515)
-
-[node name="ventilationtube19" parent="Env/ventilation/3/horizantal" unique_id=641652266 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, -37.698208)
-
-[node name="ventilationtube20" parent="Env/ventilation/3/horizantal" unique_id=1000196377 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, -33.78967)
-
-[node name="ventilationtube21" parent="Env/ventilation/3/horizantal" unique_id=1295098534 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, -30.121662)
-
-[node name="ventilationtube22" parent="Env/ventilation/3/horizantal" unique_id=739876200 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, -26.33339)
-
-[node name="ventilationtube25" parent="Env/ventilation/3/horizantal" unique_id=873849087 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, -45.67558)
-
-[node name="ventilationtube26" parent="Env/ventilation/3/horizantal" unique_id=1669814311 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, -41.887306)
-
-[node name="horizantal2" type="Node3D" parent="Env/ventilation/3" unique_id=1040250460]
-
-[node name="ventilationtube3" parent="Env/ventilation/3/horizantal2" unique_id=1868973429 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, 24.517464)
-
-[node name="ventilationtube4" parent="Env/ventilation/3/horizantal2" unique_id=1386002781 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, 28.426003)
-
-[node name="ventilationtube5" parent="Env/ventilation/3/horizantal2" unique_id=1330265419 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, 32.09401)
-
-[node name="ventilationtube6" parent="Env/ventilation/3/horizantal2" unique_id=621298892 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, 35.882282)
-
-[node name="ventilationtube7" parent="Env/ventilation/3/horizantal2" unique_id=623026760 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, 8.963547)
-
-[node name="ventilationtube8" parent="Env/ventilation/3/horizantal2" unique_id=1101055716 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, 12.872086)
-
-[node name="ventilationtube9" parent="Env/ventilation/3/horizantal2" unique_id=970699120 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, 16.540092)
-
-[node name="ventilationtube10" parent="Env/ventilation/3/horizantal2" unique_id=1937889837 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, 20.328365)
-
-[node name="ventilationtube11" parent="Env/ventilation/3/horizantal2" unique_id=434360444 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, -6.494953)
-
-[node name="ventilationtube12" parent="Env/ventilation/3/horizantal2" unique_id=1370005861 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, -2.5864143)
-
-[node name="ventilationtube13" parent="Env/ventilation/3/horizantal2" unique_id=2004358409 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, 1.0815926)
-
-[node name="ventilationtube14" parent="Env/ventilation/3/horizantal2" unique_id=1585676003 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, 4.8698654)
-
-[node name="ventilationtube15" parent="Env/ventilation/3/horizantal2" unique_id=1474071007 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, -22.04887)
-
-[node name="ventilationtube16" parent="Env/ventilation/3/horizantal2" unique_id=1504256513 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, -18.140331)
-
-[node name="ventilationtube17" parent="Env/ventilation/3/horizantal2" unique_id=497165305 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, -14.472324)
-
-[node name="ventilationtube18" parent="Env/ventilation/3/horizantal2" unique_id=260778579 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, -10.6840515)
-
-[node name="ventilationtube19" parent="Env/ventilation/3/horizantal2" unique_id=378076053 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, -37.698208)
-
-[node name="ventilationtube20" parent="Env/ventilation/3/horizantal2" unique_id=754567856 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, -33.78967)
-
-[node name="ventilationtube21" parent="Env/ventilation/3/horizantal2" unique_id=1013926500 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, -30.121662)
-
-[node name="ventilationtube22" parent="Env/ventilation/3/horizantal2" unique_id=1165368588 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, -26.33339)
-
-[node name="ventilationtube25" parent="Env/ventilation/3/horizantal2" unique_id=786899933 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, -45.67558)
-
-[node name="ventilationtube26" parent="Env/ventilation/3/horizantal2" unique_id=56443852 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, -41.887306)
-
-[node name="4" type="Node" parent="Env/ventilation" unique_id=1760313449]
-
-[node name="ventilationtube_curved" parent="Env/ventilation/4" unique_id=1449660193 instance=ExtResource("15_muem4")]
-transform = Transform3D(0.9997495, -0.022373237, 9.779653e-10, 0, -4.371138e-08, -0.9999999, 0.022373237, 0.9997495, -4.3700442e-08, 47.53808, 16.895435, -54.535645)
-
-[node name="ventilationtube_curved2" parent="Env/ventilation/4" unique_id=289221623 instance=ExtResource("15_muem4")]
-transform = Transform3D(0.9997495, 0.022373237, 9.779653e-10, 0, -4.371138e-08, 0.9999999, 0.022373237, -0.9997495, -4.3700442e-08, 47.518456, -4.3757243, -54.536087)
-
-[node name="vertical" type="Node3D" parent="Env/ventilation/4" unique_id=579786469]
-transform = Transform3D(0.022373194, 0, 0.9997496, 0, 1, 0, -0.9997496, 0, 0.022373194, 4.859829, 0, -110.70402)
-
-[node name="ventilationtube3" parent="Env/ventilation/4/vertical" unique_id=2030874740 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -55.193653, 12.171385, 44.434547)
-
-[node name="ventilationtube4" parent="Env/ventilation/4/vertical" unique_id=1705655673 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -55.193653, 8.262772, 44.434547)
-
-[node name="ventilationtube5" parent="Env/ventilation/4/vertical" unique_id=849126070 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -55.193653, 4.5946884, 44.434547)
-
-[node name="ventilationtube6" parent="Env/ventilation/4/vertical" unique_id=608534018 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -55.193653, 0.8063412, 44.434547)
-
-[node name="horizantal" type="Node3D" parent="Env/ventilation/4" unique_id=594898147]
-transform = Transform3D(0.022373194, 0, 0.9997496, 0, 1, 0, -0.9997496, 0, 0.022373194, 4.859829, 0, -110.70402)
-
-[node name="ventilationtube3" parent="Env/ventilation/4/horizantal" unique_id=1396589669 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, 24.517464)
-
-[node name="ventilationtube4" parent="Env/ventilation/4/horizantal" unique_id=1867695764 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, 28.426003)
-
-[node name="ventilationtube5" parent="Env/ventilation/4/horizantal" unique_id=292676788 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, 32.09401)
-
-[node name="ventilationtube6" parent="Env/ventilation/4/horizantal" unique_id=1887765686 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, 35.882282)
-
-[node name="ventilationtube7" parent="Env/ventilation/4/horizantal" unique_id=798210337 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, 8.963547)
-
-[node name="ventilationtube8" parent="Env/ventilation/4/horizantal" unique_id=1510552504 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, 12.872086)
-
-[node name="ventilationtube9" parent="Env/ventilation/4/horizantal" unique_id=342697389 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, 16.540092)
-
-[node name="ventilationtube10" parent="Env/ventilation/4/horizantal" unique_id=1055711673 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, 20.328365)
-
-[node name="ventilationtube11" parent="Env/ventilation/4/horizantal" unique_id=2007288937 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, -6.494953)
-
-[node name="ventilationtube12" parent="Env/ventilation/4/horizantal" unique_id=950281626 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, -2.5864143)
-
-[node name="ventilationtube13" parent="Env/ventilation/4/horizantal" unique_id=1048697627 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, 1.0815926)
-
-[node name="ventilationtube14" parent="Env/ventilation/4/horizantal" unique_id=1018668961 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, 4.8698654)
-
-[node name="ventilationtube15" parent="Env/ventilation/4/horizantal" unique_id=1663267957 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, -22.04887)
-
-[node name="ventilationtube16" parent="Env/ventilation/4/horizantal" unique_id=2009630798 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, -18.140331)
-
-[node name="ventilationtube17" parent="Env/ventilation/4/horizantal" unique_id=862162200 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, -14.472324)
-
-[node name="ventilationtube18" parent="Env/ventilation/4/horizantal" unique_id=1854730297 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, -10.6840515)
-
-[node name="ventilationtube19" parent="Env/ventilation/4/horizantal" unique_id=985869267 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.614983, -37.698208)
-
-[node name="ventilationtube20" parent="Env/ventilation/4/horizantal" unique_id=710797336 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.639677, -33.78967)
-
-[node name="ventilationtube21" parent="Env/ventilation/4/horizantal" unique_id=573579683 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, -30.121662)
-
-[node name="ventilationtube22" parent="Env/ventilation/4/horizantal" unique_id=1493787844 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, -26.33339)
-
-[node name="ventilationtube25" parent="Env/ventilation/4/horizantal" unique_id=426608353 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.662853, -45.67558)
-
-[node name="ventilationtube26" parent="Env/ventilation/4/horizantal" unique_id=1346192380 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, 19.686787, -41.887306)
-
-[node name="horizantal2" type="Node3D" parent="Env/ventilation/4" unique_id=1039478734]
-transform = Transform3D(0.022373194, 0, 0.9997496, 0, 1, 0, -0.9997496, 0, 0.022373194, 4.859829, 0, -110.70402)
-
-[node name="ventilationtube3" parent="Env/ventilation/4/horizantal2" unique_id=261519513 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, 24.517464)
-
-[node name="ventilationtube4" parent="Env/ventilation/4/horizantal2" unique_id=1953278430 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, 28.426003)
-
-[node name="ventilationtube5" parent="Env/ventilation/4/horizantal2" unique_id=1971006360 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, 32.09401)
-
-[node name="ventilationtube6" parent="Env/ventilation/4/horizantal2" unique_id=1801950419 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, 35.882282)
-
-[node name="ventilationtube7" parent="Env/ventilation/4/horizantal2" unique_id=1352721923 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, 8.963547)
-
-[node name="ventilationtube8" parent="Env/ventilation/4/horizantal2" unique_id=1960102803 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, 12.872086)
-
-[node name="ventilationtube9" parent="Env/ventilation/4/horizantal2" unique_id=4274272 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, 16.540092)
-
-[node name="ventilationtube10" parent="Env/ventilation/4/horizantal2" unique_id=161954863 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, 20.328365)
-
-[node name="ventilationtube11" parent="Env/ventilation/4/horizantal2" unique_id=1158748689 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, -6.494953)
-
-[node name="ventilationtube12" parent="Env/ventilation/4/horizantal2" unique_id=1496067122 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, -2.5864143)
-
-[node name="ventilationtube13" parent="Env/ventilation/4/horizantal2" unique_id=1233272775 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, 1.0815926)
-
-[node name="ventilationtube14" parent="Env/ventilation/4/horizantal2" unique_id=843223332 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, 4.8698654)
-
-[node name="ventilationtube15" parent="Env/ventilation/4/horizantal2" unique_id=266927304 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, -22.04887)
-
-[node name="ventilationtube16" parent="Env/ventilation/4/horizantal2" unique_id=155464036 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, -18.140331)
-
-[node name="ventilationtube17" parent="Env/ventilation/4/horizantal2" unique_id=465006545 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, -14.472324)
-
-[node name="ventilationtube18" parent="Env/ventilation/4/horizantal2" unique_id=121861080 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, -10.6840515)
-
-[node name="ventilationtube19" parent="Env/ventilation/4/horizantal2" unique_id=1103362420 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.631172, -37.698208)
-
-[node name="ventilationtube20" parent="Env/ventilation/4/horizantal2" unique_id=791330320 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.606478, -33.78967)
-
-[node name="ventilationtube21" parent="Env/ventilation/4/horizantal2" unique_id=1362234142 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, -30.121662)
-
-[node name="ventilationtube22" parent="Env/ventilation/4/horizantal2" unique_id=2112915475 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, -26.33339)
-
-[node name="ventilationtube25" parent="Env/ventilation/4/horizantal2" unique_id=1971599901 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.583302, -45.67558)
-
-[node name="ventilationtube26" parent="Env/ventilation/4/horizantal2" unique_id=339687375 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(-4.371139e-08, 1, -2.0438185e-15, 0.0063179433, 2.761702e-10, 0.99998003, 0.99998003, 4.3710514e-08, -0.0063179433, -55.149464, -8.559368, -41.887306)
-
-[node name="scatter" type="Node" parent="Env/ventilation" unique_id=1132645402]
-
-[node name="ventilationtube" parent="Env/ventilation/scatter" unique_id=1545581063 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(0.9749459, 0.16465741, 0.14956075, -0.02382993, 0.7458013, -0.6657416, -0.22116198, 0.64549816, 0.73103994, 19.448181, 2.0658593, -34.166233)
-
-[node name="ventilationtube2" parent="Env/ventilation/scatter" unique_id=218807483 instance=ExtResource("14_jbj1t")]
-transform = Transform3D(0.9749459, 0.16465741, 0.14956075, -0.02382993, 0.7458013, -0.6657416, -0.22116198, 0.64549816, 0.73103994, 15.621942, 2.159381, -33.298267)
-
-[node name="ventilationtube_curved" parent="Env/ventilation/scatter" unique_id=1325503680 instance=ExtResource("15_muem4")]
-transform = Transform3D(0.22081338, 0.026868625, -0.97494584, -0.016414195, 0.99958134, 0.023829948, 0.975178, 0.01074101, 0.22116198, 24.390533, 1.4393228, -35.930458)
-
-[node name="lifts" type="Node3D" parent="Env" unique_id=353533169]
-
-[node name="lift1" parent="Env/lifts" unique_id=1075321402 instance=ExtResource("16_dp3eg")]
-transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, 41.14175, 0, 38.2027)
-
-[node name="lift2" parent="Env/lifts" unique_id=42528732 instance=ExtResource("16_dp3eg")]
-transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, 42.563763, 0, -10.91236)
-
-[node name="door" type="Node3D" parent="Env" unique_id=1273159355]
-
-[node name="door" parent="Env/door" unique_id=1333249276 instance=ExtResource("17_0ld40")]
-transform = Transform3D(-6, 0, -7.54979e-07, 0, 5, 0, 9.0597484e-07, 0, -5, -1.0200081, 0, 47.745903)
-
-[node name="conveyor" type="Node3D" parent="Env" unique_id=410727621]
-
-[node name="conveyor_belt" parent="Env/conveyor" unique_id=1695101288 instance=ExtResource("18_gqmmt")]
-transform = Transform3D(2.9984832, 0, -0.09538349, 0, 3.5, 0, 0.09538349, 0, 2.9984832, -32.925613, 0, 47.320206)
-
-[node name="fog" type="Node3D" parent="Env" unique_id=1982349391]
-
-[node name="fog" parent="Env/fog" unique_id=1461466784 instance=ExtResource("20_jscy8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.136621, 4.593067, 55.060955)
-fog_size = Vector2(40, 40)
-
-[node name="fog2" parent="Env/fog" unique_id=42974661 instance=ExtResource("20_jscy8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.791058, 9.770208, 53.88525)
-fog_size = Vector2(40, 40)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=733947204]
-transform = Transform3D(-0.27423722, -0.71372896, -0.6445036, -0.54040915, -0.43999, 0.7171937, -0.7954571, 0.54497683, -0.2650441, 0, 20, 0)
-light_color = Color(0.22799999, 0.31349996, 0.57, 1)
 
 [node name="Lights" type="Node3D" parent="." unique_id=326508904]
 
@@ -846,10 +855,11 @@ script = ExtResource("24_y6deb")
 camera_bounds = NodePath("../CameraBounds")
 metadata/_custom_type_script = "uid://bxue002h03ok6"
 
-[node name="BigEnemyManager" type="Node" parent="." unique_id=363636069 node_paths=PackedStringArray("camera_bounds")]
+[node name="BigEnemyManager" type="Node" parent="." unique_id=363636069 node_paths=PackedStringArray("camera_bounds", "map")]
 unique_name_in_owner = true
 script = ExtResource("23_pm3ni")
 camera_bounds = NodePath("../CameraBounds")
+map = NodePath("../Map")
 metadata/_custom_type_script = "uid://cog2ov4dgpth2"
 
 [node name="DroneManager" type="Node" parent="." unique_id=663992579 node_paths=PackedStringArray("camera_bounds")]
@@ -911,5 +921,3 @@ offset_top = 78.0
 offset_right = 141.0
 offset_bottom = 115.0
 text = "Spawn drone"
-
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1194103766]

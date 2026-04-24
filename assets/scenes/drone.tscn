@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://q8fs4agvgiw0" path="res://scripts/Components/ActiveSkillComponent.gd" id="9_praws"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://w148sk4dnhjf" path="res://assets/source/entities/drone/drone_blend_tree.tres" id="9_wt63a"]
 [ext_resource type="Script" uid="uid://brr713nr64ach" path="res://scripts/Components/HealthComponent.gd" id="16_bnc7f"]
+[ext_resource type="Script" uid="uid://k8xtbff7swi0" path="res://scripts/Components/AIComponent.gd" id="16_mttwm"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_2dbrb"]
 _surfaces = [{
@@ -152,6 +153,7 @@ transform = Transform3D(0.995396, -2.0123987e-10, 0.09584576, -0.095845744, -4.1
 shape = SubResource("BoxShape3D_dpg6e")
 
 [node name="Hurtbox" type="Area3D" parent="." unique_id=543596209]
+collision_layer = 2
 script = ExtResource("9_mttwm")
 metadata/_custom_type_script = "uid://4g7g22oy78fc"
 
@@ -176,6 +178,8 @@ light_energy = 3.366
 shadow_enabled = true
 omni_range = 11.66
 omni_attenuation = 0.96
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1591731995]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2015327755]
 libraries/ = ExtResource("8_praws")
@@ -244,3 +248,8 @@ script = ExtResource("16_bnc7f")
 model = NodePath("../model/drone")
 hurtbox = NodePath("../Hurtbox")
 metadata/_custom_type_script = "uid://brr713nr64ach"
+
+[node name="AIComponent" type="Node" parent="." unique_id=1211889633]
+unique_name_in_owner = true
+script = ExtResource("16_mttwm")
+metadata/_custom_type_script = "uid://k8xtbff7swi0"

@@ -9,8 +9,9 @@ extends Node3D
 @onready var button_3: Button = $Control/Button3
 @onready var big_enemy_manager: BigEnemyManager = %BigEnemyManager
 
+var active_player: Player
+
 func _ready():
 	button.connect("button_down", robot_1_manager.spawn.bind(false))
 	button_2.connect("button_down", big_enemy_manager.spawn.bind(false))
 	button_3.connect("button_down", drone_manager.spawn.bind(false))
-	

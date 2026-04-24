@@ -37,3 +37,9 @@ libraries/ = ExtResource("5_11yv0")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=647374597]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.82489, 6.7085114, 0.08306885)
 shape = SubResource("BoxShape3D_353s3")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." index="6" unique_id=653719477]
+transform = Transform3D(0.9999901, 0, -0.0044505745, 0, 1, 0, 0.0044505745, 0, 0.9999901, 0, 0, 0)
+height = 15.0
+vertices = PackedVector3Array(-9.924256, 0, -2.8475223, -10.084482, 0, 2.8465028, -2.9926324, 0, 2.8524375, -3.0776665, 0, -3.2570028)
+affect_navigation_mesh = true

@@ -7,15 +7,11 @@ extends Node
 @onready var robot1 = preload("res://assets/scenes/robot_1.tscn")
 @onready var robot1_spawner: Marker3D = $"../Spawns/robot1_spawner"
 @onready var robot_1_postspawn: Marker3D = $"../PostSpawn/robot1postspawn"
-@onready var lift_1: Node3D = $"../Env/lifts/lift1"
+@onready var lift_1: Node3D = $"../Map/lifts/lift1"
 @onready var global_spawner: Marker3D = $"../GlobalSpawner"
 
 func _ready():
-	pass
-	#var robot1_instance = _generate_instance()
-	#robot1_instance.is_controlled = true
-	#robot1_instance.global_transform = global_spawner.global_transform
-	#main.add_child.call_deferred(robot1_instance)
+	_spawn("", true)
 
 func spawn(controlled: bool):
 	lift_1.open(_spawn.bind(controlled))
@@ -28,12 +24,20 @@ func _generate_instance() -> Robot1:
 func _spawn(_animation: String, controlled: bool):
 	var robot1_instance = _generate_instance()
 	robot1_instance.is_controlled = controlled
-	robot1_instance.global_transform = robot1_spawner.global_transform
+	
+	var active_spawner = robot1_spawner if not controlled else global_spawner
+	robot1_instance.global_transform = active_spawner.global_transform
 	main.add_child.call_deferred(robot1_instance)
-	robot1_instance.ready.connect(
-		robot1_instance.on_spawn.bind(
-			robot_1_postspawn.global_position, 
-			lift_1.close
+
+	if not controlled:
+		robot1_instance.ready.connect(
+			robot1_instance.on_spawn.bind(
+				robot_1_postspawn.global_position, 
+				main.active_player,
+				lift_1.close
+			)
 		)
-	)
+	else:
+		main.active_player = robot1_instance
+		
 	

@@ -2,21 +2,19 @@ class_name BigEnemyManager
 extends Node
 
 @export var camera_bounds: Area3D
+@export var map: NavigationRegion3D
 
 @onready var main = get_tree().root.get_node("main")
 @onready var projectile_manager: Node = %ProjectileManager
 @onready var bigenemy = preload("res://assets/scenes/bigenemy.tscn")
-@onready var door: Node3D = $"../Env/door/door"
+@onready var door: Node3D = $"../Map/door/door"
 @onready var bigenemy_spawner: Marker3D = $"../Spawns/bigenemy_spawner"
 @onready var bigenemypostspawn: Marker3D = $"../PostSpawn/bigenemypostspawn"
 @onready var global_spawner: Marker3D = $"../GlobalSpawner"
 
 func _ready():
+	#_spawn("", true)
 	pass
-	#var bigenemy_instance = _generate_instance()
-	#bigenemy_instance.is_controlled = true
-	#bigenemy_instance.global_transform = global_spawner.global_transform
-	#main.add_child.call_deferred(bigenemy_instance)
 
 func spawn(controlled: bool):
 	door.open(_spawn.bind(controlled))
@@ -32,11 +30,18 @@ func _generate_instance() -> BigEnemy:
 func _spawn(_animation: String, controlled: bool):
 	var bigenemy_instance = _generate_instance()
 	bigenemy_instance.is_controlled = controlled
-	bigenemy_instance.global_transform = bigenemy_spawner.global_transform
-	main.add_child.call_deferred(bigenemy_instance)
-	bigenemy_instance.ready.connect(
-		bigenemy_instance.on_spawn.bind(
-			bigenemypostspawn.global_position, 
-			door.close
+	
+	var active_spawner = bigenemy_spawner if not controlled else global_spawner
+	bigenemy_instance.global_transform = active_spawner.global_transform
+	map.add_child.call_deferred(bigenemy_instance)
+	
+	if not controlled:
+		bigenemy_instance.ready.connect(
+			bigenemy_instance.on_spawn.bind(
+				bigenemypostspawn.global_position, 
+				main.active_player,
+				door.close
+			)
 		)
-	)
+	else:
+		main.active_player = bigenemy_instance

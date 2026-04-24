@@ -60,3 +60,8 @@ mesh = SubResource("ArrayMesh_5x3yc")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=481754674]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02865982, 0.2619629, 0.052337646)
 shape = SubResource("BoxShape3D_rq7i0")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=5643985]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.314784, -0.09460282)
+height = 4.0
+vertices = PackedVector3Array(-1.4003134, 0, -0.953662, -1.3761711, 0, 1.4123853, 1.3520269, 0, 1.3882424, 1.472744, 0, -0.953662)
