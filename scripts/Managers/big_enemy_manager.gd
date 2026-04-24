@@ -13,8 +13,8 @@ extends Node
 @onready var global_spawner: Marker3D = $"../GlobalSpawner"
 
 func _ready():
-	#_spawn("", true)
-	pass
+	_spawn("", true)
+	#pass
 
 func spawn(controlled: bool):
 	door.open(_spawn.bind(controlled))

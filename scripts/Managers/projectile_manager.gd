@@ -8,6 +8,7 @@ func spawn_projectile(
 	projectile_spawn_locations: Array,
 	projectile_dir: Array
 ) -> void:
+	print("shooting projectile")
 	for i in range(projectile_spawn_locations.size()):
 		var projectile_instance = drone_projectile.instantiate()
 		

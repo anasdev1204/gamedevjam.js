@@ -31,7 +31,7 @@ func update(delta: float, direction: Vector3):
 func tween_rotate(duration : float, direction: Vector3):
 	if tween:
 		tween.kill()
-	
+
 	var target_rotation : Vector3 = model.rotation
 	target_rotation.y = lerp_angle(model.rotation.y, atan2(direction.x, direction.z) - player_init_rotation, 1)
 	

@@ -5,6 +5,7 @@ extends Node
 @export var anim_tree: AnimationTree
 @export var skills_container: SkillsContainer
 @export var movement_component: MovementComponent
+@export var rotation_component: RotationComponent
 @export var camera_component: CameraComponent
 
 func _ready():

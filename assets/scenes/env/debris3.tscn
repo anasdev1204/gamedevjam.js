@@ -7,15 +7,17 @@
 size = Vector3(3.520346, 1.0981293, 4.42231)
 
 [node name="debris3" type="StaticBody3D" unique_id=1234568447]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2610016, 0)
 script = ExtResource("1_1h5w3")
 
 [node name="Debris3" type="MeshInstance3D" parent="." unique_id=2093957345]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.39014, -0.74179363, 0.32227373)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.39, -0.217, 0.322)
 mesh = ExtResource("1_8j7r2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=663061516]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02927053, -0.25328827, 0.22941971)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02927053, 0.3277769, 0.22941971)
 shape = SubResource("BoxShape3D_uebar")
 
-[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=2084783842]
-vertices = PackedVector3Array(2.2106256, 0, 2.5485544, -1.9571772, 0, 2.802002, -2.0979815, 0, -2.0134985, 1.9571772, 0, -1.9571774)
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=655797656]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.28199077, 0)
+vertices = PackedVector3Array(1.9767599, 0, 2.3493416, -1.976759, 0, 2.4528375, -2.0388565, 0, -1.9974581, 2.059556, 0, -1.9974581)

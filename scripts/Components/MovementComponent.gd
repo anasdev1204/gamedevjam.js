@@ -150,7 +150,7 @@ func move_to(pos: Vector3, on_finished: Callable = Callable()) -> void:
 func passive_dash(_velocity : Vector3, duration : float, delay : float):
 	if _velocity == Vector3.ZERO:
 		return
-	rotation_component.tween_rotate(delay * 0.5, last_direction)
+
 	await get_tree().create_timer(delay).timeout
 	passive_dash_timer.start(duration)
 	var rotation : float = atan2(last_direction.x, last_direction.z)

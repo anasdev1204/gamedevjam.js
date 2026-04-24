@@ -11,7 +11,8 @@ extends Node
 @onready var global_spawner: Marker3D = $"../GlobalSpawner"
 
 func _ready():
-	_spawn("", true)
+	#_spawn("", true)
+	pass
 
 func spawn(controlled: bool):
 	lift_1.open(_spawn.bind(controlled))

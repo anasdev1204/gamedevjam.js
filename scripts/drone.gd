@@ -8,9 +8,14 @@ signal shot_fired
 func _ready():
 	super._ready()
 	
-	input_component.primary_fired.connect(
-		_on_primary_fired
-	)
+	if is_controlled:
+		input_component.primary_fired.connect(
+			_on_primary_fired
+		)
+	else:
+		ai_component.primary_fired.connect(
+			_on_primary_fired
+		)
 	
 func _on_primary_fired():
 	var projectile_spawn_locations := []

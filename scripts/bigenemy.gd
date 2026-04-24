@@ -9,9 +9,14 @@ signal shot_fired
 func _ready():
 	super._ready()
 	
-	input_component.primary_fired.connect(
-		_on_primary_fired
-	)
+	if is_controlled:	
+		input_component.primary_fired.connect(
+			_on_primary_fired
+		)
+	else:
+		ai_component.primary_fired.connect(
+			_on_primary_fired
+		)
 	
 func _on_primary_fired():
 	await get_tree().create_timer(5.0 / Engine.physics_ticks_per_second).timeout
