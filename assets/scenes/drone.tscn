@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dprh06t61bjcu" path="res://scripts/drone.gd" id="1_b8s44"]
 [ext_resource type="Script" uid="uid://dy5m5f1dv31so" path="res://scripts/VFX/dash_afterimage.gd" id="2_1rp74"]
-[ext_resource type="PackedScene" uid="uid://hey7tb57bduq" path="res://assets/source/entities/drone/drone_propeller.tscn" id="2_b8s44"]
+[ext_resource type="PackedScene" uid="uid://hey7tb57bduq" path="res://assets/scenes/vfx/drone_propeller.tscn" id="2_b8s44"]
 [ext_resource type="Material" uid="uid://dmsvhf6ry2mas" path="res://res/materials/simple_outline.tres" id="2_q8fse"]
 [ext_resource type="Shader" uid="uid://dbu7llmqrxdp3" path="res://res/shaders/toon.tres" id="3_w3j5c"]
 [ext_resource type="Texture2D" uid="uid://bwpraxhoy1xt8" path="res://assets/source/entities/drone/drone_text.png" id="4_pi7vy"]
@@ -207,11 +207,12 @@ active_dash_duration = 0.3
 active_dash_cooldown = 0.4
 metadata/_custom_type_script = "uid://dw3mcscvxt3xt"
 
-[node name="RotationComponent" type="Node" parent="." unique_id=1262219759 node_paths=PackedStringArray("player", "model")]
+[node name="RotationComponent" type="Node" parent="." unique_id=1262219759 node_paths=PackedStringArray("player", "model", "collision_shape")]
 unique_name_in_owner = true
 script = ExtResource("7_8nm5b")
 player = NodePath("..")
 model = NodePath("../model")
+collision_shape = NodePath("../CollisionShape3D")
 default_rotation = 90.0
 metadata/_custom_type_script = "uid://ba8212q4seyav"
 

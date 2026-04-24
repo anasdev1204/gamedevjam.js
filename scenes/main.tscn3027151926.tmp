@@ -23,7 +23,6 @@
 [ext_resource type="PackedScene" uid="uid://ba0igo8jquk3k" path="res://assets/scenes/env/fog.tscn" id="20_jscy8"]
 [ext_resource type="PackedScene" uid="uid://xau1sksva2cv" path="res://assets/scenes/env/wall.tscn" id="21_yc10j"]
 [ext_resource type="Script" uid="uid://ctyw3efxqa3w" path="res://scripts/Managers/big_enemy_manager.gd" id="23_pm3ni"]
-[ext_resource type="Script" uid="uid://bbxoejl2dkesg" path="res://scripts/Managers/robot_1_manager.gd" id="24_y6deb"]
 
 [sub_resource type="Environment" id="Environment_0wfyh"]
 background_mode = 1
@@ -847,18 +846,6 @@ camera_bounds = NodePath("../CameraBounds")
 
 [node name="Robot1Manager" type="Node" parent="." unique_id=1035737565]
 unique_name_in_owner = true
-script = ExtResource("24_y6deb")
 
 [node name="Robot2Manager" type="Node" parent="." unique_id=40115028]
 unique_name_in_owner = true
-
-[node name="Spawns" type="Node3D" parent="." unique_id=1860744488]
-
-[node name="drone_spawner" type="Marker3D" parent="Spawns" unique_id=1687055254]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.63575, 13.529114, 52.247154)
-
-[node name="bigenemy_spawner" type="Marker3D" parent="Spawns" unique_id=1362118858]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.963336, 53.594337)
-
-[node name="robot1_spawner" type="Marker3D" parent="Spawns" unique_id=21368267]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.285088, -0.87120724, 24.666512)

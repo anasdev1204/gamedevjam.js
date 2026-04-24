@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://cchhimadbt1dg"]
 
-[ext_resource type="Script" uid="uid://x5adlln11yam" path="res://scripts/Classes/Player.gd" id="1_0mrj5"]
+[ext_resource type="Script" uid="uid://cxpq4kknl2n57" path="res://scripts/bigenemy.gd" id="1_x4fpt"]
 [ext_resource type="Script" uid="uid://dy5m5f1dv31so" path="res://scripts/VFX/dash_afterimage.gd" id="2_w5iej"]
 [ext_resource type="Material" uid="uid://dmsvhf6ry2mas" path="res://res/materials/simple_outline.tres" id="3_x4fpt"]
 [ext_resource type="Shader" uid="uid://dbu7llmqrxdp3" path="res://res/shaders/toon.tres" id="4_16qem"]
@@ -70,16 +70,14 @@ next_pass = ExtResource("3_x4fpt")
 shader = ExtResource("4_16qem")
 shader_parameter/albedo = ExtResource("5_j646y")
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tf84j"]
-radius = 0.48046875
-height = 0.9609375
+[sub_resource type="CylinderMesh" id="CylinderMesh_x4fpt"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_kv6f3"]
-size = Vector3(0.64172363, 2.1922913, 0.7664795)
+[sub_resource type="BoxShape3D" id="BoxShape3D_x4fpt"]
+size = Vector3(6.645668, 3.5151215, 2.697998)
 
-[node name="bigenemy" type="CharacterBody3D" unique_id=1665825012]
-script = ExtResource("1_0mrj5")
-metadata/_custom_type_script = "uid://x5adlln11yam"
+[node name="bigenemy" type="CharacterBody3D" unique_id=1999983968]
+script = ExtResource("1_x4fpt")
+metadata/_custom_type_script = "uid://cxpq4kknl2n57"
 
 [node name="VFX" type="Node3D" parent="." unique_id=1787133210]
 
@@ -102,7 +100,7 @@ bones/1/name = "Bone.001"
 bones/1/parent = -1
 bones/1/rest = Transform3D(0.9999929, -0.003766364, 7.420213e-08, 0.003766364, 0.9999929, -5.284853e-08, -7.400255e-08, 5.3127625e-08, 1, 0.023271438, 2.6962051, 4.2992437e-07)
 bones/1/enabled = true
-bones/1/position = Vector3(0.023271436, 3.3361185, 4.3888576e-07)
+bones/1/position = Vector3(0.023271436, 3.2141747, 4.3318084e-07)
 bones/1/rotation = Quaternion(2.6494083e-08, 3.705123e-08, 0.0018831851, 0.9999982)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "Bone.002.L"
@@ -110,7 +108,7 @@ bones/2/parent = 1
 bones/2/rest = Transform3D(0.5262218, 0.8503475, 1.8703578e-07, -0.8503475, 0.5262218, -3.4393304e-07, -3.908849e-07, 2.1939671e-08, 1.0000001, 0.97262925, 2.094288, 1.8324522e-07)
 bones/2/enabled = true
 bones/2/position = Vector3(0.97262925, 2.094288, 1.8324522e-07)
-bones/2/rotation = Quaternion(1.2512885e-07, 1.60251e-07, -0.499059, 0.866568)
+bones/2/rotation = Quaternion(1.174128e-07, 1.6474488e-07, -0.5380566, 0.84290874)
 bones/2/scale = Vector3(1.0000001, 1.0000001, 1.0000001)
 bones/3/name = "Bone.003.L"
 bones/3/parent = 2
@@ -131,7 +129,7 @@ bones/5/parent = 1
 bones/5/rest = Transform3D(0.5326122, -0.84635943, -3.3793017e-07, 0.84635943, 0.5326122, -3.42103e-07, 4.6952778e-07, -1.0380214e-07, 1.0000001, -1.0033685, 2.1017306, 3.6805403e-08)
 bones/5/enabled = true
 bones/5/position = Vector3(-1.0033685, 2.1017306, 3.6805403e-08)
-bones/5/rotation = Quaternion(8.758061e-08, -2.2501798e-07, 0.49579173, 0.8684416)
+bones/5/rotation = Quaternion(7.695406e-08, -2.2773112e-07, 0.5348781, 0.8449293)
 bones/5/scale = Vector3(1, 1, 1.0000001)
 bones/6/name = "Bone.003.R"
 bones/6/parent = 5
@@ -153,14 +151,35 @@ mesh = SubResource("ArrayMesh_xa8vf")
 skin = SubResource("Skin_ckpij")
 surface_material_override/0 = SubResource("ShaderMaterial_ns5r0")
 
+[node name="beam_marker" type="Marker3D" parent="Armature/Skeleton3D/Cube_004" unique_id=452860151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15272522, 4.4020143, 4.3679523)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Armature/Skeleton3D/Cube_004/beam_marker" unique_id=2145271249]
+visible = false
+mesh = SubResource("CylinderMesh_x4fpt")
+
 [node name="skills" type="Node3D" parent="Armature/Skeleton3D" unique_id=600847600 node_paths=PackedStringArray("active_skills")]
 script = ExtResource("6_hhmkw")
 active_skills = [NodePath("ActiveSkill")]
+max_combo = 1
 
 [node name="ActiveSkill" type="Node" parent="Armature/Skeleton3D/skills" unique_id=1261094335]
 script = ExtResource("7_qd8f2")
 animation_name = &"blast"
+windup_duration = 0.22
+windup_scale = 1.15
+delivery_duration = 0.12
+delivery_scale = 1.55
+recovery_duration = 0.16
+recovery_scale = 1.2
 metadata/_custom_type_script = "uid://4gsfrqitdpoc"
+
+[node name="beam_marker" type="Marker3D" parent="Armature" unique_id=1174840792]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15272522, 4.4020143, 4.3679523)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Armature/beam_marker" unique_id=917428701]
+mesh = SubResource("CylinderMesh_x4fpt")
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=1689113310]
 transform = Transform3D(0.8480481, 0, 0.52991927, 0, 1, 0, -0.52991927, 0, 0.8480481, 0, 3.169639, 0)
@@ -172,25 +191,9 @@ projection = 1
 current = true
 size = 20.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1221074493]
-transform = Transform3D(3.2242746, 0, 0, 0, 3.2242746, 0, 0, 0, 3.2242746, 0.54201484, 4.3223286, 1.6398058)
-shape = SubResource("CapsuleShape3D_tf84j")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1040088439]
-transform = Transform3D(0.78613746, 0.6180517, 0, -0.6180517, 0.78613746, 0, 0, 0, 1, -1.7106867, 5.6025467, 1.5230455)
-shape = SubResource("BoxShape3D_kv6f3")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1808336031]
-transform = Transform3D(-0.7858569, -0.61840844, -8.742278e-08, -0.61840844, 0.7858569, 0, 6.8701794e-08, 5.4062983e-08, -1, 2.7047153, 5.3919554, 1.6246893)
-shape = SubResource("BoxShape3D_kv6f3")
-
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=1965353897]
-transform = Transform3D(-0.9995066, -0.031410784, -7.036604e-08, -0.031410784, 0.9995066, 5.1878327e-08, 6.8701794e-08, 5.4062983e-08, -1, 3.8917246, 2.8063908, 1.6246893)
-shape = SubResource("BoxShape3D_kv6f3")
-
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="." unique_id=1373952502]
-transform = Transform3D(-0.9995066, -0.031410784, -7.036604e-08, -0.031410784, 0.9995066, 5.1878327e-08, 6.8701794e-08, 5.4062983e-08, -1, -2.6833825, 2.8063908, 1.6246893)
-shape = SubResource("BoxShape3D_kv6f3")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1378753056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.56339025, 4.6145887, 1.5701957)
+shape = SubResource("BoxShape3D_x4fpt")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1229379448]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.172556, -0.14692974)
@@ -208,9 +211,11 @@ tree_root = ExtResource("9_x4fpt")
 anim_player = NodePath("../AnimationPlayer")
 parameters/movement_blend/blend_position = 0.0
 parameters/movement_time_scale/scale = 1.0
-parameters/Transition/current_state = "end_attack"
-parameters/Transition/transition_request = ""
-parameters/Transition/current_index = 0
+parameters/attack_buffer_0/TimeScale/scale = 1.0
+parameters/attack_buffer_1/TimeScale/scale = 1.0
+parameters/attack_transition/current_state = "end_attack"
+parameters/attack_transition/transition_request = ""
+parameters/attack_transition/current_index = 0
 
 [node name="InputComponent" type="Node" parent="." unique_id=604280645]
 unique_name_in_owner = true
@@ -224,13 +229,17 @@ body = NodePath("..")
 rotation_component = NodePath("../RotationComponent")
 camera_component = NodePath("../CameraComponent")
 dash_after_image_vfx = NodePath("../VFX/DashAfterImage")
+active_dash_speed = 40.0
+active_dash_duration = 0.3
+active_dash_cooldown = 0.4
 metadata/_custom_type_script = "uid://dw3mcscvxt3xt"
 
-[node name="RotationComponent" type="Node" parent="." unique_id=1234091633 node_paths=PackedStringArray("player", "model")]
+[node name="RotationComponent" type="Node" parent="." unique_id=1234091633 node_paths=PackedStringArray("player", "model", "collision_shape")]
 unique_name_in_owner = true
 script = ExtResource("10_7dt0x")
 player = NodePath("..")
 model = NodePath("../Armature/Skeleton3D/Cube_004")
+collision_shape = NodePath("../CollisionShape3D")
 metadata/_custom_type_script = "uid://ba8212q4seyav"
 
 [node name="CameraComponent" type="Node" parent="." unique_id=2007762721 node_paths=PackedStringArray("target", "pivot", "camera")]

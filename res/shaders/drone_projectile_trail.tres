@@ -1,6 +1,6 @@
 [gd_resource type="VisualShader" format=3 uid="uid://qnq3ifsvv782"]
 
-[ext_resource type="Texture2D" uid="uid://dmwac0wdioscs" path="res://assets/source/weapons/drone_projectile_trail.png" id="1_06j57"]
+[ext_resource type="Texture2D" uid="uid://dmwac0wdioscs" path="res://assets/source/entities/drone/drone_projectile_trail.png" id="1_06j57"]
 
 [sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_6h4fm"]
 operator = 2

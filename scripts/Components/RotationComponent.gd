@@ -2,6 +2,7 @@ class_name RotationComponent extends Node
 
 @export var player: Player
 @export var model: Node3D
+@export var collision_shape: CollisionShape3D
 @export var rotation_speed := 10.0
 @export var default_rotation := 0.
 
@@ -20,12 +21,17 @@ func update(delta: float, direction: Vector3):
 			target_angle,
 			rotation_speed * delta
 		)
+		
+		collision_shape.rotation.y = lerp_angle(
+			collision_shape.rotation.y,
+			target_angle,
+			rotation_speed * delta
+		)
 
 func tween_rotate(duration : float, direction: Vector3):
 	if tween:
 		tween.kill()
 	
-	print("tweenwa")
 	var target_rotation : Vector3 = model.rotation
 	target_rotation.y = lerp_angle(model.rotation.y, atan2(direction.x, direction.z) - player_init_rotation, 1)
 	
