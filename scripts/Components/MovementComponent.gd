@@ -211,7 +211,7 @@ func _on_active_dash():
 func _on_active_dash_end():
 	camera_component.set_camera_size()
 	dash_after_image_vfx.stop()
-	active_dash_cooldown_timer.start(active_dash_cooldown)
+	active_dash_cooldown_timer.start(active_dash_cooldown * Global.dash_cd_mult)
 	
 func _on_active_dash_cooldown_timer_end():
 	dash_ready.emit()

@@ -188,7 +188,6 @@ func enable():
 	if is_in_group("enemy"):
 		remove_from_group("enemy")
 		
-	
 func disable(_init := true):
 	is_controlled = false
 	
@@ -215,10 +214,12 @@ func disable(_init := true):
 	swtich_area.active = false
 	switch_indicator.visible = false
 	
-	health_component.reset_health(ai_component.health * Global.wave_multiplier)
+	health_component.reset_health(
+		ai_component.health * 
+		Global.wave_multiplier
+	)
 	
 	add_to_group("enemy")
-	
 	
 func _disconnect_input():
 	if input_component.move_dir_change.is_connected(_on_movement_change):
@@ -241,7 +242,7 @@ func _disconnect_ai():
 		ai_component.primary_fired.disconnect(active_skill_component._on_primary_fire)
 
 func start_switch_cooldown():
-	switch_cooldown_timer.start(switch_cooldown)
+	switch_cooldown_timer.start(switch_cooldown * Global.switch_cooldown_mult)
 
 func _on_switch_cooldown_timer_timeout():
 	switch_ready.emit()

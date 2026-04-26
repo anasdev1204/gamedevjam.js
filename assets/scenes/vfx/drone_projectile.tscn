@@ -68,7 +68,7 @@ collision_layer = 16
 collision_mask = 8
 script = ExtResource("6_wf64q")
 knockback = 3.0
-ally_multiplier = 1.5
+ally_multiplier = 1.0
 metadata/_custom_type_script = "uid://cffa0n4q4tuvk"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=1177974230]

@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://cffa0n4q4tuvk" path="res://scripts/Classes/Hitbox.gd" id="5_bvkgv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hux4n"]
-size = Vector3(0.19616318, 1.1999664, 3.1488)
+size = Vector3(0.19616318, 2.170353, 5.1004324)
 
 [node name="Sword" type="MeshInstance3D" unique_id=1762692563]
 script = ExtResource("1_phvpg")
@@ -35,6 +35,6 @@ ally_multiplier = 3.0
 metadata/_custom_type_script = "uid://cffa0n4q4tuvk"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=653390244]
-transform = Transform3D(0.9928493, -0.04108483, 0.11208164, 0, 0.9389083, 0.34416774, -0.11937442, -0.3417067, 0.9321944, 0.100631945, 0.22106618, 1.0264933)
+transform = Transform3D(0.9928493, -0.04108483, 0.11208164, 0, 0.9389083, 0.34416774, -0.11937442, -0.3417067, 0.9321944, 0.18600859, 0.56569004, 1.7365797)
 shape = SubResource("BoxShape3D_hux4n")
 debug_color = Color(0.3475012, 0.6204995, 0, 0.68100005)

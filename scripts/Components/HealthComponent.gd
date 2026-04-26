@@ -43,8 +43,9 @@ func _ready():
 func _hit(damage: float, attack_global_position: Vector3, knockback_value: float):
 	if get_parent().is_controlled and _is_invincible():
 		return
-		
-	current_health -= damage
+	
+	var dmg_offset :float = Global.flat_damage_reduction if  get_parent().is_controlled else 0.
+	current_health -= damage - dmg_offset
 	hp_change.emit(current_health)
 	
 	if current_health <= 0:
@@ -53,7 +54,7 @@ func _hit(damage: float, attack_global_position: Vector3, knockback_value: float
 			died = true
 	else:
 		_hit_flash_shader(true)
-		start_invincibility_timer(invincibility_duration)
+		start_invincibility_timer(invincibility_duration + Global.invincible_duration_offset)
 		display_health()
 		movement_component.knock_back(attack_global_position, knockback_value)
 
@@ -66,7 +67,8 @@ func _is_invincible():
 func _reset_invicibility():
 	_hit_flash_shader(false)
 
-func _heal(healed_hp: float):
+func heal(healed_hp: float):
+	print(healed_hp)
 	current_health += healed_hp
 	hp_change.emit(current_health)
 	

@@ -45,6 +45,9 @@ func _spawn(_animation: String, controlled: bool, number: float, local_session: 
 					door.close if i + 1 == number else do_nothing
 				)
 			)
+			main.active_player_changed.connect(
+				bigenemy_instance._active_ai
+			)
 			await get_tree().create_timer(spawn_delay).timeout
 			if local_session != main.spawn_session:
 				return

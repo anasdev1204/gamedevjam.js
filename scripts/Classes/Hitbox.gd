@@ -11,7 +11,7 @@ func _ready():
 	area_entered.connect(_on_area_entered)
 	
 func _on_area_entered(area):	
-	var active_multiplier := ally_multiplier if not is_in_group("enemy") else Global.wave_multiplier
+	var active_multiplier: float = (ally_multiplier * Global.dmg_mult) if not is_in_group("enemy") else (Global.wave_multiplier * Global.enemy_dmg_mult)
 	if monitoring and is_instance_of(area, Hurtbox):		
 		if (
 			(area.get_parent().is_in_group("enemy") and not is_in_group("enemy"))
@@ -24,6 +24,10 @@ func _on_area_entered(area):
 				knockback
 			)
 			
+			
+			if not is_in_group("enemy"):
+				get_tree().current_scene.heal_player(damage * active_multiplier * Global.life_steal)
+				
 			if on_enter:
 				on_enter.call()
 

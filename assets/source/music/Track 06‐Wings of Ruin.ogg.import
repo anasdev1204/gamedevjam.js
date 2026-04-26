@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dqt584hmc46oc"
+path="res://.godot/imported/Track 06‐Wings of Ruin.ogg-bbbd6d6284f4019184e76aa3372b15fa.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/source/music/Track 06‐Wings of Ruin.ogg"
+dest_files=["res://.godot/imported/Track 06‐Wings of Ruin.ogg-bbbd6d6284f4019184e76aa3372b15fa.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

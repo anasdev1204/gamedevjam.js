@@ -43,6 +43,9 @@ func _spawn(_animation: String, controlled: bool, number: float, local_session: 
 					do_nothing
 				)
 			)
+			main.active_player_changed.connect(
+				drone_instance._active_ai
+			)
 		await get_tree().create_timer(spawn_delay).timeout
 	
 		if local_session != main.spawn_session:

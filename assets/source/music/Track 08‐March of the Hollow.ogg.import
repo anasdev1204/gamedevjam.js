@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c2hpddeo2w51i"
+path="res://.godot/imported/Track 08‐March of the Hollow.ogg-69e78c30ee883f2ff78f1d68330ca371.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/source/music/Track 08‐March of the Hollow.ogg"
+dest_files=["res://.godot/imported/Track 08‐March of the Hollow.ogg-69e78c30ee883f2ff78f1d68330ca371.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

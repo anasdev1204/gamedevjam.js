@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dv5f5tlqrwyjf" path="res://scripts/main.gd" id="1_og1vs"]
 [ext_resource type="Script" uid="uid://iu2puidp8m0i" path="res://scripts/Managers/world_audio_manager.gd" id="2_qkpxi"]
-[ext_resource type="AudioStream" uid="uid://c23rgirjwvn6j" path="res://assets/source/music/Track 02‐Cleave the Flood.wav" id="3_5q0nq"]
-[ext_resource type="AudioStream" uid="uid://cwlib6kcdgn3y" path="res://assets/source/music/Track 06‐Wings of Ruin.wav" id="4_dgi5k"]
-[ext_resource type="AudioStream" uid="uid://dvfldi6gve4g6" path="res://assets/source/music/Track 08‐March of the Hollow.wav" id="5_j8jky"]
-[ext_resource type="AudioStream" uid="uid://bkvtjggvf5xds" path="res://assets/source/music/Track 11‐The Glory Divide.wav" id="6_kmb1v"]
+[ext_resource type="AudioStream" uid="uid://cawj71bs0bpno" path="res://assets/source/music/Track 02‐Cleave the Flood.ogg" id="3_bjg73"]
+[ext_resource type="AudioStream" uid="uid://dqt584hmc46oc" path="res://assets/source/music/Track 06‐Wings of Ruin.ogg" id="4_bu4jf"]
+[ext_resource type="AudioStream" uid="uid://c2hpddeo2w51i" path="res://assets/source/music/Track 08‐March of the Hollow.ogg" id="5_o7ddy"]
+[ext_resource type="AudioStream" uid="uid://b4utogc34d6cd" path="res://assets/source/music/Track 11‐The Glory Divide.ogg" id="6_0loja"]
 [ext_resource type="Material" uid="uid://bldmqy2ivi5ny" path="res://res/materials/tile.tres" id="7_85g3d"]
 [ext_resource type="Material" uid="uid://6xhy26gxuau5" path="res://res/materials/wall.tres" id="8_choun"]
 [ext_resource type="PackedScene" uid="uid://bgfncvsletmqa" path="res://assets/scenes/env/pipe1.tscn" id="9_eb6dy"]
@@ -31,7 +31,26 @@
 [ext_resource type="Script" uid="uid://cog2ov4dgpth2" path="res://scripts/Managers/big_enemy_manager.gd" id="23_pm3ni"]
 [ext_resource type="Script" uid="uid://bxue002h03ok6" path="res://scripts/Managers/robot_1_manager.gd" id="24_y6deb"]
 [ext_resource type="Texture2D" uid="uid://dlqb37h44618f" path="res://assets/source/HUD/dash_available.png" id="26_2wyq8"]
+[ext_resource type="Script" uid="uid://ejm0uo78gtkl" path="res://scripts/Augment/Berserker.gd" id="26_5he1u"]
+[ext_resource type="Script" uid="uid://boy514tm2gwcc" path="res://scripts/Augment/Ghost.gd" id="27_5poiv"]
+[ext_resource type="Texture2D" uid="uid://3strxgss4k2x" path="res://assets/source/HUD/enrage.png" id="27_bu4jf"]
 [ext_resource type="Texture2D" uid="uid://catlmy1bstcck" path="res://assets/source/HUD/switch_available.png" id="27_vxglm"]
+[ext_resource type="Script" uid="uid://j8kyc43xc7nn" path="res://scripts/Augment/IronBody.gd" id="28_2cjbq"]
+[ext_resource type="Script" uid="uid://bexjkk40mtiyw" path="res://scripts/Augment/Lifesteal.gd" id="29_chjal"]
+[ext_resource type="Texture2D" uid="uid://b65dvh635a36q" path="res://assets/source/HUD/dodging.png" id="29_o7ddy"]
+[ext_resource type="Script" uid="uid://b4opehhc34p8c" path="res://scripts/Augment/Random.gd" id="30_cjqg0"]
+[ext_resource type="Texture2D" uid="uid://cj8v5npk7i2re" path="res://assets/source/HUD/muscle-up.png" id="31_0loja"]
+[ext_resource type="Script" uid="uid://bd6e2nul0jgqp" path="res://scripts/Augment/Rage.gd" id="31_vchkt"]
+[ext_resource type="Texture2D" uid="uid://bston3owpe02y" path="res://assets/source/HUD/transfuse.png" id="33_ids8r"]
+[ext_resource type="Script" uid="uid://bf4omu3tv8b1b" path="res://scripts/Augment/Teleportation.gd" id="33_vc5cj"]
+[ext_resource type="Script" uid="uid://se1sv76yaxv2" path="res://scripts/Augment/GlassCanon.gd" id="34_5poiv"]
+[ext_resource type="Script" uid="uid://dn1mi6lwsnso3" path="res://scripts/Augment/Panic.gd" id="35_2cjbq"]
+[ext_resource type="Texture2D" uid="uid://cpiiyd6kif8nq" path="res://assets/source/HUD/dice.png" id="35_dnhof"]
+[ext_resource type="Texture2D" uid="uid://070i863mud1i" path="res://assets/source/HUD/heart-earrings.png" id="37_1v6qk"]
+[ext_resource type="Texture2D" uid="uid://cue50odux8klf" path="res://assets/source/HUD/bloody-sword.png" id="39_augu2"]
+[ext_resource type="Texture2D" uid="uid://c57wqo187yyp7" path="res://assets/source/HUD/boot-stomp.png" id="41_tm6hj"]
+[ext_resource type="Texture2D" uid="uid://bbrs7qw0d5y1h" path="res://assets/source/HUD/soul.png" id="43_kf5aa"]
+[ext_resource type="Texture2D" uid="uid://brt5xxmkh46uy" path="res://assets/source/HUD/misdirection.png" id="45_t5ykj"]
 
 [sub_resource type="Environment" id="Environment_0wfyh"]
 background_mode = 1
@@ -48,10 +67,10 @@ volumetric_fog_detail_spread = 0.7071066
 shuffle = true
 fade_time = 1.0
 stream_count = 4
-stream_0 = ExtResource("3_5q0nq")
-stream_1 = ExtResource("4_dgi5k")
-stream_2 = ExtResource("5_j8jky")
-stream_3 = ExtResource("6_kmb1v")
+stream_0 = ExtResource("3_bjg73")
+stream_1 = ExtResource("4_bu4jf")
+stream_2 = ExtResource("5_o7ddy")
+stream_3 = ExtResource("6_0loja")
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_og1vs"]
 vertices = PackedVector3Array(-50.009605, 3.5, -50.02031, -50.009605, 3.5, 31.72969, -49.509605, 3.5, -49.77031, 48.990395, 3.5, -49.77031, -45.259605, 1, -41.77031, -45.009605, 1, -41.02031, -44.509605, 1, -40.52031, -43.759605, 1, -41.77031, -43.009605, 1.25, -48.77031, -46.259605, 1, -41.77031, -48.759605, 1, -48.77031, -48.759605, 1, -41.27031, -46.509605, 1, -41.27031, -43.009605, 1, -41.77031, -35.259605, 1.25, -47.02031, -33.009605, 1.25, -47.02031, -32.509605, 1.25, -48.27031, -36.259605, 1, -39.77031, -35.759605, 1, -42.77031, -36.259605, 1, -43.02031, -29.509605, 1.25, -48.77031, -36.259605, 1.25, -44.52031, -32.759605, 1.5, -43.27031, -33.509605, 1.75, -43.27031, -33.509605, 1.25, -42.77031, -12.259605, 0.75, -0.77030945, -12.009605, 0.75, 0.22969055, -11.259605, 0.75, 0.22969055, 15.740395, 1.25, -15.020309, -32.759605, 1.5, -44.27031, -32.259605, 1.25, -44.77031, -32.509605, 1.25, -45.52031, -33.509605, 1.25, -45.52031, -34.259605, 1.25, -44.52031, 13.240395, 1.5, -35.02031, -25.259605, 1.25, -47.27031, -25.509605, 1.25, -45.77031, 12.990395, 1.5, -33.02031, 15.740395, 1.25, -16.02031, 13.740395, 1.25, -29.77031, -30.009605, 1.25, -44.77031, 16.490395, 1.5, -35.52031, 16.240395, 1.5, -48.77031, -25.759605, 1.25, -48.77031, 13.490395, 1.5, -31.77031, -34.759605, 1, -39.27031, 16.240395, 1.25, -16.27031, 15.990395, 1.5, -30.02031, -33.759605, 1, -37.27031, -31.509605, 1, -36.77031, -13.009605, 0.75, -0.77030945, -31.259605, 1, -35.52031, -29.259605, 1.25, -45.27031, 22.740395, 1.5, -37.02031, 23.990395, 1.5, -38.77031, 23.490395, 1.5, -42.77031, 24.990395, 1.5, -43.02031, 24.990395, 1.75, -48.77031, 29.240395, 1.5, -37.02031, 29.990395, 1.5, -36.52031, 30.490395, 1.5, -36.77031, 30.990395, 1.5, -39.52031, 28.990395, 1.5, -43.02031, 32.240395, 1.5, -40.77031, 33.490395, 1.5, -40.77031, 33.740395, 1.75, -41.27031, 33.490395, 1.75, -42.52031, 31.990395, 1.75, -43.02031, 25.490395, 1.5, -42.52031, 26.990395, 1.75, -42.52031, 27.240395, 1.5, -43.77031, 28.490395, 1.5, -43.77031, 31.490395, 1.75, -44.27031, 31.990395, 1.75, -44.77031, 33.990395, 1.75, -48.77031, 33.740395, 1.75, -44.52031, 43.490395, 1.75, -42.02031, 45.240395, 1.75, -41.02031, 46.490395, 1.75, -41.27031, 46.990395, 1.75, -38.27031, 48.990395, 1.75, -38.27031, 48.990395, 1.75, -48.77031, 35.240395, 1.75, -44.52031, -31.509605, 2.5, -45.77031, -28.259605, 2.5, -46.27031, -28.509605, 2.5, -47.77031, -31.759605, 2.5, -47.27031, 17.490395, 1.5, -33.52031, 15.990395, 1.75, -33.52031, 15.490395, 1.5, -33.02031, 23.740395, 1.5, -35.27031, 21.990395, 1.75, -33.27031, 25.490395, 1.75, -34.77031, 14.907059, 1.75, -32.02031, 25.990395, 1.5, -38.02031, 27.740395, 1.75, -37.77031, 37.990395, 3.5, -42.27031, 36.990395, 3.5, -42.02031, 36.990395, 3.5, -41.52031, 37.740395, 3.5, -41.27031, 41.740395, 3.5, -40.77031, 41.490395, 3.5, -41.27031, -45.259605, 1, -40.52031, -44.759605, 1, -38.77031, -48.759605, 1, -30.52031, -48.259605, 1, -30.77031, -48.509605, 1, -32.27031, -44.759605, 1, -36.77031, -43.759605, 1, -38.27031, -46.259605, 1, -40.52031, -46.509605, 1, -37.02031, -47.259605, 1, -36.27031, 46.740395, 1.75, -37.77031, 48.990395, 1.75, -31.27031, 38.490395, 1.75, -39.02031, 37.990395, 1.75, -40.02031, 35.740395, 1.75, -40.52031, 35.990395, 1.5, -36.27031, 45.490395, 1.75, -37.77031, 34.240395, 1.5, -34.52031, 33.490395, 1.5, -32.52031, 38.490395, 1.5, -30.77031, 38.990395, 1.5, -31.52031, 43.740395, 1.75, -38.27031, 43.240395, 1.75, -39.02031, -40.259605, 3.5, -39.52031, -41.009605, 3.5, -39.52031, -41.259605, 3.5, -39.02031, -39.509605, 3.5, -38.27031, -36.259605, 3.5, -38.02031, -47.509605, 1, -30.02031, -47.009605, 1, -30.52031, -45.759605, 1, -28.52031, -47.009605, 1, -28.52031, -43.759605, 0.75, -5.5203094, -39.259605, 0.75, -5.7703094, -17.259605, 0.75, 4.2296906, -16.259605, 0.75, 4.2296906, -16.259605, 0.75, 3.2296906, -15.509605, 0.75, 2.9796906, -15.759605, 0.75, 1.4796906, -43.759605, 1, -36.02031, -48.759605, 0.5, -3.5203094, -46.009605, 0.5, -3.5203094, -43.509605, 1, -33.77031, -43.009605, 1, -33.27031, -38.509605, 1, -36.52031, -35.759605, 0.75, -3.0203094, -35.009605, 0.75, -1.2703094, -14.509605, 0.75, 0.97969055, -34.509605, 1, -35.52031, -35.009605, 1, -36.27031, -31.509605, 1, -35.02031, -32.759605, 1, -35.02031, -44.259605, 1, -30.02031, -37.259605, 0.75, -4.7703094, -35.009605, 0.75, 1.7296906, 17.240395, 1.25, -16.27031, 17.740395, 1.25, -15.520309, 18.240395, 1.25, -16.02031, 30.740395, 1.5, -32.77031, 31.490395, 1.5, -33.52031, 29.740395, 1.5, -33.77031, 30.740395, 1.5, -31.77031, 27.240395, 1.5, -33.77031, 24.240395, 1.5, -31.77031, 19.490395, 1.25, -16.02031, 27.740395, 1.25, -13.520309, 28.490395, 1.25, -12.770309, 30.240395, 1.25, -12.770309, 32.240395, 1.5, -31.27031, 38.490395, 1.5, -17.02031, 31.740395, 1.5, -34.77031, 31.740395, 1.5, -33.77031, 32.240395, 1.5, -34.27031, 32.240395, 1.5, -34.77031, 14.990395, 5.5, -32.52031, 21.240395, 5.25, -34.02031, 19.990395, 5.25, -34.27031, 14.240395, 5.5, -32.77031, -46.509605, 1, -31.52031, -46.509605, 1, -31.02031, -45.759605, 1, -31.52031, -46.259605, 1, -32.02031, 30.740395, 1.25, -12.520309, 30.490395, 1.25, -11.020309, 30.990395, 1.25, -10.520309, 41.490395, 1.25, -9.520309, 38.740395, 1.5, -16.52031, 41.990395, 1.5, -13.020309, 48.990395, 1.5, -12.770309, 48.990395, 1.5, -16.52031, -8.009605, 0.75, 6.9796906, -8.009605, 0.75, 7.9796906, -7.2596054, 0.75, 8.729691, -5.5096054, 0.75, 8.979691, 17.490395, 1.25, -13.020309, 17.240395, 1.25, -14.520309, 15.990395, 1.25, -14.520309, -10.759605, 0.75, 0.47969055, -13.009605, 0.75, 3.9796906, -14.759605, 0.75, 4.2296906, -15.009605, 0.75, 4.7296906, -8.759605, 0.75, 6.4796906, -10.759605, 0.75, 1.4796906, -5.0096054, 0.75, 9.729691, 17.990395, 1.25, -12.770309, -12.009605, 0.75, 2.9796906, 19.490395, 3.5, -14.520309, 18.740395, 3.5, -14.270309, 18.740395, 3.5, -13.770309, 21.740395, 3.5, -12.770309, 25.990395, 3.5, -12.270309, 17.740395, 0.75, 37.22969, 19.990395, 0.75, 37.72969, 22.240395, 0.75, 35.22969, 27.740395, 1.25, -9.770309, 27.240395, 1.25, -10.520309, 22.740395, 1.25, -10.520309, 21.990395, 1.25, -11.520309, 41.740395, 1, 17.47969, 41.740395, 1, 11.979691, 41.240395, 1, 11.729691, 38.990395, 1, 17.72969, 29.490395, 1.25, -9.270309, 30.740395, 1.25, -9.270309, 23.990395, 1, 34.72969, 38.990395, 1, 32.22969, -5.0096054, 0.75, 10.479691, 17.240395, 0.75, 37.72969, -39.259605, 0.75, -1.7703094, -40.509605, 0.75, -2.5203094, -41.759605, 0.75, -2.5203094, -43.009605, 0.75, -1.5203094, -38.509605, 0.5, 2.2296906, -38.259605, 0.75, -0.27030945, -45.759605, 0.5, -2.7703094, -39.759605, 0.5, 15.479691, -34.259605, 0.5, 14.229691, -33.759605, 0.5, 13.979691, -35.759605, 0.75, 3.4796906, -36.759605, 0.5, 3.4796906, -43.759605, 0.5, -1.5203094, -38.259605, 0.5, 16.47969, -34.759605, 0.5, 16.47969, -41.759605, 0.5, 15.979691, -48.759605, 0.25, 20.22969, -43.259605, 0.5, 20.22969, -32.259605, 0.5, 15.229691, -31.509605, 0.5, 15.979691, -30.759605, 0.5, 15.979691, -30.259605, 0.5, 16.97969, -28.509605, 0.5, 16.97969, -32.759605, 0.5, 13.979691, -24.009605, 0.5, 17.72969, -28.009605, 0.5, 17.72969, -18.259605, 0.75, 5.7296906, -18.009605, 0.75, 4.7296906, -18.259605, 0.75, 7.2296906, -23.509605, 0.5, 18.47969, -17.759605, 0.75, 7.4796906, -14.259605, 2.5, 1.9796906, -14.009605, 2.5, 2.9796906, -13.259605, 2.5, 2.4796906, -13.509605, 2.5, 1.9796906, -17.009605, 3.5, 5.7296906, -16.759605, 3.5, 6.4796906, -13.759605, 3.5, 7.4796906, -11.509605, 3.5, 7.9796906, -10.009605, 3.5, 7.7296906, -27.009605, 0.5, 23.97969, -27.259605, 0.5, 23.22969, -27.759605, 0.5, 23.22969, -28.759605, 0.5, 25.47969, -26.759605, 0.25, 40.47969, -11.509605, 0.5, 43.72969, -5.5096054, 0.5, 43.97969, -5.5096054, 0.75, 10.979691, -7.7596054, 0.75, 10.479691, -24.509605, 0.5, 23.22969, -25.259605, 0.5, 23.97969, -8.509605, 0.75, 9.729691, -12.759605, 0.75, 9.229691, -23.509605, 0.5, 20.47969, -25.509605, 0.25, 42.22969, -20.509605, 0.25, 43.47969, -19.759605, 0.25, 44.22969, -11.759605, 0.25, 44.22969, 14.240395, 0.5, 43.22969, 16.740395, 0.5, 42.97969, 14.990395, 0.5, 42.97969, 14.490395, 0.5, 41.72969, 13.740395, 0.5, 44.47969, 9.990395, 0.5, 43.97969, 10.240395, 0.5, 44.72969, 17.740395, 0.75, 39.72969, 17.240395, 0.75, 39.22969, 48.990395, 1, 17.72969, 48.990395, 1.25, 11.979691, -38.509605, 0.5, 17.47969, -40.009605, 0.5, 17.47969, -40.509605, 0.5, 17.97969, -36.759605, 0.5, 19.22969, -26.259605, 0.75, 21.72969, -25.509605, 0.5, 21.47969, -25.009605, 0.75, 19.97969, -31.259605, 0.75, 18.22969, -34.509605, 0.75, 18.47969, -27.759605, 1, 21.22969, -31.509605, 0.75, 17.72969, -34.509605, 0.75, 17.22969, -39.509605, 3.5, 20.72969, -35.759605, 3.5, 21.47969, -37.509605, 3.5, 20.22969, -39.759605, 3.5, 20.22969, -46.759605, 0.25, 28.97969, -46.759605, 0.25, 28.72969, -47.009605, 0.25, 27.72969, -48.759605, 0.25, 28.97969, -45.009605, 0.25, 26.22969, -40.259605, 0.25, 25.97969, -40.259605, 0.25, 24.72969, -45.259605, 0.25, 25.72969, -46.509605, 0.25, 26.22969, -39.509605, 0.5, 23.47969, -36.509605, 0.5, 23.47969, -35.009605, 0.5, 22.97969, -43.009605, 0.5, 20.97969, -46.009605, 0.25, 25.72969, -31.009605, 0.75, 24.72969, -31.009605, 0.75, 24.22969, -32.509605, 0.5, 23.97969, -36.759605, 0.75, 25.22969, -36.509605, 0.5, 26.47969, -33.009605, 0.5, 26.72969, -38.009605, 0.25, 28.22969, -39.009605, 0.25, 31.97969, -36.509605, 0.25, 33.22969, -32.509605, 0.5, 28.22969, -36.509605, 0.25, 34.47969, -38.259605, 0.5, 38.47969, -46.009605, 0.25, 29.47969, -44.509605, 0.25, 29.47969, -45.009605, 0.25, 28.47969, -43.509605, 0.5, 30.47969, -40.009605, 0.25, 26.97969, 22.740395, 0.75, 38.47969, 22.240395, 0.75, 39.72969, 24.740395, 0.75, 39.97969, 24.490395, 0.75, 36.97969, 24.740395, 1, 35.22969, 26.490395, 0.75, 39.47969, 39.490395, 1, 32.72969, 40.740395, 1, 32.72969, 40.490395, 0.75, 48.97969, 48.990395, 0.75, 48.97969, 48.990395, 1, 32.47969, 24.990395, 0.75, 41.97969, 22.740395, 0.75, 41.72969, 21.240395, 0.5, 44.47969, 18.990395, 0.5, 44.72969, 19.240395, 0.5, 48.97969, 26.990395, 0.75, 41.22969, 27.240395, 0.75, 39.97969, -26.259605, 0.25, 42.72969, -30.509605, 0.25, 48.97969, -23.009605, 0.25, 48.97969, -27.009605, 0.25, 47.47969, -41.509605, 0.25, 44.97969, -41.509605, 0, 48.97969, -39.759605, 0, 48.97969, -40.509605, 0.25, 44.47969, -39.509605, 0, 49.97969, -30.759605, 0.25, 49.97969, -44.009605, 0.25, 43.97969, -46.259605, 0, 44.47969, -48.759605, 0, 48.97969, -48.759605, 0, 43.47969, -21.259605, 0.25, 48.97969, -11.759605, 0.25, 48.97969, 14.240395, 0.5, 45.22969, 10.240395, 0.5, 48.97969, -28.509605, 0, 59.72969, -28.509605, 0.25, 51.22969, -30.509605, 0.25, 51.22969, -39.759605, 0, 51.22969, -41.759605, 0, 51.22969, -41.759605, 0, 59.72969, -49.259605, 0, 51.22969, -49.259605, 0, 59.72969, 49.990395, 0.75, 59.22969, 49.990395, 0.75, 51.22969)
@@ -118,7 +137,7 @@ metadata/_custom_type_script = "uid://iu2puidp8m0i"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="WorldAudioManager" unique_id=141160316]
 stream = SubResource("AudioStreamPlaylist_fuf3a")
-volume_db = -30.0
+volume_db = -10.476
 autoplay = true
 bus = &"bg"
 
@@ -840,6 +859,55 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MapBounds/top" unique_id=2032995295]
 shape = SubResource("BoxShape3D_jyhfs")
 
+[node name="AugmentContainer" type="Node" parent="." unique_id=778171306]
+unique_name_in_owner = true
+
+[node name="BerserkerAugment" type="Node" parent="AugmentContainer" unique_id=758613698]
+script = ExtResource("26_5he1u")
+icon = ExtResource("27_bu4jf")
+metadata/_custom_type_script = "uid://ejm0uo78gtkl"
+
+[node name="GhostAugment" type="Node" parent="AugmentContainer" unique_id=345184172]
+script = ExtResource("27_5poiv")
+icon = ExtResource("29_o7ddy")
+metadata/_custom_type_script = "uid://boy514tm2gwcc"
+
+[node name="IronBodyAugment" type="Node" parent="AugmentContainer" unique_id=986873258]
+script = ExtResource("28_2cjbq")
+icon = ExtResource("31_0loja")
+metadata/_custom_type_script = "uid://j8kyc43xc7nn"
+
+[node name="LifestealAugment" type="Node" parent="AugmentContainer" unique_id=627938222]
+script = ExtResource("29_chjal")
+icon = ExtResource("33_ids8r")
+metadata/_custom_type_script = "uid://bexjkk40mtiyw"
+
+[node name="RandomAugment" type="Node" parent="AugmentContainer" unique_id=1430183042 node_paths=PackedStringArray("augments")]
+script = ExtResource("30_cjqg0")
+augments = [NodePath("../GhostAugment"), NodePath("../IronBodyAugment"), NodePath("../LifestealAugment"), NodePath("../SharedBuffAugment"), NodePath("../TeleportationAugment"), NodePath("../BerserkerAugment"), NodePath("../GhostTriggerAugment"), NodePath("../PanicModeAugment")]
+icon = ExtResource("35_dnhof")
+metadata/_custom_type_script = "uid://b4opehhc34p8c"
+
+[node name="SharedBuffAugment" type="Node" parent="AugmentContainer" unique_id=462177934]
+script = ExtResource("31_vchkt")
+icon = ExtResource("37_1v6qk")
+metadata/_custom_type_script = "uid://bd6e2nul0jgqp"
+
+[node name="TeleportationAugment" type="Node" parent="AugmentContainer" unique_id=1830019042]
+script = ExtResource("33_vc5cj")
+icon = ExtResource("41_tm6hj")
+metadata/_custom_type_script = "uid://bf4omu3tv8b1b"
+
+[node name="GhostTriggerAugment" type="Node" parent="AugmentContainer" unique_id=296383805]
+script = ExtResource("34_5poiv")
+icon = ExtResource("43_kf5aa")
+metadata/_custom_type_script = "uid://se1sv76yaxv2"
+
+[node name="PanicModeAugment" type="Node" parent="AugmentContainer" unique_id=1147451511]
+script = ExtResource("35_2cjbq")
+icon = ExtResource("45_t5ykj")
+metadata/_custom_type_script = "uid://dn1mi6lwsnso3"
+
 [node name="ProjectileManager" type="Node" parent="." unique_id=260401708]
 unique_name_in_owner = true
 script = ExtResource("15_jkv2x")
@@ -1256,6 +1324,7 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 process_mode = 2
 layer = 2
+visible = false
 
 [node name="Control" type="Control" parent="Paused" unique_id=1839090932]
 layout_mode = 3
@@ -1616,10 +1685,307 @@ grow_vertical = 0
 text = "Body switch mechanic"
 horizontal_alignment = 1
 
+[node name="Augment" type="CanvasLayer" parent="." unique_id=749963295]
+unique_name_in_owner = true
+process_mode = 2
+layer = 4
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Augment" unique_id=444910445]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.36078432)
+
+[node name="Control" type="Control" parent="Augment" unique_id=1596809954]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Augment/Control" unique_id=1590079860]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.36078432)
+
+[node name="Augment1" type="Control" parent="Augment/Control" unique_id=1711784812]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Augment/Control/Augment1" unique_id=342919867]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 66.0
+offset_top = -268.0
+offset_right = 352.0
+offset_bottom = 268.0
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Name" type="Label" parent="Augment/Control/Augment1/ColorRect" unique_id=1179842696]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -11.5
+offset_right = 61.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Augment Name"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Augment/Control/Augment1/ColorRect" unique_id=1824436495]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.5
+offset_top = 32.0
+offset_right = 115.5
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Augment description"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="Augment/Control/Augment1/ColorRect" unique_id=988791034]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_top = 80.0
+offset_right = 64.0
+offset_bottom = 208.0
+grow_horizontal = 2
+texture = ExtResource("39_augu2")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="Augment/Control/Augment1/ColorRect" unique_id=1457665446]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = -86.0
+offset_right = 88.0
+offset_bottom = -38.001587
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Select"
+
+[node name="Augment2" type="Control" parent="Augment/Control" unique_id=681407428]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Augment/Control/Augment2" unique_id=585141586]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = -268.0
+offset_right = 143.0
+offset_bottom = 268.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Name" type="Label" parent="Augment/Control/Augment2/ColorRect" unique_id=74543670]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -11.5
+offset_right = 61.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Augment Name"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Augment/Control/Augment2/ColorRect" unique_id=2127149771]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = 32.0
+offset_right = 119.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Augment description"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="Augment/Control/Augment2/ColorRect" unique_id=1523519469]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_top = 80.0
+offset_right = 64.0
+offset_bottom = 208.0
+grow_horizontal = 2
+texture = ExtResource("39_augu2")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="Augment/Control/Augment2/ColorRect" unique_id=836758900]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = -86.0
+offset_right = 88.0
+offset_bottom = -38.001587
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Select"
+
+[node name="Augment3" type="Control" parent="Augment/Control" unique_id=1613959026]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Augment/Control/Augment3" unique_id=348618026]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -352.0
+offset_top = -268.0
+offset_right = -66.0
+offset_bottom = 268.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Name" type="Label" parent="Augment/Control/Augment3/ColorRect" unique_id=2037700879]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -11.5
+offset_right = 61.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Augment Name"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Augment/Control/Augment3/ColorRect" unique_id=1715065409]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.5
+offset_top = 32.0
+offset_right = 115.5
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Augment description"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="Augment/Control/Augment3/ColorRect" unique_id=52236788]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_top = 80.0
+offset_right = 64.0
+offset_bottom = 208.0
+grow_horizontal = 2
+texture = ExtResource("39_augu2")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="Augment/Control/Augment3/ColorRect" unique_id=890136573]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = -86.0
+offset_right = 88.0
+offset_bottom = -38.001587
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Select"
+
 [node name="End" type="CanvasLayer" parent="." unique_id=1993901393]
 unique_name_in_owner = true
 process_mode = 2
 layer = 2
+visible = false
 
 [node name="Control" type="Control" parent="End" unique_id=167008315]
 layout_mode = 3
@@ -1981,6 +2347,7 @@ horizontal_alignment = 1
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1267731374]
 unique_name_in_owner = true
+visible = false
 
 [node name="HUD" type="Control" parent="HUD" unique_id=417308764]
 layout_mode = 3

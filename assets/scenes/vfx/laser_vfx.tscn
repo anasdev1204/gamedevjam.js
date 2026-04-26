@@ -170,7 +170,7 @@ monitorable = false
 script = ExtResource("8_d4ksi")
 damage = 25.0
 knockback = 4.0
-ally_multiplier = 1.4
+ally_multiplier = 1.2
 metadata/_custom_type_script = "uid://cffa0n4q4tuvk"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hitbox" unique_id=1787667714]

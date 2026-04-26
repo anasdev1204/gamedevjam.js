@@ -5,6 +5,7 @@
 [ext_resource type="Shader" uid="uid://dyiuh4ch3n0j" path="res://res/shaders/explosion_particles.tres" id="2_2d033"]
 [ext_resource type="Texture2D" uid="uid://dixs2n4wobo7s" path="res://assets/source/vfx/T_vfx_hit122.jpg" id="3_7xs1l"]
 [ext_resource type="Script" uid="uid://cffa0n4q4tuvk" path="res://scripts/Classes/Hitbox.gd" id="5_vmur6"]
+[ext_resource type="AudioStream" uid="uid://dxva7618qiopt" path="res://assets/source/sfx/explosion.mp3" id="6_axdsn"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_7xs1l"]
 radius = 1.5
@@ -141,3 +142,10 @@ metadata/_custom_type_script = "uid://cffa0n4q4tuvk"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=1299658990]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2071228, 2.312008, 0.07688522)
 shape = SubResource("BoxShape3D_vmur6")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1566936487]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.689538, 0)
+stream = ExtResource("6_axdsn")
+autoplay = true
+max_distance = 20.0
+bus = &"sfx"

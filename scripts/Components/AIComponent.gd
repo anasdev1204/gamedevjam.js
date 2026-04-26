@@ -51,7 +51,7 @@ func _physics_process(delta: float):
 		body.move_and_slide()
 		return
 
-	body.velocity = move_dir * speed
+	body.velocity = move_dir * speed * Global.enemy_speed_mult
 
 	if movement_state != is_movement_ongoing():
 		movement_state = is_movement_ongoing()
