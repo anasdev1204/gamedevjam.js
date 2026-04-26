@@ -19,38 +19,45 @@ extends Node3D
 @onready var hud: CanvasLayer = %HUD
 @onready var pause_menu: CanvasLayer = $Paused
 @onready var resume_button: Button = %ResumeButton
+@onready var end_menu: CanvasLayer = %End
 @onready var play_button: Button = $Start/Control/PlayButton
-
+@onready var play_again_button: Button = $End/Control/PlayAgain
 
 var current_wave := 0
 var active_player: Player
 var remaining_enemies := 0
+var spawn_session := 0
 
 func _ready():
+	get_tree().paused = true
 	hud.visible = false
 	pause_menu.visible = false
+	end_menu.visible = false
+	
 	play_button.pressed.connect(_start_game)
 	resume_button.pressed.connect(_on_resume_pressed)
+	play_again_button.pressed.connect(_on_play_again_pressed)
 
 func _start_game():
-	print("starting game")
+	get_tree().paused = false
 	hud.visible = true
 	start_menu.visible = false
+	end_menu.visible = false
 	
 	active_player = robot_1_manager.init_spawn()
 	await get_tree().process_frame
 	bind_signals()
 	
-	current_wave += 1
-	
 func _end_game():
-	pass
+	get_tree().paused = true
+	end_menu.visible = true
 
 func _process(_delta):
 	_update_remaining_enemies()
 	enemies_counter.text = str(remaining_enemies) + " remaining enemies"
-	if remaining_enemies <= 0 and current_wave > 0:
+	if remaining_enemies <= 0:
 		current_wave += 1
+		spawn_session += 1
 		var wave_data := _generate_wave()
 		_spawn_wave(
 			wave_data.robot_1,
@@ -66,7 +73,12 @@ func _update_remaining_enemies():
 			remaining_enemies += 1
 
 	remaining_enemies = max(remaining_enemies - 1, 0)
-	
+
+func _purge_entities():
+	for child in get_children():
+		if child is Player:
+			child.queue_free()
+
 func _generate_wave() -> Dictionary:
 	return {
 		"robot_1": 3 + current_wave,
@@ -75,18 +87,20 @@ func _generate_wave() -> Dictionary:
 	}
 
 func _reset_wave():
-	current_wave = 1
+	current_wave = 0
 	Global.wave_multiplier = 1
+	remaining_enemies = 0
+	spawn_session = 0
 
 func _spawn_wave(r1_n: int, be_n: int, dr_n: int):
 	wave_counter.text = "Wave " + str(current_wave)
 	Global.wave_multiplier *= 1.1
 	if r1_n != 0:
-		robot_1_manager.spawn(false, r1_n)
+		robot_1_manager.spawn(false, r1_n, spawn_session)
 	if be_n != 0:
-		big_enemy_manager.spawn(false, be_n)
+		big_enemy_manager.spawn(false, be_n, spawn_session)
 	if dr_n != 0:
-		drone_manager.spawn(false, dr_n)
+		drone_manager.spawn(false, dr_n, spawn_session)
 	remaining_enemies += r1_n + be_n + dr_n
 
 func _unhandled_input(event):
@@ -100,10 +114,19 @@ func _toggle_pause():
 func _on_resume_pressed():
 	get_tree().paused = false
 	pause_menu.visible = false
-	
+
+func _on_play_again_pressed():
+	_reset_wave()
+	_purge_entities()
+	_start_game()
+
 func bind_signals():
 	active_player.health_component.hp_change.connect(
 		_on_active_player_hp_change
+	)
+	
+	active_player.health_component.die.connect(
+		_end_game
 	)
 	
 	active_player.movement_component.dash_used.connect(
@@ -119,11 +142,14 @@ func bind_signals():
 	active_player.switch_ready.connect(
 		_on_switch_ready
 	)
-
+	
 func unbind_signals():
 	if active_player.health_component.hp_change.is_connected(_on_active_player_hp_change):
 		active_player.health_component.hp_change.disconnect(_on_active_player_hp_change)
-		
+	
+	if 	active_player.health_component.die.is_connected(_end_game):
+		active_player.health_component.die.disconnect(_end_game)
+	
 	if active_player.movement_component.dash_used.is_connected(_on_dash_used):
 		active_player.movement_component.dash_used.disconnect(_on_dash_used)
 		

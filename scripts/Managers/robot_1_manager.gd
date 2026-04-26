@@ -21,8 +21,8 @@ func init_spawn() -> Robot1:
 	main.add_child(robot1_instance)
 	return robot1_instance
 
-func spawn(controlled: bool, number: float):
-	lift_1.open(_spawn.bind(controlled, number))
+func spawn(controlled: bool, number: float,  local_session: float):
+	lift_1.open(_spawn.bind(controlled, number, local_session))
 	
 func _generate_instance() -> Robot1:
 	var robot1_instance: Robot1 = robot1.instantiate()
@@ -32,7 +32,7 @@ func _generate_instance() -> Robot1:
 	)
 	return robot1_instance
 	
-func _spawn(_animation: String, controlled: bool, number: float):
+func _spawn(_animation: String, controlled: bool, number: float,  local_session: float):
 	for i in range(number):
 		var robot1_instance = _generate_instance()
 		robot1_instance.is_controlled = controlled
@@ -49,5 +49,7 @@ func _spawn(_animation: String, controlled: bool, number: float):
 			)
 		await get_tree().create_timer(spawn_delay).timeout
 
+		if local_session != main.spawn_session:
+			return
 func do_nothing():
 	pass

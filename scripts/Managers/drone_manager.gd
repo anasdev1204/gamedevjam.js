@@ -13,8 +13,8 @@ extends Node
 @onready var drone_spawner: Marker3D = $"../Spawns/drone_spawner"
 @onready var dronepostspawn: Marker3D = $"../PostSpawn/dronepostspawn"
 
-func spawn(controlled: bool, number: float):
-	_spawn("", controlled, number)
+func spawn(controlled: bool, number: float, local_session: float):
+	_spawn("", controlled, number, local_session)
 	
 func _generate_instance() -> Drone:
 	var drone_instance: Drone = drone.instantiate()
@@ -27,7 +27,7 @@ func _generate_instance() -> Drone:
 	)
 	return drone_instance
 
-func _spawn(_animation: String, controlled: bool, number: float):
+func _spawn(_animation: String, controlled: bool, number: float, local_session: float):
 	for i in range(number):
 		var drone_instance: Drone = _generate_instance()
 		drone_instance.is_controlled = controlled
@@ -44,6 +44,8 @@ func _spawn(_animation: String, controlled: bool, number: float):
 				)
 			)
 		await get_tree().create_timer(spawn_delay).timeout
-
+	
+		if local_session != main.spawn_session:
+			return
 func do_nothing():
 	pass

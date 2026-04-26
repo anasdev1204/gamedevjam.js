@@ -15,8 +15,8 @@ extends Node
 @onready var bigenemy_spawner: Marker3D = $"../Spawns/bigenemy_spawner"
 @onready var bigenemypostspawn: Marker3D = $"../PostSpawn/bigenemypostspawn"
 
-func spawn(controlled: bool, number: float):
-	door.open(_spawn.bind(controlled, number))
+func spawn(controlled: bool, number: float, local_session: float):
+	door.open(_spawn.bind(controlled, number, local_session))
 	
 func _generate_instance() -> BigEnemy:
 	var bigenemy_instance: BigEnemy = bigenemy.instantiate()
@@ -29,7 +29,7 @@ func _generate_instance() -> BigEnemy:
 	)
 	return bigenemy_instance
 
-func _spawn(_animation: String, controlled: bool, number: float):
+func _spawn(_animation: String, controlled: bool, number: float, local_session: float):
 	for i in range(number):
 		var bigenemy_instance = _generate_instance()
 		bigenemy_instance.is_controlled = controlled
@@ -46,6 +46,7 @@ func _spawn(_animation: String, controlled: bool, number: float):
 				)
 			)
 			await get_tree().create_timer(spawn_delay).timeout
-
+			if local_session != main.spawn_session:
+				return
 func do_nothing():
 	pass

@@ -78,14 +78,23 @@ size = Vector3(1, 20, 100)
 [sub_resource type="BoxShape3D" id="BoxShape3D_jyhfs"]
 size = Vector3(100, 20, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_og1vs"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dgi5k"]
+bg_color = Color(0.11119685, 0.11119685, 0.11119678, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.47058824, 0.47058824, 0.47058824, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qkpxi"]
 border_width_bottom = 3
 border_color = Color(0.37, 0.37, 0.37, 1)
 corner_detail = 3
 expand_margin_bottom = 3.0
 shadow_size = 3
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2wyq8"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5q0nq"]
 bg_color = Color(0.09803922, 0.972549, 1, 1)
 border_width_bottom = 3
 border_color = Color(0.047058824, 0.5568628, 0.5803922, 1)
@@ -881,7 +890,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.963336, 43.803974)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.418053, 0, 35.558308)
 
 [node name="GlobalSpawner" type="Marker3D" parent="." unique_id=59072115]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07790375, -0.38793707, 30.50465)
 
 [node name="Start" type="CanvasLayer" parent="." unique_id=1093556534]
 unique_name_in_owner = true
@@ -906,6 +914,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.36078432)
 
 [node name="PlayButton" type="Button" parent="Start/Control" unique_id=1593286027]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -921,20 +930,343 @@ grow_vertical = 2
 size_flags_horizontal = 6
 text = "Play"
 
-[node name="Paused" type="CanvasLayer" parent="." unique_id=656841424]
+[node name="Movement block" type="Control" parent="Start/Control" unique_id=196230301]
+layout_mode = 1
+anchors_preset = 0
+offset_top = 40.0
+offset_right = 283.0
+offset_bottom = 238.0
+
+[node name="W" type="Panel" parent="Start/Control/Movement block" unique_id=306219125]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 60.0
+offset_right = 20.0
+offset_bottom = 100.31
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dgi5k")
+
+[node name="Label" type="Label" parent="Start/Control/Movement block/W" unique_id=1057743054]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.4724152, 0.47241515, 0.47241515, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "W"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="S" type="Panel" parent="Start/Control/Movement block/W" unique_id=1636944234]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 9.690002
+offset_right = 20.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dgi5k")
+
+[node name="Label" type="Label" parent="Start/Control/Movement block/W/S" unique_id=32176457]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.4724152, 0.47241515, 0.47241515, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="D" type="Panel" parent="Start/Control/Movement block/W/S" unique_id=427322821]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 30.0
+offset_right = 70.0
+offset_bottom = 40.309998
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dgi5k")
+
+[node name="Label" type="Label" parent="Start/Control/Movement block/W/S/D" unique_id=217340501]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.4724152, 0.47241515, 0.47241515, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "D"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="a" type="Panel" parent="Start/Control/Movement block/W/S" unique_id=57132948]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -70.0
+offset_right = -30.0
+offset_bottom = 40.309998
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dgi5k")
+
+[node name="Label" type="Label" parent="Start/Control/Movement block/W/S/a" unique_id=652203251]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.4724152, 0.47241515, 0.47241515, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "a"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Title" type="Label" parent="Start/Control/Movement block" unique_id=688745882]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -78.5
+offset_top = -23.0
+offset_right = 78.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "Movement keybinds"
+horizontal_alignment = 1
+
+[node name="Attack" type="Control" parent="Start/Control" unique_id=720221768]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -141.5
+offset_top = 40.0
+offset_right = 141.5
+offset_bottom = 238.0
+grow_horizontal = 2
+
+[node name="E" type="Panel" parent="Start/Control/Attack" unique_id=414071109]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 110.0
+offset_right = 20.0
+offset_bottom = 150.31
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dgi5k")
+
+[node name="Label" type="Label" parent="Start/Control/Attack/E" unique_id=1325435059]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.4724152, 0.47241515, 0.47241515, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="Start/Control/Attack/E" unique_id=759357766]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.5
+offset_top = -30.0
+offset_right = 30.5
+offset_bottom = -7.0
+grow_horizontal = 2
+text = "To dash"
+
+[node name="MouseClick" type="Panel" parent="Start/Control/Attack" unique_id=1915058595]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.25
+offset_top = 30.0
+offset_right = 72.25
+offset_bottom = 70.30999
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dgi5k")
+
+[node name="Label" type="Label" parent="Start/Control/Attack/MouseClick" unique_id=914502121]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.4724152, 0.47241515, 0.47241515, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "L. Mouse"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Start/Control/Attack/MouseClick" unique_id=420851186]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.5
+offset_top = -30.0
+offset_right = 30.5
+offset_bottom = -7.0
+grow_horizontal = 2
+text = "To attack"
+
+[node name="Attack" type="Label" parent="Start/Control/Attack" unique_id=1868537512]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -78.5
+offset_top = -23.0
+offset_right = 78.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "Combat keybinds"
+horizontal_alignment = 1
+
+[node name="Switch" type="Control" parent="Start/Control" unique_id=662092642]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -283.0
+offset_top = 40.0
+offset_bottom = 238.0
+grow_horizontal = 0
+
+[node name="E" type="Panel" parent="Start/Control/Switch" unique_id=2129709229]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 110.0
+offset_right = 20.0
+offset_bottom = 150.31
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dgi5k")
+
+[node name="Label" type="Label" parent="Start/Control/Switch/E" unique_id=1111252971]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.4724152, 0.47241515, 0.47241515, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "Q"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="Start/Control/Switch/E" unique_id=570995566]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -115.125
+offset_top = -120.0
+offset_right = 115.125
+offset_bottom = -19.0
+grow_horizontal = 2
+text = "When an enemy is exploding you can use the following keybind to switch bodies with it."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Attack" type="Label" parent="Start/Control/Switch" unique_id=350780323]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -78.5
+offset_top = -23.0
+offset_right = 78.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "Body switch mechanic"
+horizontal_alignment = 1
+
+[node name="Paused" type="CanvasLayer" parent="." unique_id=1393817126]
 unique_name_in_owner = true
 process_mode = 2
 layer = 2
 
-[node name="Control" type="Control" parent="Paused" unique_id=418952153]
+[node name="Control" type="Control" parent="Paused" unique_id=1839090932]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="ColorRect" parent="Paused/Control" unique_id=1648794230]
+[node name="ColorRect" type="ColorRect" parent="Paused/Control" unique_id=484464455]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -942,8 +1274,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.36078432)
+metadata/_edit_use_anchors_ = true
 
-[node name="ResumeButton" type="Button" parent="Paused/Control" unique_id=1161380525]
+[node name="ResumeButton" type="Button" parent="Paused/Control" unique_id=376456347]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -959,11 +1292,697 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
 text = "Resume"
+metadata/_edit_use_anchors_ = true
 
-[node name="HUD" type="CanvasLayer" parent="." unique_id=42199256]
+[node name="Movement block" type="Control" parent="Paused" unique_id=1711805878]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 40.0
+offset_right = 283.0
+offset_bottom = 238.0
+
+[node name="W" type="Panel" parent="Paused/Movement block" unique_id=1816847283]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 60.0
+offset_right = 20.0
+offset_bottom = 100.31
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dgi5k")
+
+[node name="Label" type="Label" parent="Paused/Movement block/W" unique_id=1105018635]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.4724152, 0.47241515, 0.47241515, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "W"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="S" type="Panel" parent="Paused/Movement block/W" unique_id=2137375212]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 9.690002
+offset_right = 20.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dgi5k")
+
+[node name="Label" type="Label" parent="Paused/Movement block/W/S" unique_id=1917231435]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.4724152, 0.47241515, 0.47241515, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="D" type="Panel" parent="Paused/Movement block/W/S" unique_id=887107037]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 30.0
+offset_right = 70.0
+offset_bottom = 40.309998
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dgi5k")
+
+[node name="Label" type="Label" parent="Paused/Movement block/W/S/D" unique_id=1761958476]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.4724152, 0.47241515, 0.47241515, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "D"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="a" type="Panel" parent="Paused/Movement block/W/S" unique_id=1912269606]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -70.0
+offset_right = -30.0
+offset_bottom = 40.309998
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dgi5k")
+
+[node name="Label" type="Label" parent="Paused/Movement block/W/S/a" unique_id=1907721273]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.4724152, 0.47241515, 0.47241515, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "a"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Title" type="Label" parent="Paused/Movement block" unique_id=828610623]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -78.5
+offset_top = -23.0
+offset_right = 78.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "Movement keybinds"
+horizontal_alignment = 1
+
+[node name="Attack" type="Control" parent="Paused" unique_id=2055252848]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -141.5
+offset_top = 40.0
+offset_right = 141.5
+offset_bottom = 238.0
+grow_horizontal = 2
+
+[node name="E" type="Panel" parent="Paused/Attack" unique_id=72530064]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 110.0
+offset_right = 20.0
+offset_bottom = 150.31
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dgi5k")
+
+[node name="Label" type="Label" parent="Paused/Attack/E" unique_id=1849596183]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.4724152, 0.47241515, 0.47241515, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="Paused/Attack/E" unique_id=2037449763]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.5
+offset_top = -30.0
+offset_right = 30.5
+offset_bottom = -7.0
+grow_horizontal = 2
+text = "To dash"
+
+[node name="MouseClick" type="Panel" parent="Paused/Attack" unique_id=1772422141]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.25
+offset_top = 30.0
+offset_right = 72.25
+offset_bottom = 70.30999
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dgi5k")
+
+[node name="Label" type="Label" parent="Paused/Attack/MouseClick" unique_id=955810351]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.4724152, 0.47241515, 0.47241515, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "L. Mouse"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Paused/Attack/MouseClick" unique_id=2040473474]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.5
+offset_top = -30.0
+offset_right = 30.5
+offset_bottom = -7.0
+grow_horizontal = 2
+text = "To attack"
+
+[node name="Attack" type="Label" parent="Paused/Attack" unique_id=1760846926]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -78.5
+offset_top = -23.0
+offset_right = 78.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "Combat keybinds"
+horizontal_alignment = 1
+
+[node name="Switch" type="Control" parent="Paused" unique_id=862456470]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -283.0
+offset_top = 40.0
+offset_bottom = 238.0
+grow_horizontal = 0
+
+[node name="E" type="Panel" parent="Paused/Switch" unique_id=555863973]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 110.0
+offset_right = 20.0
+offset_bottom = 150.31
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dgi5k")
+
+[node name="Label" type="Label" parent="Paused/Switch/E" unique_id=1501394330]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.4724152, 0.47241515, 0.47241515, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "Q"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="Paused/Switch/E" unique_id=509450200]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -115.125
+offset_top = -120.0
+offset_right = 115.125
+offset_bottom = -19.0
+grow_horizontal = 2
+text = "When an enemy is exploding you can use the following keybind to switch bodies with it."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Attack" type="Label" parent="Paused/Switch" unique_id=2046727005]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -78.5
+offset_top = -23.0
+offset_right = 78.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "Body switch mechanic"
+horizontal_alignment = 1
+
+[node name="End" type="CanvasLayer" parent="." unique_id=1993901393]
+unique_name_in_owner = true
+process_mode = 2
+layer = 2
+
+[node name="Control" type="Control" parent="End" unique_id=167008315]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="End/Control" unique_id=1064737202]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.36078432)
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayAgain" type="Button" parent="End/Control" unique_id=480990367]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.0
+offset_top = -21.5
+offset_right = 107.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+text = "Play again"
+metadata/_edit_use_anchors_ = true
+
+[node name="Movement block" type="Control" parent="End" unique_id=353684383]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 40.0
+offset_right = 283.0
+offset_bottom = 238.0
+
+[node name="W" type="Panel" parent="End/Movement block" unique_id=929307224]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 60.0
+offset_right = 20.0
+offset_bottom = 100.31
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dgi5k")
+
+[node name="Label" type="Label" parent="End/Movement block/W" unique_id=1503420491]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.4724152, 0.47241515, 0.47241515, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "W"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="S" type="Panel" parent="End/Movement block/W" unique_id=1768311120]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 9.690002
+offset_right = 20.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dgi5k")
+
+[node name="Label" type="Label" parent="End/Movement block/W/S" unique_id=798930334]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.4724152, 0.47241515, 0.47241515, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="D" type="Panel" parent="End/Movement block/W/S" unique_id=1863627107]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 30.0
+offset_right = 70.0
+offset_bottom = 40.309998
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dgi5k")
+
+[node name="Label" type="Label" parent="End/Movement block/W/S/D" unique_id=1758545406]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.4724152, 0.47241515, 0.47241515, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "D"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="a" type="Panel" parent="End/Movement block/W/S" unique_id=576334091]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -70.0
+offset_right = -30.0
+offset_bottom = 40.309998
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dgi5k")
+
+[node name="Label" type="Label" parent="End/Movement block/W/S/a" unique_id=14982115]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.4724152, 0.47241515, 0.47241515, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "a"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Title" type="Label" parent="End/Movement block" unique_id=290922638]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -78.5
+offset_top = -23.0
+offset_right = 78.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "Movement keybinds"
+horizontal_alignment = 1
+
+[node name="Attack" type="Control" parent="End" unique_id=1049211571]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -141.5
+offset_top = 40.0
+offset_right = 141.5
+offset_bottom = 238.0
+grow_horizontal = 2
+
+[node name="E" type="Panel" parent="End/Attack" unique_id=1218106032]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 110.0
+offset_right = 20.0
+offset_bottom = 150.31
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dgi5k")
+
+[node name="Label" type="Label" parent="End/Attack/E" unique_id=1249182896]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.4724152, 0.47241515, 0.47241515, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="End/Attack/E" unique_id=2082156170]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.5
+offset_top = -30.0
+offset_right = 30.5
+offset_bottom = -7.0
+grow_horizontal = 2
+text = "To dash"
+
+[node name="MouseClick" type="Panel" parent="End/Attack" unique_id=1236395374]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.25
+offset_top = 30.0
+offset_right = 72.25
+offset_bottom = 70.30999
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dgi5k")
+
+[node name="Label" type="Label" parent="End/Attack/MouseClick" unique_id=1218852215]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.4724152, 0.47241515, 0.47241515, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "L. Mouse"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="End/Attack/MouseClick" unique_id=338017195]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.5
+offset_top = -30.0
+offset_right = 30.5
+offset_bottom = -7.0
+grow_horizontal = 2
+text = "To attack"
+
+[node name="Attack" type="Label" parent="End/Attack" unique_id=1072408677]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -78.5
+offset_top = -23.0
+offset_right = 78.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "Combat keybinds"
+horizontal_alignment = 1
+
+[node name="Switch" type="Control" parent="End" unique_id=143885130]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -283.0
+offset_top = 40.0
+offset_bottom = 238.0
+grow_horizontal = 0
+
+[node name="E" type="Panel" parent="End/Switch" unique_id=1478271580]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 110.0
+offset_right = 20.0
+offset_bottom = 150.31
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dgi5k")
+
+[node name="Label" type="Label" parent="End/Switch/E" unique_id=253845730]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.4724152, 0.47241515, 0.47241515, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "Q"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="End/Switch/E" unique_id=185881158]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -115.125
+offset_top = -120.0
+offset_right = 115.125
+offset_bottom = -19.0
+grow_horizontal = 2
+text = "When an enemy is exploding you can use the following keybind to switch bodies with it."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Attack" type="Label" parent="End/Switch" unique_id=230301263]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -78.5
+offset_top = -23.0
+offset_right = 78.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "Body switch mechanic"
+horizontal_alignment = 1
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1267731374]
 unique_name_in_owner = true
 
-[node name="HUD" type="Control" parent="HUD" unique_id=917414974]
+[node name="HUD" type="Control" parent="HUD" unique_id=417308764]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -971,8 +1990,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="HPbar" type="ProgressBar" parent="HUD/HUD" unique_id=1327496341]
+[node name="HPbar" type="ProgressBar" parent="HUD/HUD" unique_id=989693862]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 20)
 layout_mode = 1
@@ -989,12 +2009,12 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 6
 size_flags_vertical = 8
-theme_override_styles/background = SubResource("StyleBoxFlat_og1vs")
-theme_override_styles/fill = SubResource("StyleBoxFlat_2wyq8")
+theme_override_styles/background = SubResource("StyleBoxFlat_qkpxi")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5q0nq")
 value = 100.0
 show_percentage = false
 
-[node name="dash_icon" type="TextureRect" parent="HUD/HUD/HPbar" unique_id=1452008393]
+[node name="dash_icon" type="TextureRect" parent="HUD/HUD/HPbar" unique_id=384766389]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 1
@@ -1012,7 +2032,7 @@ grow_vertical = 2
 texture = ExtResource("26_2wyq8")
 expand_mode = 1
 
-[node name="switch_icon" type="TextureRect" parent="HUD/HUD/HPbar" unique_id=432238988]
+[node name="switch_icon" type="TextureRect" parent="HUD/HUD/HPbar" unique_id=2125967539]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 1
@@ -1030,7 +2050,7 @@ grow_vertical = 2
 texture = ExtResource("27_vxglm")
 expand_mode = 1
 
-[node name="wave_counter" type="Label" parent="HUD/HUD/HPbar" unique_id=837223107]
+[node name="wave_counter" type="Label" parent="HUD/HUD/HPbar" unique_id=515815571]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -1048,7 +2068,7 @@ theme_override_font_sizes/font_size = 24
 text = "Wave"
 horizontal_alignment = 1
 
-[node name="enemies_counter" type="Label" parent="HUD/HUD/HPbar" unique_id=134807281]
+[node name="enemies_counter" type="Label" parent="HUD/HUD/HPbar" unique_id=1284449993]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
