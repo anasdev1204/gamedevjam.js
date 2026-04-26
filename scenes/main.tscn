@@ -1320,6 +1320,21 @@ grow_vertical = 0
 text = "Body switch mechanic"
 horizontal_alignment = 1
 
+[node name="Label" type="Label" parent="Start/Control" unique_id=83630445]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -391.5
+offset_top = -48.0
+offset_right = 391.5
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "You may encounter some frame drops in the first couple waves, enabling graphics acceleration helps."
+
 [node name="Paused" type="CanvasLayer" parent="." unique_id=1393817126]
 unique_name_in_owner = true
 process_mode = 2
