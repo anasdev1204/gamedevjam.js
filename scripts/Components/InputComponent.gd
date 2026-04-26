@@ -1,12 +1,15 @@
 class_name InputComponent extends Node
 
 @export var body: Player
+@export var switch_area: SwitchArea
 
 signal primary_fired
 signal active_dash_fired
+signal switch_fired(Player)
 signal move_dir_change(dir: Vector3)
 
 var move_dir := Vector3.ZERO
+var attack_dir := Vector3.ZERO
 var movement_state := false
 var disabled := true
 
@@ -14,7 +17,7 @@ func _unhandled_input(event):
 	if disabled:
 		return
 
-	var mouse_dir = get_mouse_world_direction()
+	attack_dir = get_mouse_world_direction()
 
 	if event.is_action_pressed("primary_attack"):
 		if can_attack():
@@ -23,18 +26,15 @@ func _unhandled_input(event):
 	if event.is_action_pressed("active_dash"):
 		if can_attack():
 			active_dash_fired.emit()
+			
+	if event.is_action_pressed("switch"):
+		if can_switch():
+			var switch_to: Player = switch_area.get_closest_exploding_in_range(attack_dir)
+			switch_fired.emit(switch_to)
 	
-	var input_x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-	var input_z = Input.get_action_strength("move_forward") - Input.get_action_strength("move_back")
-
-	var right = mouse_dir.cross(Vector3.UP).normalized()
-	var forward = mouse_dir.normalized()
-
-	move_dir = (right * input_x) + (forward * input_z)
-
-	if move_dir.length_squared() > 0.001:
-		move_dir = move_dir.normalized()
-
+	move_dir.x = Input.get_action_strength("move_left") - Input.get_action_strength("move_right")
+	move_dir.z = Input.get_action_strength("move_forward") - Input.get_action_strength("move_back")
+	
 	if movement_state != is_movement_ongoing():
 		movement_state = is_movement_ongoing()
 		move_dir_change.emit(move_dir)
@@ -42,9 +42,10 @@ func _unhandled_input(event):
 func can_attack():
 	var value = true
 	
-	# Add conditions for verifying if attack is possible
-	
 	return value
+	
+func can_switch():
+	return switch_area.is_exploding_in_range()
 
 func get_mouse_world_direction() -> Vector3:
 	var cam = get_viewport().get_camera_3d()

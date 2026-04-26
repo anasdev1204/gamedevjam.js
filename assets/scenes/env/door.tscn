@@ -6,6 +6,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cpeonvy4p46qm" path="res://res/meshes/door1.tres" id="3_yhvyw"]
 [ext_resource type="ArrayMesh" uid="uid://bdoxdacdsu2gy" path="res://res/meshes/screw1.tres" id="4_nba5v"]
 [ext_resource type="AnimationLibrary" uid="uid://t5dkjba0e3mx" path="res://assets/source/env/decor/door_animations.res" id="5_31hs4"]
+[ext_resource type="AudioStream" uid="uid://c2scea5grvdmm" path="res://assets/source/sfx/door sound.mp3" id="7_nba5v"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_31hs4"]
 size = Vector3(3.128418, 3.776245, 1)
@@ -41,3 +42,8 @@ shape = SubResource("BoxShape3D_31hs4")
 height = 4.0
 vertices = PackedVector3Array(-1.7789097, 0, -0.6330883, -1.7789097, 0, 0.63995737, 1.6881084, 0, 0.6851006, 1.7151943, 0, -0.6150308)
 affect_navigation_mesh = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="7" unique_id=987158417]
+stream = ExtResource("7_nba5v")
+max_distance = 50.0
+bus = &"sfx"

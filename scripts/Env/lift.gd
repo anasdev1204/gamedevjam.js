@@ -11,10 +11,10 @@ func _ready():
 func open(callable: Callable):
 	if animation_player.is_playing():
 		return
-		
+	
 	animation_player.play("open")
 	animation_player.animation_finished.connect(callable, CONNECT_ONE_SHOT)
-
+	
 func close():
 	if animation_player.is_playing():
 		return

@@ -2,6 +2,30 @@ class_name Hitbox
 extends Area3D
 
 @export var damage := 10.
+@export var knockback := 10.
+@export var ally_multiplier := 2.
+
+var on_enter: Callable
+
+func _ready():
+	area_entered.connect(_on_area_entered)
+	
+func _on_area_entered(area):	
+	var active_multiplier := ally_multiplier if not is_in_group("enemy") else Global.wave_multiplier
+	if monitoring and is_instance_of(area, Hurtbox):		
+		if (
+			(area.get_parent().is_in_group("enemy") and not is_in_group("enemy"))
+			or
+			(not area.get_parent().is_in_group("enemy") and is_in_group("enemy"))
+		):
+			area.hurtbox_entered(
+				damage * active_multiplier, 
+				get_parent().global_position, 
+				knockback
+			)
+			
+			if on_enter:
+				on_enter.call()
 
 func set_enemy_group():
 	add_to_group("enemy")
@@ -11,11 +35,4 @@ func leave_enemy_group():
 
 func update_monitorable(new_monitorable: bool):
 	monitorable = new_monitorable
-
-	if new_monitorable:
-		_check_initial_overlaps()
-		
-func _check_initial_overlaps():
-	for area in get_overlapping_areas():
-		if is_instance_of(area, Hurtbox):
-			area.on_area_overlap(self)
+	monitoring = new_monitorable

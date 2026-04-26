@@ -12,7 +12,8 @@ var player_init_rotation : float
 func _ready():
 	player_init_rotation = player.rotation.y
 
-func update(delta: float, direction: Vector3):
+func update(delta: float, move_direction: Vector3, attack_direction: Vector3, is_attacking: bool):
+	var direction = attack_direction if is_attacking else move_direction
 	if model and direction.length_squared() > 0.001:
 		var look_dir := Vector2(direction.x, direction.z).normalized()
 		var target_angle := atan2(look_dir.x, look_dir.y) - deg_to_rad(default_rotation)

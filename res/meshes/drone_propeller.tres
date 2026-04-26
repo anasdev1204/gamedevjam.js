@@ -1,15 +1,5 @@
 [gd_resource type="ArrayMesh" format=4 uid="uid://dc6cmcn7rs8yw"]
 
-[ext_resource type="Shader" uid="uid://diehh4qm11vrh" path="res://res/shaders/drone_propeller.gdshader" id="1_epq42"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_l7yar"]
-render_priority = 0
-shader = ExtResource("1_epq42")
-shader_parameter/speed = 0.800000038
-shader_parameter/blade_count = 4.0
-shader_parameter/opacity = 20.0
-shader_parameter/tint = Color(0.81960785, 0.29411766, 0.29411766, 1)
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_sfyy8"]
 _surfaces = [{
 "aabb": AABB(-1, -1, 0.010243, 2, 2, 1e-05),
@@ -31,7 +21,6 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 90,
 "index_data": PackedByteArray("AAABAAIAAgABAAMAAwABAAQABAABAAUABQABAAYABgABAAcABwABAAgACAABAAkACQABAAoACgABAAsACwABAAwADAABAA0ADQABAA4ADgABAA8ADwABABAAEAABABEAEQABABIAEgABABMAEwABABQAFAABABUAFQABABYAFgABABcAFwABABgAGAABABkAGQABABoAGgABABsAGwABABwAHAABAB0AHQABAB4AHgABAB8A"),
-"material": SubResource("ShaderMaterial_l7yar"),
 "name": "Cylinder",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),

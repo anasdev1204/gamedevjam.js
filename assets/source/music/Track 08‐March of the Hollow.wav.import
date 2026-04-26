@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dvfldi6gve4g6"
+path="res://.godot/imported/Track 08‐March of the Hollow.wav-6d2052d85e1871783938538d2a62ca81.sample"
+
+[deps]
+
+source_file="res://assets/source/music/Track 08‐March of the Hollow.wav"
+dest_files=["res://.godot/imported/Track 08‐March of the Hollow.wav-6d2052d85e1871783938538d2a62ca81.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

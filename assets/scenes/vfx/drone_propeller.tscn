@@ -1,11 +1,23 @@
 [gd_scene format=3 uid="uid://hey7tb57bduq"]
 
+[ext_resource type="Script" uid="uid://cnumkiw1ka81m" path="res://scripts/VFX/drone_propeller.gd" id="1_ele8a"]
 [ext_resource type="ArrayMesh" uid="uid://dc6cmcn7rs8yw" path="res://res/meshes/drone_propeller.tres" id="1_l1ces"]
+[ext_resource type="Shader" uid="uid://diehh4qm11vrh" path="res://res/shaders/drone_propeller.gdshader" id="2_ao1fm"]
 [ext_resource type="ArrayMesh" uid="uid://dkxelv6k2ih4l" path="res://res/meshes/drone_propeller_center.tres" id="2_i4aeh"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qn0nw"]
+render_priority = 0
+shader = ExtResource("2_ao1fm")
+shader_parameter/speed = 0.800000038
+shader_parameter/blade_count = 4.0
+shader_parameter/opacity = 20.0
+shader_parameter/tint = Color(0.09803922, 0.972549, 1, 1)
+
 [node name="drone_propeller" type="Node3D" unique_id=1937261150]
+script = ExtResource("1_ele8a")
 
 [node name="DronePropeller" type="MeshInstance3D" parent="." unique_id=106666161]
+material_override = SubResource("ShaderMaterial_qn0nw")
 mesh = ExtResource("1_l1ces")
 
 [node name="DronePropellerCenter" type="MeshInstance3D" parent="." unique_id=1368895121]

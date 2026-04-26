@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dy5m5f1dv31so" path="res://scripts/VFX/dash_afterimage.gd" id="2_w5iej"]
 [ext_resource type="Material" uid="uid://ceelg1747kp50" path="res://assets/source/entities/bigenemy/bigenemy_shader.tres" id="3_x4fpt"]
 [ext_resource type="Script" uid="uid://gj31cgpakkbq" path="res://scripts/Classes/ActiveSkillsContainer.gd" id="6_hhmkw"]
+[ext_resource type="Script" uid="uid://bdv7tfjlpm2tm" path="res://scripts/Classes/SwitchArea.gd" id="7_j646y"]
 [ext_resource type="Script" uid="uid://4gsfrqitdpoc" path="res://scripts/Classes/ActiveSkill.gd" id="7_qd8f2"]
 [ext_resource type="Script" uid="uid://4g7g22oy78fc" path="res://scripts/Classes/Hurtbox.gd" id="8_j646y"]
 [ext_resource type="Script" uid="uid://cexttyfap48mc" path="res://scripts/Components/InputComponent.gd" id="8_psmrw"]
@@ -11,6 +12,7 @@
 [ext_resource type="Script" uid="uid://dw3mcscvxt3xt" path="res://scripts/Components/MovementComponent.gd" id="9_imtvo"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://mr5r58ayuo80" path="res://assets/source/entities/bigenemy/bigenemy_blendtree.tres" id="9_x4fpt"]
 [ext_resource type="Script" uid="uid://ba8212q4seyav" path="res://scripts/Components/RotationComponent.gd" id="10_7dt0x"]
+[ext_resource type="AudioStream" uid="uid://d0jpjwirspafb" path="res://assets/source/sfx/floating.mp3" id="10_hhmkw"]
 [ext_resource type="Script" uid="uid://w05okq7rpmrx" path="res://scripts/Components/CameraComponent.gd" id="11_1krhf"]
 [ext_resource type="Script" uid="uid://q8fs4agvgiw0" path="res://scripts/Components/ActiveSkillComponent.gd" id="12_ptkkm"]
 [ext_resource type="Script" uid="uid://brr713nr64ach" path="res://scripts/Components/HealthComponent.gd" id="15_16qem"]
@@ -73,6 +75,41 @@ size = Vector3(6.645668, 3.5151215, 2.697998)
 [sub_resource type="BoxShape3D" id="BoxShape3D_16qem"]
 size = Vector3(8.315226, 6.158928, 2.697998)
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_hhmkw"]
+height = 27.974854
+radius = 18.649414
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_16qem"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j646y"]
+border_width_bottom = 3
+border_color = Color(0.37, 0.37, 0.37, 1)
+corner_detail = 3
+expand_margin_bottom = 3.0
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hhmkw"]
+bg_color = Color(0.72, 0, 0.011999818, 1)
+border_width_bottom = 3
+border_color = Color(0.39, 0, 0.0064999005, 1)
+corner_detail = 3
+expand_margin_bottom = 3.0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_16qem"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qd8f2"]
+bg_color = Color(0.11119685, 0.11119685, 0.11119678, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.47058824, 0.47058824, 0.47058824, 1)
+border_blend = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_psmrw"]
+viewport_path = NodePath("SubViewport2")
+
 [node name="bigenemy" type="CharacterBody3D" unique_id=1999983968]
 collision_layer = 2
 collision_mask = 5
@@ -83,7 +120,7 @@ metadata/_custom_type_script = "uid://cxpq4kknl2n57"
 
 [node name="DashAfterImage" type="Node3D" parent="VFX" unique_id=280523003 node_paths=PackedStringArray("character_mesh")]
 script = ExtResource("2_w5iej")
-character_mesh = NodePath("../../Armature/Skeleton3D/Cube_004")
+character_mesh = NodePath("../../Armature/Skeleton3D/model")
 
 [node name="Armature" type="Node3D" parent="." unique_id=679372524]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44669104, -0.13188344, 1.5927806)
@@ -100,7 +137,7 @@ bones/1/name = "Bone.001"
 bones/1/parent = -1
 bones/1/rest = Transform3D(0.9999929, -0.003766364, 7.420213e-08, 0.003766364, 0.9999929, -5.284853e-08, -7.400255e-08, 5.3127625e-08, 1, 0.023271438, 2.6962051, 4.2992437e-07)
 bones/1/enabled = true
-bones/1/position = Vector3(0.023271436, 2.7233815, 4.3119573e-07)
+bones/1/position = Vector3(0.023271436, 2.4710977, 4.475372e-07)
 bones/1/rotation = Quaternion(2.6494083e-08, 3.705123e-08, 0.0018831851, 0.9999982)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "Bone.002.L"
@@ -108,7 +145,7 @@ bones/2/parent = 1
 bones/2/rest = Transform3D(0.5262218, 0.8503475, 1.8703578e-07, -0.8503475, 0.5262218, -3.4393304e-07, -3.908849e-07, 2.1939671e-08, 1.0000001, 0.97262925, 2.094288, 1.8324522e-07)
 bones/2/enabled = true
 bones/2/position = Vector3(0.97262925, 2.094288, 1.8324522e-07)
-bones/2/rotation = Quaternion(1.0365862e-07, 1.6605108e-07, -0.49222955, 0.8704654)
+bones/2/rotation = Quaternion(1.13761104e-07, 1.6498919e-07, -0.52257496, 0.8525934)
 bones/2/scale = Vector3(1.0000001, 1.0000001, 1.0000001)
 bones/3/name = "Bone.003.L"
 bones/3/parent = 2
@@ -129,7 +166,7 @@ bones/5/parent = 1
 bones/5/rest = Transform3D(0.5326122, -0.84635943, -3.3793017e-07, 0.84635943, 0.5326122, -3.42103e-07, 4.6952778e-07, -1.0380214e-07, 1.0000001, -1.0033685, 2.1017306, 3.6805403e-08)
 bones/5/enabled = true
 bones/5/position = Vector3(-1.0033685, 2.1017306, 3.6805403e-08)
-bones/5/rotation = Quaternion(6.659541e-08, -2.3102562e-07, 0.4889476, 0.87231314)
+bones/5/rotation = Quaternion(7.445023e-08, -2.2867874e-07, 0.5193601, 0.85455555)
 bones/5/scale = Vector3(1, 1, 1.0000001)
 bones/6/name = "Bone.003.R"
 bones/6/parent = 5
@@ -146,15 +183,16 @@ bones/7/position = Vector3(2.384188e-07, 2.0732875, 2.2737368e-13)
 bones/7/rotation = Quaternion(1.3184439e-07, -1.3756096e-08, 0.25853533, 0.9660018)
 bones/7/scale = Vector3(1.0000001, 0.9999999, 1)
 
-[node name="Cube_004" type="MeshInstance3D" parent="Armature/Skeleton3D" unique_id=907791890]
+[node name="model" type="MeshInstance3D" parent="Armature/Skeleton3D" unique_id=907791890]
+unique_name_in_owner = true
 material_override = ExtResource("3_x4fpt")
 mesh = SubResource("ArrayMesh_xa8vf")
 skin = SubResource("Skin_ckpij")
 
-[node name="beam_marker" type="Marker3D" parent="Armature/Skeleton3D/Cube_004" unique_id=452860151]
+[node name="beam_marker" type="Marker3D" parent="Armature/Skeleton3D/model" unique_id=452860151]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15272522, 4.4020143, 4.3679523)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Armature/Skeleton3D/Cube_004/beam_marker" unique_id=2145271249]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Armature/Skeleton3D/model/beam_marker" unique_id=2145271249]
 visible = false
 mesh = SubResource("CylinderMesh_x4fpt")
 
@@ -166,7 +204,7 @@ max_combo = 1
 [node name="ActiveSkill" type="Node" parent="Armature/Skeleton3D/skills" unique_id=1261094335]
 script = ExtResource("7_qd8f2")
 animation_name = &"blast"
-windup_duration = 0.22
+windup_duration = 0.5
 windup_scale = 1.15
 delivery_duration = 0.12
 delivery_scale = 1.55
@@ -188,7 +226,6 @@ transform = Transform3D(0.8480481, 0, 0.52991927, 0, 1, 0, -0.52991927, 0, 0.848
 unique_name_in_owner = true
 transform = Transform3D(-1, -6.181724e-08, 6.181724e-08, 0, 0.70710677, 0.70710677, -8.742278e-08, 0.70710677, -0.70710677, 0, 10, -5)
 projection = 1
-current = true
 size = 20.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1378753056]
@@ -222,6 +259,18 @@ omni_attenuation = 0.96
 debug_enabled = true
 debug_path_custom_color = Color(0.5200528, 0.00019310057, 0.52004904, 1)
 
+[node name="SwtichArea" type="Area3D" parent="." unique_id=882212185]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("7_j646y")
+metadata/_custom_type_script = "uid://bdv7tfjlpm2tm"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SwtichArea" unique_id=2106538388]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.987427, 0)
+shape = SubResource("CylinderShape3D_hhmkw")
+debug_color = Color(0, 0.5950001, 0.7, 1)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1060243540]
 libraries/ = ExtResource("8_w5iej")
 
@@ -236,17 +285,28 @@ parameters/attack_transition/current_state = "end_attack"
 parameters/attack_transition/transition_request = ""
 parameters/attack_transition/current_index = 0
 
-[node name="InputComponent" type="Node" parent="." unique_id=604280645 node_paths=PackedStringArray("body")]
+[node name="AudioContainer" type="Node3D" parent="." unique_id=1557539482]
+
+[node name="float" type="AudioStreamPlayer3D" parent="AudioContainer" unique_id=1490625703]
+stream = ExtResource("10_hhmkw")
+volume_db = -20.0
+autoplay = true
+max_distance = 30.0
+parameters/looping = true
+
+[node name="InputComponent" type="Node" parent="." unique_id=604280645 node_paths=PackedStringArray("body", "switch_area")]
 unique_name_in_owner = true
 script = ExtResource("8_psmrw")
 body = NodePath("..")
+switch_area = NodePath("../SwtichArea")
 
-[node name="MovementComponent" type="Node" parent="." unique_id=936195654 node_paths=PackedStringArray("body", "rotation_component", "camera_component", "dash_after_image_vfx")]
+[node name="MovementComponent" type="Node" parent="." unique_id=936195654 node_paths=PackedStringArray("body", "rotation_component", "camera_component", "health_component", "dash_after_image_vfx")]
 unique_name_in_owner = true
 script = ExtResource("9_imtvo")
 body = NodePath("..")
 rotation_component = NodePath("../RotationComponent")
 camera_component = NodePath("../CameraComponent")
+health_component = NodePath("../HealthComponent")
 dash_after_image_vfx = NodePath("../VFX/DashAfterImage")
 active_dash_speed = 40.0
 active_dash_duration = 0.3
@@ -257,7 +317,7 @@ metadata/_custom_type_script = "uid://dw3mcscvxt3xt"
 unique_name_in_owner = true
 script = ExtResource("10_7dt0x")
 player = NodePath("..")
-model = NodePath("../Armature/Skeleton3D/Cube_004")
+model = NodePath("../Armature/Skeleton3D/model")
 collision_shape = NodePath("../CollisionShape3D")
 metadata/_custom_type_script = "uid://ba8212q4seyav"
 
@@ -280,10 +340,13 @@ rotation_component = NodePath("../RotationComponent")
 camera_component = NodePath("../CameraComponent")
 metadata/_custom_type_script = "uid://q8fs4agvgiw0"
 
-[node name="HealthComponent" type="Node" parent="." unique_id=1108564044 node_paths=PackedStringArray("model", "hurtbox")]
+[node name="HealthComponent" type="Node" parent="." unique_id=1108564044 node_paths=PackedStringArray("movement_component", "enemy_health_bar_subview", "enemy_health_bar_sprite", "model", "hurtbox")]
 unique_name_in_owner = true
 script = ExtResource("15_16qem")
-model = NodePath("../Armature/Skeleton3D/Cube_004")
+movement_component = NodePath("../MovementComponent")
+enemy_health_bar_subview = NodePath("../SubViewport")
+enemy_health_bar_sprite = NodePath("../Healthbar")
+model = NodePath("../Armature/Skeleton3D/model")
 hurtbox = NodePath("../Hurtbox")
 metadata/_custom_type_script = "uid://brr713nr64ach"
 
@@ -291,5 +354,77 @@ metadata/_custom_type_script = "uid://brr713nr64ach"
 unique_name_in_owner = true
 script = ExtResource("15_j646y")
 body = NodePath("..")
-attack_range = 10.0
+speed = 10.0
+attack_range = 13.0
+fire_cooldown = 2.0
 metadata/_custom_type_script = "uid://k8xtbff7swi0"
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=2021206797]
+transparent_bg = true
+size = Vector2i(400, 50)
+
+[node name="Panel" type="Panel" parent="SubViewport" unique_id=1416424601]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_16qem")
+
+[node name="ProgressBar" type="ProgressBar" parent="SubViewport/Panel" unique_id=1584666585]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.040000003
+anchor_top = 0.16700001
+anchor_right = 0.96000004
+anchor_bottom = 0.771
+offset_left = 0.045000076
+offset_top = -0.016000748
+offset_bottom = -0.008003235
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_j646y")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hhmkw")
+value = 100.0
+show_percentage = false
+
+[node name="Healthbar" type="Sprite3D" parent="." unique_id=144469534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.164961, 0)
+visible = false
+billboard = 1
+texture = SubResource("ViewportTexture_16qem")
+
+[node name="SubViewport2" type="SubViewport" parent="." unique_id=1120915745]
+transparent_bg = true
+size = Vector2i(50, 50)
+
+[node name="Panel" type="Panel" parent="SubViewport2" unique_id=2051662488]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qd8f2")
+
+[node name="Label" type="Label" parent="SubViewport2/Panel" unique_id=1766798914]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.4724152, 0.47241515, 0.47241515, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "q"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="SwitchIndicator" type="Sprite3D" parent="." unique_id=227150215]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.369482, 0)
+visible = false
+billboard = 1
+texture_filter = 1
+texture = SubResource("ViewportTexture_psmrw")

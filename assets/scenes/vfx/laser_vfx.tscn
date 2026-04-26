@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://c5bj1o4lawh4w" path="res://scripts/VFX/laser_vfx.gd" id="1_n0q1q"]
 [ext_resource type="Texture2D" uid="uid://breamms6j3o5e" path="res://assets/source/entities/bigenemy/T_VFX_Noise_9.PNG" id="3_dkq6i"]
 [ext_resource type="Shader" uid="uid://54mcij1kh36x" path="res://res/shaders/laser_vfx.tres" id="3_mwhqj"]
-[ext_resource type="ArrayMesh" uid="uid://b64gk4uiyksqx" path="res://res/meshes/beam.tres" id="4_lt8la"]
 [ext_resource type="Curve" uid="uid://cedqbldamgkop" path="res://assets/source/entities/bigenemy/scale_curve.tres" id="5_83dhm"]
 [ext_resource type="ArrayMesh" uid="uid://dk43gyxj1s4dt" path="res://res/meshes/beam_head.tres" id="8_7pmqx"]
 [ext_resource type="Script" uid="uid://cffa0n4q4tuvk" path="res://scripts/Classes/Hitbox.gd" id="8_d4ksi"]
+[ext_resource type="AudioStream" uid="uid://db1l5xv12o1d1" path="res://assets/source/sfx/laserbeam.mp3" id="8_n0q1q"]
 [ext_resource type="Shader" uid="uid://dcpqig5w1ikke" path="res://res/shaders/laser_particles.tres" id="9_ic46v"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g5plk"]
@@ -18,9 +18,9 @@ shader = ExtResource("3_mwhqj")
 shader_parameter/Color = Color(0.81960785, 0.29411766, 0.29411766, 1)
 shader_parameter/speed = Vector2(2, -1)
 shader_parameter/Energy = SubResource("CompressedTexture2D_g5plk")
-shader_parameter/texture_power = 0.4
-shader_parameter/gradient_power = 0.0
-shader_parameter/gradient_power_2 = 2.0
+shader_parameter/texture_power = -0.085
+shader_parameter/gradient_power = 0.025
+shader_parameter/gradient_power_2 = 2.895
 shader_parameter/triplanar_scale = Vector3(1, 1, 1)
 shader_parameter/triplanar_offset = Vector3(0, 0, 0)
 shader_parameter/triplanar_sharpness = 0.5
@@ -48,7 +48,6 @@ _surfaces = [{
 "index_count": 960,
 "index_data": PackedByteArray("SgB0AEkASQB0AHUAdAB2AHUASQB1AEgAdQB2AHcAdgBFAHcASAB1AHgAdQB3AHgASAB4AEQAdwBFAHMARQBxAHMAeAB3AHkAdwBzAHkARAB4AHoAeAB5AHoARAB6AEIAcwBxAHsAcQBHAHsAewBHAEYAcwB7AHIAeQBzAHIAewBGAHAAcgB7AHAAcABGAEMAeQByAHwAegB5AHwAcgBwAG8AfAByAG8AcABDAH0AbwBwAH0AfQBDAEEAegB8AH4AQgB6AH4AQgB+AEAAfgB8AH8AfABvAH8AQAB+AIAAfgB/AIAAQACAAD4AbwB9ADwAfwBvADwAfQBBAG4APAB9AG4AbgBBAD8AfwA8AIEAgAB/AIEAPABuAG0AgQA8AG0AbgA/AIIAbQBuAIIAggA/AD0APgCAAIMAgACBAIMAPgCDADsAgQBtAIQAgwCBAIQAbQCCAGwAhABtAGwAOwCDAIUAgwCEAIUAOwCFADkAggA9AGsAbACCAGsAawA9ADoAhABsAIYAhQCEAIYAbABrAGoAhgBsAGoAawA6AIcAagBrAIcAhwA6ADgAOQCFAIgAhQCGAIgAOQCIADcAhgBqAIkAiACGAIkAagCHADMAiQBqADMANwCIAIoAiACJAIoANwCKADUAhwA4AGkAMwCHAGkAaQA4ADYAiQAzAIsAigCJAIsAMwBpAGgAiwAzAGgAaQA2AIwAaABpAIwAjAA2ADQANQCKAI0AigCLAI0ANQCNADIAiwBoAI4AjQCLAI4AaACMAGcAjgBoAGcAMgCNAI8AjQCOAI8AMgCPADAAjAA0AGYAZwCMAGYAZgA0ADEAjgBnAJAAjwCOAJAAZwBmAGUAkABnAGUAZgAxAJEAZQBmAJEAkQAxAC8AMACPAJIAjwCQAJIAMACSAC4AkABlAJMAkgCQAJMAZQCRACoAkwBlACoALgCSAJQAkgCTAJQALgCUACwAkQAvAGQAKgCRAGQAZAAvAC0AkwAqAJUAlACTAJUAKgBkAGMAlQAqAGMAZAAtAJYAYwBkAJYAlgAtACsALACUAJcAlACVAJcALACXACkAlQBjAJgAlwCVAJgAYwCWAGIAmABjAGIAKQCXAJkAlwCYAJkAKQCZACcAlgArAGEAYgCWAGEAYQArACgAmABiAJoAmQCYAJoAYgBhAGAAmgBiAGAAYQAoAJsAYABhAJsAmwAoACYAJwCZAJwAmQCaAJwAJwCcACUAmgBgAJ0AnACaAJ0AYACbACEAnQBgACEAJQCcAJ4AnACdAJ4AJQCeACMAmwAmAF8AIQCbAF8AXwAmACQAnQAhAJ8AngCdAJ8AIQBfAF4AnwAhAF4AXwAkAKAAXgBfAKAAoAAkACIAIwCeAKEAngCfAKEAIwChACAAnwBeAKIAoQCfAKIAXgCgAF0AogBeAF0AIAChAKMAoQCiAKMAIACjAB4AoAAiAFwAXQCgAFwAXAAiAB8AogBdAKQAowCiAKQAXQBcAFsApABdAFsAXAAfAKUAWwBcAKUApQAfAB0AHgCjAKYAowCkAKYAHgCmABwApABbAKcApgCkAKcAWwClABgApwBbABgAHACmAKgApgCnAKgAHACoABoApQAdAFoAGAClAFoAWgAdABsApwAYAKkAqACnAKkAGABaAFkAqQAYAFkAWgAbAKoAWQBaAKoAqgAbABkAGgCoAKsAqACpAKsAGgCrABcAqQBZAKwAqwCpAKwAWQCqAFgArABZAFgAFwCrAK0AqwCsAK0AFwCtABUAqgAZAFcAWACqAFcAVwAZABYArABYAK4ArQCsAK4AWABXAFYArgBYAFYAVwAWAK8AVgBXAK8ArwAWABQAFQCtALAArQCuALAAFQCwABMArgBWALEAsACuALEAVgCvAA8AsQBWAA8AEwCwALIAsACxALIAEwCyABEArwAUAFUADwCvAFUAVQAUABIAsQAPALMAsgCxALMADwBVAFQAswAPAFQAVQASALQAVABVALQAtAASABAAEQCyALUAsgCzALUAEQC1AA4AswBUALYAtQCzALYAVAC0AFMAtgBUAFMADgC1ALcAtQC2ALcADgC3AA0AtAAQAFIAUwC0AFIAUgAQAAgAtgBTALgAtwC2ALgAUwBSAFEAuABTAFEAUgAIALkAUQBSALkAuQAIAAcADQC3ALoAtwC4ALoADQC6AAwAuABRALsAugC4ALsAUQC5AAQAuwBRAAQADAC6ALwAugC7ALwADAC8AAsAuQAHAE8ABAC5AE8ATwAHAAYAuwAEAL0AvAC7AL0ABABPAFAAvQAEAFAATwAGAL4AUABPAL4AvgAGAAUACwC8AL8AvAC9AL8ACwC/AAkAvQBQAMAAvwC9AMAAUAC+AE4AwABQAE4ACQC/AMEAvwDAAMEACQDBAAoACgDBAMIAwQDAAMMAwQDDAMIAwABOAMMAwgDDAMQAwwBNAMQAwwBOAE0AxABNAAAATgC+AEwATgBMAE0AvgAFAEwATAAFAAMATQBMAMUATQDFAAAATAADAMUAAADFAEsAxQADAAEAxQABAEsASwABAAIA"),
 "lods": [0.02738534, PackedByteArray("SwABAAIASwADAAEATAADAEsATAAFAAMATAAGAAUATQBMAEsATQBLAAAACgBNAAAACQBNAAoACQBOAE0ATgBMAE0ACwBOAAkATwAGAEwATwAHAAYAUABMAE4ACwBQAE4AUABPAEwADABQAAsATwAIAAcADAAEAFAABABPAFAADQAEAAwADQBRAAQAUQBPAAQADgBRAA0AUgAIAE8AUQBSAE8AUgAQAAgADgBTAFEAUwBSAFEAEQBTAA4AUgASABAAEQBUAFMAVABSAFMAEwBUABEAVQASAFIAVABVAFIAVQAUABIAEwAPAFQADwBVAFQAFQAPABMAVQAWABQAFQBWAA8AVgBVAA8AFwBWABUAVwAWAFUAVgBXAFUAVwAZABYAFwBYAFYAWABXAFYAGgBYABcAVwAbABkAGgBZAFgAWQBXAFgAHABZABoAWgAbAFcAWQBaAFcAWgAdABsAHAAYAFkAGABaAFkAHgAYABwAWgAfAB0AHgBbABgAWwBaABgAIABbAB4AXAAfAFoAWwBcAFoAXAAiAB8AIABdAFsAXQBcAFsAIwBdACAAXAAkACIAIwBeAF0AXgBcAF0AJQBeACMAXwAkAFwAXgBfAFwAXwAmACQAJQAhAF4AIQBfAF4AJwAhACUAXwAoACYAJwBgACEAYABfACEAKQBgACcAYQAoAF8AYABhAF8AYQArACgAKQBiAGAAYgBhAGAALABiACkAYQAtACsALABjAGIAYwBhAGIALgBjACwAZAAtAGEAYwBkAGEAZAAvAC0ALgAqAGMAKgBkAGMAMAAqAC4AZAAxAC8AMABlACoAZQBkACoAMgBlADAAZgAxAGQAZQBmAGQAZgA0ADEAMgBnAGUAZwBmAGUANQBnADIAZgA2ADQANQBoAGcAaABmAGcANwBoADUAaQA2AGYAaABpAGYAaQA4ADYANwAzAGgAMwBpAGgAOQAzADcAaQA6ADgAOQBqADMAagBpADMAOwBqADkAawA6AGkAagBrAGkAawA9ADoAOwBsAGoAbABrAGoAPgBsADsAawA/AD0APgBtAGwAbQBrAGwAQABtAD4AbgA/AGsAbQBuAGsAbgBBAD8AQAA8AG0APABuAG0AQgA8AEAAbgBDAEEAQgBvADwAbwBuADwARABvAEIAcABDAG4AbwBwAG4AcABGAEMAcABHAEYAcQBHAHAARAByAG8AcgBwAG8ASAByAEQAcwBxAHAAcwBwAHIASABzAHIARQBxAHMASQBzAEgASQBFAHMASgBFAEkA"), 0.12773894, PackedByteArray("AAABAAIAAAADAAEABAADAAAABAAFAAMABAAGAAUABAAHAAYABAAIAAcACQAAAAoACQAEAAAACwAEAAkADAAEAAsADQAEAAwADgAEAA0ADwAIAAQADgAPAAQADwAQAAgAEQAPAA4ADwASABAAEwAPABEADwAUABIAFQAPABMADwAWABQAFwAPABUAGAAWAA8AFwAYAA8AGAAZABYAGgAYABcAGAAbABkAHAAYABoAGAAdABsAHgAYABwAGAAfAB0AIAAYAB4AIQAfABgAIAAhABgAIQAiAB8AIwAhACAAIQAkACIAJQAhACMAIQAmACQAJwAhACUAIQAoACYAKQAhACcAKgAoACEAKQAqACEAKgArACgALAAqACkAKgAtACsALgAqACwAKgAvAC0AMAAqAC4AKgAxAC8AMgAqADAAMwAxACoAMgAzACoAMwA0ADEANQAzADIAMwA2ADQANwAzADUAMwA4ADYAOQAzADcAMwA6ADgAOwAzADkAPAA6ADMAOwA8ADMAPAA9ADoAPgA8ADsAPAA/AD0AQAA8AD4APABBAD8AQgA8AEAAPABDAEEARAA8AEIARQBDADwARABFADwARQBGAEMARQBHAEYASABFAEQASQBFAEgASgBFAEkA")],
-"material": SubResource("ShaderMaterial_qtc2g"),
 "name": "Cylinder",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -64,9 +63,9 @@ shader = ExtResource("3_mwhqj")
 shader_parameter/Color = Color(1, 0.8784314, 0.8156863, 1)
 shader_parameter/speed = Vector2(2, -1)
 shader_parameter/Energy = ExtResource("3_dkq6i")
-shader_parameter/texture_power = 0.2
-shader_parameter/gradient_power = 0.0
-shader_parameter/gradient_power_2 = 2.0
+shader_parameter/texture_power = 0.705
+shader_parameter/gradient_power = 0.635
+shader_parameter/gradient_power_2 = 2.385
 shader_parameter/triplanar_scale = Vector3(1, 1, 1)
 shader_parameter/triplanar_offset = Vector3(0, 0, 0)
 shader_parameter/triplanar_sharpness = 0.5
@@ -79,7 +78,6 @@ _surfaces = [{
 "index_count": 960,
 "index_data": PackedByteArray("SgB0AEkASQB0AHUAdAB2AHUASQB1AEgAdQB2AHcAdgBFAHcASAB1AHgAdQB3AHgASAB4AEQAdwBFAHMARQBxAHMAeAB3AHkAdwBzAHkARAB4AHoAeAB5AHoARAB6AEIAcwBxAHsAcQBHAHsAewBHAEYAcwB7AHIAeQBzAHIAewBGAHAAcgB7AHAAcABGAEMAeQByAHwAegB5AHwAcgBwAG8AfAByAG8AcABDAH0AbwBwAH0AfQBDAEEAegB8AH4AQgB6AH4AQgB+AEAAfgB8AH8AfABvAH8AQAB+AIAAfgB/AIAAQACAAD4AbwB9ADwAfwBvADwAfQBBAG4APAB9AG4AbgBBAD8AfwA8AIEAgAB/AIEAPABuAG0AgQA8AG0AbgA/AIIAbQBuAIIAggA/AD0APgCAAIMAgACBAIMAPgCDADsAgQBtAIQAgwCBAIQAbQCCAGwAhABtAGwAOwCDAIUAgwCEAIUAOwCFADkAggA9AGsAbACCAGsAawA9ADoAhABsAIYAhQCEAIYAbABrAGoAhgBsAGoAawA6AIcAagBrAIcAhwA6ADgAOQCFAIgAhQCGAIgAOQCIADcAhgBqAIkAiACGAIkAagCHADMAiQBqADMANwCIAIoAiACJAIoANwCKADUAhwA4AGkAMwCHAGkAaQA4ADYAiQAzAIsAigCJAIsAMwBpAGgAiwAzAGgAaQA2AIwAaABpAIwAjAA2ADQANQCKAI0AigCLAI0ANQCNADIAiwBoAI4AjQCLAI4AaACMAGcAjgBoAGcAMgCNAI8AjQCOAI8AMgCPADAAjAA0AGYAZwCMAGYAZgA0ADEAjgBnAJAAjwCOAJAAZwBmAGUAkABnAGUAZgAxAJEAZQBmAJEAkQAxAC8AMACPAJIAjwCQAJIAMACSAC4AkABlAJMAkgCQAJMAZQCRACoAkwBlACoALgCSAJQAkgCTAJQALgCUACwAkQAvAGQAKgCRAGQAZAAvAC0AkwAqAJUAlACTAJUAKgBkAGMAlQAqAGMAZAAtAJYAYwBkAJYAlgAtACsALACUAJcAlACVAJcALACXACkAlQBjAJgAlwCVAJgAYwCWAGIAmABjAGIAKQCXAJkAlwCYAJkAKQCZACcAlgArAGEAYgCWAGEAYQArACgAmABiAJoAmQCYAJoAYgBhAGAAmgBiAGAAYQAoAJsAYABhAJsAmwAoACYAJwCZAJwAmQCaAJwAJwCcACUAmgBgAJ0AnACaAJ0AYACbACEAnQBgACEAJQCcAJ4AnACdAJ4AJQCeACMAmwAmAF8AIQCbAF8AXwAmACQAnQAhAJ8AngCdAJ8AIQBfAF4AnwAhAF4AXwAkAKAAXgBfAKAAoAAkACIAIwCeAKEAngCfAKEAIwChACAAnwBeAKIAoQCfAKIAXgCgAF0AogBeAF0AIAChAKMAoQCiAKMAIACjAB4AoAAiAFwAXQCgAFwAXAAiAB8AogBdAKQAowCiAKQAXQBcAFsApABdAFsAXAAfAKUAWwBcAKUApQAfAB0AHgCjAKYAowCkAKYAHgCmABwApABbAKcApgCkAKcAWwClABgApwBbABgAHACmAKgApgCnAKgAHACoABoApQAdAFoAGAClAFoAWgAdABsApwAYAKkAqACnAKkAGABaAFkAqQAYAFkAWgAbAKoAWQBaAKoAqgAbABkAGgCoAKsAqACpAKsAGgCrABcAqQBZAKwAqwCpAKwAWQCqAFgArABZAFgAFwCrAK0AqwCsAK0AFwCtABUAqgAZAFcAWACqAFcAVwAZABYArABYAK4ArQCsAK4AWABXAFYArgBYAFYAVwAWAK8AVgBXAK8ArwAWABQAFQCtALAArQCuALAAFQCwABMArgBWALEAsACuALEAVgCvAA8AsQBWAA8AEwCwALIAsACxALIAEwCyABEArwAUAFUADwCvAFUAVQAUABIAsQAPALMAsgCxALMADwBVAFQAswAPAFQAVQASALQAVABVALQAtAASABAAEQCyALUAsgCzALUAEQC1AA4AswBUALYAtQCzALYAVAC0AFMAtgBUAFMADgC1ALcAtQC2ALcADgC3AA0AtAAQAFIAUwC0AFIAUgAQAAgAtgBTALgAtwC2ALgAUwBSAFEAuABTAFEAUgAIALkAUQBSALkAuQAIAAcADQC3ALoAtwC4ALoADQC6AAwAuABRALsAugC4ALsAUQC5AAQAuwBRAAQADAC6ALwAugC7ALwADAC8AAsAuQAHAE8ABAC5AE8ATwAHAAYAuwAEAL0AvAC7AL0ABABPAFAAvQAEAFAATwAGAL4AUABPAL4AvgAGAAUACwC8AL8AvAC9AL8ACwC/AAkAvQBQAMAAvwC9AMAAUAC+AE4AwABQAE4ACQC/AMEAvwDAAMEACQDBAAoACgDBAMIAwQDAAMMAwQDDAMIAwABOAMMAwgDDAMQAwwBNAMQAwwBOAE0AxABNAAAATgC+AEwATgBMAE0AvgAFAEwATAAFAAMATQBMAMUATQDFAAAATAADAMUAAADFAEsAxQADAAEAxQABAEsASwABAAIA"),
 "lods": [0.02738534, PackedByteArray("SwABAAIASwADAAEATAADAEsATAAFAAMATAAGAAUATQBMAEsATQBLAAAACgBNAAAACQBNAAoACQBOAE0ATgBMAE0ACwBOAAkATwAGAEwATwAHAAYAUABMAE4ACwBQAE4AUABPAEwADABQAAsATwAIAAcADAAEAFAABABPAFAADQAEAAwADQBRAAQAUQBPAAQADgBRAA0AUgAIAE8AUQBSAE8AUgAQAAgADgBTAFEAUwBSAFEAEQBTAA4AUgASABAAEQBUAFMAVABSAFMAEwBUABEAVQASAFIAVABVAFIAVQAUABIAEwAPAFQADwBVAFQAFQAPABMAVQAWABQAFQBWAA8AVgBVAA8AFwBWABUAVwAWAFUAVgBXAFUAVwAZABYAFwBYAFYAWABXAFYAGgBYABcAVwAbABkAGgBZAFgAWQBXAFgAHABZABoAWgAbAFcAWQBaAFcAWgAdABsAHAAYAFkAGABaAFkAHgAYABwAWgAfAB0AHgBbABgAWwBaABgAIABbAB4AXAAfAFoAWwBcAFoAXAAiAB8AIABdAFsAXQBcAFsAIwBdACAAXAAkACIAIwBeAF0AXgBcAF0AJQBeACMAXwAkAFwAXgBfAFwAXwAmACQAJQAhAF4AIQBfAF4AJwAhACUAXwAoACYAJwBgACEAYABfACEAKQBgACcAYQAoAF8AYABhAF8AYQArACgAKQBiAGAAYgBhAGAALABiACkAYQAtACsALABjAGIAYwBhAGIALgBjACwAZAAtAGEAYwBkAGEAZAAvAC0ALgAqAGMAKgBkAGMAMAAqAC4AZAAxAC8AMABlACoAZQBkACoAMgBlADAAZgAxAGQAZQBmAGQAZgA0ADEAMgBnAGUAZwBmAGUANQBnADIAZgA2ADQANQBoAGcAaABmAGcANwBoADUAaQA2AGYAaABpAGYAaQA4ADYANwAzAGgAMwBpAGgAOQAzADcAaQA6ADgAOQBqADMAagBpADMAOwBqADkAawA6AGkAagBrAGkAawA9ADoAOwBsAGoAbABrAGoAPgBsADsAawA/AD0APgBtAGwAbQBrAGwAQABtAD4AbgA/AGsAbQBuAGsAbgBBAD8AQAA8AG0APABuAG0AQgA8AEAAbgBDAEEAQgBvADwAbwBuADwARABvAEIAcABDAG4AbwBwAG4AcABGAEMAcABHAEYAcQBHAHAARAByAG8AcgBwAG8ASAByAEQAcwBxAHAAcwBwAHIASABzAHIARQBxAHMASQBzAEgASQBFAHMASgBFAEkA"), 0.12773894, PackedByteArray("AAABAAIAAAADAAEABAADAAAABAAFAAMABAAGAAUABAAHAAYABAAIAAcACQAAAAoACQAEAAAACwAEAAkADAAEAAsADQAEAAwADgAEAA0ADwAIAAQADgAPAAQADwAQAAgAEQAPAA4ADwASABAAEwAPABEADwAUABIAFQAPABMADwAWABQAFwAPABUAGAAWAA8AFwAYAA8AGAAZABYAGgAYABcAGAAbABkAHAAYABoAGAAdABsAHgAYABwAGAAfAB0AIAAYAB4AIQAfABgAIAAhABgAIQAiAB8AIwAhACAAIQAkACIAJQAhACMAIQAmACQAJwAhACUAIQAoACYAKQAhACcAKgAoACEAKQAqACEAKgArACgALAAqACkAKgAtACsALgAqACwAKgAvAC0AMAAqAC4AKgAxAC8AMgAqADAAMwAxACoAMgAzACoAMwA0ADEANQAzADIAMwA2ADQANwAzADUAMwA4ADYAOQAzADcAMwA6ADgAOwAzADkAPAA6ADMAOwA8ADMAPAA9ADoAPgA8ADsAPAA/AD0AQAA8AD4APABBAD8AQgA8AEAAPABDAEEARAA8AEIARQBDADwARABFADwARQBGAEMARQBHAEYASABFAEQASQBFAEgASgBFAEkA")],
-"material": SubResource("ShaderMaterial_d4ksi"),
 "name": "Cylinder",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -89,29 +87,22 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wbi7l")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_n0q1q"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qtc2g"]
+noise_type = 2
+frequency = 0.0027
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4xjdn"]
-
-[sub_resource type="Curve" id="Curve_x1eyk"]
-_limits = [0.0, 0.5, 0.0, 1.0]
-_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(1, 0.5), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_uy7oo"]
-_limits = [0.0, 0.5, 0.0, 1.0]
-_data = [Vector2(0, 0.5), 0.0, 0.011353601, 0, 0, Vector2(0.99999, 0.5), 0.0, 0.0, 0, 0]
-point_count = 2
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_d4ksi"]
+noise = SubResource("FastNoiseLite_qtc2g")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yqvi6"]
 render_priority = 0
 shader = ExtResource("3_mwhqj")
 shader_parameter/Color = Color(0.81960785, 0.29411766, 0.29411766, 1)
 shader_parameter/speed = Vector2(2, 1.5)
-shader_parameter/Energy = ExtResource("3_dkq6i")
-shader_parameter/texture_power = 1.0
-shader_parameter/gradient_power = 3.0
-shader_parameter/gradient_power_2 = 1.0
+shader_parameter/Energy = SubResource("NoiseTexture2D_d4ksi")
+shader_parameter/texture_power = -0.015
+shader_parameter/gradient_power = 1.88
+shader_parameter/gradient_power_2 = 1.7
 shader_parameter/triplanar_scale = Vector3(1, 1, 1)
 shader_parameter/triplanar_offset = Vector3(0, 0, 0)
 shader_parameter/triplanar_sharpness = 0.5
@@ -129,7 +120,7 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.6217009, 0.9188948), 0.0, 0.0,
 point_count = 3
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n0q1q"]
-size = Vector3(1, 6.5098267, 20.530884)
+size = Vector3(3.944336, 6.5098267, 20.530884)
 
 [node name="laser_vfx" type="Node3D" unique_id=1971870939]
 script = ExtResource("1_n0q1q")
@@ -137,55 +128,18 @@ length_curve = ExtResource("5_83dhm")
 
 [node name="beam" type="MeshInstance3D" parent="." unique_id=1730996694]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_qtc2g")
 mesh = SubResource("ArrayMesh_d4ksi")
 skeleton = NodePath("")
 
 [node name="inner_beam" type="MeshInstance3D" parent="." unique_id=475410243]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_d4ksi")
 mesh = SubResource("ArrayMesh_n0q1q")
 
-[node name="old_beam" type="CPUParticles3D" parent="." unique_id=1479680568]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.025604248)
-visible = false
-material_override = SubResource("ShaderMaterial_n0q1q")
-emitting = false
-amount = 1
-lifetime = 0.8
-one_shot = true
-explosiveness = 1.0
-mesh = ExtResource("4_lt8la")
-gravity = Vector3(0, 0, 0)
-split_scale = true
-scale_curve_x = null
-scale_curve_y = null
-scale_curve_z = ExtResource("5_83dhm")
-color = Color(0.81960785, 0.29411766, 0.29411766, 1)
-
-[node name="old_inner_beam" type="CPUParticles3D" parent="." unique_id=1153516975]
-visible = false
-material_override = SubResource("ShaderMaterial_4xjdn")
-emitting = false
-amount = 1
-lifetime = 0.8
-one_shot = true
-explosiveness = 1.0
-mesh = ExtResource("4_lt8la")
-gravity = Vector3(0, 0, 0)
-split_scale = true
-scale_curve_x = SubResource("Curve_x1eyk")
-scale_curve_y = SubResource("Curve_uy7oo")
-scale_curve_z = ExtResource("5_83dhm")
-color = Color(1, 0.8784314, 0.8156863, 1)
-
-[node name="head" type="CPUParticles3D" parent="." unique_id=641150087]
-visible = false
+[node name="start_beam" type="MeshInstance3D" parent="." unique_id=1833261309]
 material_override = SubResource("ShaderMaterial_yqvi6")
-amount = 1
-lifetime = 0.8
-explosiveness = 1.0
 mesh = ExtResource("8_7pmqx")
-gravity = Vector3(0, 0, 0)
-color = Color(0.9882353, 0.23529412, 0, 1)
 
 [node name="particles" type="CPUParticles3D" parent="." unique_id=787461385]
 material_override = SubResource("ShaderMaterial_b2ue8")
@@ -207,13 +161,25 @@ radial_accel_max = 2.0
 scale_amount_min = 0.5
 hue_variation_curve = SubResource("Curve_ldsoa")
 
-[node name="Area3D" type="Area3D" parent="." unique_id=1096881406]
+[node name="hitbox" type="Area3D" parent="." unique_id=1096881406]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+collision_layer = 16
+collision_mask = 8
+monitoring = false
+monitorable = false
 script = ExtResource("8_d4ksi")
-damage = 30.0
+damage = 25.0
+knockback = 4.0
+ally_multiplier = 1.4
 metadata/_custom_type_script = "uid://cffa0n4q4tuvk"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1787667714]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.058685392, 9.359563)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hitbox" unique_id=1787667714]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10400392, 0.058685392, 9.359563)
 shape = SubResource("BoxShape3D_n0q1q")
 debug_color = Color(0.4762593, 0.0015360448, 0.6797369, 0.41960785)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1814726086]
+stream = ExtResource("8_n0q1q")
+attenuation_model = 1
+autoplay = true
+max_distance = 60.0

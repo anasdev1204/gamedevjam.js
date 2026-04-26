@@ -4,6 +4,7 @@ extends Node
 @export var body: CharacterBody3D
 @export var rotation_component: RotationComponent
 @export var camera_component: CameraComponent
+@export var health_component: HealthComponent
 @export var dash_after_image_vfx: Node3D
 
 @export var speed := 20.0
@@ -16,8 +17,16 @@ extends Node
 @export var active_dash_cooldown := 1.
 @export var active_dash_camera_size := 25
 
+@export var knockback_duration := 0.2
+
 var active_dash_timer: Timer
 var active_dash_cooldown_timer: Timer
+signal dash_used
+signal dash_ready
+
+var knockback_speed := 8.0
+var knockback_timer: Timer
+var knockback_direction: Vector3
 
 var target_velocity: Vector3
 
@@ -39,8 +48,15 @@ func _ready():
 	active_dash_cooldown_timer.one_shot = true
 	add_child(active_dash_cooldown_timer)
 	
+	knockback_timer = Timer.new()
+	knockback_timer.one_shot = true
+	add_child(knockback_timer)
+	
 	active_dash_timer.timeout.connect(
 		_on_active_dash_end
+	)
+	active_dash_cooldown_timer.timeout.connect(
+		_on_active_dash_cooldown_timer_end
 	)
 
 func update(delta: float, move_dir: Vector3, is_attacking: bool):	
@@ -53,6 +69,13 @@ func update(delta: float, move_dir: Vector3, is_attacking: bool):
 	if is_active_dashing():
 		var dash_direction := last_direction.normalized()
 		body.velocity = active_dash_speed * dash_direction
+		body.move_and_slide()
+		return
+	
+	if is_knocked_back():
+		var hit_direction := (body.global_position -knockback_direction ).normalized()
+		hit_direction.y = 0.
+		body.velocity = knockback_speed * hit_direction
 		body.move_and_slide()
 		return
 		
@@ -99,11 +122,26 @@ func update(delta: float, move_dir: Vector3, is_attacking: bool):
 func move_to(pos: Vector3, on_finished: Callable = Callable()) -> void:
 	if body == null:
 		return
+		
+	# radius of spread around target
+	var spread_radius := 1.5
+
+	# random point in circle (XZ plane)
+	var angle := randf() * TAU
+	var radius := sqrt(randf()) * spread_radius
+
+	var offset := Vector3(
+		cos(angle) * radius,
+		0.0,
+		sin(angle) * radius
+	)
+
+	var final_pos := pos + offset
 
 	var threshold := 0.1
 
 	while is_instance_valid(body):
-		var to_target := pos - body.global_position
+		var to_target := final_pos - body.global_position
 
 		var distance := to_target.length()
 
@@ -113,7 +151,7 @@ func move_to(pos: Vector3, on_finished: Callable = Callable()) -> void:
 		var dir := to_target.normalized()
 		get_parent()._on_movement_change(dir)
 		if rotation_component:
-			rotation_component.update(get_process_delta_time(), dir)
+			rotation_component.update(get_process_delta_time(), dir, dir, false)
 
 		target_velocity = dir * speed
 
@@ -140,7 +178,7 @@ func move_to(pos: Vector3, on_finished: Callable = Callable()) -> void:
 		await get_tree().physics_frame
 
 	# stop exactly at target
-	body.global_position = Vector3(pos.x, pos.y, pos.z)
+	body.global_position = Vector3(final_pos.x, final_pos.y, final_pos.z)
 	body.velocity.x = 0.0
 	body.velocity.z = 0.0
 	get_parent()._on_movement_change(Vector3.ZERO)
@@ -165,7 +203,9 @@ func _on_active_dash():
 		return
 		
 	active_dash_timer.start(active_dash_duration)
+	health_component.start_invincibility_timer(active_dash_duration)
 	dash_after_image_vfx.start()
+	dash_used.emit()
 	camera_component.set_camera_size(active_dash_camera_size)
 	
 func _on_active_dash_end():
@@ -173,8 +213,19 @@ func _on_active_dash_end():
 	dash_after_image_vfx.stop()
 	active_dash_cooldown_timer.start(active_dash_cooldown)
 	
+func _on_active_dash_cooldown_timer_end():
+	dash_ready.emit()
+	
 func is_active_dashing() -> bool:
 	return active_dash_timer.time_left > 0
 
 func can_active_dash() -> bool:
 	return active_dash_cooldown_timer.time_left <= 0
+
+func knock_back(attack_global_position: Vector3, knockback_value: float):
+	knockback_timer.start(knockback_duration)
+	knockback_speed = knockback_value
+	knockback_direction = attack_global_position
+	
+func is_knocked_back() -> bool:
+	return knockback_timer.time_left > 0.

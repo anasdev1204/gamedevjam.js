@@ -11,11 +11,13 @@
 [ext_resource type="Script" uid="uid://4gsfrqitdpoc" path="res://scripts/Classes/ActiveSkill.gd" id="7_praws"]
 [ext_resource type="Script" uid="uid://w05okq7rpmrx" path="res://scripts/Components/CameraComponent.gd" id="8_iamlv"]
 [ext_resource type="AnimationLibrary" uid="uid://c1p5v7lxwhk6c" path="res://assets/source/entities/drone/drone_anims.res" id="8_praws"]
+[ext_resource type="AudioStream" uid="uid://c8tcy0ujx15l4" path="res://assets/source/sfx/drone.mp3" id="9_dpg6e"]
 [ext_resource type="Script" uid="uid://4g7g22oy78fc" path="res://scripts/Classes/Hurtbox.gd" id="9_mttwm"]
 [ext_resource type="Script" uid="uid://q8fs4agvgiw0" path="res://scripts/Components/ActiveSkillComponent.gd" id="9_praws"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://w148sk4dnhjf" path="res://assets/source/entities/drone/drone_blend_tree.tres" id="9_wt63a"]
 [ext_resource type="Script" uid="uid://brr713nr64ach" path="res://scripts/Components/HealthComponent.gd" id="16_bnc7f"]
 [ext_resource type="Script" uid="uid://k8xtbff7swi0" path="res://scripts/Components/AIComponent.gd" id="16_mttwm"]
+[ext_resource type="Script" uid="uid://bdv7tfjlpm2tm" path="res://scripts/Classes/SwitchArea.gd" id="17_mttwm"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_2dbrb"]
 _surfaces = [{
@@ -75,7 +77,6 @@ _surfaces = [{
 "index_count": 120,
 "index_data": PackedByteArray("AAABAAIAAAADAAEAMAAFADEAMAAHAAUACAAJAAoACAALAAkAMgAVADMAMgAXABUANAANAA4ANAA1AA0ANgARABIANgA3ABEAEAA4ADkAEAATADgADAA6ADsADAAPADoAFAA8ABYAFAA9ADwABAA+AAYABAA/AD4AGAAZABoAGAAbABkAQAAdAB4AQABBAB0AIAAhACIAIAAjACEAQgAtAC4AQgBDAC0ARAAlAEUARAAnACUARgApAEcARgArACkAKABIACoAKABJAEgAJABKACYAJABLAEoALABMAE0ALAAvAEwAHABOAE8AHAAfAE4A"),
 "lods": [0.11509875, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A")],
-"material": SubResource("StandardMaterial3D_wt63a"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 80,
@@ -87,6 +88,42 @@ shadow_mesh = SubResource("ArrayMesh_p1mjp")
 [sub_resource type="BoxShape3D" id="BoxShape3D_dpg6e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mttwm"]
+size = Vector3(1.9298096, 3.0816803, 2.8570404)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_dpg6e"]
+height = 27.974854
+radius = 18.649414
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bnc7f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mttwm"]
+border_width_bottom = 3
+border_color = Color(0.37, 0.37, 0.37, 1)
+corner_detail = 3
+expand_margin_bottom = 3.0
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dpg6e"]
+bg_color = Color(0.72, 0, 0.011999818, 1)
+border_width_bottom = 3
+border_color = Color(0.39, 0, 0.0064999005, 1)
+corner_detail = 3
+expand_margin_bottom = 3.0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_bnc7f"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_55mya"]
+bg_color = Color(0.11119685, 0.11119685, 0.11119678, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.47058824, 0.47058824, 0.47058824, 1)
+border_blend = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ja8o1"]
+viewport_path = NodePath("SubViewport2")
 
 [node name="Drone" type="CharacterBody3D" unique_id=2058500955]
 collision_layer = 2
@@ -99,27 +136,33 @@ metadata/_custom_type_script = "uid://dprh06t61bjcu"
 
 [node name="DashAfterImage" type="Node3D" parent="VFX" unique_id=1312395539 node_paths=PackedStringArray("character_mesh")]
 script = ExtResource("2_1rp74")
-character_mesh = NodePath("../../model/drone")
+character_mesh = NodePath("../../model/model")
 
 [node name="model" type="Node3D" parent="." unique_id=1532225515]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, 2.466189, 0)
 
-[node name="drone" type="MeshInstance3D" parent="model" unique_id=1803811931]
+[node name="model" type="MeshInstance3D" parent="model" unique_id=1803811931]
+unique_name_in_owner = true
 transform = Transform3D(-0.013962215, 0, 0.9999025, 0, 1, 0, -0.9999024, 0, -0.013962216, 0.0007964391, 0.0056438446, 1.8626451e-09)
 material_override = ExtResource("3_b8s44")
 mesh = SubResource("ArrayMesh_mxu11")
 skeleton = NodePath("")
 
 [node name="gun" type="MeshInstance3D" parent="model" unique_id=232258420]
+unique_name_in_owner = true
 transform = Transform3D(0.17215632, 0, 0, 0, 0.17215632, 0, 0, 0, 0.17215633, 0.6616226, -0.21998215, 0.44889525)
+material_override = SubResource("StandardMaterial3D_wt63a")
 mesh = SubResource("ArrayMesh_q8fse")
 skeleton = NodePath("")
 
-[node name="drone_propeller" parent="model" unique_id=1937261150 instance=ExtResource("2_b8s44")]
-transform = Transform3D(0.25000003, 0, 0, 0, -1.0927848e-08, 0.25000003, 0, -0.25, -1.0927847e-08, -0.015863601, 0.35529852, -0.7112463)
+[node name="propellers" type="Node3D" parent="model" unique_id=145017370]
+unique_name_in_owner = true
 
-[node name="drone_propeller2" parent="model" unique_id=911001778 instance=ExtResource("2_b8s44")]
-transform = Transform3D(0.25000003, 0, 0, 0, -1.0927848e-08, 0.25000003, 0, -0.25, -1.0927847e-08, -0.015863601, 0.35529852, 0.7264108)
+[node name="drone_propeller" parent="model/propellers" unique_id=1937261150 instance=ExtResource("2_b8s44")]
+transform = Transform3D(0.25000003, 0, 0, 0, -1.0927848e-08, 0.25000003, 0, -0.25, -1.0927847e-08, -0.0158636, 0.35529864, -0.7112463)
+
+[node name="drone_propeller2" parent="model/propellers" unique_id=911001778 instance=ExtResource("2_b8s44")]
+transform = Transform3D(0.25000003, 0, 0, 0, -1.0927848e-08, 0.25000003, 0, -0.25, -1.0927847e-08, -0.0158636, 0.35529864, 0.7264108)
 
 [node name="skills" type="Node3D" parent="model" unique_id=1420509515 node_paths=PackedStringArray("active_skills")]
 script = ExtResource("6_8nm5b")
@@ -161,7 +204,7 @@ script = ExtResource("9_mttwm")
 metadata/_custom_type_script = "uid://4g7g22oy78fc"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox" unique_id=2117543203]
-transform = Transform3D(0.995396, -2.0123987e-10, 0.09584576, -0.095845744, -4.1895505e-09, 0.9953962, 2.0123987e-10, -0.99999976, -4.1895514e-09, -0.02270599, 1.431882, -0.02270599)
+transform = Transform3D(0.995396, -2.0123987e-10, 0.09584576, -0.095845744, -4.1895505e-09, 0.9953962, 2.0123987e-10, -0.99999976, -4.1895514e-09, 0.08813208, 1.4768474, -0.06472108)
 shape = SubResource("BoxShape3D_mttwm")
 debug_color = Color(0.9607843, 0, 0.5176471, 0.41960785)
 
@@ -172,7 +215,6 @@ transform = Transform3D(0.8480481, 0, 0.52991927, 0, 1, 0, -0.52991927, 0, 0.848
 unique_name_in_owner = true
 transform = Transform3D(-1, -6.181724e-08, 6.181724e-08, 0, 0.70710677, 0.70710677, -8.742278e-08, 0.70710677, -0.70710677, 0, 10, -5)
 projection = 1
-current = true
 size = 20.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1977972953]
@@ -188,6 +230,28 @@ omni_attenuation = 0.96
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="feet" unique_id=1591731995]
 debug_enabled = true
 debug_path_custom_color = Color(0.0010853444, 0.0010853446, 0.0010853445, 1)
+
+[node name="SwtichArea" type="Area3D" parent="." unique_id=1990055138]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("17_mttwm")
+metadata/_custom_type_script = "uid://bdv7tfjlpm2tm"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SwtichArea" unique_id=1300181343]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.987427, 0)
+shape = SubResource("CylinderShape3D_dpg6e")
+debug_color = Color(0, 0.5950001, 0.7, 1)
+
+[node name="Audio" type="Node3D" parent="." unique_id=888348249]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Audio" unique_id=1496112174]
+stream = ExtResource("9_dpg6e")
+max_db = 6.0
+autoplay = true
+max_distance = 30.0
+bus = &"sfx"
+parameters/looping = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2015327755]
 libraries/ = ExtResource("8_praws")
@@ -205,17 +269,19 @@ parameters/attack_transition/current_state = "end_attack"
 parameters/attack_transition/transition_request = ""
 parameters/attack_transition/current_index = 0
 
-[node name="InputComponent" type="Node" parent="." unique_id=2044064928 node_paths=PackedStringArray("body")]
+[node name="InputComponent" type="Node" parent="." unique_id=2044064928 node_paths=PackedStringArray("body", "switch_area")]
 unique_name_in_owner = true
 script = ExtResource("5_snx0p")
 body = NodePath("..")
+switch_area = NodePath("../SwtichArea")
 
-[node name="MovementComponent" type="Node" parent="." unique_id=1673556509 node_paths=PackedStringArray("body", "rotation_component", "camera_component", "dash_after_image_vfx")]
+[node name="MovementComponent" type="Node" parent="." unique_id=1673556509 node_paths=PackedStringArray("body", "rotation_component", "camera_component", "health_component", "dash_after_image_vfx")]
 unique_name_in_owner = true
 script = ExtResource("6_1rp74")
 body = NodePath("..")
 rotation_component = NodePath("../RotationComponent")
 camera_component = NodePath("../CameraComponent")
+health_component = NodePath("../HealthComponent")
 dash_after_image_vfx = NodePath("../VFX/DashAfterImage")
 active_dash_speed = 40.0
 active_dash_duration = 0.3
@@ -250,10 +316,13 @@ rotation_component = NodePath("../RotationComponent")
 camera_component = NodePath("../CameraComponent")
 metadata/_custom_type_script = "uid://q8fs4agvgiw0"
 
-[node name="HealthComponent" type="Node" parent="." unique_id=5880889 node_paths=PackedStringArray("model", "hurtbox")]
+[node name="HealthComponent" type="Node" parent="." unique_id=5880889 node_paths=PackedStringArray("movement_component", "enemy_health_bar_subview", "enemy_health_bar_sprite", "model", "hurtbox")]
 unique_name_in_owner = true
 script = ExtResource("16_bnc7f")
-model = NodePath("../model/drone")
+movement_component = NodePath("../MovementComponent")
+enemy_health_bar_subview = NodePath("../SubViewport")
+enemy_health_bar_sprite = NodePath("../Healthbar")
+model = NodePath("../model/model")
 hurtbox = NodePath("../Hurtbox")
 metadata/_custom_type_script = "uid://brr713nr64ach"
 
@@ -261,5 +330,78 @@ metadata/_custom_type_script = "uid://brr713nr64ach"
 unique_name_in_owner = true
 script = ExtResource("16_mttwm")
 body = NodePath("..")
+health = 24.0
+speed = 16.0
 attack_range = 20.0
+fire_cooldown = 1.2
 metadata/_custom_type_script = "uid://k8xtbff7swi0"
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=828617899]
+transparent_bg = true
+size = Vector2i(140, 30)
+
+[node name="Panel" type="Panel" parent="SubViewport" unique_id=248543495]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bnc7f")
+
+[node name="ProgressBar" type="ProgressBar" parent="SubViewport/Panel" unique_id=1307146907]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.040000003
+anchor_top = 0.16700001
+anchor_right = 0.96000004
+anchor_bottom = 0.771
+offset_left = 0.045000076
+offset_top = -0.016000748
+offset_bottom = -0.008003235
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_mttwm")
+theme_override_styles/fill = SubResource("StyleBoxFlat_dpg6e")
+value = 100.0
+show_percentage = false
+
+[node name="Healthbar" type="Sprite3D" parent="." unique_id=1719715345]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4008155, 0)
+visible = false
+billboard = 1
+texture = SubResource("ViewportTexture_bnc7f")
+
+[node name="SubViewport2" type="SubViewport" parent="." unique_id=837294050]
+transparent_bg = true
+size = Vector2i(50, 50)
+
+[node name="Panel" type="Panel" parent="SubViewport2" unique_id=1969200959]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_55mya")
+
+[node name="Label" type="Label" parent="SubViewport2/Panel" unique_id=2146717216]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.4724152, 0.47241515, 0.47241515, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "q"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="SwitchIndicator" type="Sprite3D" parent="." unique_id=1563227719]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.55687, 0)
+visible = false
+billboard = 1
+texture_filter = 1
+texture = SubResource("ViewportTexture_ja8o1")

@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bk57jutvgd16j"]
+
+[ext_resource type="Shader" uid="uid://bd3iesuaxayhj" path="res://res/shaders/explosion_vfx.tres" id="1_efnta"]
+[ext_resource type="Texture2D" uid="uid://cypldc4iv83rh" path="res://assets/source/vfx/T_MarbleNoise_tiled.png" id="2_f13po"]
+
+[resource]
+render_priority = 1
+shader = ExtResource("1_efnta")
+shader_parameter/speed = Vector2(0, 0.8)
+shader_parameter/deformation_intensity = 0.2
+shader_parameter/Color = Color(1, 0.29748532, 0, 1)
+shader_parameter/Emission = 20.0
+shader_parameter/tex_frg_8 = ExtResource("2_f13po")

@@ -2,7 +2,6 @@
 
 [ext_resource type="Material" uid="uid://dmsvhf6ry2mas" path="res://res/materials/simple_outline.tres" id="1_pk26u"]
 [ext_resource type="Shader" uid="uid://dbu7llmqrxdp3" path="res://res/shaders/toon.tres" id="2_b4edl"]
-[ext_resource type="Texture2D" uid="uid://byyo18brkiblo" path="res://assets/source/entities/bigenemy/bigenemy_text.png" id="3_s6lbt"]
 
 [resource]
 resource_local_to_scene = true
@@ -11,4 +10,3 @@ next_pass = ExtResource("1_pk26u")
 shader = ExtResource("2_b4edl")
 shader_parameter/is_hit = false
 shader_parameter/Hitflash_Color = Color(1, 1, 1, 1)
-shader_parameter/albedo = ExtResource("3_s6lbt")

@@ -1,0 +1,72 @@
+[gd_resource type="VisualShader" format=3 uid="uid://dyiuh4ch3n0j"]
+
+[ext_resource type="Texture2D" uid="uid://bpltpbqqx26jw" path="res://assets/source/vfx/T_4_streaks.png" id="1_glhsm"]
+[ext_resource type="Texture2D" uid="uid://b32r2jlbj3npo" path="res://assets/source/vfx/T_PerlinNoise_Tiled11_inv.png" id="2_2ntvr"]
+
+[sub_resource type="VisualShaderNodeSmoothStep" id="VisualShaderNodeSmoothStep_7eyxe"]
+default_input_values = [0, 0.0, 1, 0.8, 2, 0.5]
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_ng205"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_2ntvr"]
+expanded_output_ports = [0]
+texture = ExtResource("1_glhsm")
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_7eyxe"]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeMultiplyAdd" id="VisualShaderNodeMultiplyAdd_ng205"]
+default_input_values = [0, Vector2(0, 0), 1, Vector2(0.25, 1), 2, Vector2(0, 0)]
+op_type = 1
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_2g0d5"]
+expanded_output_ports = [0]
+input_name = "color"
+
+[sub_resource type="Curve" id="Curve_glhsm"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25, 0), 0.0, 0.0, 0, 0, Vector2(0.25, 0.25), 1.124, 0.0, 0, 0, Vector2(0.5, 0.25), 0.0, 0.0, 0, 0, Vector2(0.5, 0.5), 0.0, 0.0, 0, 0, Vector2(0.75, 0.5), 0.0, 0.0, 0, 0, Vector2(0.75, 0.75), 0.0, 0.0, 0, 0]
+point_count = 7
+
+[sub_resource type="CurveTexture" id="CurveTexture_2ntvr"]
+curve = SubResource("Curve_glhsm")
+
+[sub_resource type="VisualShaderNodeCurveTexture" id="VisualShaderNodeCurveTexture_7eyxe"]
+texture = SubResource("CurveTexture_2ntvr")
+
+[sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_glhsm"]
+op_type = 0
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_2ntvr"]
+parameter_name = "Color"
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_2g0d5"]
+texture = ExtResource("2_2ntvr")
+texture_type = 1
+
+[resource]
+modes/cull = 2
+flags/unshaded = true
+nodes/fragment/0/position = Vector2(640, 112)
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_2ntvr")
+nodes/fragment/2/position = Vector2(-256, 224)
+nodes/fragment/3/node = SubResource("VisualShaderNodeInput_7eyxe")
+nodes/fragment/3/position = Vector2(-928, 128)
+nodes/fragment/4/node = SubResource("VisualShaderNodeMultiplyAdd_ng205")
+nodes/fragment/4/position = Vector2(-592, 208)
+nodes/fragment/5/node = SubResource("VisualShaderNodeInput_2g0d5")
+nodes/fragment/5/position = Vector2(-1712, 496)
+nodes/fragment/6/node = SubResource("VisualShaderNodeCurveTexture_7eyxe")
+nodes/fragment/6/position = Vector2(-1136, 352)
+nodes/fragment/7/node = SubResource("VisualShaderNodeVectorCompose_glhsm")
+nodes/fragment/7/position = Vector2(-832, 352)
+nodes/fragment/8/node = SubResource("VisualShaderNodeColorParameter_2ntvr")
+nodes/fragment/8/position = Vector2(-208, -112)
+nodes/fragment/9/node = SubResource("VisualShaderNodeTexture_2g0d5")
+nodes/fragment/9/position = Vector2(-720, 880)
+nodes/fragment/10/node = SubResource("VisualShaderNodeSmoothStep_7eyxe")
+nodes/fragment/10/position = Vector2(-80, 688)
+nodes/fragment/11/node = SubResource("VisualShaderNodeFloatOp_ng205")
+nodes/fragment/11/position = Vector2(272, 336)
+nodes/fragment/connections = PackedInt32Array(3, 0, 4, 0, 4, 0, 2, 0, 5, 1, 6, 0, 6, 0, 7, 0, 7, 0, 4, 2, 8, 0, 0, 0, 2, 1, 11, 0, 11, 0, 0, 1, 10, 0, 11, 1, 5, 4, 10, 0, 9, 0, 10, 2)

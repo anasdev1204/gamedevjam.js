@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://cv6v1kto50fcs"]
+
+[ext_resource type="Script" uid="uid://dd0psdri3gclt" path="res://scripts/VFX/explosion_vfx.gd" id="1_bwsug"]
+[ext_resource type="Material" uid="uid://bk57jutvgd16j" path="res://res/shaders/explosion_shader.tres" id="1_e24x3"]
+[ext_resource type="Shader" uid="uid://dyiuh4ch3n0j" path="res://res/shaders/explosion_particles.tres" id="2_2d033"]
+[ext_resource type="Texture2D" uid="uid://dixs2n4wobo7s" path="res://assets/source/vfx/T_vfx_hit122.jpg" id="3_7xs1l"]
+[ext_resource type="Script" uid="uid://cffa0n4q4tuvk" path="res://scripts/Classes/Hitbox.gd" id="5_vmur6"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_7xs1l"]
+radius = 1.5
+height = 3.0
+
+[sub_resource type="Curve" id="Curve_2d033"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.3187251, 0.38687074), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_7xs1l"]
+_data = [Vector2(0.007968128, 0.3040154), 0.0, 0.0, 0, 0, Vector2(0.15537848, 0.6520077), 0.0, 0.0, 0, 0, Vector2(0.5030303, 0.8556558), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_bwsug"]
+offsets = PackedFloat32Array(0.10779817, 0.51605505)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2d033"]
+render_priority = 0
+shader = ExtResource("2_2d033")
+shader_parameter/Color = Color(1, 0.7529412, 0, 1)
+
+[sub_resource type="Curve" id="Curve_bwsug"]
+_data = [Vector2(0, 0), 0.0, 3.2346835, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_vmur6"]
+texture_mode = 1
+curve = SubResource("Curve_bwsug")
+
+[sub_resource type="Curve" id="Curve_axdsn"]
+_data = [Vector2(0, 0.50783), 0.0, 1.8736019, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_70rtr"]
+curve = SubResource("Curve_axdsn")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2d033"]
+particle_flag_align_y = true
+direction = Vector3(0, 1, 0)
+spread = 180.0
+initial_velocity_min = 0.5
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+scale_min = 2.0
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_70rtr")
+alpha_curve = SubResource("CurveTexture_vmur6")
+hue_variation_min = -1.0
+hue_variation_max = 0.99999994
+
+[sub_resource type="QuadMesh" id="QuadMesh_7xs1l"]
+size = Vector2(1.5, 6)
+center_offset = Vector3(0, 2.4, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bwsug"]
+blend_mode = 1
+shading_mode = 0
+albedo_color = Color(1, 0.81467485, 0, 1)
+albedo_texture = ExtResource("3_7xs1l")
+billboard_mode = 1
+billboard_keep_scale = true
+proximity_fade_enabled = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_nd7mw"]
+
+[sub_resource type="Curve" id="Curve_vmur6"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vmur6"]
+size = Vector3(6.7807007, 4.1312866, 5.787224)
+
+[node name="explosion_vfx" type="Node3D" unique_id=307212851]
+script = ExtResource("1_bwsug")
+
+[node name="clouds" type="CPUParticles3D" parent="." unique_id=1737637119]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.013544, 0)
+material_override = ExtResource("1_e24x3")
+emitting = false
+amount = 12
+lifetime = 0.6
+one_shot = true
+explosiveness = 0.8
+mesh = SubResource("SphereMesh_7xs1l")
+emission_shape = 1
+emission_sphere_radius = 0.4
+gravity = Vector3(0, 0, 0)
+radial_accel_min = 6.5
+radial_accel_max = 7.5
+radial_accel_curve = SubResource("Curve_2d033")
+scale_amount_min = 0.5
+scale_amount_max = 1.5
+scale_amount_curve = SubResource("Curve_7xs1l")
+color_ramp = SubResource("Gradient_bwsug")
+
+[node name="particles" type="GPUParticles3D" parent="." unique_id=1833345649]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.013544, 0)
+material_override = SubResource("ShaderMaterial_2d033")
+emitting = false
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_2d033")
+draw_pass_1 = SubResource("QuadMesh_7xs1l")
+
+[node name="flare" type="CPUParticles3D" parent="." unique_id=1071516133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.013544, 0)
+material_override = SubResource("StandardMaterial3D_bwsug")
+emitting = false
+amount = 1
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_nd7mw")
+gravity = Vector3(0, 0, 0)
+scale_amount_min = 16.0
+scale_amount_max = 16.0
+scale_amount_curve = SubResource("Curve_vmur6")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1848639714]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8272214, 0)
+light_color = Color(1, 0.5010346, 0, 1)
+light_energy = 10.0
+omni_range = 20.0
+
+[node name="Hitbox" type="Area3D" parent="." unique_id=1722800574]
+collision_layer = 16
+collision_mask = 8
+script = ExtResource("5_vmur6")
+damage = 25.0
+metadata/_custom_type_script = "uid://cffa0n4q4tuvk"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=1299658990]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2071228, 2.312008, 0.07688522)
+shape = SubResource("BoxShape3D_vmur6")

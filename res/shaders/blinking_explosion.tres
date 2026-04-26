@@ -1,0 +1,25 @@
+[gd_resource type="Shader" format=3 uid="uid://04xdxlpwwpam"]
+
+[resource]
+code = "shader_type spatial;
+
+uniform sampler2D curve_texture;
+uniform sampler2D color_ramp;
+
+/* Drive manually from script/editor: 0.0 -> 1.0 */
+uniform float progress : hint_range(0.0, 1.0) = 0.1;
+
+uniform float emission_strength = 2.0;
+
+void fragment() {
+	float t = clamp(progress, 0.0, 1.0);
+
+	// Sample curve for blink/intensity shaping
+	float blink = texture(curve_texture, vec2(t, 0.25)).r;
+
+	// Sample ramp color at same position
+	vec3 ramp_color = texture(color_ramp, vec2(t, 0.5)).rgb;
+
+	ALBEDO = ramp_color * blink;
+	EMISSION = ramp_color * blink * emission_strength;
+}"

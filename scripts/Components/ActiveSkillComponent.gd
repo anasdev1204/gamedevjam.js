@@ -15,7 +15,7 @@ func _ready():
 	)
 
 func _on_primary_fire():
-	if is_skill_active():
+	if is_skill_active() or player.is_exploding:
 		return
 	
 	player.set_player_attacking(true)

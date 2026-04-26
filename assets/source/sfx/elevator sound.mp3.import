@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c2dl2y75kjvf4"
+path="res://.godot/imported/elevator sound.mp3-ec288d88838214dfde106d729cdec790.mp3str"
+
+[deps]
+
+source_file="res://assets/source/sfx/elevator sound.mp3"
+dest_files=["res://.godot/imported/elevator sound.mp3-ec288d88838214dfde106d729cdec790.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
